@@ -1,0 +1,2419 @@
+[
+ {
+  "id": 11853,
+  "title": "2K Build Your Own Bundle (2022)",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fstore%2Fpromo%2F2k-build-your-own-bundle",
+  "details": "https://isthereanydeal.com/bundles/11853/",
+  "isMature": false,
+  "publish": "2022-07-29T20:41:36+02:00",
+  "expiry": "2022-08-11T19:00:00+02:00",
+  "note": "* Discount applied only to FULL PRICE of selected titles.",
+  "counts": {
+   "games": 41,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-e9cc-7214-a12e-4a275de23889",
+      "slug": "xcom-enemy-unknown-the-complete-edition",
+      "title": "XCOM: Enemy Unknown - The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/boxart.jpg?t=1786659921",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner145.jpg?t=1786659922",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner300.jpg?t=1786659922",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner400.jpg?t=1786659922",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner600.jpg?t=1786659923"
+      }
+     },
+     {
+      "id": "018d937e-ea07-720f-a0bf-bcbece3c6430",
+      "slug": "borderlands-2-game-of-the-year-edition",
+      "title": "Borderlands 2 Game of the Year Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/boxart.jpg?t=1786418142",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner145.jpg?t=1786418142",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner300.jpg?t=1786418142",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner400.jpg?t=1786418142",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner600.jpg?t=1786418142"
+      }
+     },
+     {
+      "id": "018d937e-ea15-7048-b1b5-b4d86ad0ef8e",
+      "slug": "borderlands-the-handsome-collection",
+      "title": "Borderlands: The Handsome Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/boxart.jpg?t=1786389054",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner145.jpg?t=1786389055",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner300.jpg?t=1786389055",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner400.jpg?t=1786389055",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner600.jpg?t=1786389056"
+      }
+     },
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-f010-709c-9351-79ca5ac46fac",
+      "slug": "borderlands-the-pre-sequel-season-pass",
+      "title": "Borderlands: The Pre-Sequel Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/boxart.jpg?t=1786392147",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner145.jpg?t=1786392147",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner300.jpg?t=1786392147",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner400.jpg?t=1786392147",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner600.jpg?t=1786392147"
+      }
+     },
+     {
+      "id": "018d937e-f050-7366-9d55-484657399ad7",
+      "slug": "duke-nukem-forever",
+      "title": "Duke Nukem Forever",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/boxart.jpg?t=1792624504",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner145.jpg?t=1792624504",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner300.jpg?t=1792624504",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner400.jpg?t=1792624504",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner600.jpg?t=1792624505"
+      }
+     },
+     {
+      "id": "018d937e-f47e-70fd-b32d-9e52cbebd4ce",
+      "slug": "bioshock-the-collection",
+      "title": "BioShock: The Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/boxart.jpg?t=1787246726",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner145.jpg?t=1787246726",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner300.jpg?t=1787246727",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner400.jpg?t=1787246727",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner600.jpg?t=1787246727"
+      }
+     },
+     {
+      "id": "018d937e-f48c-7289-8516-c7c5b2e12eba",
+      "slug": "borderlands-2",
+      "title": "Borderlands 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/boxart.jpg?t=1786400221",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner145.jpg?t=1786400221",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner300.jpg?t=1786400221",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner400.jpg?t=1786400222",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner600.jpg?t=1786400222"
+      }
+     },
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937e-f894-7298-aa8b-effcb532df75",
+      "slug": "sid-meiers-civilization-beyond-earth",
+      "title": "Sid Meier's Civilization: Beyond Earth",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/boxart.jpg?t=1788468305",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner145.jpg?t=1788468305",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner300.jpg?t=1788468305",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner400.jpg?t=1788468305",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner600.jpg?t=1788468305"
+      }
+     },
+     {
+      "id": "018d937e-f9ca-71f0-b70e-1bb83ca1a11d",
+      "slug": "borderlands-2-season-pass",
+      "title": "Borderlands 2 Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/boxart.jpg?t=1786413306",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner145.jpg?t=1786413306",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner300.jpg?t=1786413306",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner400.jpg?t=1786413306",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner600.jpg?t=1786413306"
+      }
+     },
+     {
+      "id": "018d937e-f9cd-7155-9615-a06d7a4e3b81",
+      "slug": "spec-ops-the-line",
+      "title": "Spec Ops: The Line",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/boxart.jpg?t=1769728554",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner145.jpg?t=1769728554",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner300.jpg?t=1769728554",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner400.jpg?t=1769728554",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner600.jpg?t=1769728554"
+      }
+     },
+     {
+      "id": "018d937e-fd5e-7114-937e-5357a75217fc",
+      "slug": "xcom-enemy-unknown",
+      "title": "XCOM: Enemy Unknown",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/boxart.jpg?t=1786650661",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner145.jpg?t=1786650661",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner300.jpg?t=1786650661",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner400.jpg?t=1786650661",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner600.jpg?t=1786650661"
+      }
+     },
+     {
+      "id": "018d937e-fd77-712a-a2b4-e5c7d75ac957",
+      "slug": "xcom-2-reinforcement-pack",
+      "title": "XCOM 2: Reinforcement Pack",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/boxart.jpg?t=1779823222",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner145.jpg?t=1779823223",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner300.jpg?t=1779823223",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner400.jpg?t=1779823223",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner600.jpg?t=1779823223"
+      }
+     },
+     {
+      "id": "018d937e-ffc7-7336-98ee-45ad2be310fa",
+      "slug": "sid-meiers-civilization-vi-rise-and-fall",
+      "title": "Sid Meier's Civilization\u00ae VI: Rise and Fall",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ffc7-7336-98ee-45ad2be310fa/boxart.jpg?t=1788517220",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ffc7-7336-98ee-45ad2be310fa/banner145.jpg?t=1788517220",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ffc7-7336-98ee-45ad2be310fa/banner300.jpg?t=1788517220",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ffc7-7336-98ee-45ad2be310fa/banner400.jpg?t=1788517220",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ffc7-7336-98ee-45ad2be310fa/banner600.jpg?t=1788517220"
+      }
+     },
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-00f0-734f-b5d3-6148afe5439f",
+      "slug": "sid-meiers-civilization-vi-gathering-storm",
+      "title": "Sid Meier's Civilization\u00ae VI: Gathering Storm",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00f0-734f-b5d3-6148afe5439f/boxart.jpg?t=1788511823",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00f0-734f-b5d3-6148afe5439f/banner145.jpg?t=1788511823",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00f0-734f-b5d3-6148afe5439f/banner300.jpg?t=1788511823",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00f0-734f-b5d3-6148afe5439f/banner400.jpg?t=1788511823",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00f0-734f-b5d3-6148afe5439f/banner600.jpg?t=1788511823"
+      }
+     },
+     {
+      "id": "018d937f-037c-7124-93f1-26fa0fc27db1",
+      "slug": "sid-meiers-civilization-v-the-complete-edition",
+      "title": "Sid Meier's Civilization V: The Complete Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-037c-7124-93f1-26fa0fc27db1/boxart.jpg?t=1788476727",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-037c-7124-93f1-26fa0fc27db1/banner145.jpg?t=1788476727",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-037c-7124-93f1-26fa0fc27db1/banner300.jpg?t=1788476727",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-037c-7124-93f1-26fa0fc27db1/banner400.jpg?t=1788476727",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-037c-7124-93f1-26fa0fc27db1/banner600.jpg?t=1788476728"
+      }
+     },
+     {
+      "id": "018d937f-0385-7060-95c3-212ab5fbeb8a",
+      "slug": "sid-meiers-civilization-iii-complete",
+      "title": "Sid Meier's Civilization\u00ae III: Complete",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/boxart.jpg?t=1788456317",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner145.jpg?t=1788456317",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner300.jpg?t=1788456317",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner400.jpg?t=1788456317",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner600.png?t=1788456317"
+      }
+     },
+     {
+      "id": "018d937f-0391-7367-9843-b48292f1e144",
+      "slug": "sid-meiers-civilization-beyond-earth-the-collection",
+      "title": "Sid Meier's Civilization\u00ae: Beyond Earth\u2122 - The Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/boxart.jpg?t=1788469207",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner145.jpg?t=1788469207",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner300.jpg?t=1788469207",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner400.jpg?t=1788469207",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner600.jpg?t=1788469208"
+      }
+     },
+     {
+      "id": "018d937f-03a1-72f6-9466-1decbdce41a4",
+      "slug": "carnival-games-vr",
+      "title": "Carnival Games\u00ae VR",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/boxart.jpg?t=1786385268",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner145.jpg?t=1786385268",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner300.jpg?t=1786385268",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner400.jpg?t=1786385268",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner600.jpg?t=1786385269"
+      }
+     },
+     {
+      "id": "018d937f-0403-726b-9cdd-c51bb324a406",
+      "slug": "the-bureau-xcom-declassified",
+      "title": "The Bureau: XCOM Declassified",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/boxart.jpg?t=1786393550",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner145.jpg?t=1786393550",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner300.jpg?t=1786393551",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner400.jpg?t=1786393551",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner600.jpg?t=1786393551"
+      }
+     },
+     {
+      "id": "018d937f-05f8-707d-bd24-938d36001e57",
+      "slug": "borderlands-the-pre-sequel",
+      "title": "Borderlands: The Pre-Sequel",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/boxart.jpg?t=1786401109",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner145.jpg?t=1786401109",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner300.jpg?t=1786401109",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner400.jpg?t=1786401109",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner600.jpg?t=1786401109"
+      }
+     },
+     {
+      "id": "018d937f-09c9-728a-81df-6a614f614b7f",
+      "slug": "the-darkness-ii",
+      "title": "The Darkness II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/boxart.jpg?t=1788627312",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner145.jpg?t=1788627312",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner300.jpg?t=1788627312",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner400.jpg?t=1788627312",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner600.jpg?t=1788627312"
+      }
+     },
+     {
+      "id": "018d937f-0a08-70ec-a93c-cc94e23406fc",
+      "slug": "nba-2k13",
+      "title": "NBA 2K13",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-0ca3-7124-a8a8-9be51f082a07",
+      "slug": "xcom-enemy-within",
+      "title": "XCOM: Enemy Within",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/boxart.jpg?t=1786644669",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner145.jpg?t=1786644669",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner300.jpg?t=1786644669",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner400.jpg?t=1786644669",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner600.jpg?t=1786644669"
+      }
+     },
+     {
+      "id": "018d937f-0fe0-7262-b4f9-cb0c7881d33b",
+      "slug": "borderlands-game-of-the-year-enhanced",
+      "title": "Borderlands: Game of the Year Enhanced",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/boxart.jpg?t=1786404992",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner145.jpg?t=1786404992",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner300.jpg?t=1786404993",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner400.jpg?t=1786404993",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner600.jpg?t=1786404993"
+      }
+     },
+     {
+      "id": "018d937f-11e5-7389-8aac-dab552d9a48f",
+      "slug": "xcom-2-war-of-the-chosen",
+      "title": "XCOM 2: War of the Chosen",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/boxart.jpg?t=1786642531",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner145.jpg?t=1786642531",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner300.jpg?t=1786642531",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner400.jpg?t=1786642531",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner600.jpg?t=1786642531"
+      }
+     },
+     {
+      "id": "018d937f-15e1-70aa-9eb2-324de5e2b9bf",
+      "slug": "sid-meiers-civilization-beyond-earth-rising-tide",
+      "title": "Sid Meier's Civilization: Beyond Earth - Rising Tide",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/boxart.jpg?t=1788494111",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner145.jpg?t=1788494111",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner300.jpg?t=1788494111",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner400.jpg?t=1788494111",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner600.jpg?t=1788494111"
+      }
+     },
+     {
+      "id": "018d937f-1edc-7258-bb8f-e593bce66781",
+      "slug": "nba-2k-playgrounds-2",
+      "title": "NBA 2K Playgrounds 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/boxart.jpg?t=1771980917",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner145.jpg?t=1771980918",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner300.jpg?t=1771980918",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner400.jpg?t=1771980918",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner600.jpg?t=1771980919"
+      }
+     },
+     {
+      "id": "018d937f-21da-71a5-b774-323d7a867ff8",
+      "slug": "borderlands-3",
+      "title": "Borderlands 3",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-21da-71a5-b774-323d7a867ff8/boxart.jpg?t=1786387888",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-21da-71a5-b774-323d7a867ff8/banner145.jpg?t=1786387888",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-21da-71a5-b774-323d7a867ff8/banner300.jpg?t=1786387888",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-21da-71a5-b774-323d7a867ff8/banner400.jpg?t=1786387888",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-21da-71a5-b774-323d7a867ff8/banner600.jpg?t=1786387888"
+      }
+     },
+     {
+      "id": "018d937f-2697-703c-a493-38df9a17aebf",
+      "slug": "sid-meiers-civilization-iv-the-complete-edition",
+      "title": "Sid Meier's Civilization IV: The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/boxart.jpg?t=1788474904",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner145.jpg?t=1788474904",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner300.jpg?t=1788474904",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner400.jpg?t=1788474904",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner600.jpg?t=1788474904"
+      }
+     },
+     {
+      "id": "018d937f-2792-722e-821f-d3c426f1c101",
+      "slug": "carnival-games",
+      "title": "Carnival Games",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/boxart.jpg?t=1786382423",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner145.jpg?t=1786382423",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner300.jpg?t=1786382423",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner400.jpg?t=1786382423",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner600.jpg?t=1786382424"
+      }
+     },
+     {
+      "id": "018d937f-2f2c-73a1-bc32-96445a7a81ff",
+      "slug": "carnival-games-vr-alley-adventure",
+      "title": "Carnival Games\u00ae VR: Alley Adventure",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/boxart.jpg?t=1786383458",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner145.jpg?t=1786383458",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner300.jpg?t=1786383458",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner400.jpg?t=1786383458",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner600.jpg?t=1786383459"
+      }
+     },
+     {
+      "id": "018d937f-39e1-71ab-b891-dbc8ab47a893",
+      "slug": "sid-meiers-civilization-vi-platinum-edition",
+      "title": "Sid Meier's Civilization\u00ae VI: Platinum Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-39e1-71ab-b891-dbc8ab47a893/boxart.jpg?t=1792720227",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-39e1-71ab-b891-dbc8ab47a893/banner145.jpg?t=1792720227",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-39e1-71ab-b891-dbc8ab47a893/banner300.jpg?t=1792720227",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-39e1-71ab-b891-dbc8ab47a893/banner400.jpg?t=1792720227",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-39e1-71ab-b891-dbc8ab47a893/banner600.jpg?t=1792720228"
+      }
+     },
+     {
+      "id": "018d937f-4090-736d-a19c-4e3e66f01698",
+      "slug": "xcom-chimera-squad",
+      "title": "XCOM\u00ae: Chimera Squad",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4090-736d-a19c-4e3e66f01698/boxart.jpg?t=1786650355",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4090-736d-a19c-4e3e66f01698/banner145.jpg?t=1786650355",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4090-736d-a19c-4e3e66f01698/banner300.jpg?t=1786650355",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4090-736d-a19c-4e3e66f01698/banner400.jpg?t=1786650355",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4090-736d-a19c-4e3e66f01698/banner600.jpg?t=1786650355"
+      }
+     },
+     {
+      "id": "018d937f-4280-704c-93a0-81d1f7475188",
+      "slug": "pga-tour-2k21",
+      "title": "PGA TOUR 2K21",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4280-704c-93a0-81d1f7475188/boxart.jpg?t=1769727659",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4280-704c-93a0-81d1f7475188/banner145.jpg?t=1769727659",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4280-704c-93a0-81d1f7475188/banner300.jpg?t=1769727659",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4280-704c-93a0-81d1f7475188/banner400.jpg?t=1769727659",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4280-704c-93a0-81d1f7475188/banner600.jpg?t=1769727660"
+      }
+     },
+     {
+      "id": "018d937f-4281-720f-83e1-1ce173656809",
+      "slug": "pga-tour-2k21-deluxe-edition",
+      "title": "PGA TOUR 2K21 Deluxe Edition",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4281-720f-83e1-1ce173656809/boxart.jpg?t=1737642928",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4281-720f-83e1-1ce173656809/banner145.jpg?t=1737642928",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4281-720f-83e1-1ce173656809/banner300.jpg?t=1737642928",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4281-720f-83e1-1ce173656809/banner400.jpg?t=1737642928",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4281-720f-83e1-1ce173656809/banner600.jpg?t=1737642928"
+      }
+     },
+     {
+      "id": "018d937f-4402-70ec-a4bf-282adbff66b1",
+      "slug": "wwe-2k-battlegrounds",
+      "title": "WWE 2K Battlegrounds",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/boxart.jpg?t=1771980601",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner145.jpg?t=1771980602",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner300.jpg?t=1771980602",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner400.jpg?t=1771980602",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner600.jpg?t=1771980602"
+      }
+     },
+     {
+      "id": "018d937f-5281-7062-9d82-a628f7800863",
+      "slug": "nba-2k22-nba-75th-anniversary-edition",
+      "title": "NBA 2K22 NBA 75th Anniversary Edition",
+      "type": "dlc",
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-57a7-7120-964f-6d6bfb7ff632",
+      "slug": "pga-tour-2k21-baller-edition",
+      "title": "PGA TOUR 2K21 Baller Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-57a7-7120-964f-6d6bfb7ff632/boxart.jpg?t=1733925911",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-57a7-7120-964f-6d6bfb7ff632/banner145.jpg?t=1733925911",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-57a7-7120-964f-6d6bfb7ff632/banner300.jpg?t=1733925911",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-57a7-7120-964f-6d6bfb7ff632/banner400.jpg?t=1733925911",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-57a7-7120-964f-6d6bfb7ff632/banner600.jpg?t=1733925912"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 11526,
+  "title": "BioShock: The Collection Bundle",
+  "page": {
+   "id": 8,
+   "name": "Fanatical",
+   "shopId": 6
+  },
+  "url": "https://www.awin1.com/cread.php?awinmid=118821&awinaffid=235265&ued=https%3A%2F%2Fwww.fanatical.com%2Fen%2Fbundle%2Fbioshock-the-collection",
+  "details": "https://isthereanydeal.com/bundles/11526/",
+  "isMature": false,
+  "publish": "2022-05-25T00:22:21+02:00",
+  "expiry": "2022-05-28T00:55:00+02:00",
+  "note": null,
+  "counts": {
+   "games": 6,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 10.79,
+     "amountInt": 1079,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-ea72-72e7-9147-d4374bb94326",
+      "slug": "bioshock-infinite-columbias-finest",
+      "title": "Bioshock Infinite: Columbia's Finest",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea72-72e7-9147-d4374bb94326/boxart.jpg?t=1787247327",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea72-72e7-9147-d4374bb94326/banner145.jpg?t=1787247327",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea72-72e7-9147-d4374bb94326/banner300.jpg?t=1787247327",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea72-72e7-9147-d4374bb94326/banner400.jpg?t=1787247327",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea72-72e7-9147-d4374bb94326/banner600.jpg?t=1787247327"
+      }
+     },
+     {
+      "id": "018d937e-ea7f-709b-8187-5a95e0d2372d",
+      "slug": "bioshock-infinite-season-pass",
+      "title": "BioShock Infinite - Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea7f-709b-8187-5a95e0d2372d/boxart.jpg?t=1787280030",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea7f-709b-8187-5a95e0d2372d/banner145.jpg?t=1787280030",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea7f-709b-8187-5a95e0d2372d/banner300.jpg?t=1787280030",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea7f-709b-8187-5a95e0d2372d/banner400.jpg?t=1787280030",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea7f-709b-8187-5a95e0d2372d/banner600.jpg?t=1787280031"
+      }
+     },
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-11d9-71e5-b804-55b8da7c6416",
+      "slug": "bioshock-2-minervas-den",
+      "title": "Bioshock 2: Minerva's Den",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-11d9-71e5-b804-55b8da7c6416/boxart.jpg?t=1790883729",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-11d9-71e5-b804-55b8da7c6416/banner145.jpg?t=1790883729",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-11d9-71e5-b804-55b8da7c6416/banner300.jpg?t=1790883729",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-11d9-71e5-b804-55b8da7c6416/banner400.jpg?t=1790883729",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-11d9-71e5-b804-55b8da7c6416/banner600.jpg?t=1790883729"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 10162,
+  "title": "2K Build Your Own Bundle (2021)",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fstore%2Fpromo%2F2k-build-your-own-bundle%2F",
+  "details": "https://isthereanydeal.com/bundles/10162/",
+  "isMature": false,
+  "publish": "2021-06-20T05:21:24+02:00",
+  "expiry": "2021-07-02T18:55:00+02:00",
+  "note": "* Discount applies to REGULAR RETAIL (FULL) PRICE only.",
+  "counts": {
+   "games": 36,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-e9cc-7214-a12e-4a275de23889",
+      "slug": "xcom-enemy-unknown-the-complete-edition",
+      "title": "XCOM: Enemy Unknown - The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/boxart.jpg?t=1786659921",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner145.jpg?t=1786659922",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner300.jpg?t=1786659922",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner400.jpg?t=1786659922",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-e9cc-7214-a12e-4a275de23889/banner600.jpg?t=1786659923"
+      }
+     },
+     {
+      "id": "018d937e-ea07-720f-a0bf-bcbece3c6430",
+      "slug": "borderlands-2-game-of-the-year-edition",
+      "title": "Borderlands 2 Game of the Year Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/boxart.jpg?t=1786418142",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner145.jpg?t=1786418142",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner300.jpg?t=1786418142",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner400.jpg?t=1786418142",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner600.jpg?t=1786418142"
+      }
+     },
+     {
+      "id": "018d937e-ea15-7048-b1b5-b4d86ad0ef8e",
+      "slug": "borderlands-the-handsome-collection",
+      "title": "Borderlands: The Handsome Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/boxart.jpg?t=1786389054",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner145.jpg?t=1786389055",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner300.jpg?t=1786389055",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner400.jpg?t=1786389055",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner600.jpg?t=1786389056"
+      }
+     },
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-f010-709c-9351-79ca5ac46fac",
+      "slug": "borderlands-the-pre-sequel-season-pass",
+      "title": "Borderlands: The Pre-Sequel Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/boxart.jpg?t=1786392147",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner145.jpg?t=1786392147",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner300.jpg?t=1786392147",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner400.jpg?t=1786392147",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f010-709c-9351-79ca5ac46fac/banner600.jpg?t=1786392147"
+      }
+     },
+     {
+      "id": "018d937e-f050-7366-9d55-484657399ad7",
+      "slug": "duke-nukem-forever",
+      "title": "Duke Nukem Forever",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/boxart.jpg?t=1792624504",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner145.jpg?t=1792624504",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner300.jpg?t=1792624504",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner400.jpg?t=1792624504",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner600.jpg?t=1792624505"
+      }
+     },
+     {
+      "id": "018d937e-f47e-70fd-b32d-9e52cbebd4ce",
+      "slug": "bioshock-the-collection",
+      "title": "BioShock: The Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/boxart.jpg?t=1787246726",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner145.jpg?t=1787246726",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner300.jpg?t=1787246727",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner400.jpg?t=1787246727",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner600.jpg?t=1787246727"
+      }
+     },
+     {
+      "id": "018d937e-f48c-7289-8516-c7c5b2e12eba",
+      "slug": "borderlands-2",
+      "title": "Borderlands 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/boxart.jpg?t=1786400221",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner145.jpg?t=1786400221",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner300.jpg?t=1786400221",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner400.jpg?t=1786400222",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner600.jpg?t=1786400222"
+      }
+     },
+     {
+      "id": "018d937e-f820-7061-8269-8e08a85c9911",
+      "slug": "xcom-2",
+      "title": "XCOM 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f820-7061-8269-8e08a85c9911/boxart.jpg?t=1786651835",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f820-7061-8269-8e08a85c9911/banner145.jpg?t=1786651835",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f820-7061-8269-8e08a85c9911/banner300.jpg?t=1786651835",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f820-7061-8269-8e08a85c9911/banner400.jpg?t=1786651835",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f820-7061-8269-8e08a85c9911/banner600.jpg?t=1786651835"
+      }
+     },
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937e-f894-7298-aa8b-effcb532df75",
+      "slug": "sid-meiers-civilization-beyond-earth",
+      "title": "Sid Meier's Civilization: Beyond Earth",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/boxart.jpg?t=1788468305",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner145.jpg?t=1788468305",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner300.jpg?t=1788468305",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner400.jpg?t=1788468305",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner600.jpg?t=1788468305"
+      }
+     },
+     {
+      "id": "018d937e-f9ca-71f0-b70e-1bb83ca1a11d",
+      "slug": "borderlands-2-season-pass",
+      "title": "Borderlands 2 Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/boxart.jpg?t=1786413306",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner145.jpg?t=1786413306",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner300.jpg?t=1786413306",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner400.jpg?t=1786413306",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner600.jpg?t=1786413306"
+      }
+     },
+     {
+      "id": "018d937e-f9cd-7155-9615-a06d7a4e3b81",
+      "slug": "spec-ops-the-line",
+      "title": "Spec Ops: The Line",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/boxart.jpg?t=1769728554",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner145.jpg?t=1769728554",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner300.jpg?t=1769728554",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner400.jpg?t=1769728554",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner600.jpg?t=1769728554"
+      }
+     },
+     {
+      "id": "018d937e-fd77-712a-a2b4-e5c7d75ac957",
+      "slug": "xcom-2-reinforcement-pack",
+      "title": "XCOM 2: Reinforcement Pack",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/boxart.jpg?t=1779823222",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner145.jpg?t=1779823223",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner300.jpg?t=1779823223",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner400.jpg?t=1779823223",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fd77-712a-a2b4-e5c7d75ac957/banner600.jpg?t=1779823223"
+      }
+     },
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-0385-7060-95c3-212ab5fbeb8a",
+      "slug": "sid-meiers-civilization-iii-complete",
+      "title": "Sid Meier's Civilization\u00ae III: Complete",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/boxart.jpg?t=1788456317",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner145.jpg?t=1788456317",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner300.jpg?t=1788456317",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner400.jpg?t=1788456317",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner600.png?t=1788456317"
+      }
+     },
+     {
+      "id": "018d937f-0391-7367-9843-b48292f1e144",
+      "slug": "sid-meiers-civilization-beyond-earth-the-collection",
+      "title": "Sid Meier's Civilization\u00ae: Beyond Earth\u2122 - The Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/boxart.jpg?t=1788469207",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner145.jpg?t=1788469207",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner300.jpg?t=1788469207",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner400.jpg?t=1788469207",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0391-7367-9843-b48292f1e144/banner600.jpg?t=1788469208"
+      }
+     },
+     {
+      "id": "018d937f-03a1-72f6-9466-1decbdce41a4",
+      "slug": "carnival-games-vr",
+      "title": "Carnival Games\u00ae VR",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/boxart.jpg?t=1786385268",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner145.jpg?t=1786385268",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner300.jpg?t=1786385268",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner400.jpg?t=1786385268",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner600.jpg?t=1786385269"
+      }
+     },
+     {
+      "id": "018d937f-0403-726b-9cdd-c51bb324a406",
+      "slug": "the-bureau-xcom-declassified",
+      "title": "The Bureau: XCOM Declassified",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/boxart.jpg?t=1786393550",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner145.jpg?t=1786393550",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner300.jpg?t=1786393551",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner400.jpg?t=1786393551",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner600.jpg?t=1786393551"
+      }
+     },
+     {
+      "id": "018d937f-05f8-707d-bd24-938d36001e57",
+      "slug": "borderlands-the-pre-sequel",
+      "title": "Borderlands: The Pre-Sequel",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/boxart.jpg?t=1786401109",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner145.jpg?t=1786401109",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner300.jpg?t=1786401109",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner400.jpg?t=1786401109",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner600.jpg?t=1786401109"
+      }
+     },
+     {
+      "id": "018d937f-09c9-728a-81df-6a614f614b7f",
+      "slug": "the-darkness-ii",
+      "title": "The Darkness II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/boxart.jpg?t=1788627312",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner145.jpg?t=1788627312",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner300.jpg?t=1788627312",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner400.jpg?t=1788627312",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner600.jpg?t=1788627312"
+      }
+     },
+     {
+      "id": "018d937f-0bf8-702b-bd79-02d25955fed6",
+      "slug": "xcom-2-collection",
+      "title": "XCOM 2 Collection",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0bf8-702b-bd79-02d25955fed6/boxart.jpg?t=1786643169",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0bf8-702b-bd79-02d25955fed6/banner145.jpg?t=1786643169",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0bf8-702b-bd79-02d25955fed6/banner300.jpg?t=1786643169",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0bf8-702b-bd79-02d25955fed6/banner400.jpg?t=1786643169",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0bf8-702b-bd79-02d25955fed6/banner600.jpg?t=1786643170"
+      }
+     },
+     {
+      "id": "018d937f-0ca3-7124-a8a8-9be51f082a07",
+      "slug": "xcom-enemy-within",
+      "title": "XCOM: Enemy Within",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/boxart.jpg?t=1786644669",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner145.jpg?t=1786644669",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner300.jpg?t=1786644669",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner400.jpg?t=1786644669",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner600.jpg?t=1786644669"
+      }
+     },
+     {
+      "id": "018d937f-0fe0-7262-b4f9-cb0c7881d33b",
+      "slug": "borderlands-game-of-the-year-enhanced",
+      "title": "Borderlands: Game of the Year Enhanced",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/boxart.jpg?t=1786404992",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner145.jpg?t=1786404992",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner300.jpg?t=1786404993",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner400.jpg?t=1786404993",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0fe0-7262-b4f9-cb0c7881d33b/banner600.jpg?t=1786404993"
+      }
+     },
+     {
+      "id": "018d937f-11e5-7389-8aac-dab552d9a48f",
+      "slug": "xcom-2-war-of-the-chosen",
+      "title": "XCOM 2: War of the Chosen",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/boxart.jpg?t=1786642531",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner145.jpg?t=1786642531",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner300.jpg?t=1786642531",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner400.jpg?t=1786642531",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-11e5-7389-8aac-dab552d9a48f/banner600.jpg?t=1786642531"
+      }
+     },
+     {
+      "id": "018d937f-1564-7371-a80b-779b9d616930",
+      "slug": "wwe-2k20-digital-deluxe-edition",
+      "title": "WWE 2K20 - Digital Deluxe Edition",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-1577-721a-8dd2-e481329726d1",
+      "slug": "wwe-2k20",
+      "title": "WWE 2K20",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/boxart.jpg?t=1769727675",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner145.jpg?t=1769727675",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner300.jpg?t=1769727675",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner400.jpg?t=1769727675",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner600.jpg?t=1769727676"
+      }
+     },
+     {
+      "id": "018d937f-15e1-70aa-9eb2-324de5e2b9bf",
+      "slug": "sid-meiers-civilization-beyond-earth-rising-tide",
+      "title": "Sid Meier's Civilization: Beyond Earth - Rising Tide",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/boxart.jpg?t=1788494111",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner145.jpg?t=1788494111",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner300.jpg?t=1788494111",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner400.jpg?t=1788494111",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner600.jpg?t=1788494111"
+      }
+     },
+     {
+      "id": "018d937f-1edc-7258-bb8f-e593bce66781",
+      "slug": "nba-2k-playgrounds-2",
+      "title": "NBA 2K Playgrounds 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/boxart.jpg?t=1771980917",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner145.jpg?t=1771980918",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner300.jpg?t=1771980918",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner400.jpg?t=1771980918",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1edc-7258-bb8f-e593bce66781/banner600.jpg?t=1771980919"
+      }
+     },
+     {
+      "id": "018d937f-2697-703c-a493-38df9a17aebf",
+      "slug": "sid-meiers-civilization-iv-the-complete-edition",
+      "title": "Sid Meier's Civilization IV: The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/boxart.jpg?t=1788474904",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner145.jpg?t=1788474904",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner300.jpg?t=1788474904",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner400.jpg?t=1788474904",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner600.jpg?t=1788474904"
+      }
+     },
+     {
+      "id": "018d937f-2792-722e-821f-d3c426f1c101",
+      "slug": "carnival-games",
+      "title": "Carnival Games",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/boxart.jpg?t=1786382423",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner145.jpg?t=1786382423",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner300.jpg?t=1786382423",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner400.jpg?t=1786382423",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2792-722e-821f-d3c426f1c101/banner600.jpg?t=1786382424"
+      }
+     },
+     {
+      "id": "018d937f-2f2c-73a1-bc32-96445a7a81ff",
+      "slug": "carnival-games-vr-alley-adventure",
+      "title": "Carnival Games\u00ae VR: Alley Adventure",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/boxart.jpg?t=1786383458",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner145.jpg?t=1786383458",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner300.jpg?t=1786383458",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner400.jpg?t=1786383458",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner600.jpg?t=1786383459"
+      }
+     },
+     {
+      "id": "018d937f-37f3-73ce-bcbf-074faffb2696",
+      "slug": "duke-nukem-forever-collection",
+      "title": "Duke Nukem Forever Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "banner145": "https://assets.isthereanydeal.com/018d937f-37f3-73ce-bcbf-074faffb2696/banner145.jpg?t=1786772105",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-37f3-73ce-bcbf-074faffb2696/banner300.jpg?t=1786772105",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-37f3-73ce-bcbf-074faffb2696/banner400.jpg?t=1786772105",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-37f3-73ce-bcbf-074faffb2696/banner600.jpg?t=1786772105"
+      }
+     },
+     {
+      "id": "018d937f-43ea-733e-bbbd-bb68789dae12",
+      "slug": "nba-2k21-mamba-forever-edition",
+      "title": "NBA 2K21 Mamba Forever Edition",
+      "type": "dlc",
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-4402-70ec-a4bf-282adbff66b1",
+      "slug": "wwe-2k-battlegrounds",
+      "title": "WWE 2K Battlegrounds",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/boxart.jpg?t=1771980601",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner145.jpg?t=1771980602",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner300.jpg?t=1771980602",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner400.jpg?t=1771980602",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4402-70ec-a4bf-282adbff66b1/banner600.jpg?t=1771980602"
+      }
+     },
+     {
+      "id": "018d937f-4832-72a1-8fd6-1f4fefe6c1e0",
+      "slug": "nba-2k21",
+      "title": "NBA 2K21",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4832-72a1-8fd6-1f4fefe6c1e0/boxart.jpg?t=1769726123",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4832-72a1-8fd6-1f4fefe6c1e0/banner145.jpg?t=1769726123",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4832-72a1-8fd6-1f4fefe6c1e0/banner300.jpg?t=1769726123",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4832-72a1-8fd6-1f4fefe6c1e0/banner400.jpg?t=1769726123",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4832-72a1-8fd6-1f4fefe6c1e0/banner600.jpg?t=1769726123"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 8856,
+  "title": "2K Build Your Own Bundle (2020)",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fstore%2Fpromo%2F2k-byob",
+  "details": "https://isthereanydeal.com/bundles/8856/",
+  "isMature": false,
+  "publish": "2020-06-04T20:51:26+02:00",
+  "expiry": "2020-06-18T20:00:00+02:00",
+  "note": "* Discount applies to FULL PRICE of selected titles.",
+  "counts": {
+   "games": 21,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-ea07-720f-a0bf-bcbece3c6430",
+      "slug": "borderlands-2-game-of-the-year-edition",
+      "title": "Borderlands 2 Game of the Year Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/boxart.jpg?t=1786418142",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner145.jpg?t=1786418142",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner300.jpg?t=1786418142",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner400.jpg?t=1786418142",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner600.jpg?t=1786418142"
+      }
+     },
+     {
+      "id": "018d937e-ea15-7048-b1b5-b4d86ad0ef8e",
+      "slug": "borderlands-the-handsome-collection",
+      "title": "Borderlands: The Handsome Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/boxart.jpg?t=1786389054",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner145.jpg?t=1786389055",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner300.jpg?t=1786389055",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner400.jpg?t=1786389055",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner600.jpg?t=1786389056"
+      }
+     },
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-f050-7366-9d55-484657399ad7",
+      "slug": "duke-nukem-forever",
+      "title": "Duke Nukem Forever",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/boxart.jpg?t=1792624504",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner145.jpg?t=1792624504",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner300.jpg?t=1792624504",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner400.jpg?t=1792624504",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner600.jpg?t=1792624505"
+      }
+     },
+     {
+      "id": "018d937e-f47e-70fd-b32d-9e52cbebd4ce",
+      "slug": "bioshock-the-collection",
+      "title": "BioShock: The Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/boxart.jpg?t=1787246726",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner145.jpg?t=1787246726",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner300.jpg?t=1787246727",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner400.jpg?t=1787246727",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner600.jpg?t=1787246727"
+      }
+     },
+     {
+      "id": "018d937e-f48c-7289-8516-c7c5b2e12eba",
+      "slug": "borderlands-2",
+      "title": "Borderlands 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/boxart.jpg?t=1786400221",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner145.jpg?t=1786400221",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner300.jpg?t=1786400221",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner400.jpg?t=1786400222",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner600.jpg?t=1786400222"
+      }
+     },
+     {
+      "id": "018d937e-f840-7073-871c-bd42fd7d4bdf",
+      "slug": "nba-2k20",
+      "title": "NBA 2K20",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f840-7073-871c-bd42fd7d4bdf/boxart.jpg?t=1769724628",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f840-7073-871c-bd42fd7d4bdf/banner145.jpg?t=1769724628",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f840-7073-871c-bd42fd7d4bdf/banner300.jpg?t=1769724628",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f840-7073-871c-bd42fd7d4bdf/banner400.jpg?t=1769724628",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f840-7073-871c-bd42fd7d4bdf/banner600.jpg?t=1769724629"
+      }
+     },
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937e-f894-7298-aa8b-effcb532df75",
+      "slug": "sid-meiers-civilization-beyond-earth",
+      "title": "Sid Meier's Civilization: Beyond Earth",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/boxart.jpg?t=1788468305",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner145.jpg?t=1788468305",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner300.jpg?t=1788468305",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner400.jpg?t=1788468305",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner600.jpg?t=1788468305"
+      }
+     },
+     {
+      "id": "018d937e-f9ca-71f0-b70e-1bb83ca1a11d",
+      "slug": "borderlands-2-season-pass",
+      "title": "Borderlands 2 Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/boxart.jpg?t=1786413306",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner145.jpg?t=1786413306",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner300.jpg?t=1786413306",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner400.jpg?t=1786413306",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner600.jpg?t=1786413306"
+      }
+     },
+     {
+      "id": "018d937e-f9cd-7155-9615-a06d7a4e3b81",
+      "slug": "spec-ops-the-line",
+      "title": "Spec Ops: The Line",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/boxart.jpg?t=1769728554",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner145.jpg?t=1769728554",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner300.jpg?t=1769728554",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner400.jpg?t=1769728554",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner600.jpg?t=1769728554"
+      }
+     },
+     {
+      "id": "018d937e-fd5e-7114-937e-5357a75217fc",
+      "slug": "xcom-enemy-unknown",
+      "title": "XCOM: Enemy Unknown",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/boxart.jpg?t=1786650661",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner145.jpg?t=1786650661",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner300.jpg?t=1786650661",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner400.jpg?t=1786650661",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner600.jpg?t=1786650661"
+      }
+     },
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-03a1-72f6-9466-1decbdce41a4",
+      "slug": "carnival-games-vr",
+      "title": "Carnival Games\u00ae VR",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/boxart.jpg?t=1786385268",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner145.jpg?t=1786385268",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner300.jpg?t=1786385268",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner400.jpg?t=1786385268",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-03a1-72f6-9466-1decbdce41a4/banner600.jpg?t=1786385269"
+      }
+     },
+     {
+      "id": "018d937f-0403-726b-9cdd-c51bb324a406",
+      "slug": "the-bureau-xcom-declassified",
+      "title": "The Bureau: XCOM Declassified",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/boxart.jpg?t=1786393550",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner145.jpg?t=1786393550",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner300.jpg?t=1786393551",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner400.jpg?t=1786393551",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner600.jpg?t=1786393551"
+      }
+     },
+     {
+      "id": "018d937f-05f8-707d-bd24-938d36001e57",
+      "slug": "borderlands-the-pre-sequel",
+      "title": "Borderlands: The Pre-Sequel",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/boxart.jpg?t=1786401109",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner145.jpg?t=1786401109",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner300.jpg?t=1786401109",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner400.jpg?t=1786401109",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner600.jpg?t=1786401109"
+      }
+     },
+     {
+      "id": "018d937f-09c9-728a-81df-6a614f614b7f",
+      "slug": "the-darkness-ii",
+      "title": "The Darkness II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/boxart.jpg?t=1788627312",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner145.jpg?t=1788627312",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner300.jpg?t=1788627312",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner400.jpg?t=1788627312",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner600.jpg?t=1788627312"
+      }
+     },
+     {
+      "id": "018d937f-0ca3-7124-a8a8-9be51f082a07",
+      "slug": "xcom-enemy-within",
+      "title": "XCOM: Enemy Within",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/boxart.jpg?t=1786644669",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner145.jpg?t=1786644669",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner300.jpg?t=1786644669",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner400.jpg?t=1786644669",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner600.jpg?t=1786644669"
+      }
+     },
+     {
+      "id": "018d937f-1577-721a-8dd2-e481329726d1",
+      "slug": "wwe-2k20",
+      "title": "WWE 2K20",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/boxart.jpg?t=1769727675",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner145.jpg?t=1769727675",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner300.jpg?t=1769727675",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner400.jpg?t=1769727675",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1577-721a-8dd2-e481329726d1/banner600.jpg?t=1769727676"
+      }
+     },
+     {
+      "id": "018d937f-2697-703c-a493-38df9a17aebf",
+      "slug": "sid-meiers-civilization-iv-the-complete-edition",
+      "title": "Sid Meier's Civilization IV: The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/boxart.jpg?t=1788474904",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner145.jpg?t=1788474904",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner300.jpg?t=1788474904",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner400.jpg?t=1788474904",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner600.jpg?t=1788474904"
+      }
+     },
+     {
+      "id": "018d937f-2f2c-73a1-bc32-96445a7a81ff",
+      "slug": "carnival-games-vr-alley-adventure",
+      "title": "Carnival Games\u00ae VR: Alley Adventure",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/boxart.jpg?t=1786383458",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner145.jpg?t=1786383458",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner300.jpg?t=1786383458",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner400.jpg?t=1786383458",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner600.jpg?t=1786383459"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 7475,
+  "title": "Build Your Own 2K Bundle ",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fstore%2Fpromo%2F2k-build-your-own-bundle%2F",
+  "details": "https://isthereanydeal.com/bundles/7475/",
+  "isMature": false,
+  "publish": "2019-06-06T20:56:00+02:00",
+  "expiry": "2019-07-05T15:00:00+02:00",
+  "note": "* Discounts apply only to FULL price of selected titles.",
+  "counts": {
+   "games": 28,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-e9c3-73d9-bb2c-acd0f73a84f2",
+      "slug": "mafia-iii",
+      "title": "Mafia III",
+      "type": "dlc",
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937e-ea07-720f-a0bf-bcbece3c6430",
+      "slug": "borderlands-2-game-of-the-year-edition",
+      "title": "Borderlands 2 Game of the Year Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/boxart.jpg?t=1786418142",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner145.jpg?t=1786418142",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner300.jpg?t=1786418142",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner400.jpg?t=1786418142",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea07-720f-a0bf-bcbece3c6430/banner600.jpg?t=1786418142"
+      }
+     },
+     {
+      "id": "018d937e-ea15-7048-b1b5-b4d86ad0ef8e",
+      "slug": "borderlands-the-handsome-collection",
+      "title": "Borderlands: The Handsome Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/boxart.jpg?t=1786389054",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner145.jpg?t=1786389055",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner300.jpg?t=1786389055",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner400.jpg?t=1786389055",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea15-7048-b1b5-b4d86ad0ef8e/banner600.jpg?t=1786389056"
+      }
+     },
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-f050-7366-9d55-484657399ad7",
+      "slug": "duke-nukem-forever",
+      "title": "Duke Nukem Forever",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/boxart.jpg?t=1792624504",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner145.jpg?t=1792624504",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner300.jpg?t=1792624504",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner400.jpg?t=1792624504",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner600.jpg?t=1792624505"
+      }
+     },
+     {
+      "id": "018d937e-f47e-70fd-b32d-9e52cbebd4ce",
+      "slug": "bioshock-the-collection",
+      "title": "BioShock: The Collection",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/boxart.jpg?t=1787246726",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner145.jpg?t=1787246726",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner300.jpg?t=1787246727",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner400.jpg?t=1787246727",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f47e-70fd-b32d-9e52cbebd4ce/banner600.jpg?t=1787246727"
+      }
+     },
+     {
+      "id": "018d937e-f48a-71cb-8789-653187c5c245",
+      "slug": "nba-2k19",
+      "title": "NBA 2K19",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f48a-71cb-8789-653187c5c245/boxart.jpg?t=1769727610",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f48a-71cb-8789-653187c5c245/banner145.jpg?t=1769727610",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f48a-71cb-8789-653187c5c245/banner300.jpg?t=1769727610",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f48a-71cb-8789-653187c5c245/banner400.jpg?t=1769727610",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f48a-71cb-8789-653187c5c245/banner600.jpg?t=1769727612"
+      }
+     },
+     {
+      "id": "018d937e-f48c-7289-8516-c7c5b2e12eba",
+      "slug": "borderlands-2",
+      "title": "Borderlands 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/boxart.jpg?t=1786400221",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner145.jpg?t=1786400221",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner300.jpg?t=1786400221",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner400.jpg?t=1786400222",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner600.jpg?t=1786400222"
+      }
+     },
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937e-f894-7298-aa8b-effcb532df75",
+      "slug": "sid-meiers-civilization-beyond-earth",
+      "title": "Sid Meier's Civilization: Beyond Earth",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/boxart.jpg?t=1788468305",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner145.jpg?t=1788468305",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner300.jpg?t=1788468305",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner400.jpg?t=1788468305",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f894-7298-aa8b-effcb532df75/banner600.jpg?t=1788468305"
+      }
+     },
+     {
+      "id": "018d937e-f9ca-71f0-b70e-1bb83ca1a11d",
+      "slug": "borderlands-2-season-pass",
+      "title": "Borderlands 2 Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/boxart.jpg?t=1786413306",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner145.jpg?t=1786413306",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner300.jpg?t=1786413306",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner400.jpg?t=1786413306",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9ca-71f0-b70e-1bb83ca1a11d/banner600.jpg?t=1786413306"
+      }
+     },
+     {
+      "id": "018d937e-f9cd-7155-9615-a06d7a4e3b81",
+      "slug": "spec-ops-the-line",
+      "title": "Spec Ops: The Line",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/boxart.jpg?t=1769728554",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner145.jpg?t=1769728554",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner300.jpg?t=1769728554",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner400.jpg?t=1769728554",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner600.jpg?t=1769728554"
+      }
+     },
+     {
+      "id": "018d937e-fd5e-7114-937e-5357a75217fc",
+      "slug": "xcom-enemy-unknown",
+      "title": "XCOM: Enemy Unknown",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/boxart.jpg?t=1786650661",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner145.jpg?t=1786650661",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner300.jpg?t=1786650661",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner400.jpg?t=1786650661",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner600.jpg?t=1786650661"
+      }
+     },
+     {
+      "id": "018d937f-00af-7316-9ec1-2279ac59c8c6",
+      "slug": "mafia-iii-digital-deluxe-edition",
+      "title": "Mafia III Digital Deluxe Edition",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-0385-7060-95c3-212ab5fbeb8a",
+      "slug": "sid-meiers-civilization-iii-complete",
+      "title": "Sid Meier's Civilization\u00ae III: Complete",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/boxart.jpg?t=1788456317",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner145.jpg?t=1788456317",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner300.jpg?t=1788456317",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner400.jpg?t=1788456317",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0385-7060-95c3-212ab5fbeb8a/banner600.png?t=1788456317"
+      }
+     },
+     {
+      "id": "018d937f-0403-726b-9cdd-c51bb324a406",
+      "slug": "the-bureau-xcom-declassified",
+      "title": "The Bureau: XCOM Declassified",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/boxart.jpg?t=1786393550",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner145.jpg?t=1786393550",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner300.jpg?t=1786393551",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner400.jpg?t=1786393551",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner600.jpg?t=1786393551"
+      }
+     },
+     {
+      "id": "018d937f-043a-7142-b8ca-953d04cc4793",
+      "slug": "mafia-ii",
+      "title": "Mafia II",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-05f8-707d-bd24-938d36001e57",
+      "slug": "borderlands-the-pre-sequel",
+      "title": "Borderlands: The Pre-Sequel",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/boxart.jpg?t=1786401109",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner145.jpg?t=1786401109",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner300.jpg?t=1786401109",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner400.jpg?t=1786401109",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-05f8-707d-bd24-938d36001e57/banner600.jpg?t=1786401109"
+      }
+     },
+     {
+      "id": "018d937f-09c9-728a-81df-6a614f614b7f",
+      "slug": "the-darkness-ii",
+      "title": "The Darkness II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/boxart.jpg?t=1788627312",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner145.jpg?t=1788627312",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner300.jpg?t=1788627312",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner400.jpg?t=1788627312",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner600.jpg?t=1788627312"
+      }
+     },
+     {
+      "id": "018d937f-0ca3-7124-a8a8-9be51f082a07",
+      "slug": "xcom-enemy-within",
+      "title": "XCOM: Enemy Within",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/boxart.jpg?t=1786644669",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner145.jpg?t=1786644669",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner300.jpg?t=1786644669",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner400.jpg?t=1786644669",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0ca3-7124-a8a8-9be51f082a07/banner600.jpg?t=1786644669"
+      }
+     },
+     {
+      "id": "018d937f-13c1-73ed-ad37-04c4864f1e78",
+      "slug": "nba-2k19-20th-anniversary-edition",
+      "title": "NBA 2K19 20th Anniversary Edition",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-15e1-70aa-9eb2-324de5e2b9bf",
+      "slug": "sid-meiers-civilization-beyond-earth-rising-tide",
+      "title": "Sid Meier's Civilization: Beyond Earth - Rising Tide",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/boxart.jpg?t=1788494111",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner145.jpg?t=1788494111",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner300.jpg?t=1788494111",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner400.jpg?t=1788494111",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-15e1-70aa-9eb2-324de5e2b9bf/banner600.jpg?t=1788494111"
+      }
+     },
+     {
+      "id": "018d937f-208c-70a6-9ba1-97f6507b0c62",
+      "slug": "wwe-2k19-digital-deluxe-edition",
+      "title": "WWE 2K19 - Digital Deluxe Edition",
+      "type": null,
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-208c-70a6-9ba1-97f6507b0c62/boxart.jpg?t=1747208421",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-208c-70a6-9ba1-97f6507b0c62/banner145.jpg?t=1747208421",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-208c-70a6-9ba1-97f6507b0c62/banner300.jpg?t=1747208421",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-208c-70a6-9ba1-97f6507b0c62/banner400.jpg?t=1747208421"
+      }
+     },
+     {
+      "id": "018d937f-2697-703c-a493-38df9a17aebf",
+      "slug": "sid-meiers-civilization-iv-the-complete-edition",
+      "title": "Sid Meier's Civilization IV: The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/boxart.jpg?t=1788474904",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner145.jpg?t=1788474904",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner300.jpg?t=1788474904",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner400.jpg?t=1788474904",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner600.jpg?t=1788474904"
+      }
+     },
+     {
+      "id": "018d937f-2e7f-7352-a19e-71683540688a",
+      "slug": "wwe-2k19",
+      "title": "WWE 2K19",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2e7f-7352-a19e-71683540688a/boxart.jpg?t=1769733428",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2e7f-7352-a19e-71683540688a/banner145.jpg?t=1769733428",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2e7f-7352-a19e-71683540688a/banner300.jpg?t=1769733429",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2e7f-7352-a19e-71683540688a/banner400.jpg?t=1769733429",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2e7f-7352-a19e-71683540688a/banner600.jpg?t=1769733430"
+      }
+     },
+     {
+      "id": "018d937f-2f2c-73a1-bc32-96445a7a81ff",
+      "slug": "carnival-games-vr-alley-adventure",
+      "title": "Carnival Games\u00ae VR: Alley Adventure",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/boxart.jpg?t=1786383458",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner145.jpg?t=1786383458",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner300.jpg?t=1786383458",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner400.jpg?t=1786383458",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2f2c-73a1-bc32-96445a7a81ff/banner600.jpg?t=1786383459"
+      }
+     },
+     {
+      "id": "018d937f-3102-701d-a896-7cbc7f8bbec8",
+      "slug": "mafia",
+      "title": "Mafia",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3102-701d-a896-7cbc7f8bbec8/boxart.jpg?t=1786737042",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3102-701d-a896-7cbc7f8bbec8/banner145.jpg?t=1786737042",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3102-701d-a896-7cbc7f8bbec8/banner300.jpg?t=1786737042",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3102-701d-a896-7cbc7f8bbec8/banner400.jpg?t=1786737042",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3102-701d-a896-7cbc7f8bbec8/banner600.jpg?t=1786737042"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 967,
+  "title": "Humble 2K Bundle ",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2F",
+  "details": "https://isthereanydeal.com/bundles/967/",
+  "isMature": false,
+  "publish": "2014-07-08T20:17:00+02:00",
+  "expiry": "2014-07-22T19:59:00+02:00",
+  "note": "* BioShock Infinite and Spec Ops: The Line were originally Windows, Mac in bundle. Steam later released eON-based versions for Linux in 2015.",
+  "counts": {
+   "games": 13,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 1,
+     "amountInt": 100,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-0403-726b-9cdd-c51bb324a406",
+      "slug": "the-bureau-xcom-declassified",
+      "title": "The Bureau: XCOM Declassified",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/boxart.jpg?t=1786393550",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner145.jpg?t=1786393550",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner300.jpg?t=1786393551",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner400.jpg?t=1786393551",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner600.jpg?t=1786393551"
+      }
+     },
+     {
+      "id": "018d937f-09c9-728a-81df-6a614f614b7f",
+      "slug": "the-darkness-ii",
+      "title": "The Darkness II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/boxart.jpg?t=1788627312",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner145.jpg?t=1788627312",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner300.jpg?t=1788627312",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner400.jpg?t=1788627312",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner600.jpg?t=1788627312"
+      }
+     }
+    ]
+   },
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-ea42-70b0-afaa-03eab4eb43f6",
+      "slug": "x-com-enforcer",
+      "title": "X-COM: Enforcer",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea42-70b0-afaa-03eab4eb43f6/boxart.jpg?t=1786644310",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea42-70b0-afaa-03eab4eb43f6/banner145.jpg?t=1786644310",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea42-70b0-afaa-03eab4eb43f6/banner300.jpg?t=1786644310",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea42-70b0-afaa-03eab4eb43f6/banner400.jpg?t=1786644310",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea42-70b0-afaa-03eab4eb43f6/banner600.png?t=1786644311"
+      }
+     },
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-f075-7232-ad5a-7bf4e271647b",
+      "slug": "x-com-terror-from-the-deep",
+      "title": "X-COM: Terror From the Deep",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f075-7232-ad5a-7bf4e271647b/boxart.png?t=1786647364",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f075-7232-ad5a-7bf4e271647b/banner145.jpg?t=1786647364",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f075-7232-ad5a-7bf4e271647b/banner300.jpg?t=1786647364",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f075-7232-ad5a-7bf4e271647b/banner400.jpg?t=1786647364",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f075-7232-ad5a-7bf4e271647b/banner600.png?t=1786647364"
+      }
+     },
+     {
+      "id": "018d937e-f558-71de-ac04-20579eafb95f",
+      "slug": "x-com-apocalypse",
+      "title": "X-COM: Apocalypse",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f558-71de-ac04-20579eafb95f/boxart.jpg?t=1786666544",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f558-71de-ac04-20579eafb95f/banner145.jpg?t=1786666544",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f558-71de-ac04-20579eafb95f/banner300.jpg?t=1786666544",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f558-71de-ac04-20579eafb95f/banner400.jpg?t=1786666544",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f558-71de-ac04-20579eafb95f/banner600.png?t=1786666544"
+      }
+     },
+     {
+      "id": "018d937e-f9cd-7155-9615-a06d7a4e3b81",
+      "slug": "spec-ops-the-line",
+      "title": "Spec Ops: The Line",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/boxart.jpg?t=1769728554",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner145.jpg?t=1769728554",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner300.jpg?t=1769728554",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner400.jpg?t=1769728554",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner600.jpg?t=1769728554"
+      }
+     },
+     {
+      "id": "018d937f-043a-7142-b8ca-953d04cc4793",
+      "slug": "mafia-ii",
+      "title": "Mafia II",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-12e5-70f0-b5c0-e9285ba3c9f9",
+      "slug": "x-com-interceptor",
+      "title": "X-Com: Interceptor",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-12e5-70f0-b5c0-e9285ba3c9f9/boxart.jpg?t=1786641958",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-12e5-70f0-b5c0-e9285ba3c9f9/banner145.jpg?t=1786641958",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-12e5-70f0-b5c0-e9285ba3c9f9/banner300.jpg?t=1786641958",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-12e5-70f0-b5c0-e9285ba3c9f9/banner400.jpg?t=1786641958",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-12e5-70f0-b5c0-e9285ba3c9f9/banner600.png?t=1786641958"
+      }
+     },
+     {
+      "id": "018d937f-1304-7116-8fdf-d7aace655320",
+      "slug": "x-com-ufo-defense",
+      "title": "X-Com: UFO Defense",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1304-7116-8fdf-d7aace655320/boxart.jpg?t=1786650315",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1304-7116-8fdf-d7aace655320/banner145.jpg?t=1786650315",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1304-7116-8fdf-d7aace655320/banner300.jpg?t=1786650316",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1304-7116-8fdf-d7aace655320/banner400.jpg?t=1786650316",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1304-7116-8fdf-d7aace655320/banner600.jpg?t=1786650316"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 20,
+     "amountInt": 2000,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937e-fd5e-7114-937e-5357a75217fc",
+      "slug": "xcom-enemy-unknown",
+      "title": "XCOM: Enemy Unknown",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/boxart.jpg?t=1786650661",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner145.jpg?t=1786650661",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner300.jpg?t=1786650661",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner400.jpg?t=1786650661",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fd5e-7114-937e-5357a75217fc/banner600.jpg?t=1786650661"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 627,
+  "title": "Get Loaded Bundle - March 2014",
+  "page": {
+   "id": 15,
+   "name": "Get Loaded",
+   "shopId": null
+  },
+  "url": "http://www.getloadedgo.com/",
+  "details": "https://isthereanydeal.com/bundles/627/",
+  "isMature": false,
+  "publish": "2014-03-08T00:37:00+01:00",
+  "expiry": "2014-03-10T16:59:00+01:00",
+  "note": null,
+  "counts": {
+   "games": 17,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 25.06,
+     "amountInt": 2506,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-ea4b-729b-b46d-7a6fb83f1b4b",
+      "slug": "sid-meiers-civilization-v-gods-and-kings",
+      "title": "Sid Meier's Civilization V: Gods and Kings",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea4b-729b-b46d-7a6fb83f1b4b/boxart.jpg?t=1788479713",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea4b-729b-b46d-7a6fb83f1b4b/banner145.jpg?t=1788479713",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea4b-729b-b46d-7a6fb83f1b4b/banner300.jpg?t=1788479713",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea4b-729b-b46d-7a6fb83f1b4b/banner400.jpg?t=1788479714",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea4b-729b-b46d-7a6fb83f1b4b/banner600.jpg?t=1788479714"
+      }
+     },
+     {
+      "id": "018d937e-ea52-713b-b1d2-963f87211f25",
+      "slug": "bioshock-2",
+      "title": "BioShock 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/boxart.jpg?t=1787278219",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner145.jpg?t=1787278219",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner300.jpg?t=1787278219",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner400.jpg?t=1787278219",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea52-713b-b1d2-963f87211f25/banner600.jpg?t=1787278219"
+      }
+     },
+     {
+      "id": "018d937e-ea55-72a0-bb18-9bb2a7ac73d7",
+      "slug": "sid-meiers-pirates",
+      "title": "Sid Meier's Pirates!",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-ea55-72a0-bb18-9bb2a7ac73d7/boxart.jpg?t=1789703754",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-ea55-72a0-bb18-9bb2a7ac73d7/banner145.jpg?t=1789703754",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-ea55-72a0-bb18-9bb2a7ac73d7/banner300.jpg?t=1789703754",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-ea55-72a0-bb18-9bb2a7ac73d7/banner400.jpg?t=1789703754",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-ea55-72a0-bb18-9bb2a7ac73d7/banner600.jpg?t=1789703755"
+      }
+     },
+     {
+      "id": "018d937e-f050-7366-9d55-484657399ad7",
+      "slug": "duke-nukem-forever",
+      "title": "Duke Nukem Forever",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/boxart.jpg?t=1792624504",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner145.jpg?t=1792624504",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner300.jpg?t=1792624504",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner400.jpg?t=1792624504",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f050-7366-9d55-484657399ad7/banner600.jpg?t=1792624505"
+      }
+     },
+     {
+      "id": "018d937e-f48c-7289-8516-c7c5b2e12eba",
+      "slug": "borderlands-2",
+      "title": "Borderlands 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/boxart.jpg?t=1786400221",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner145.jpg?t=1786400221",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner300.jpg?t=1786400221",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner400.jpg?t=1786400222",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f48c-7289-8516-c7c5b2e12eba/banner600.jpg?t=1786400222"
+      }
+     },
+     {
+      "id": "018d937e-f4d0-7252-ba72-bcafaa198877",
+      "slug": "sid-meiers-civilization-v-brave-new-world",
+      "title": "Sid Meier's Civilization V: Brave New World",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f4d0-7252-ba72-bcafaa198877/boxart.jpg?t=1788507038",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f4d0-7252-ba72-bcafaa198877/banner145.jpg?t=1788507038",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f4d0-7252-ba72-bcafaa198877/banner300.jpg?t=1788507038",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f4d0-7252-ba72-bcafaa198877/banner400.jpg?t=1788507038",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f4d0-7252-ba72-bcafaa198877/banner600.jpg?t=1788507038"
+      }
+     },
+     {
+      "id": "018d937e-f877-71b3-aba5-8ff11818cd0b",
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/boxart.jpg?t=1787255137",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner145.jpg?t=1787255137",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner300.jpg?t=1787255137",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner400.jpg?t=1787255137",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f877-71b3-aba5-8ff11818cd0b/banner600.jpg?t=1787255137"
+      }
+     },
+     {
+      "id": "018d937e-f87b-73bf-a7fc-2cd555ec47a8",
+      "slug": "borderlands-game-of-the-year-edition",
+      "title": "Borderlands Game of the Year Edition",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f87b-73bf-a7fc-2cd555ec47a8/boxart.jpg?t=1786417536",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f87b-73bf-a7fc-2cd555ec47a8/banner145.jpg?t=1786417536",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f87b-73bf-a7fc-2cd555ec47a8/banner300.jpg?t=1786417536",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f87b-73bf-a7fc-2cd555ec47a8/banner400.jpg?t=1786417536",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f87b-73bf-a7fc-2cd555ec47a8/banner600.jpg?t=1786417536"
+      }
+     },
+     {
+      "id": "018d937e-f9cd-7155-9615-a06d7a4e3b81",
+      "slug": "spec-ops-the-line",
+      "title": "Spec Ops: The Line",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/boxart.jpg?t=1769728554",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner145.jpg?t=1769728554",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner300.jpg?t=1769728554",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner400.jpg?t=1769728554",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9cd-7155-9615-a06d7a4e3b81/banner600.jpg?t=1769728554"
+      }
+     },
+     {
+      "id": "018d937e-fce3-7094-bf5f-033eef93575d",
+      "slug": "sid-meiers-civilization-v",
+      "title": "Sid Meier's Civilization V",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fce3-7094-bf5f-033eef93575d/boxart.jpg?t=1788460520",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fce3-7094-bf5f-033eef93575d/banner145.jpg?t=1788460520",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fce3-7094-bf5f-033eef93575d/banner300.jpg?t=1788460520",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fce3-7094-bf5f-033eef93575d/banner400.jpg?t=1788460520",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fce3-7094-bf5f-033eef93575d/banner600.jpg?t=1788460520"
+      }
+     },
+     {
+      "id": "018d937f-00db-709e-9c93-c0c25174ca30",
+      "slug": "bioshock",
+      "title": "BioShock",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/boxart.jpg?t=1787255139",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner145.jpg?t=1787255139",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner300.jpg?t=1787255139",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner400.jpg?t=1787255139",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00db-709e-9c93-c0c25174ca30/banner600.jpg?t=1787255139"
+      }
+     },
+     {
+      "id": "018d937f-0403-726b-9cdd-c51bb324a406",
+      "slug": "the-bureau-xcom-declassified",
+      "title": "The Bureau: XCOM Declassified",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/boxart.jpg?t=1786393550",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner145.jpg?t=1786393550",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner300.jpg?t=1786393551",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner400.jpg?t=1786393551",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0403-726b-9cdd-c51bb324a406/banner600.jpg?t=1786393551"
+      }
+     },
+     {
+      "id": "018d937f-043a-7142-b8ca-953d04cc4793",
+      "slug": "mafia-ii",
+      "title": "Mafia II",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-09c9-728a-81df-6a614f614b7f",
+      "slug": "the-darkness-ii",
+      "title": "The Darkness II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/boxart.jpg?t=1788627312",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner145.jpg?t=1788627312",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner300.jpg?t=1788627312",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner400.jpg?t=1788627312",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09c9-728a-81df-6a614f614b7f/banner600.jpg?t=1788627312"
+      }
+     },
+     {
+      "id": "018d937f-0a08-70ec-a93c-cc94e23406fc",
+      "slug": "nba-2k13",
+      "title": "NBA 2K13",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-172f-7317-aaa4-217319ad5fb5",
+      "slug": "the-stronghold-collection",
+      "title": "The Stronghold Collection",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-172f-7317-aaa4-217319ad5fb5/boxart.jpg?t=1731980771",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-172f-7317-aaa4-217319ad5fb5/banner145.jpg?t=1731980771",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-172f-7317-aaa4-217319ad5fb5/banner300.jpg?t=1731980771",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-172f-7317-aaa4-217319ad5fb5/banner400.jpg?t=1731980771",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-172f-7317-aaa4-217319ad5fb5/banner600.jpg?t=1731980771"
+      }
+     },
+     {
+      "id": "018d937f-2697-703c-a493-38df9a17aebf",
+      "slug": "sid-meiers-civilization-iv-the-complete-edition",
+      "title": "Sid Meier's Civilization IV: The Complete Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/boxart.jpg?t=1788474904",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner145.jpg?t=1788474904",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner300.jpg?t=1788474904",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner400.jpg?t=1788474904",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2697-703c-a493-38df9a17aebf/banner600.jpg?t=1788474904"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

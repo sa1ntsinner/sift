@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steamsift"
+version = "1.0.0"
+description = "Steam deals, sifted: every discount checked against two years of prices. HOT, GREAT, OK, MEH or NOPE."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "sa1ntsinner" }]
+keywords = ["steam", "deals", "sale", "wishlist", "recommendations", "telegram", "cli", "tui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Natural Language :: Russian",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Games/Entertainment",
+]
+dependencies = [
+    "rich>=13.0.0",
+    "requests>=2.28.0",
+    "python-dotenv>=1.0.0",
+    "platformdirs>=4.0",
+    "keyring>=24.0",
+    "tomli-w>=1.0",
+    "textual>=1.0",
+    "textual-image>=0.8",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyyaml>=6", "build", "twine"]
+
+[project.urls]
+Homepage = "https://sa1ntsinner.github.io/sift/"
+Source = "https://github.com/sa1ntsinner/sift"
+Issues = "https://github.com/sa1ntsinner/sift/issues"
+
+[project.scripts]
+sift = "steamsift.cli:entry"
+steamsift = "steamsift.cli:entry"
+ss = "steamsift.cli:entry"
+
+[tool.setuptools]
+packages = ["steamsift", "steamsift.notify", "steamsift.tui"]
+
+[tool.setuptools.package-data]
+steamsift = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

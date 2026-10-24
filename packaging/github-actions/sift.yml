@@ -1,0 +1,47 @@
+# sift — Steam deal alerts from the cloud (runs even when your PC is off).
+# Setup: Settings → Secrets and variables → Actions → add the secrets listed below, then enable Actions.
+name: sift notifications
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency: sift
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SIFT_HOME: ${{ github.workspace }}/.sift
+      TZ: UTC
+      SIFT_LANG: en
+      STEAM_ID64: ${{ secrets.STEAM_ID64 }}
+      STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+      STEAM_COUNTRY: ${{ secrets.STEAM_COUNTRY }}
+      ITAD_API_KEY: ${{ secrets.ITAD_API_KEY }}
+      SIFT_FAMILY: ${{ secrets.SIFT_FAMILY }}
+      SIFT_TELEGRAM_TOKEN: ${{ secrets.SIFT_TELEGRAM_TOKEN }}
+      SIFT_TELEGRAM_CHAT: ${{ secrets.SIFT_TELEGRAM_CHAT }}
+      SIFT_DISCORD_WEBHOOK: ${{ secrets.SIFT_DISCORD_WEBHOOK }}
+      SIFT_NTFY_TOPIC: ${{ secrets.SIFT_NTFY_TOPIC }}
+      SIFT_NOTIFY_MODE: ${{ vars.SIFT_NOTIFY_MODE || 'digest' }}
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore sift state (dedupe, digest queue, hidden games)
+        uses: actions/cache/restore@v4
+        with:
+          path: .sift
+          key: sift-${{ github.run_id }}
+          restore-keys: sift-
+      - run: pip install --quiet steamsift
+      - run: sift notify run
+      - name: Save sift state
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .sift
+          key: sift-${{ github.run_id }}

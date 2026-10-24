@@ -1,0 +1,2501 @@
+{
+ "response": {
+  "store_items": [
+   {
+    "item_type": 0,
+    "id": 1174180,
+    "success": 1,
+    "visible": true,
+    "name": "Red Dead Redemption 2",
+    "store_url_path": "app/1174180/Red_Dead_Redemption_2",
+    "store_url_slug": "Red_Dead_Redemption_2",
+    "appid": 1174180,
+    "type": 0,
+    "content_descriptorids": [
+     5
+    ],
+    "tagids": [
+     1695,
+     1742,
+     1647,
+     3859,
+     21,
+     19,
+     4175,
+     4182,
+     1774,
+     6041,
+     5411,
+     4166,
+     3814,
+     1756,
+     1697,
+     4345,
+     3810,
+     3839,
+     1663,
+     12095
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2,
+      1,
+      49,
+      36,
+      9,
+      38
+     ],
+     "feature_categoryids": [
+      22,
+      35,
+      41,
+      42
+     ],
+     "controller_categoryids": [
+      18
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 851931,
+      "percent_positive": 92,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 315885,
+      "percent_positive": 92,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "Arthur Morgan and the Van der Linde Gang are outlaws on the run. With federal agents and bounty hunters massing on their heels, the gang must rob, steal, and fight their way across the rugged heartland in order to survive.",
+     "publishers": [
+      {
+       "name": "Rockstar Games",
+       "creator_clan_account_id": 1541443
+      }
+     ],
+     "developers": [
+      {
+       "name": "Rockstar Games",
+       "creator_clan_account_id": 1541443
+      }
+     ],
+     "franchises": [
+      {
+       "name": "Red Dead Redemption"
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 1695,
+      "weight": 1046
+     },
+     {
+      "tagid": 1742,
+      "weight": 836
+     },
+     {
+      "tagid": 1647,
+      "weight": 720
+     },
+     {
+      "tagid": 3859,
+      "weight": 701
+     },
+     {
+      "tagid": 21,
+      "weight": 697
+     },
+     {
+      "tagid": 19,
+      "weight": 632
+     },
+     {
+      "tagid": 4175,
+      "weight": 626
+     },
+     {
+      "tagid": 4182,
+      "weight": 555
+     },
+     {
+      "tagid": 1774,
+      "weight": 496
+     },
+     {
+      "tagid": 6041,
+      "weight": 466
+     },
+     {
+      "tagid": 5411,
+      "weight": 453
+     },
+     {
+      "tagid": 4166,
+      "weight": 449
+     },
+     {
+      "tagid": 3814,
+      "weight": 383
+     },
+     {
+      "tagid": 1756,
+      "weight": 374
+     },
+     {
+      "tagid": 1697,
+      "weight": 341
+     },
+     {
+      "tagid": 4345,
+      "weight": 331
+     },
+     {
+      "tagid": 3810,
+      "weight": 275
+     },
+     {
+      "tagid": 3839,
+      "weight": 246
+     },
+     {
+      "tagid": 1663,
+      "weight": 231
+     },
+     {
+      "tagid": 12095,
+      "weight": 133
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/1174180/${FILENAME}?t=1759502961",
+     "main_capsule": "capsule_616x353.jpg",
+     "small_capsule": "capsule_231x87.jpg",
+     "header": "header.jpg",
+     "page_background": "page_bg_generated_v6b.jpg",
+     "hero_capsule": "hero_capsule.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "library_hero.jpg",
+     "library_hero_2x": "library_hero_2x.jpg",
+     "community_icon": "5106abd9c1187a97f23295a0ba9470c94804ec6c",
+     "page_background_path": "app/1174180?t=1759502961",
+     "raw_page_background": "page_bg_raw.jpg",
+     "last_modified": 1759502961
+    },
+    "release": {
+     "steam_release_date": 1575565200
+    },
+    "platforms": {
+     "windows": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 2,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 2
+    },
+    "best_purchase_option": {
+     "packageid": 402134,
+     "purchase_option_name": "Red Dead Redemption 2",
+     "final_price_in_cents": "33950000",
+     "original_price_in_cents": "135900000",
+     "formatted_final_price": "339.500₫",
+     "formatted_original_price": "1.359.000₫",
+     "discount_pct": 75,
+     "active_discounts": [
+      {
+       "discount_amount": "101950000",
+       "discount_description": "#discount_desc_preset_special",
+       "discount_end_date": 1792688400
+      }
+     ],
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 1030830,
+    "success": 1,
+    "visible": true,
+    "name": "Mafia II: Definitive Edition",
+    "store_url_path": "app/1030830/Mafia_II_Definitive_Edition",
+    "store_url_slug": "Mafia_II_Definitive_Edition",
+    "appid": 1030830,
+    "type": 0,
+    "content_descriptorids": [
+     1,
+     2,
+     5
+    ],
+    "tagids": [
+     19,
+     21,
+     6378,
+     1695,
+     1742,
+     12095,
+     4182,
+     6650,
+     4667,
+     1697,
+     6052,
+     3814,
+     4345,
+     1774,
+     4166,
+     1756,
+     4106,
+     1693,
+     5708,
+     3859
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      62
+     ],
+     "controller_categoryids": [
+      28
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 29061,
+      "percent_positive": 74,
+      "review_score": 6,
+      "review_score_label": "Mostly Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 8916,
+      "percent_positive": 75,
+      "review_score": 6,
+      "review_score_label": "Mostly Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "War hero Vito Scaletta becomes entangled with the mob in hopes of paying his father’s debts. Vito works to prove himself, climbing the family ladder with crimes of larger reward and consequence.",
+     "publishers": [
+      {
+       "name": "2K",
+       "creator_clan_account_id": 2428135
+      }
+     ],
+     "developers": [
+      {
+       "name": "Hangar 13"
+      },
+      {
+       "name": "D3T"
+      }
+     ],
+     "franchises": [
+      {
+       "name": "Mafia",
+       "creator_clan_account_id": 33339572
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 19,
+      "weight": 1135
+     },
+     {
+      "tagid": 21,
+      "weight": 1038
+     },
+     {
+      "tagid": 6378,
+      "weight": 745
+     },
+     {
+      "tagid": 1695,
+      "weight": 738
+     },
+     {
+      "tagid": 1742,
+      "weight": 717
+     },
+     {
+      "tagid": 12095,
+      "weight": 648
+     },
+     {
+      "tagid": 4182,
+      "weight": 529
+     },
+     {
+      "tagid": 6650,
+      "weight": 515
+     },
+     {
+      "tagid": 4667,
+      "weight": 487
+     },
+     {
+      "tagid": 1697,
+      "weight": 466
+     },
+     {
+      "tagid": 6052,
+      "weight": 439
+     },
+     {
+      "tagid": 3814,
+      "weight": 418
+     },
+     {
+      "tagid": 4345,
+      "weight": 411
+     },
+     {
+      "tagid": 1774,
+      "weight": 362
+     },
+     {
+      "tagid": 4166,
+      "weight": 341
+     },
+     {
+      "tagid": 1756,
+      "weight": 264
+     },
+     {
+      "tagid": 4106,
+      "weight": 222
+     },
+     {
+      "tagid": 1693,
+      "weight": 209
+     },
+     {
+      "tagid": 5708,
+      "weight": 174
+     },
+     {
+      "tagid": 3859,
+      "weight": 132
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/1030830/${FILENAME}?t=1786727561",
+     "main_capsule": "capsule_616x353.jpg",
+     "small_capsule": "capsule_231x87.jpg",
+     "header": "header.jpg",
+     "page_background": "page_bg_generated_v6b.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "library_hero.jpg",
+     "library_hero_2x": "library_hero_2x.jpg",
+     "community_icon": "f80e173ad5c242ca0d41e30af1f6358d1e64d9b4",
+     "page_background_path": "app/1030830?t=1786727561",
+     "raw_page_background": "page_bg_raw.jpg",
+     "last_modified": 1786727561
+    },
+    "release": {
+     "steam_release_date": 1589907600
+    },
+    "platforms": {
+     "windows": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 2,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 2
+    },
+    "best_purchase_option": {
+     "packageid": 342913,
+     "purchase_option_name": "Mafia II: Definitive Edition",
+     "final_price_in_cents": "10450000",
+     "original_price_in_cents": "52300000",
+     "formatted_final_price": "104.500₫",
+     "formatted_original_price": "523.000₫",
+     "discount_pct": 80,
+     "active_discounts": [
+      {
+       "discount_amount": "41850000",
+       "discount_description": "#discount_desc_preset_special",
+       "discount_end_date": 1792688400
+      }
+     ],
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 2,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 19,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": false,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 2050650,
+    "success": 1,
+    "visible": true,
+    "name": "Resident Evil 4",
+    "store_url_path": "app/2050650/Resident_Evil_4",
+    "store_url_slug": "Resident_Evil_4",
+    "appid": 2050650,
+    "type": 0,
+    "related_items": {
+     "demo_appid": [
+      2231770
+     ],
+     "standalone_demo_appid": [
+      2231770
+     ],
+     "demos": [
+      {
+       "appid": 2231770,
+       "show_above_purchase": true
+      }
+     ],
+     "standalone_demos": [
+      {
+       "appid": 2231770,
+       "show_above_purchase": true
+      }
+     ]
+    },
+    "content_descriptorids": [
+     2,
+     5
+    ],
+    "tagids": [
+     1667,
+     19,
+     3978,
+     3814,
+     4182,
+     1659,
+     1742,
+     1662,
+     5708,
+     4342,
+     4145,
+     4345,
+     1697,
+     21978,
+     4175,
+     8945,
+     21,
+     4106,
+     4667,
+     1721
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      23,
+      61,
+      62
+     ],
+     "controller_categoryids": [
+      28
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 190179,
+      "percent_positive": 97,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 72686,
+      "percent_positive": 96,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "Survival is just the beginning.\r\n\r\nSix years have passed since the biological disaster in Raccoon City.\r\nLeon S. Kennedy, one of the survivors, tracks the president's kidnapped daughter\r\nto a secluded European village, where there is something terribly wrong with the locals.",
+     "publishers": [
+      {
+       "name": "CAPCOM Co., Ltd.",
+       "creator_clan_account_id": 33273264
+      }
+     ],
+     "developers": [
+      {
+       "name": "CAPCOM Co., Ltd.",
+       "creator_clan_account_id": 33273264
+      }
+     ],
+     "franchises": [
+      {
+       "name": "Resident Evil",
+       "creator_clan_account_id": 34827950
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 1667,
+      "weight": 861
+     },
+     {
+      "tagid": 19,
+      "weight": 819
+     },
+     {
+      "tagid": 3978,
+      "weight": 765
+     },
+     {
+      "tagid": 3814,
+      "weight": 765
+     },
+     {
+      "tagid": 4182,
+      "weight": 712
+     },
+     {
+      "tagid": 1659,
+      "weight": 655
+     },
+     {
+      "tagid": 1742,
+      "weight": 619
+     },
+     {
+      "tagid": 1662,
+      "weight": 488
+     },
+     {
+      "tagid": 5708,
+      "weight": 421
+     },
+     {
+      "tagid": 4342,
+      "weight": 411
+     },
+     {
+      "tagid": 4145,
+      "weight": 398
+     },
+     {
+      "tagid": 4345,
+      "weight": 366
+     },
+     {
+      "tagid": 1697,
+      "weight": 364
+     },
+     {
+      "tagid": 21978,
+      "weight": 354
+     },
+     {
+      "tagid": 4175,
+      "weight": 353
+     },
+     {
+      "tagid": 8945,
+      "weight": 345
+     },
+     {
+      "tagid": 21,
+      "weight": 339
+     },
+     {
+      "tagid": 4106,
+      "weight": 326
+     },
+     {
+      "tagid": 4667,
+      "weight": 324
+     },
+     {
+      "tagid": 1721,
+      "weight": 305
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/2050650/${FILENAME}?t=1772502922",
+     "main_capsule": "capsule_616x353.jpg",
+     "small_capsule": "capsule_231x87.jpg",
+     "header": "header.jpg",
+     "page_background": "page_bg_generated_v6b.jpg",
+     "hero_capsule": "hero_capsule.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "library_hero.jpg",
+     "library_hero_2x": "library_hero_2x.jpg",
+     "community_icon": "817358b8013c55831ea10d031ef9c0b151110826",
+     "page_background_path": "app/2050650?t=1772502922",
+     "raw_page_background": "page_bg_raw.jpg",
+     "last_modified": 1772502922
+    },
+    "release": {
+     "steam_release_date": 1679616000
+    },
+    "platforms": {
+     "windows": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 794618,
+     "purchase_option_name": "Resident Evil 4",
+     "final_price_in_cents": "85000000",
+     "formatted_final_price": "850.000₫",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 25,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 620,
+    "success": 1,
+    "visible": true,
+    "name": "Portal 2",
+    "store_url_path": "app/620/Portal_2",
+    "store_url_slug": "Portal_2",
+    "appid": 620,
+    "type": 0,
+    "tagids": [
+     4182,
+     1625,
+     1664,
+     3839,
+     5923,
+     1742,
+     5537,
+     4136,
+     7208,
+     5395,
+     1685,
+     4106,
+     19,
+     1663,
+     3968,
+     3942,
+     8122,
+     5794,
+     1719,
+     4166
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2,
+      1,
+      9,
+      38,
+      39,
+      24
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      13,
+      30,
+      51,
+      67,
+      68,
+      69,
+      70,
+      74,
+      79,
+      23,
+      15,
+      17,
+      14,
+      41,
+      42,
+      43,
+      44,
+      62
+     ],
+     "controller_categoryids": [
+      28,
+      55,
+      56,
+      57,
+      58,
+      59
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 391543,
+      "percent_positive": 98,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 174252,
+      "percent_positive": 98,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "The \"Perpetual Testing Initiative\" has been expanded to allow you to design co-op puzzles for you and your friends!",
+     "publishers": [
+      {
+       "name": "Valve",
+       "creator_clan_account_id": 4
+      }
+     ],
+     "developers": [
+      {
+       "name": "Valve",
+       "creator_clan_account_id": 4
+      }
+     ],
+     "franchises": [
+      {
+       "name": "Portal"
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 4182,
+      "weight": 604
+     },
+     {
+      "tagid": 1625,
+      "weight": 588
+     },
+     {
+      "tagid": 1664,
+      "weight": 586
+     },
+     {
+      "tagid": 3839,
+      "weight": 560
+     },
+     {
+      "tagid": 5923,
+      "weight": 558
+     },
+     {
+      "tagid": 1742,
+      "weight": 555
+     },
+     {
+      "tagid": 5537,
+      "weight": 549
+     },
+     {
+      "tagid": 4136,
+      "weight": 541
+     },
+     {
+      "tagid": 7208,
+      "weight": 538
+     },
+     {
+      "tagid": 5395,
+      "weight": 531
+     },
+     {
+      "tagid": 1685,
+      "weight": 517
+     },
+     {
+      "tagid": 4106,
+      "weight": 517
+     },
+     {
+      "tagid": 19,
+      "weight": 512
+     },
+     {
+      "tagid": 1663,
+      "weight": 512
+     },
+     {
+      "tagid": 3968,
+      "weight": 403
+     },
+     {
+      "tagid": 3942,
+      "weight": 392
+     },
+     {
+      "tagid": 8122,
+      "weight": 386
+     },
+     {
+      "tagid": 5794,
+      "weight": 382
+     },
+     {
+      "tagid": 1719,
+      "weight": 381
+     },
+     {
+      "tagid": 4166,
+      "weight": 378
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/620/${FILENAME}?t=1790187113",
+     "main_capsule": "02b755eb0cf5f41c1838a99c9a353ebce32a88cd/capsule_616x353.jpg",
+     "main_capsule_2x": "02b755eb0cf5f41c1838a99c9a353ebce32a88cd/capsule_616x353_2x.jpg",
+     "small_capsule": "bd23943dcd0280aa2cdc066e2f86d2185cfd4cce/capsule_231x87.jpg",
+     "small_capsule_2x": "bd23943dcd0280aa2cdc066e2f86d2185cfd4cce/capsule_231x87_2x.jpg",
+     "header": "faffc0f560786e2f05104a8d2fac837c6969bf13/header.jpg",
+     "header_2x": "faffc0f560786e2f05104a8d2fac837c6969bf13/header_2x.jpg",
+     "hero_capsule": "9a8ae9bb0b85f125bd956024f86f30a3aeb799e8/hero_capsule.jpg",
+     "hero_capsule_2x": "9a8ae9bb0b85f125bd956024f86f30a3aeb799e8/hero_capsule_2x.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "a58588d857b8683f8065e55f97ab82ad8a945c51/library_hero.jpg",
+     "library_hero_2x": "a58588d857b8683f8065e55f97ab82ad8a945c51/library_hero_2x.jpg",
+     "community_icon": "25a5a16b2423bf7487ac5340b5b0948cef48c5f8",
+     "page_background_path": "app/620?t=1790187113",
+     "last_modified": 1790187113
+    },
+    "release": {
+     "steam_release_date": 1303186800
+    },
+    "platforms": {
+     "windows": true,
+     "steamos_linux": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 3,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 7877,
+     "purchase_option_name": "Portal 2",
+     "final_price_in_cents": "14000000",
+     "formatted_final_price": "140.000₫",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 19,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 13,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 14,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 15,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 18,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 16,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 11,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 20,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 17,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 9,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 21,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 23,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 24,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 26,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 292030,
+    "success": 1,
+    "visible": true,
+    "name": "The Witcher 3: Wild Hunt — Remastered",
+    "store_url_path": "app/292030/The_Witcher_3_Wild_Hunt_Remastered",
+    "store_url_slug": "The_Witcher_3_Wild_Hunt_Remastered",
+    "appid": 292030,
+    "type": 0,
+    "content_descriptorids": [
+     1,
+     5
+    ],
+    "tagids": [
+     1695,
+     122,
+     1742,
+     4166,
+     1684,
+     21,
+     4182,
+     6650,
+     6426,
+     1697,
+     1756,
+     4172,
+     19,
+     6971,
+     4231,
+     4604,
+     4057,
+     4342,
+     3810,
+     12095
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      30,
+      64,
+      66,
+      67,
+      68,
+      69,
+      70,
+      74,
+      78,
+      79,
+      23,
+      42,
+      43,
+      61,
+      62
+     ],
+     "controller_categoryids": [
+      57,
+      58,
+      18
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 836625,
+      "percent_positive": 96,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     },
+     "summary_unfiltered": {
+      "review_count": 846376,
+      "percent_positive": 95,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 246758,
+      "percent_positive": 96,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "The Witcher 3: Wild Hunt — Remastered modernizes the acclaimed role-playing game with a range of upgrades and enhancements. Become monster slayer for hire Geralt of Rivia and journey across a dark fantasy open world in an epic quest to find your adopted daughter Ciri.",
+     "publishers": [
+      {
+       "name": "CD PROJEKT RED",
+       "creator_clan_account_id": 32989758
+      }
+     ],
+     "developers": [
+      {
+       "name": "CD PROJEKT RED",
+       "creator_clan_account_id": 32989758
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 1695,
+      "weight": 1157
+     },
+     {
+      "tagid": 122,
+      "weight": 973
+     },
+     {
+      "tagid": 1742,
+      "weight": 904
+     },
+     {
+      "tagid": 4166,
+      "weight": 616
+     },
+     {
+      "tagid": 1684,
+      "weight": 598
+     },
+     {
+      "tagid": 21,
+      "weight": 584
+     },
+     {
+      "tagid": 4182,
+      "weight": 572
+     },
+     {
+      "tagid": 6650,
+      "weight": 567
+     },
+     {
+      "tagid": 6426,
+      "weight": 522
+     },
+     {
+      "tagid": 1697,
+      "weight": 424
+     },
+     {
+      "tagid": 1756,
+      "weight": 424
+     },
+     {
+      "tagid": 4172,
+      "weight": 418
+     },
+     {
+      "tagid": 19,
+      "weight": 398
+     },
+     {
+      "tagid": 6971,
+      "weight": 358
+     },
+     {
+      "tagid": 4231,
+      "weight": 356
+     },
+     {
+      "tagid": 4604,
+      "weight": 342
+     },
+     {
+      "tagid": 4057,
+      "weight": 336
+     },
+     {
+      "tagid": 4342,
+      "weight": 202
+     },
+     {
+      "tagid": 3810,
+      "weight": 123
+     },
+     {
+      "tagid": 12095,
+      "weight": 116
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/292030/${FILENAME}?t=1790845156",
+     "main_capsule": "c9efb37645a3ee09eb131c7febd471f29fbea587/capsule_616x353_alt_assets_1.jpg",
+     "main_capsule_2x": "c9efb37645a3ee09eb131c7febd471f29fbea587/capsule_616x353_alt_assets_1_2x.jpg",
+     "small_capsule": "62fb0a4707d9fb0f729affec7d7d01dd70099769/capsule_231x87_alt_assets_1.jpg",
+     "small_capsule_2x": "62fb0a4707d9fb0f729affec7d7d01dd70099769/capsule_231x87_alt_assets_1_2x.jpg",
+     "header": "e8afc4252e3fee8ed2525ab2fd7675cca39aa38d/header_alt_assets_1.jpg",
+     "header_2x": "e8afc4252e3fee8ed2525ab2fd7675cca39aa38d/header_alt_assets_1_2x.jpg",
+     "page_background": "94a3c7f9db82538b752312f6e17f912f0899ca30/page_bg_v6.jpg",
+     "hero_capsule": "8557464ea685098b67d2f71b7a7d8c2523f215a0/hero_capsule.jpg",
+     "hero_capsule_2x": "8557464ea685098b67d2f71b7a7d8c2523f215a0/hero_capsule_2x.jpg",
+     "library_capsule": "dd1c19c4e41b120ddfa35734cc31f79254c25082/library_capsule.jpg",
+     "library_capsule_2x": "dd1c19c4e41b120ddfa35734cc31f79254c25082/library_capsule_2x.jpg",
+     "library_hero": "2dbca4868f3a9912aad6966bb0b6ab2d270f6da6/library_hero.jpg",
+     "library_hero_2x": "2dbca4868f3a9912aad6966bb0b6ab2d270f6da6/library_hero_2x.jpg",
+     "community_icon": "7b52d11edee478d652ef4e7103e00644bed2c74c",
+     "page_background_path": "app/292030?t=1790845156",
+     "raw_page_background": "94a3c7f9db82538b752312f6e17f912f0899ca30/page_bg_raw.jpg",
+     "last_modified": 1790845156
+    },
+    "release": {
+     "steam_release_date": 1431937260,
+     "original_release_date": 0
+    },
+    "platforms": {
+     "windows": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 68476,
+     "purchase_option_name": "The Witcher 3: Wild Hunt — Remastered",
+     "final_price_in_cents": "80000000",
+     "formatted_final_price": "800.000₫",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 25,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 19,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 18,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 21,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 26,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 1245620,
+    "success": 1,
+    "visible": true,
+    "name": "ELDEN RING",
+    "store_url_path": "app/1245620/ELDEN_RING",
+    "store_url_slug": "ELDEN_RING",
+    "appid": 1245620,
+    "type": 0,
+    "content_descriptorids": [
+     2,
+     5
+    ],
+    "tagids": [
+     29482,
+     1695,
+     4604,
+     122,
+     4026,
+     4231,
+     3859,
+     1697,
+     1684,
+     4182,
+     3843,
+     19,
+     1685,
+     4166,
+     1756,
+     1775,
+     4667,
+     4191,
+     4747,
+     5350
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2,
+      1,
+      49,
+      36,
+      9,
+      38
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      67,
+      68,
+      69,
+      70,
+      74,
+      79,
+      23,
+      62
+     ],
+     "controller_categoryids": [
+      28
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 833503,
+      "percent_positive": 93,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 436448,
+      "percent_positive": 94,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "THE CRITICALLY ACCLAIMED FANTASY ACTION RPG.\r\nRise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+     "publishers": [
+      {
+       "name": "FromSoftware, Inc.",
+       "creator_clan_account_id": 45188208
+      },
+      {
+       "name": "Bandai Namco Entertainment",
+       "creator_clan_account_id": 33042543
+      }
+     ],
+     "developers": [
+      {
+       "name": "FromSoftware, Inc.",
+       "creator_clan_account_id": 45188208
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 29482,
+      "weight": 1080
+     },
+     {
+      "tagid": 1695,
+      "weight": 790
+     },
+     {
+      "tagid": 4604,
+      "weight": 753
+     },
+     {
+      "tagid": 122,
+      "weight": 720
+     },
+     {
+      "tagid": 4026,
+      "weight": 706
+     },
+     {
+      "tagid": 4231,
+      "weight": 548
+     },
+     {
+      "tagid": 3859,
+      "weight": 523
+     },
+     {
+      "tagid": 1697,
+      "weight": 510
+     },
+     {
+      "tagid": 1684,
+      "weight": 489
+     },
+     {
+      "tagid": 4182,
+      "weight": 475
+     },
+     {
+      "tagid": 3843,
+      "weight": 456
+     },
+     {
+      "tagid": 19,
+      "weight": 429
+     },
+     {
+      "tagid": 1685,
+      "weight": 368
+     },
+     {
+      "tagid": 4166,
+      "weight": 363
+     },
+     {
+      "tagid": 1756,
+      "weight": 353
+     },
+     {
+      "tagid": 1775,
+      "weight": 348
+     },
+     {
+      "tagid": 4667,
+      "weight": 342
+     },
+     {
+      "tagid": 4191,
+      "weight": 308
+     },
+     {
+      "tagid": 4747,
+      "weight": 227
+     },
+     {
+      "tagid": 5350,
+      "weight": 205
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/1245620/${FILENAME}?t=1790290043",
+     "main_capsule": "e930e28b7e51d58697224549929373fb49494d21/capsule_616x353_alt_assets_3.jpg",
+     "main_capsule_2x": "e930e28b7e51d58697224549929373fb49494d21/capsule_616x353_alt_assets_3_2x.jpg",
+     "small_capsule": "65b8e40dc6ffab9cf53bf26f05023a199118a6a8/capsule_231x87_alt_assets_3.jpg",
+     "small_capsule_2x": "65b8e40dc6ffab9cf53bf26f05023a199118a6a8/capsule_231x87_alt_assets_3_2x.jpg",
+     "header": "f0b19c231f86fa0e633ff88a1a63459443017728/header_alt_assets_3.jpg",
+     "header_2x": "f0b19c231f86fa0e633ff88a1a63459443017728/header_alt_assets_3_2x.jpg",
+     "page_background": "page_bg_generated_v6b.jpg",
+     "hero_capsule": "14cc633e6c88ea08e14ef809ace57033c6fb0264/hero_capsule_alt_assets_3.jpg",
+     "hero_capsule_2x": "14cc633e6c88ea08e14ef809ace57033c6fb0264/hero_capsule_alt_assets_3_2x.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "library_hero.jpg",
+     "library_hero_2x": "library_hero_2x.jpg",
+     "community_icon": "b6e290dd5a92ce98f89089a207733c70c41a1871",
+     "page_background_path": "app/1245620?t=1790290043",
+     "raw_page_background": "page_bg_raw.jpg",
+     "edition_comparison": "74a5e0bf6820afb6e0056cc7d5e3ed346f3ce083/edition_comparision.png",
+     "last_modified": 1790290043
+    },
+    "release": {
+     "steam_release_date": 1645744078
+    },
+    "platforms": {
+     "windows": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 440408,
+     "purchase_option_name": "ELDEN RING",
+     "final_price_in_cents": "99000000",
+     "formatted_final_price": "990.000₫",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 9,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 25,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 2148100,
+    "success": 1,
+    "visible": true,
+    "name": "Eville Soundtrack",
+    "store_url_path": "app/2148100/Eville_Soundtrack",
+    "store_url_slug": "Eville_Soundtrack",
+    "appid": 2148100,
+    "type": 11,
+    "related_items": {
+     "parent_appid": 1220170
+    },
+    "categories": {},
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 0,
+      "percent_positive": 0,
+      "review_score": 0,
+      "review_score_label": "No user reviews"
+     }
+    },
+    "basic_info": {
+     "short_description": "The official soundtrack from the popular social-deduction game Eville quickly sets the mood for any role players looking for a game.",
+     "publishers": [
+      {
+       "name": "Versus Evil",
+       "creator_clan_account_id": 33240956
+      }
+     ],
+     "developers": [
+      {
+       "name": "VestGames",
+       "creator_clan_account_id": 39120527
+      }
+     ]
+    },
+    "assets": {
+     "asset_url_format": "steam/apps/2148100/${FILENAME}?t=1665472269",
+     "main_capsule": "capsule_616x353.jpg",
+     "small_capsule": "capsule_231x87.jpg",
+     "header": "header.jpg",
+     "header_2x": "header.jpg",
+     "hero_capsule": "hero_capsule.jpg",
+     "library_capsule": "portrait.png",
+     "community_icon": "6286c32a32fb2a93ed2148fa84d3a0300073e0e7",
+     "page_background_path": "app/2148100?t=1665472269",
+     "last_modified": 1665472269
+    },
+    "release": {
+     "steam_release_date": 1665472271
+    },
+    "platforms": {
+     "windows": true,
+     "mac": true,
+     "steamos_linux": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 0,
+     "steam_os_compat_category": 0,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 0
+    },
+    "best_purchase_option": {
+     "packageid": 768417,
+     "purchase_option_name": "Eville Soundtrack",
+     "final_price_in_cents": "10200000",
+     "formatted_final_price": "102.000₫",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 0,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    }
+   },
+   {
+    "item_type": 0,
+    "id": 1091500,
+    "success": 1,
+    "visible": true,
+    "name": "Cyberpunk 2077",
+    "store_url_path": "app/1091500/Cyberpunk_2077",
+    "store_url_slug": "Cyberpunk_2077",
+    "appid": 1091500,
+    "type": 0,
+    "content_descriptorids": [
+     1,
+     2,
+     5
+    ],
+    "tagids": [
+     4115,
+     1695,
+     6650,
+     122,
+     4182,
+     1742,
+     1663,
+     3942,
+     4295,
+     3839,
+     4166,
+     3834,
+     19,
+     4667,
+     1756,
+     4231,
+     21,
+     4747,
+     9204,
+     44868
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      74,
+      78,
+      79,
+      23,
+      61,
+      62
+     ],
+     "controller_categoryids": [
+      28,
+      55,
+      57,
+      58
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 887667,
+      "percent_positive": 87,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     },
+     "summary_unfiltered": {
+      "review_count": 894070,
+      "percent_positive": 87,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 392594,
+      "percent_positive": 89,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+     "publishers": [
+      {
+       "name": "CD PROJEKT RED",
+       "creator_clan_account_id": 32989758
+      }
+     ],
+     "developers": [
+      {
+       "name": "CD PROJEKT RED",
+       "creator_clan_account_id": 32989758
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 4115,
+      "weight": 874
+     },
+     {
+      "tagid": 1695,
+      "weight": 825
+     },
+     {
+      "tagid": 6650,
+      "weight": 730
+     },
+     {
+      "tagid": 122,
+      "weight": 668
+     },
+     {
+      "tagid": 4182,
+      "weight": 668
+     },
+     {
+      "tagid": 1742,
+      "weight": 630
+     },
+     {
+      "tagid": 1663,
+      "weight": 596
+     },
+     {
+      "tagid": 3942,
+      "weight": 596
+     },
+     {
+      "tagid": 4295,
+      "weight": 585
+     },
+     {
+      "tagid": 3839,
+      "weight": 548
+     },
+     {
+      "tagid": 4166,
+      "weight": 506
+     },
+     {
+      "tagid": 3834,
+      "weight": 485
+     },
+     {
+      "tagid": 19,
+      "weight": 422
+     },
+     {
+      "tagid": 4667,
+      "weight": 369
+     },
+     {
+      "tagid": 1756,
+      "weight": 328
+     },
+     {
+      "tagid": 4231,
+      "weight": 320
+     },
+     {
+      "tagid": 21,
+      "weight": 297
+     },
+     {
+      "tagid": 4747,
+      "weight": 297
+     },
+     {
+      "tagid": 9204,
+      "weight": 166
+     },
+     {
+      "tagid": 44868,
+      "weight": 83
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/1091500/${FILENAME}?t=1784714077",
+     "main_capsule": "a757b56d2078be8b09a04e2ad531f1fefafaa129/capsule_616x353.jpg",
+     "main_capsule_2x": "a757b56d2078be8b09a04e2ad531f1fefafaa129/capsule_616x353_2x.jpg",
+     "small_capsule": "590e0988a2fb79f44d3e31e41fd4949eb76abc41/capsule_231x87.jpg",
+     "small_capsule_2x": "590e0988a2fb79f44d3e31e41fd4949eb76abc41/capsule_231x87_2x.jpg",
+     "header": "e9047d8ec47ae3d94bb8b464fb0fc9e9972b4ac7/header.jpg",
+     "header_2x": "e9047d8ec47ae3d94bb8b464fb0fc9e9972b4ac7/header_2x.jpg",
+     "page_background": "644eb087007768417a847e52c38eeaf34b57fd12/page_bg_v6.jpg",
+     "hero_capsule": "25688b768e9ad78eaa8abe9a84ff3aead547f796/hero_capsule.jpg",
+     "hero_capsule_2x": "25688b768e9ad78eaa8abe9a84ff3aead547f796/hero_capsule_2x.jpg",
+     "library_capsule": "6399de67cce3cecadce7900e03f6e09ff910a235/library_capsule.jpg",
+     "library_capsule_2x": "6399de67cce3cecadce7900e03f6e09ff910a235/library_capsule_2x.jpg",
+     "library_hero": "cf8cec802dc47d0f24b75f9eee135e96812e2652/library_hero.jpg",
+     "library_hero_2x": "cf8cec802dc47d0f24b75f9eee135e96812e2652/library_hero_2x.jpg",
+     "community_icon": "6897c3848f3e0350d512f59d5bae174a1e3739f9",
+     "page_background_path": "app/1091500?t=1784714077",
+     "raw_page_background": "644eb087007768417a847e52c38eeaf34b57fd12/page_bg_raw.jpg",
+     "last_modified": 1784714077
+    },
+    "release": {
+     "steam_release_date": 1607558400,
+     "original_release_date": 0
+    },
+    "platforms": {
+     "windows": true,
+     "mac": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 2,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 367653,
+     "purchase_option_name": "Cyberpunk 2077",
+     "final_price_in_cents": "99000000",
+     "formatted_final_price": "990.000₫",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 25,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 19,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 18,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 9,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 21,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 26,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   }
+  ]
+ }
+}

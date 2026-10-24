@@ -1,0 +1,2718 @@
+[
+ {
+  "id": 16529,
+  "title": "CRPG Pack Isometric Immersion Bundle",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fgames%2Fcrpg-pack-isometric-immersion",
+  "details": "https://isthereanydeal.com/bundles/16529/",
+  "isMature": false,
+  "publish": "2026-09-02T21:21:43+02:00",
+  "expiry": "2026-10-01T05:59:35+02:00",
+  "note": "Keys expire. Please redeem before March 23rd, 2027\nThis bundle supports Little Free Library.",
+  "counts": {
+   "games": 11,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 10,
+     "amountInt": 1000,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-f9c5-7308-a7b8-96f24ab5b2d4",
+      "slug": "torment-tides-of-numenera",
+      "title": "Torment: Tides of Numenera",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f9c5-7308-a7b8-96f24ab5b2d4/boxart.jpg?t=1786644068",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f9c5-7308-a7b8-96f24ab5b2d4/banner145.jpg?t=1786644068",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f9c5-7308-a7b8-96f24ab5b2d4/banner300.jpg?t=1786644068",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f9c5-7308-a7b8-96f24ab5b2d4/banner400.jpg?t=1786644068",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f9c5-7308-a7b8-96f24ab5b2d4/banner600.jpg?t=1786644068"
+      }
+     },
+     {
+      "id": "018d937f-1ec7-73ba-bf09-67b2815afe72",
+      "slug": "underrail",
+      "title": "UnderRail",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1ec7-73ba-bf09-67b2815afe72/boxart.jpg?t=1786210589",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1ec7-73ba-bf09-67b2815afe72/banner145.jpg?t=1786210589",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1ec7-73ba-bf09-67b2815afe72/banner300.jpg?t=1786210589",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1ec7-73ba-bf09-67b2815afe72/banner400.jpg?t=1786210589",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1ec7-73ba-bf09-67b2815afe72/banner600.jpg?t=1786210589"
+      }
+     },
+     {
+      "id": "018d937f-3420-7043-bbcc-4a84312e9325",
+      "slug": "balrum",
+      "title": "Balrum",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3420-7043-bbcc-4a84312e9325/boxart.jpg?t=1786458047",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3420-7043-bbcc-4a84312e9325/banner145.jpg?t=1786458047",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3420-7043-bbcc-4a84312e9325/banner300.jpg?t=1786458047",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3420-7043-bbcc-4a84312e9325/banner400.jpg?t=1786458047",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3420-7043-bbcc-4a84312e9325/banner600.jpg?t=1786458047"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-66a3-7379-b454-b05fe2d4bed0",
+      "slug": "gamedec-definitive-edition",
+      "title": "Gamedec - Definitive Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-66a3-7379-b454-b05fe2d4bed0/boxart.jpg?t=1790867722",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-66a3-7379-b454-b05fe2d4bed0/banner145.jpg?t=1790867722",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-66a3-7379-b454-b05fe2d4bed0/banner300.jpg?t=1790867722",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-66a3-7379-b454-b05fe2d4bed0/banner400.jpg?t=1790867723",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-66a3-7379-b454-b05fe2d4bed0/banner600.jpg?t=1790867723"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 15,
+     "amountInt": 1500,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-5201-7118-a997-43802a45d8d9",
+      "slug": "black-geyser-couriers-of-darkness",
+      "title": "Black Geyser: Couriers of Darkness",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5201-7118-a997-43802a45d8d9/boxart.jpg?t=1789421727",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5201-7118-a997-43802a45d8d9/banner145.jpg?t=1789421727",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5201-7118-a997-43802a45d8d9/banner300.jpg?t=1789421727",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5201-7118-a997-43802a45d8d9/banner400.jpg?t=1789421727",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5201-7118-a997-43802a45d8d9/banner600.jpg?t=1789421727"
+      }
+     },
+     {
+      "id": "018fc81f-7db5-71c0-ac37-071c32062bd1",
+      "slug": "skald-against-the-black-priory-deluxe-edition",
+      "title": "SKALD: Against the Black Priory Deluxe Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018fc81f-7db5-71c0-ac37-071c32062bd1/boxart.jpg?t=1786134098",
+       "banner145": "https://assets.isthereanydeal.com/018fc81f-7db5-71c0-ac37-071c32062bd1/banner145.jpg?t=1786134099",
+       "banner300": "https://assets.isthereanydeal.com/018fc81f-7db5-71c0-ac37-071c32062bd1/banner300.jpg?t=1786134099",
+       "banner400": "https://assets.isthereanydeal.com/018fc81f-7db5-71c0-ac37-071c32062bd1/banner400.jpg?t=1786134099",
+       "banner600": "https://assets.isthereanydeal.com/018fc81f-7db5-71c0-ac37-071c32062bd1/banner600.jpg?t=1786134100"
+      }
+     },
+     {
+      "id": "01934002-df5d-7108-88d2-4d56ac43b82d",
+      "slug": "pathfinder-wrath-of-the-righteous-game-of-the-year-edition",
+      "title": "Pathfinder: Wrath of the Righteous - Game of the Year Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/01934002-df5d-7108-88d2-4d56ac43b82d/boxart.jpg?t=1786211481",
+       "banner145": "https://assets.isthereanydeal.com/01934002-df5d-7108-88d2-4d56ac43b82d/banner145.jpg?t=1786211481",
+       "banner300": "https://assets.isthereanydeal.com/01934002-df5d-7108-88d2-4d56ac43b82d/banner300.jpg?t=1786211481",
+       "banner400": "https://assets.isthereanydeal.com/01934002-df5d-7108-88d2-4d56ac43b82d/banner400.jpg?t=1786211481",
+       "banner600": "https://assets.isthereanydeal.com/01934002-df5d-7108-88d2-4d56ac43b82d/banner600.jpg?t=1786211482"
+      }
+     },
+     {
+      "id": "01995953-cd0e-712d-b772-ebeaa4d05e06",
+      "slug": "black-geyser-couriers-of-darkness-tales-of-the-moon-cult",
+      "title": "Black Geyser: Couriers of Darkness - Tales of the Moon Cult",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/01995953-cd0e-712d-b772-ebeaa4d05e06/boxart.jpg?t=1789423248",
+       "banner145": "https://assets.isthereanydeal.com/01995953-cd0e-712d-b772-ebeaa4d05e06/banner145.jpg?t=1789423248",
+       "banner300": "https://assets.isthereanydeal.com/01995953-cd0e-712d-b772-ebeaa4d05e06/banner300.jpg?t=1789423249",
+       "banner400": "https://assets.isthereanydeal.com/01995953-cd0e-712d-b772-ebeaa4d05e06/banner400.jpg?t=1789423249",
+       "banner600": "https://assets.isthereanydeal.com/01995953-cd0e-712d-b772-ebeaa4d05e06/banner600.jpg?t=1789423249"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 23,
+     "amountInt": 2300,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-66c4-73c9-996f-9034adea22e2",
+      "slug": "warhammer-40000-rogue-trader",
+      "title": "Warhammer 40,000: Rogue Trader",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-66c4-73c9-996f-9034adea22e2/boxart.jpg?t=1790794815",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-66c4-73c9-996f-9034adea22e2/banner145.jpg?t=1790794815",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-66c4-73c9-996f-9034adea22e2/banner300.jpg?t=1790794815",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-66c4-73c9-996f-9034adea22e2/banner400.jpg?t=1790794815",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-66c4-73c9-996f-9034adea22e2/banner600.jpg?t=1790794815"
+      }
+     },
+     {
+      "id": "018d937f-7985-706b-a349-e848ede28cb5",
+      "slug": "warhammer-40000-rogue-trader-season-pass",
+      "title": "Warhammer 40000 Rogue Trader Season Pass",
+      "type": "dlc",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7985-706b-a349-e848ede28cb5/boxart.jpg?t=1786650639",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7985-706b-a349-e848ede28cb5/banner145.jpg?t=1786650639",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7985-706b-a349-e848ede28cb5/banner300.jpg?t=1786650639",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7985-706b-a349-e848ede28cb5/banner400.jpg?t=1786650639",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7985-706b-a349-e848ede28cb5/banner600.jpg?t=1786650639"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 16264,
+  "title": "Build Your Own Best of Platinum Collection (Summer 2026)",
+  "page": {
+   "id": 8,
+   "name": "Fanatical",
+   "shopId": 6
+  },
+  "url": "https://www.awin1.com/cread.php?awinmid=118821&awinaffid=235265&ued=https%3A%2F%2Fwww.fanatical.com%2Fpick-and-mix%2Fbest-of-platinum-collection-build-your-own-bundle",
+  "details": "https://isthereanydeal.com/bundles/16264/",
+  "isMature": false,
+  "publish": "2026-06-12T20:08:24+02:00",
+  "expiry": "2026-07-17T09:00:00+02:00",
+  "note": null,
+  "counts": {
+   "games": 24,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-00c5-706e-be7e-09afe0c44277",
+      "slug": "wingspan",
+      "title": "Wingspan",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00c5-706e-be7e-09afe0c44277/boxart.jpg?t=1789661405",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00c5-706e-be7e-09afe0c44277/banner145.jpg?t=1789661405",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00c5-706e-be7e-09afe0c44277/banner300.jpg?t=1789661405",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00c5-706e-be7e-09afe0c44277/banner400.jpg?t=1789661405",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00c5-706e-be7e-09afe0c44277/banner600.jpg?t=1789661405"
+      }
+     },
+     {
+      "id": "018d937f-0e04-738c-8409-517f4a4c8ad3",
+      "slug": "the-evil-within",
+      "title": "The Evil Within",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0e04-738c-8409-517f4a4c8ad3/boxart.jpg?t=1786646445",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0e04-738c-8409-517f4a4c8ad3/banner145.jpg?t=1786646445",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0e04-738c-8409-517f4a4c8ad3/banner300.jpg?t=1786646445",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0e04-738c-8409-517f4a4c8ad3/banner400.jpg?t=1786646445",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0e04-738c-8409-517f4a4c8ad3/banner600.jpg?t=1786646445"
+      }
+     },
+     {
+      "id": "018d937f-192a-7305-bc61-55199a85e250",
+      "slug": "art-of-rally",
+      "title": "art of rally",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-192a-7305-bc61-55199a85e250/boxart.jpg?t=1790275823",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-192a-7305-bc61-55199a85e250/banner145.jpg?t=1790275823",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-192a-7305-bc61-55199a85e250/banner300.jpg?t=1790275823",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-192a-7305-bc61-55199a85e250/banner400.jpg?t=1790275823",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-192a-7305-bc61-55199a85e250/banner600.jpg?t=1790275823"
+      }
+     },
+     {
+      "id": "018d937f-222a-72ea-ad3e-7746f9a70c46",
+      "slug": "the-evil-within-2",
+      "title": "The Evil Within 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-222a-72ea-ad3e-7746f9a70c46/boxart.jpg?t=1786641636",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-222a-72ea-ad3e-7746f9a70c46/banner145.jpg?t=1786641636",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-222a-72ea-ad3e-7746f9a70c46/banner300.jpg?t=1786641636",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-222a-72ea-ad3e-7746f9a70c46/banner400.jpg?t=1786641636",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-222a-72ea-ad3e-7746f9a70c46/banner600.jpg?t=1786641636"
+      }
+     },
+     {
+      "id": "018d937f-2f10-73e8-9041-fb5ee8290cff",
+      "slug": "vampire-hunters",
+      "title": "Vampire Hunters",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2f10-73e8-9041-fb5ee8290cff/boxart.jpg?t=1792076731",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2f10-73e8-9041-fb5ee8290cff/banner145.jpg?t=1792076731",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2f10-73e8-9041-fb5ee8290cff/banner300.jpg?t=1792076732",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2f10-73e8-9041-fb5ee8290cff/banner400.jpg?t=1792076732",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2f10-73e8-9041-fb5ee8290cff/banner600.jpg?t=1792076732"
+      }
+     },
+     {
+      "id": "018d937f-3e97-7057-a5f6-a19b15c1188e",
+      "slug": "gloomy-eyes",
+      "title": "Gloomy Eyes",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3e97-7057-a5f6-a19b15c1188e/boxart.jpg?t=1790613618",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3e97-7057-a5f6-a19b15c1188e/banner145.jpg?t=1790613618",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3e97-7057-a5f6-a19b15c1188e/banner300.jpg?t=1790613618",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3e97-7057-a5f6-a19b15c1188e/banner400.jpg?t=1790613618",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3e97-7057-a5f6-a19b15c1188e/banner600.jpg?t=1790613619"
+      }
+     },
+     {
+      "id": "018d937f-4217-72ca-b8ff-d10cc2d1e964",
+      "slug": "ex-zodiac",
+      "title": "Ex-Zodiac",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4217-72ca-b8ff-d10cc2d1e964/boxart.jpg?t=1788826214",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4217-72ca-b8ff-d10cc2d1e964/banner145.jpg?t=1788826214",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4217-72ca-b8ff-d10cc2d1e964/banner300.jpg?t=1788826214",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4217-72ca-b8ff-d10cc2d1e964/banner400.jpg?t=1788826214",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4217-72ca-b8ff-d10cc2d1e964/banner600.jpg?t=1788826214"
+      }
+     },
+     {
+      "id": "018d937f-4d26-7231-b0f4-5fac7b24d37d",
+      "slug": "isonzo",
+      "title": "Isonzo",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4d26-7231-b0f4-5fac7b24d37d/boxart.jpg?t=1790866824",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4d26-7231-b0f4-5fac7b24d37d/banner145.jpg?t=1790866824",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4d26-7231-b0f4-5fac7b24d37d/banner300.jpg?t=1790866824",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4d26-7231-b0f4-5fac7b24d37d/banner400.jpg?t=1790866824",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4d26-7231-b0f4-5fac7b24d37d/banner600.jpg?t=1790866824"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5256-73e1-bba6-66fd461a55c7",
+      "slug": "robocop-rogue-city",
+      "title": "RoboCop: Rogue City",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/boxart.jpg?t=1786392097",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner145.jpg?t=1786392097",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner300.jpg?t=1786392097",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner400.jpg?t=1786392097",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner600.jpg?t=1786392097"
+      }
+     },
+     {
+      "id": "018d937f-5286-70e2-bcf0-74eda0d030e8",
+      "slug": "potion-tycoon",
+      "title": "Potion Tycoon",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5286-70e2-bcf0-74eda0d030e8/boxart.jpg?t=1789492522",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5286-70e2-bcf0-74eda0d030e8/banner145.jpg?t=1789492522",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5286-70e2-bcf0-74eda0d030e8/banner300.jpg?t=1789492522",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5286-70e2-bcf0-74eda0d030e8/banner400.jpg?t=1789492522",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5286-70e2-bcf0-74eda0d030e8/banner600.jpg?t=1789492522"
+      }
+     },
+     {
+      "id": "018d937f-6668-7258-beea-7f0a4c8ff137",
+      "slug": "interior-worlds",
+      "title": "Interior Worlds",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6668-7258-beea-7f0a4c8ff137/boxart.jpg?t=1790997333",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6668-7258-beea-7f0a4c8ff137/banner145.jpg?t=1790997334",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6668-7258-beea-7f0a4c8ff137/banner300.jpg?t=1790997334",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6668-7258-beea-7f0a4c8ff137/banner400.jpg?t=1790997335",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6668-7258-beea-7f0a4c8ff137/banner600.jpg?t=1790997335"
+      }
+     },
+     {
+      "id": "018d937f-6b60-7258-8fc1-e6cd792b57ce",
+      "slug": "ufo-robot-grendizer-the-feast-of-the-wolves",
+      "title": "UFO ROBOT GRENDIZER - The Feast of the Wolves",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6b60-7258-8fc1-e6cd792b57ce/boxart.jpg?t=1788855620",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6b60-7258-8fc1-e6cd792b57ce/banner145.jpg?t=1788855621",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6b60-7258-8fc1-e6cd792b57ce/banner300.jpg?t=1788855621",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6b60-7258-8fc1-e6cd792b57ce/banner400.jpg?t=1788855621",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6b60-7258-8fc1-e6cd792b57ce/banner600.jpg?t=1788855621"
+      }
+     },
+     {
+      "id": "018d937f-6bdc-7026-b49c-d88670b67bbb",
+      "slug": "videoverse",
+      "title": "VIDEOVERSE",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6bdc-7026-b49c-d88670b67bbb/boxart.jpg?t=1787322918",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6bdc-7026-b49c-d88670b67bbb/banner145.jpg?t=1787322918",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6bdc-7026-b49c-d88670b67bbb/banner300.jpg?t=1787322918",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6bdc-7026-b49c-d88670b67bbb/banner400.jpg?t=1787322918",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6bdc-7026-b49c-d88670b67bbb/banner600.jpg?t=1787322918"
+      }
+     },
+     {
+      "id": "018d937f-6cba-7049-b5c2-ca40cee692fa",
+      "slug": "lil-guardsman",
+      "title": "Lil' Guardsman",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6cba-7049-b5c2-ca40cee692fa/boxart.jpg?t=1786393352",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6cba-7049-b5c2-ca40cee692fa/banner145.jpg?t=1786393353",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6cba-7049-b5c2-ca40cee692fa/banner300.jpg?t=1786393353",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6cba-7049-b5c2-ca40cee692fa/banner400.jpg?t=1786393353",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6cba-7049-b5c2-ca40cee692fa/banner600.jpg?t=1786393353"
+      }
+     },
+     {
+      "id": "018d937f-6ee7-7261-93d8-0a6c485a5515",
+      "slug": "botany-manor",
+      "title": "Botany Manor",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/boxart.jpg?t=1786554642",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner145.jpg?t=1786554642",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner300.jpg?t=1786554642",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner400.jpg?t=1786554642",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner600.jpg?t=1786554642"
+      }
+     },
+     {
+      "id": "018d937f-6f0f-7249-9866-8930ff541c5d",
+      "slug": "pale-coins",
+      "title": "Pale Coins",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6f0f-7249-9866-8930ff541c5d/boxart.jpg?t=1786390360",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6f0f-7249-9866-8930ff541c5d/banner145.jpg?t=1786390360",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6f0f-7249-9866-8930ff541c5d/banner300.jpg?t=1786390360",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6f0f-7249-9866-8930ff541c5d/banner400.jpg?t=1786390360",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6f0f-7249-9866-8930ff541c5d/banner600.jpg?t=1786390360"
+      }
+     },
+     {
+      "id": "018d937f-6f92-723b-9bf0-d71a6a80206b",
+      "slug": "the-abandoned-planet",
+      "title": "The Abandoned Planet",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6f92-723b-9bf0-d71a6a80206b/boxart.jpg?t=1787166324",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6f92-723b-9bf0-d71a6a80206b/banner145.jpg?t=1787166324",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6f92-723b-9bf0-d71a6a80206b/banner300.jpg?t=1787166324",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6f92-723b-9bf0-d71a6a80206b/banner400.jpg?t=1787166324",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6f92-723b-9bf0-d71a6a80206b/banner600.jpg?t=1787166325"
+      }
+     },
+     {
+      "id": "018d937f-730e-73d0-801e-13662a513b16",
+      "slug": "train-valley-world",
+      "title": "Train Valley World",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-730e-73d0-801e-13662a513b16/boxart.jpg?t=1787332826",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-730e-73d0-801e-13662a513b16/banner145.jpg?t=1787332826",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-730e-73d0-801e-13662a513b16/banner300.jpg?t=1787332826",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-730e-73d0-801e-13662a513b16/banner400.jpg?t=1787332826",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-730e-73d0-801e-13662a513b16/banner600.jpg?t=1787332826"
+      }
+     },
+     {
+      "id": "018d937f-7496-723d-8e4d-4da9eb9d935f",
+      "slug": "broken-sword-shadow-of-the-templars-reforged",
+      "title": "Broken Sword - Shadow of the Templars: Reforged",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7496-723d-8e4d-4da9eb9d935f/boxart.jpg?t=1786209688",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7496-723d-8e4d-4da9eb9d935f/banner145.jpg?t=1786209688",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7496-723d-8e4d-4da9eb9d935f/banner300.jpg?t=1786209689",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7496-723d-8e4d-4da9eb9d935f/banner400.jpg?t=1786209689",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7496-723d-8e4d-4da9eb9d935f/banner600.jpg?t=1786209689"
+      }
+     },
+     {
+      "id": "018d937f-798e-71a3-9a16-cea3ee1bc7f3",
+      "slug": "wild-bastards",
+      "title": "Wild Bastards",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-798e-71a3-9a16-cea3ee1bc7f3/boxart.jpg?t=1788389110",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-798e-71a3-9a16-cea3ee1bc7f3/banner145.jpg?t=1788389110",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-798e-71a3-9a16-cea3ee1bc7f3/banner300.jpg?t=1788389110",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-798e-71a3-9a16-cea3ee1bc7f3/banner400.jpg?t=1788389110",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-798e-71a3-9a16-cea3ee1bc7f3/banner600.jpg?t=1788389110"
+      }
+     },
+     {
+      "id": "018d937f-7b35-7061-913a-a59b351dca75",
+      "slug": "once-upon-a-puppet",
+      "title": "Once Upon A Puppet",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7b35-7061-913a-a59b351dca75/boxart.jpg?t=1789534208",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7b35-7061-913a-a59b351dca75/banner145.jpg?t=1789534208",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7b35-7061-913a-a59b351dca75/banner300.jpg?t=1789534208",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7b35-7061-913a-a59b351dca75/banner400.jpg?t=1789534208",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7b35-7061-913a-a59b351dca75/banner600.jpg?t=1789534208"
+      }
+     },
+     {
+      "id": "018dcbf7-adb2-73a0-8c24-59b8650efe90",
+      "slug": "arranger-a-role-puzzling-adventure",
+      "title": "Arranger: A Role-Puzzling Adventure",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018dcbf7-adb2-73a0-8c24-59b8650efe90/boxart.jpg?t=1786134373",
+       "banner145": "https://assets.isthereanydeal.com/018dcbf7-adb2-73a0-8c24-59b8650efe90/banner145.jpg?t=1786134373",
+       "banner300": "https://assets.isthereanydeal.com/018dcbf7-adb2-73a0-8c24-59b8650efe90/banner300.jpg?t=1786134373",
+       "banner400": "https://assets.isthereanydeal.com/018dcbf7-adb2-73a0-8c24-59b8650efe90/banner400.jpg?t=1786134373",
+       "banner600": "https://assets.isthereanydeal.com/018dcbf7-adb2-73a0-8c24-59b8650efe90/banner600.jpg?t=1786134373"
+      }
+     },
+     {
+      "id": "0196f6c2-7a96-735e-a02b-9817c2ccf47d",
+      "slug": "dead-format",
+      "title": "Dead Format",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/0196f6c2-7a96-735e-a02b-9817c2ccf47d/boxart.jpg?t=1787430636",
+       "banner145": "https://assets.isthereanydeal.com/0196f6c2-7a96-735e-a02b-9817c2ccf47d/banner145.jpg?t=1787430636",
+       "banner300": "https://assets.isthereanydeal.com/0196f6c2-7a96-735e-a02b-9817c2ccf47d/banner300.jpg?t=1787430636",
+       "banner400": "https://assets.isthereanydeal.com/0196f6c2-7a96-735e-a02b-9817c2ccf47d/banner400.jpg?t=1787430636",
+       "banner600": "https://assets.isthereanydeal.com/0196f6c2-7a96-735e-a02b-9817c2ccf47d/banner600.jpg?t=1787430636"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 16060,
+  "title": "Build your own Exodus Bundle (Spring 2026)",
+  "page": {
+   "id": 8,
+   "name": "Fanatical",
+   "shopId": 6
+  },
+  "url": "https://www.awin1.com/cread.php?awinmid=118821&awinaffid=235265&ued=https%3A%2F%2Fwww.fanatical.com%2Fen%2Fpick-and-mix%2Fbuild-your-own-exodus-bundle",
+  "details": "https://isthereanydeal.com/bundles/16060/",
+  "isMature": false,
+  "publish": "2026-04-16T18:00:35+02:00",
+  "expiry": "2026-05-21T09:00:00+02:00",
+  "note": "You'll get coupon for 5% off your next order with purchase.\n\nIf you spend more than 15 $/\u20ac, you'll get a choice of free bonus game.",
+  "counts": {
+   "games": 19,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": null,
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-00ce-723d-aa03-49a495fa697e",
+      "slug": "zombasite",
+      "title": "Zombasite",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-00ce-723d-aa03-49a495fa697e/boxart.png?t=1787600780",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-00ce-723d-aa03-49a495fa697e/banner145.jpg?t=1787600781",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-00ce-723d-aa03-49a495fa697e/banner300.jpg?t=1787600781",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-00ce-723d-aa03-49a495fa697e/banner400.jpg?t=1787600781",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-00ce-723d-aa03-49a495fa697e/banner600.jpg?t=1787600781"
+      }
+     },
+     {
+      "id": "018d937f-0138-702d-8318-050363cca90d",
+      "slug": "king-of-retail",
+      "title": "King of Retail",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0138-702d-8318-050363cca90d/boxart.jpg?t=1786396215",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0138-702d-8318-050363cca90d/banner145.jpg?t=1786396215",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0138-702d-8318-050363cca90d/banner300.jpg?t=1786396215",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0138-702d-8318-050363cca90d/banner400.jpg?t=1786396215",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0138-702d-8318-050363cca90d/banner600.jpg?t=1786396215"
+      }
+     },
+     {
+      "id": "018d937f-2e52-73c1-b717-f9bfcae4c746",
+      "slug": "agatha-christie-murder-on-the-orient-express",
+      "title": "Agatha Christie: Murder on the Orient Express",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2e52-73c1-b717-f9bfcae4c746/boxart.jpg?t=1787020564",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2e52-73c1-b717-f9bfcae4c746/banner145.jpg?t=1787020564",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2e52-73c1-b717-f9bfcae4c746/banner300.jpg?t=1787020564",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2e52-73c1-b717-f9bfcae4c746/banner400.jpg?t=1787020564",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2e52-73c1-b717-f9bfcae4c746/banner600.jpg?t=1787020564"
+      }
+     },
+     {
+      "id": "018d937f-3830-71f4-bbcc-b3430798f559",
+      "slug": "beyond-a-steel-sky",
+      "title": "Beyond a Steel Sky",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3830-71f4-bbcc-b3430798f559/boxart.jpg?t=1788408038",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3830-71f4-bbcc-b3430798f559/banner145.jpg?t=1788408038",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3830-71f4-bbcc-b3430798f559/banner300.jpg?t=1788408038",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3830-71f4-bbcc-b3430798f559/banner400.jpg?t=1788408038",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3830-71f4-bbcc-b3430798f559/banner600.jpg?t=1788408038"
+      }
+     },
+     {
+      "id": "018d937f-4ee1-738c-8d43-300ecb996d6b",
+      "slug": "kingdom-of-the-dead",
+      "title": "KINGDOM of the DEAD",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4ee1-738c-8d43-300ecb996d6b/boxart.jpg?t=1788180003",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4ee1-738c-8d43-300ecb996d6b/banner145.jpg?t=1788180003",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4ee1-738c-8d43-300ecb996d6b/banner300.jpg?t=1788180004",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4ee1-738c-8d43-300ecb996d6b/banner400.jpg?t=1788180004",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4ee1-738c-8d43-300ecb996d6b/banner600.jpg?t=1788180004"
+      }
+     },
+     {
+      "id": "018d937f-5075-730a-8cc6-2623f33354e9",
+      "slug": "fight-of-steel-infinity-warrior",
+      "title": "Fight of Steel: Infinity Warrior",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5075-730a-8cc6-2623f33354e9/boxart.jpg?t=1786385845",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5075-730a-8cc6-2623f33354e9/banner145.jpg?t=1786385845",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5075-730a-8cc6-2623f33354e9/banner300.jpg?t=1786385845",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5075-730a-8cc6-2623f33354e9/banner400.jpg?t=1786385845",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5075-730a-8cc6-2623f33354e9/banner600.jpg?t=1786385845"
+      }
+     },
+     {
+      "id": "018d937f-51dc-70c4-aa10-429fbd9b818f",
+      "slug": "souldiers",
+      "title": "Souldiers",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51dc-70c4-aa10-429fbd9b818f/boxart.jpg?t=1786734622",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51dc-70c4-aa10-429fbd9b818f/banner145.jpg?t=1786734622",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51dc-70c4-aa10-429fbd9b818f/banner300.jpg?t=1786734622",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51dc-70c4-aa10-429fbd9b818f/banner400.jpg?t=1786734622",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51dc-70c4-aa10-429fbd9b818f/banner600.jpg?t=1786734622"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5f29-70df-9564-a8d4b2a6c40e",
+      "slug": "south-of-the-circle",
+      "title": "South of the Circle",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5f29-70df-9564-a8d4b2a6c40e/boxart.jpg?t=1788456919",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5f29-70df-9564-a8d4b2a6c40e/banner145.jpg?t=1788456919",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5f29-70df-9564-a8d4b2a6c40e/banner300.jpg?t=1788456919",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5f29-70df-9564-a8d4b2a6c40e/banner400.jpg?t=1788456919",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5f29-70df-9564-a8d4b2a6c40e/banner600.jpg?t=1788456919"
+      }
+     },
+     {
+      "id": "018d937f-67e6-7037-8d48-754f7d6e4eee",
+      "slug": "oblivion-override",
+      "title": "Oblivion Override",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-67e6-7037-8d48-754f7d6e4eee/boxart.jpg?t=1787160928",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-67e6-7037-8d48-754f7d6e4eee/banner145.jpg?t=1787160928",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-67e6-7037-8d48-754f7d6e4eee/banner300.jpg?t=1787160928",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-67e6-7037-8d48-754f7d6e4eee/banner400.jpg?t=1787160928",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-67e6-7037-8d48-754f7d6e4eee/banner600.jpg?t=1787160928"
+      }
+     },
+     {
+      "id": "018d937f-6eed-717e-a3ee-586c815d11c2",
+      "slug": "heretics-fork",
+      "title": "Heretic's Fork",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6eed-717e-a3ee-586c815d11c2/boxart.jpg?t=1788536109",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6eed-717e-a3ee-586c815d11c2/banner145.jpg?t=1788536110",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6eed-717e-a3ee-586c815d11c2/banner300.jpg?t=1788536110",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6eed-717e-a3ee-586c815d11c2/banner400.jpg?t=1788536110",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6eed-717e-a3ee-586c815d11c2/banner600.jpg?t=1788536110"
+      }
+     },
+     {
+      "id": "018d937f-6ef8-734e-ab99-8fad6a7f834b",
+      "slug": "declines-drops",
+      "title": "Decline's Drops",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ef8-734e-ab99-8fad6a7f834b/boxart.jpg?t=1786297829",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ef8-734e-ab99-8fad6a7f834b/banner145.jpg?t=1786297829",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ef8-734e-ab99-8fad6a7f834b/banner300.jpg?t=1786297829",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ef8-734e-ab99-8fad6a7f834b/banner400.jpg?t=1786297829",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ef8-734e-ab99-8fad6a7f834b/banner600.jpg?t=1786297829"
+      }
+     },
+     {
+      "id": "018d937f-6f15-737c-be19-f720ceac10d6",
+      "slug": "death-relives",
+      "title": "Death Relives",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6f15-737c-be19-f720ceac10d6/boxart.jpg?t=1786209640",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6f15-737c-be19-f720ceac10d6/banner145.jpg?t=1786209640",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6f15-737c-be19-f720ceac10d6/banner300.jpg?t=1786209640",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6f15-737c-be19-f720ceac10d6/banner400.jpg?t=1786209640",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6f15-737c-be19-f720ceac10d6/banner600.jpg?t=1786209641"
+      }
+     },
+     {
+      "id": "018d97d8-b1b9-71f4-9f51-b59b84aad51f",
+      "slug": "charrua-soccer-pro-edition",
+      "title": "Charrua Soccer - Pro Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d97d8-b1b9-71f4-9f51-b59b84aad51f/boxart.jpg?t=1790973645",
+       "banner145": "https://assets.isthereanydeal.com/018d97d8-b1b9-71f4-9f51-b59b84aad51f/banner145.jpg?t=1790973645",
+       "banner300": "https://assets.isthereanydeal.com/018d97d8-b1b9-71f4-9f51-b59b84aad51f/banner300.jpg?t=1790973645",
+       "banner400": "https://assets.isthereanydeal.com/018d97d8-b1b9-71f4-9f51-b59b84aad51f/banner400.jpg?t=1790973645",
+       "banner600": "https://assets.isthereanydeal.com/018d97d8-b1b9-71f4-9f51-b59b84aad51f/banner600.jpg?t=1790973646"
+      }
+     },
+     {
+      "id": "018dfacf-18de-7069-add4-9d3172458530",
+      "slug": "kithack-model-club",
+      "title": "KitHack Model Club",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018dfacf-18de-7069-add4-9d3172458530/boxart.jpg?t=1786647964",
+       "banner145": "https://assets.isthereanydeal.com/018dfacf-18de-7069-add4-9d3172458530/banner145.jpg?t=1786647965",
+       "banner300": "https://assets.isthereanydeal.com/018dfacf-18de-7069-add4-9d3172458530/banner300.jpg?t=1786647965",
+       "banner400": "https://assets.isthereanydeal.com/018dfacf-18de-7069-add4-9d3172458530/banner400.jpg?t=1786647965",
+       "banner600": "https://assets.isthereanydeal.com/018dfacf-18de-7069-add4-9d3172458530/banner600.jpg?t=1786647965"
+      }
+     },
+     {
+      "id": "018eccb8-0fe9-72ed-b8fc-11432715335c",
+      "slug": "fight-school-simulator",
+      "title": "Fight School Simulator",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018eccb8-0fe9-72ed-b8fc-11432715335c/boxart.jpg?t=1787338814",
+       "banner145": "https://assets.isthereanydeal.com/018eccb8-0fe9-72ed-b8fc-11432715335c/banner145.jpg?t=1787338814",
+       "banner300": "https://assets.isthereanydeal.com/018eccb8-0fe9-72ed-b8fc-11432715335c/banner300.jpg?t=1787338814",
+       "banner400": "https://assets.isthereanydeal.com/018eccb8-0fe9-72ed-b8fc-11432715335c/banner400.jpg?t=1787338814",
+       "banner600": "https://assets.isthereanydeal.com/018eccb8-0fe9-72ed-b8fc-11432715335c/banner600.jpg?t=1787338814"
+      }
+     },
+     {
+      "id": "0191263a-ed62-72aa-906d-a334ea8bc792",
+      "slug": "love-is",
+      "title": "Love is...",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/0191263a-ed62-72aa-906d-a334ea8bc792/boxart.jpg?t=1787831114",
+       "banner145": "https://assets.isthereanydeal.com/0191263a-ed62-72aa-906d-a334ea8bc792/banner145.jpg?t=1787831114",
+       "banner300": "https://assets.isthereanydeal.com/0191263a-ed62-72aa-906d-a334ea8bc792/banner300.jpg?t=1787831114",
+       "banner400": "https://assets.isthereanydeal.com/0191263a-ed62-72aa-906d-a334ea8bc792/banner400.jpg?t=1787831114",
+       "banner600": "https://assets.isthereanydeal.com/0191263a-ed62-72aa-906d-a334ea8bc792/banner600.jpg?t=1787831115"
+      }
+     },
+     {
+      "id": "0193d55e-cc64-707b-940c-3105c2f0627d",
+      "slug": "siberian-dawn-and-mission-pack-1-and-2-triple-pack",
+      "title": "Siberian Dawn & Mission Pack 1+2 Triple Pack",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "banner145": "https://assets.isthereanydeal.com/0193d55e-cc64-707b-940c-3105c2f0627d/banner145.jpg?t=1734452104",
+       "banner300": "https://assets.isthereanydeal.com/0193d55e-cc64-707b-940c-3105c2f0627d/banner300.jpg?t=1734452104",
+       "banner400": "https://assets.isthereanydeal.com/0193d55e-cc64-707b-940c-3105c2f0627d/banner400.jpg?t=1734452104"
+      }
+     },
+     {
+      "id": "0194dad4-c2a3-7303-8bed-28d4d2eb831b",
+      "slug": "asgards-fall-viking-survivors",
+      "title": "Asgard's Fall \u2014 Viking Survivors",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/0194dad4-c2a3-7303-8bed-28d4d2eb831b/boxart.jpg?t=1792685514",
+       "banner145": "https://assets.isthereanydeal.com/0194dad4-c2a3-7303-8bed-28d4d2eb831b/banner145.jpg?t=1792685514",
+       "banner300": "https://assets.isthereanydeal.com/0194dad4-c2a3-7303-8bed-28d4d2eb831b/banner300.jpg?t=1792685515",
+       "banner400": "https://assets.isthereanydeal.com/0194dad4-c2a3-7303-8bed-28d4d2eb831b/banner400.jpg?t=1792685515",
+       "banner600": "https://assets.isthereanydeal.com/0194dad4-c2a3-7303-8bed-28d4d2eb831b/banner600.jpg?t=1792685515"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 15769,
+  "title": "Indie Adventures Bundle",
+  "page": {
+   "id": 73,
+   "name": "GreenManGaming",
+   "shopId": 36
+  },
+  "url": "https://greenmangaming.sjv.io/c/2545989/3298418/15105?u=https%3A%2F%2Fwww.greenmangamingbundles.com%2Fbundles%2Findie-adventures%2F",
+  "details": "https://isthereanydeal.com/bundles/15769/",
+  "isMature": false,
+  "publish": "2026-01-07T18:03:28+01:00",
+  "expiry": "2026-01-28T19:00:00+01:00",
+  "note": null,
+  "counts": {
+   "games": 6,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 5,
+     "amountInt": 500,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-5c5a-70b4-a775-aeffcf2162fc",
+      "slug": "symphony-of-war-the-nephilim-saga",
+      "title": "Symphony of War: The Nephilim Saga",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5c5a-70b4-a775-aeffcf2162fc/boxart.jpg?t=1786756221",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5c5a-70b4-a775-aeffcf2162fc/banner145.jpg?t=1786756221",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5c5a-70b4-a775-aeffcf2162fc/banner300.jpg?t=1786756221",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5c5a-70b4-a775-aeffcf2162fc/banner400.jpg?t=1786756221",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5c5a-70b4-a775-aeffcf2162fc/banner600.jpg?t=1786756221"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 10,
+     "amountInt": 1000,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-60c0-7045-90f3-1749189b9a34",
+      "slug": "for-the-king-ii",
+      "title": "For The King II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-60c0-7045-90f3-1749189b9a34/boxart.jpg?t=1791405921",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-60c0-7045-90f3-1749189b9a34/banner145.jpg?t=1791405921",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-60c0-7045-90f3-1749189b9a34/banner300.jpg?t=1791405921",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-60c0-7045-90f3-1749189b9a34/banner400.jpg?t=1791405921",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-60c0-7045-90f3-1749189b9a34/banner600.jpg?t=1791405921"
+      }
+     },
+     {
+      "id": "018d937f-6ee2-70f6-940c-6212aabc5d16",
+      "slug": "shadow-gambit-the-cursed-crew",
+      "title": "Shadow Gambit: The Cursed Crew",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ee2-70f6-940c-6212aabc5d16/boxart.jpg?t=1792744524",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ee2-70f6-940c-6212aabc5d16/banner145.jpg?t=1792744525",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ee2-70f6-940c-6212aabc5d16/banner300.jpg?t=1792744525",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ee2-70f6-940c-6212aabc5d16/banner400.jpg?t=1792744525",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ee2-70f6-940c-6212aabc5d16/banner600.jpg?t=1792744525"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 14,
+     "amountInt": 1400,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-5f7b-7211-874b-91da4f7c6a06",
+      "slug": "flintlock-the-siege-of-dawn",
+      "title": "Flintlock: The Siege of Dawn",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5f7b-7211-874b-91da4f7c6a06/boxart.jpg?t=1787083821",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5f7b-7211-874b-91da4f7c6a06/banner145.jpg?t=1787083821",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5f7b-7211-874b-91da4f7c6a06/banner300.jpg?t=1787083821",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5f7b-7211-874b-91da4f7c6a06/banner400.jpg?t=1787083821",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5f7b-7211-874b-91da4f7c6a06/banner600.jpg?t=1787083821"
+      }
+     },
+     {
+      "id": "018d937f-6b6f-711c-b807-77468cad7a62",
+      "slug": "the-thaumaturge",
+      "title": "The Thaumaturge",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6b6f-711c-b807-77468cad7a62/boxart.jpg?t=1787697632",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6b6f-711c-b807-77468cad7a62/banner145.jpg?t=1787697632",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6b6f-711c-b807-77468cad7a62/banner300.jpg?t=1787697632",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6b6f-711c-b807-77468cad7a62/banner400.jpg?t=1787697632",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6b6f-711c-b807-77468cad7a62/banner600.jpg?t=1787697632"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 15690,
+  "title": "Dice & Destiny Bundle Encore",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fgames%2Fdice-and-destiny-encore",
+  "details": "https://isthereanydeal.com/bundles/15690/",
+  "isMature": false,
+  "publish": "2025-12-17T18:21:19+01:00",
+  "expiry": "2025-12-20T03:00:14+01:00",
+  "note": "Some proceeds go to support: \n\nhttps://www.care.org/",
+  "counts": {
+   "games": 6,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 7,
+     "amountInt": 700,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-12f1-70b3-ba20-66463a103c98",
+      "slug": "pillars-of-eternity-definitive-edition",
+      "title": "Pillars of Eternity Definitive Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/boxart.jpg?t=1786642858",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner145.jpg?t=1786642858",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner300.jpg?t=1786642858",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner400.jpg?t=1786642858",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner600.jpg?t=1786642858"
+      }
+     },
+     {
+      "id": "018d937f-3c5a-7309-9b5c-bee915f8ea7b",
+      "slug": "roadwarden",
+      "title": "Roadwarden",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/boxart.jpg?t=1787002556",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner145.jpg?t=1787002556",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner300.jpg?t=1787002556",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner400.jpg?t=1787002556",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner600.jpg?t=1787002556"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 10,
+     "amountInt": 1000,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-0a0c-70ee-bbc3-86f29dd16d35",
+      "slug": "pillars-of-eternity-ii-deadfire-obsidian-edition",
+      "title": "Pillars of Eternity II: Deadfire Obsidian Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/boxart.jpg?t=1786642221",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner145.jpg?t=1786642221",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner300.jpg?t=1786642222",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner400.jpg?t=1786642222",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner600.jpg?t=1786642222"
+      }
+     },
+     {
+      "id": "018d937f-58dc-71f2-a401-8c665db6bc09",
+      "slug": "citizen-sleeper",
+      "title": "Citizen Sleeper",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/boxart.jpg?t=1789671017",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner145.jpg?t=1789671017",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner300.jpg?t=1789671017",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner400.jpg?t=1789671017",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner600.jpg?t=1789671017"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 13,
+     "amountInt": 1300,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-464a-70ca-bf5b-2ee4abf29acc",
+      "slug": "broken-roads",
+      "title": "Broken Roads",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/boxart.jpg?t=1786655150",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner145.jpg?t=1786655150",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner300.jpg?t=1786655150",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner400.jpg?t=1786655150",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner600.jpg?t=1786655150"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 15682,
+  "title": "Build Your Own Best of Platinum Collection Bundle (2025)",
+  "page": {
+   "id": 8,
+   "name": "Fanatical",
+   "shopId": 6
+  },
+  "url": "https://www.awin1.com/cread.php?awinmid=118821&awinaffid=235265&ued=https%3A%2F%2Fwww.fanatical.com%2Fen%2Fpick-and-mix%2Fbest-of-platinum-collection-build-your-own-bundle",
+  "details": "https://isthereanydeal.com/bundles/15682/",
+  "isMature": false,
+  "publish": "2025-12-15T18:07:02+01:00",
+  "expiry": "2026-01-31T08:59:58+01:00",
+  "note": "3+ games 3.33 ea, 5+ games 3.00 ea, 10+ games 2.90 ea",
+  "counts": {
+   "games": 22,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 9.99,
+     "amountInt": 999,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-f886-70e0-a872-4970e8bd9503",
+      "slug": "fallout-76",
+      "title": "Fallout 76",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f886-70e0-a872-4970e8bd9503/boxart.jpg?t=1791382818",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f886-70e0-a872-4970e8bd9503/banner145.jpg?t=1791382818",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f886-70e0-a872-4970e8bd9503/banner300.jpg?t=1791382818",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f886-70e0-a872-4970e8bd9503/banner400.jpg?t=1791382818",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f886-70e0-a872-4970e8bd9503/banner600.jpg?t=1791382818"
+      }
+     },
+     {
+      "id": "018d937e-fce8-716b-97f3-6a41f82bb9e7",
+      "slug": "doom",
+      "title": "DOOM",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fce8-716b-97f3-6a41f82bb9e7/boxart.jpg?t=1786648864",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fce8-716b-97f3-6a41f82bb9e7/banner145.jpg?t=1786648864",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fce8-716b-97f3-6a41f82bb9e7/banner300.jpg?t=1786648864",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fce8-716b-97f3-6a41f82bb9e7/banner400.jpg?t=1786648864",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fce8-716b-97f3-6a41f82bb9e7/banner600.jpg?t=1786648864"
+      }
+     },
+     {
+      "id": "018d937f-11e4-724f-a1c2-38f3a887cb4c",
+      "slug": "fallout-new-vegas-ultimate-edition",
+      "title": "Fallout\u00ae: New Vegas\u2122 Ultimate Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-11e4-724f-a1c2-38f3a887cb4c/boxart.jpg?t=1786643467",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-11e4-724f-a1c2-38f3a887cb4c/banner145.jpg?t=1786643467",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-11e4-724f-a1c2-38f3a887cb4c/banner300.jpg?t=1786643467",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-11e4-724f-a1c2-38f3a887cb4c/banner400.jpg?t=1786643467",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-11e4-724f-a1c2-38f3a887cb4c/banner600.jpg?t=1786643468"
+      }
+     },
+     {
+      "id": "018d937f-23f0-711e-ad7c-2cc0829d75f9",
+      "slug": "fallout-3-game-of-the-year-edition",
+      "title": "Fallout 3: Game of the Year Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-23f0-711e-ad7c-2cc0829d75f9/boxart.jpg?t=1786660226",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-23f0-711e-ad7c-2cc0829d75f9/banner145.jpg?t=1786660226",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-23f0-711e-ad7c-2cc0829d75f9/banner300.jpg?t=1786660226",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-23f0-711e-ad7c-2cc0829d75f9/banner400.jpg?t=1786660226",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-23f0-711e-ad7c-2cc0829d75f9/banner600.jpg?t=1786660226"
+      }
+     },
+     {
+      "id": "018d937f-362e-70cd-a1ad-d31f21e6ef9d",
+      "slug": "dysmantle",
+      "title": "DYSMANTLE",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/boxart.jpg?t=1788819028",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner145.jpg?t=1788819028",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner300.jpg?t=1788819028",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner400.jpg?t=1788819028",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner600.jpg?t=1788819028"
+      }
+     },
+     {
+      "id": "018d937f-3ccf-7153-987c-672106ad19f9",
+      "slug": "paradise-killer",
+      "title": "Paradise Killer",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/boxart.jpg?t=1787732408",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner145.jpg?t=1787732408",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner300.jpg?t=1787732408",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner400.jpg?t=1787732408",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner600.jpg?t=1787732408"
+      }
+     },
+     {
+      "id": "018d937f-3e79-70c9-b176-6c7cd118c1ab",
+      "slug": "gestalt-steam-and-cinder",
+      "title": "Gestalt: Steam & Cinder",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3e79-70c9-b176-6c7cd118c1ab/boxart.jpg?t=1789184414",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3e79-70c9-b176-6c7cd118c1ab/banner145.jpg?t=1789184414",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3e79-70c9-b176-6c7cd118c1ab/banner300.jpg?t=1789184414",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3e79-70c9-b176-6c7cd118c1ab/banner400.jpg?t=1789184414",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3e79-70c9-b176-6c7cd118c1ab/banner600.jpg?t=1789184414"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5256-73e1-bba6-66fd461a55c7",
+      "slug": "robocop-rogue-city",
+      "title": "RoboCop: Rogue City",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/boxart.jpg?t=1786392097",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner145.jpg?t=1786392097",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner300.jpg?t=1786392097",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner400.jpg?t=1786392097",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5256-73e1-bba6-66fd461a55c7/banner600.jpg?t=1786392097"
+      }
+     },
+     {
+      "id": "018d937f-5c1d-7121-83ac-809216ae8e56",
+      "slug": "the-pale-beyond",
+      "title": "The Pale Beyond",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/boxart.jpg?t=1790576411",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner145.jpg?t=1790576411",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner300.jpg?t=1790576412",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner400.jpg?t=1790576412",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner600.jpg?t=1790576413"
+      }
+     },
+     {
+      "id": "018d937f-6195-7055-ade5-57a467f9182a",
+      "slug": "lego-bricktales",
+      "title": "LEGO\u00ae Bricktales",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6195-7055-ade5-57a467f9182a/boxart.jpg?t=1789156834",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6195-7055-ade5-57a467f9182a/banner145.jpg?t=1789156834",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6195-7055-ade5-57a467f9182a/banner300.jpg?t=1789156834",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6195-7055-ade5-57a467f9182a/banner400.jpg?t=1789156834",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6195-7055-ade5-57a467f9182a/banner600.jpg?t=1789156834"
+      }
+     },
+     {
+      "id": "018d937f-696d-7068-a8be-10d17e7a1e39",
+      "slug": "amnesia-the-bunker",
+      "title": "Amnesia: The Bunker",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-696d-7068-a8be-10d17e7a1e39/boxart.jpg?t=1786609507",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-696d-7068-a8be-10d17e7a1e39/banner145.jpg?t=1786609508",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-696d-7068-a8be-10d17e7a1e39/banner300.jpg?t=1786609508",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-696d-7068-a8be-10d17e7a1e39/banner400.jpg?t=1786609508",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-696d-7068-a8be-10d17e7a1e39/banner600.jpg?t=1786609508"
+      }
+     },
+     {
+      "id": "018d937f-6983-7219-be6a-15ccaea0cf60",
+      "slug": "steamworld-build",
+      "title": "SteamWorld Build",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6983-7219-be6a-15ccaea0cf60/boxart.jpg?t=1786754443",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6983-7219-be6a-15ccaea0cf60/banner145.jpg?t=1786754443",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6983-7219-be6a-15ccaea0cf60/banner300.jpg?t=1786754443",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6983-7219-be6a-15ccaea0cf60/banner400.jpg?t=1786754443",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6983-7219-be6a-15ccaea0cf60/banner600.jpg?t=1786754444"
+      }
+     },
+     {
+      "id": "018d937f-6ee7-7261-93d8-0a6c485a5515",
+      "slug": "botany-manor",
+      "title": "Botany Manor",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/boxart.jpg?t=1786554642",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner145.jpg?t=1786554642",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner300.jpg?t=1786554642",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner400.jpg?t=1786554642",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ee7-7261-93d8-0a6c485a5515/banner600.jpg?t=1786554642"
+      }
+     },
+     {
+      "id": "018d937f-6ef1-73d9-ad41-390d2e2f8900",
+      "slug": "edge-of-sanity",
+      "title": "Edge of Sanity",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ef1-73d9-ad41-390d2e2f8900/boxart.jpg?t=1789500915",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ef1-73d9-ad41-390d2e2f8900/banner145.jpg?t=1789500915",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ef1-73d9-ad41-390d2e2f8900/banner300.jpg?t=1789500915",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ef1-73d9-ad41-390d2e2f8900/banner400.jpg?t=1789500915",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ef1-73d9-ad41-390d2e2f8900/banner600.jpg?t=1789500915"
+      }
+     },
+     {
+      "id": "018d937f-6ef2-7274-87cd-6aaa370bb220",
+      "slug": "the-isle-tide-hotel",
+      "title": "The Isle Tide Hotel",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/boxart.jpg?t=1786210621",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner145.jpg?t=1786210621",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner300.jpg?t=1786210621",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner400.jpg?t=1786210621",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner600.jpg?t=1786210621"
+      }
+     },
+     {
+      "id": "018d937f-6f9d-7381-887c-5126f628a107",
+      "slug": "dungeon-tycoon",
+      "title": "Dungeon Tycoon",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6f9d-7381-887c-5126f628a107/boxart.jpg?t=1789677011",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6f9d-7381-887c-5126f628a107/banner145.jpg?t=1789677011",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6f9d-7381-887c-5126f628a107/banner300.jpg?t=1789677011",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6f9d-7381-887c-5126f628a107/banner400.jpg?t=1789677011",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6f9d-7381-887c-5126f628a107/banner600.jpg?t=1789677011"
+      }
+     },
+     {
+      "id": "018d937f-7058-7020-af65-d0fc332aa42f",
+      "slug": "endless-alice",
+      "title": "Endless Alice",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/boxart.jpg?t=1788810307",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner145.jpg?t=1788810307",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner300.jpg?t=1788810307",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner400.jpg?t=1788810307",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner600.jpg?t=1788810307"
+      }
+     },
+     {
+      "id": "018d937f-739d-70c3-8b88-878f0fc9fbc9",
+      "slug": "mini-settlers",
+      "title": "Mini Settlers",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-739d-70c3-8b88-878f0fc9fbc9/boxart.jpg?t=1787583315",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-739d-70c3-8b88-878f0fc9fbc9/banner145.jpg?t=1787583315",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-739d-70c3-8b88-878f0fc9fbc9/banner300.jpg?t=1787583316",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-739d-70c3-8b88-878f0fc9fbc9/banner400.jpg?t=1787583316",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-739d-70c3-8b88-878f0fc9fbc9/banner600.jpg?t=1787583316"
+      }
+     },
+     {
+      "id": "018d937f-7a20-701d-b827-565065a3606e",
+      "slug": "neongarten",
+      "title": "Neongarten",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7a20-701d-b827-565065a3606e/boxart.jpg?t=1787233522",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7a20-701d-b827-565065a3606e/banner145.jpg?t=1787233522",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7a20-701d-b827-565065a3606e/banner300.jpg?t=1787233522",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7a20-701d-b827-565065a3606e/banner400.jpg?t=1787233522",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7a20-701d-b827-565065a3606e/banner600.jpg?t=1787233522"
+      }
+     },
+     {
+      "id": "018d937f-7b13-7325-845c-6f7e2c6acbc5",
+      "slug": "reveil",
+      "title": "REVEIL",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7b13-7325-845c-6f7e2c6acbc5/boxart.jpg?t=1789495818",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7b13-7325-845c-6f7e2c6acbc5/banner145.jpg?t=1789495819",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7b13-7325-845c-6f7e2c6acbc5/banner300.jpg?t=1789495819",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7b13-7325-845c-6f7e2c6acbc5/banner400.jpg?t=1789495819",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7b13-7325-845c-6f7e2c6acbc5/banner600.jpg?t=1789495819"
+      }
+     },
+     {
+      "id": "01956c3d-4805-7287-85ec-72c1f244df8a",
+      "slug": "steamworld-classics-bundle",
+      "title": "SteamWorld Classics Bundle",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "banner145": "https://assets.isthereanydeal.com/01956c3d-4805-7287-85ec-72c1f244df8a/banner145.jpg?t=1741278011",
+       "banner300": "https://assets.isthereanydeal.com/01956c3d-4805-7287-85ec-72c1f244df8a/banner300.jpg?t=1741278011",
+       "banner400": "https://assets.isthereanydeal.com/01956c3d-4805-7287-85ec-72c1f244df8a/banner400.jpg?t=1741278011"
+      }
+     }
+    ]
+   },
+   {
+    "price": null,
+    "addon": false,
+    "games": []
+   }
+  ]
+ },
+ {
+  "id": 15485,
+  "title": "Cosmic Mysteries & Noir Realities Bundle",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fgames%2Fcosmic-mysteries-noir-realities",
+  "details": "https://isthereanydeal.com/bundles/15485/",
+  "isMature": false,
+  "publish": "2025-10-10T20:07:54+02:00",
+  "expiry": "2025-11-01T02:00:47+01:00",
+  "note": null,
+  "counts": {
+   "games": 8,
+   "media": 0
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 3,
+     "amountInt": 300,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-1593-71e7-99e1-dfb22388ebee",
+      "slug": "genesis-noir",
+      "title": "Genesis Noir",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1593-71e7-99e1-dfb22388ebee/boxart.jpg?t=1789960805",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1593-71e7-99e1-dfb22388ebee/banner145.jpg?t=1789960806",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1593-71e7-99e1-dfb22388ebee/banner300.jpg?t=1789960806",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1593-71e7-99e1-dfb22388ebee/banner400.jpg?t=1789960806",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1593-71e7-99e1-dfb22388ebee/banner600.jpg?t=1789960807"
+      }
+     },
+     {
+      "id": "018d937f-15e8-7344-a45f-ef515625f3c5",
+      "slug": "tales-of-the-neon-sea",
+      "title": "Tales of the Neon Sea",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-15e8-7344-a45f-ef515625f3c5/boxart.jpg?t=1786406426",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-15e8-7344-a45f-ef515625f3c5/banner145.jpg?t=1786406426",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-15e8-7344-a45f-ef515625f3c5/banner300.jpg?t=1786406426",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-15e8-7344-a45f-ef515625f3c5/banner400.jpg?t=1786406426",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-15e8-7344-a45f-ef515625f3c5/banner600.jpg?t=1786406426"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 6,
+     "amountInt": 600,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5a65-70dc-ba0e-42adce2cac92",
+      "slug": "glitchhikers-the-spaces-between",
+      "title": "Glitchhikers: The Spaces Between",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5a65-70dc-ba0e-42adce2cac92/boxart.jpg?t=1787734536",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5a65-70dc-ba0e-42adce2cac92/banner145.jpg?t=1787734536",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5a65-70dc-ba0e-42adce2cac92/banner300.jpg?t=1787734536",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5a65-70dc-ba0e-42adce2cac92/banner400.jpg?t=1787734536",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5a65-70dc-ba0e-42adce2cac92/banner600.jpg?t=1787734536"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 10,
+     "amountInt": 1000,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-4616-70e8-9a4c-a6a9d06c74ce",
+      "slug": "strangeland",
+      "title": "Strangeland",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4616-70e8-9a4c-a6a9d06c74ce/boxart.jpg?t=1789677633",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4616-70e8-9a4c-a6a9d06c74ce/banner145.jpg?t=1789677633",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4616-70e8-9a4c-a6a9d06c74ce/banner300.jpg?t=1789677633",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4616-70e8-9a4c-a6a9d06c74ce/banner400.jpg?t=1789677633",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4616-70e8-9a4c-a6a9d06c74ce/banner600.jpg?t=1789677633"
+      }
+     },
+     {
+      "id": "018d937f-497e-73b4-aae5-7e9c72625cd6",
+      "slug": "chicken-police-paint-it-red",
+      "title": "Chicken Police - Paint it RED",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-497e-73b4-aae5-7e9c72625cd6/boxart.jpg?t=1791462615",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-497e-73b4-aae5-7e9c72625cd6/banner145.jpg?t=1791462616",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-497e-73b4-aae5-7e9c72625cd6/banner300.jpg?t=1791462616",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-497e-73b4-aae5-7e9c72625cd6/banner400.jpg?t=1791462616",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-497e-73b4-aae5-7e9c72625cd6/banner600.jpg?t=1791462616"
+      }
+     },
+     {
+      "id": "018d937f-4d05-700c-9002-d0f37c170dc9",
+      "slug": "norco",
+      "title": "NORCO",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4d05-700c-9002-d0f37c170dc9/boxart.jpg?t=1787533221",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4d05-700c-9002-d0f37c170dc9/banner145.jpg?t=1787533221",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4d05-700c-9002-d0f37c170dc9/banner300.jpg?t=1787533221",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4d05-700c-9002-d0f37c170dc9/banner400.jpg?t=1787533221",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4d05-700c-9002-d0f37c170dc9/banner600.jpg?t=1787533221"
+      }
+     },
+     {
+      "id": "018d937f-64fa-73cc-9770-d9b75daa0bc0",
+      "slug": "the-excavation-of-hobs-barrow",
+      "title": "The Excavation of Hob's Barrow",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-64fa-73cc-9770-d9b75daa0bc0/boxart.jpg?t=1790079926",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-64fa-73cc-9770-d9b75daa0bc0/banner145.jpg?t=1790079926",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-64fa-73cc-9770-d9b75daa0bc0/banner300.jpg?t=1790079926",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-64fa-73cc-9770-d9b75daa0bc0/banner400.jpg?t=1790079926",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-64fa-73cc-9770-d9b75daa0bc0/banner600.jpg?t=1790079926"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 15391,
+  "title": "Build Your Own Platinum Collection Bundle (Sep 2025)",
+  "page": {
+   "id": 8,
+   "name": "Fanatical",
+   "shopId": 6
+  },
+  "url": "https://www.awin1.com/cread.php?awinmid=118821&awinaffid=235265&ued=https%3A%2F%2Fwww.fanatical.com%2Fen%2Fpick-and-mix%2Fplatinum-collection-build-your-own-bundle",
+  "details": "https://isthereanydeal.com/bundles/15391/",
+  "isMature": false,
+  "publish": "2025-09-04T16:23:05+02:00",
+  "expiry": "2025-10-02T14:53:15+02:00",
+  "note": "(USD) 3+ games = 3.33 each; 5+ games = 3.00 each; 7+ games = 2.86 each.",
+  "counts": {
+   "games": 17,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 9.99,
+     "amountInt": 999,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-f4a2-73ac-acc3-c8ad816458c0",
+      "slug": "flashing-lights-police-fire-ems",
+      "title": "Flashing Lights - Police, Fire, EMS",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-f4a2-73ac-acc3-c8ad816458c0/boxart.jpg?t=1790341509",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-f4a2-73ac-acc3-c8ad816458c0/banner145.jpg?t=1790341509",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-f4a2-73ac-acc3-c8ad816458c0/banner300.jpg?t=1790341509",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-f4a2-73ac-acc3-c8ad816458c0/banner400.jpg?t=1790341509",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-f4a2-73ac-acc3-c8ad816458c0/banner600.jpg?t=1790341509"
+      }
+     },
+     {
+      "id": "018d937f-362e-70cd-a1ad-d31f21e6ef9d",
+      "slug": "dysmantle",
+      "title": "DYSMANTLE",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/boxart.jpg?t=1788819028",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner145.jpg?t=1788819028",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner300.jpg?t=1788819028",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner400.jpg?t=1788819028",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner600.jpg?t=1788819028"
+      }
+     },
+     {
+      "id": "018d937f-3a74-7076-9535-190f259b2552",
+      "slug": "the-final-earth-2",
+      "title": "The Final Earth 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3a74-7076-9535-190f259b2552/boxart.jpg?t=1787627721",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3a74-7076-9535-190f259b2552/banner145.jpg?t=1787627721",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3a74-7076-9535-190f259b2552/banner300.jpg?t=1787627721",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3a74-7076-9535-190f259b2552/banner400.jpg?t=1787627721",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3a74-7076-9535-190f259b2552/banner600.jpg?t=1787627721"
+      }
+     },
+     {
+      "id": "018d937f-3ccf-7153-987c-672106ad19f9",
+      "slug": "paradise-killer",
+      "title": "Paradise Killer",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/boxart.jpg?t=1787732408",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner145.jpg?t=1787732408",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner300.jpg?t=1787732408",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner400.jpg?t=1787732408",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner600.jpg?t=1787732408"
+      }
+     },
+     {
+      "id": "018d937f-4678-7202-96ce-9715f8634909",
+      "slug": "time-to-morp",
+      "title": "Time to Morp",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4678-7202-96ce-9715f8634909/boxart.jpg?t=1786683640",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4678-7202-96ce-9715f8634909/banner145.jpg?t=1786683641",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4678-7202-96ce-9715f8634909/banner300.jpg?t=1786683641",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4678-7202-96ce-9715f8634909/banner400.jpg?t=1786683641",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4678-7202-96ce-9715f8634909/banner600.jpg?t=1786683641"
+      }
+     },
+     {
+      "id": "018d937f-4866-7228-8117-e40f54fec29e",
+      "slug": "indoorlands",
+      "title": "Indoorlands",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4866-7228-8117-e40f54fec29e/boxart.jpg?t=1786385768",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4866-7228-8117-e40f54fec29e/banner145.jpg?t=1786385768",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4866-7228-8117-e40f54fec29e/banner300.jpg?t=1786385768",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4866-7228-8117-e40f54fec29e/banner400.jpg?t=1786385768",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4866-7228-8117-e40f54fec29e/banner600.jpg?t=1786385768"
+      }
+     },
+     {
+      "id": "018d937f-4a1c-7142-b3d3-863e1cdf3d49",
+      "slug": "few-nights-more",
+      "title": "Few Nights More",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4a1c-7142-b3d3-863e1cdf3d49/boxart.jpg?t=1789756228",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4a1c-7142-b3d3-863e1cdf3d49/banner145.jpg?t=1789756228",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4a1c-7142-b3d3-863e1cdf3d49/banner300.jpg?t=1789756228",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4a1c-7142-b3d3-863e1cdf3d49/banner400.jpg?t=1789756228",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4a1c-7142-b3d3-863e1cdf3d49/banner600.jpg?t=1789756228"
+      }
+     },
+     {
+      "id": "018d937f-500f-706a-9e9d-32a6ed2b9032",
+      "slug": "plateup",
+      "title": "PlateUp!",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-500f-706a-9e9d-32a6ed2b9032/boxart.jpg?t=1792668028",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-500f-706a-9e9d-32a6ed2b9032/banner145.jpg?t=1792668028",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-500f-706a-9e9d-32a6ed2b9032/banner300.jpg?t=1792668028",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-500f-706a-9e9d-32a6ed2b9032/banner400.jpg?t=1792668028",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-500f-706a-9e9d-32a6ed2b9032/banner600.jpg?t=1792668029"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5c1d-7121-83ac-809216ae8e56",
+      "slug": "the-pale-beyond",
+      "title": "The Pale Beyond",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/boxart.jpg?t=1790576411",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner145.jpg?t=1790576411",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner300.jpg?t=1790576412",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner400.jpg?t=1790576412",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5c1d-7121-83ac-809216ae8e56/banner600.jpg?t=1790576413"
+      }
+     },
+     {
+      "id": "018d937f-6123-7361-9a4f-df74901c5b32",
+      "slug": "rustler-complete-edition",
+      "title": "Rustler: Complete Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6123-7361-9a4f-df74901c5b32/boxart.jpg?t=1786210552",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6123-7361-9a4f-df74901c5b32/banner145.jpg?t=1786210552",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6123-7361-9a4f-df74901c5b32/banner300.jpg?t=1786210552",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6123-7361-9a4f-df74901c5b32/banner400.jpg?t=1786210552",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6123-7361-9a4f-df74901c5b32/banner600.jpg?t=1786210553"
+      }
+     },
+     {
+      "id": "018d937f-6ef2-7274-87cd-6aaa370bb220",
+      "slug": "the-isle-tide-hotel",
+      "title": "The Isle Tide Hotel",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/boxart.jpg?t=1786210621",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner145.jpg?t=1786210621",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner300.jpg?t=1786210621",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner400.jpg?t=1786210621",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ef2-7274-87cd-6aaa370bb220/banner600.jpg?t=1786210621"
+      }
+     },
+     {
+      "id": "018d937f-7058-7020-af65-d0fc332aa42f",
+      "slug": "endless-alice",
+      "title": "Endless Alice",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/boxart.jpg?t=1788810307",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner145.jpg?t=1788810307",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner300.jpg?t=1788810307",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner400.jpg?t=1788810307",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7058-7020-af65-d0fc332aa42f/banner600.jpg?t=1788810307"
+      }
+     },
+     {
+      "id": "018d937f-75a4-7190-a446-db57b6cb6141",
+      "slug": "stray-path",
+      "title": "Stray Path",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-75a4-7190-a446-db57b6cb6141/boxart.jpg?t=1792646116",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-75a4-7190-a446-db57b6cb6141/banner145.jpg?t=1792646116",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-75a4-7190-a446-db57b6cb6141/banner300.jpg?t=1792646117",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-75a4-7190-a446-db57b6cb6141/banner400.jpg?t=1792646117",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-75a4-7190-a446-db57b6cb6141/banner600.jpg?t=1792646118"
+      }
+     },
+     {
+      "id": "018e3312-714f-7298-b966-7546bf411bb4",
+      "slug": "border-pioneer",
+      "title": "Border Pioneer",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018e3312-714f-7298-b966-7546bf411bb4/boxart.jpg?t=1792644031",
+       "banner145": "https://assets.isthereanydeal.com/018e3312-714f-7298-b966-7546bf411bb4/banner145.jpg?t=1792644031",
+       "banner300": "https://assets.isthereanydeal.com/018e3312-714f-7298-b966-7546bf411bb4/banner300.jpg?t=1792644032",
+       "banner400": "https://assets.isthereanydeal.com/018e3312-714f-7298-b966-7546bf411bb4/banner400.jpg?t=1792644032",
+       "banner600": "https://assets.isthereanydeal.com/018e3312-714f-7298-b966-7546bf411bb4/banner600.jpg?t=1792644032"
+      }
+     },
+     {
+      "id": "0192fefc-b496-72a9-b32d-d9a1d1276536",
+      "slug": "rogue-loops",
+      "title": "Rogue Loops",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/0192fefc-b496-72a9-b32d-d9a1d1276536/boxart.jpg?t=1790017212",
+       "banner145": "https://assets.isthereanydeal.com/0192fefc-b496-72a9-b32d-d9a1d1276536/banner145.jpg?t=1790017212",
+       "banner300": "https://assets.isthereanydeal.com/0192fefc-b496-72a9-b32d-d9a1d1276536/banner300.jpg?t=1790017212",
+       "banner400": "https://assets.isthereanydeal.com/0192fefc-b496-72a9-b32d-d9a1d1276536/banner400.jpg?t=1790017212",
+       "banner600": "https://assets.isthereanydeal.com/0192fefc-b496-72a9-b32d-d9a1d1276536/banner600.jpg?t=1790017213"
+      }
+     },
+     {
+      "id": "019914d9-57e1-7061-891b-0c4f60388c68",
+      "slug": "mayhem-brawler-and-final-vendetta-double-pack",
+      "title": "Mayhem Brawler + Final Vendetta Double Pack",
+      "type": null,
+      "mature": false,
+      "assets": {
+       "banner145": "https://assets.isthereanydeal.com/019914d9-57e1-7061-891b-0c4f60388c68/banner145.jpg?t=1757059809",
+       "banner300": "https://assets.isthereanydeal.com/019914d9-57e1-7061-891b-0c4f60388c68/banner300.jpg?t=1757059809",
+       "banner400": "https://assets.isthereanydeal.com/019914d9-57e1-7061-891b-0c4f60388c68/banner400.jpg?t=1757059809"
+      }
+     }
+    ]
+   },
+   {
+    "price": null,
+    "addon": false,
+    "games": []
+   }
+  ]
+ },
+ {
+  "id": 15017,
+  "title": "Dice & Destiny Bundle",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fgames%2Fdice-and-destiny",
+  "details": "https://isthereanydeal.com/bundles/15017/",
+  "isMature": false,
+  "publish": "2025-03-26T20:04:47+01:00",
+  "expiry": "2025-04-17T02:59:40+02:00",
+  "note": "Some proceeds go to care.org",
+  "counts": {
+   "games": 6,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 7,
+     "amountInt": 700,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-12f1-70b3-ba20-66463a103c98",
+      "slug": "pillars-of-eternity-definitive-edition",
+      "title": "Pillars of Eternity Definitive Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/boxart.jpg?t=1786642858",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner145.jpg?t=1786642858",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner300.jpg?t=1786642858",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner400.jpg?t=1786642858",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-12f1-70b3-ba20-66463a103c98/banner600.jpg?t=1786642858"
+      }
+     },
+     {
+      "id": "018d937f-3c5a-7309-9b5c-bee915f8ea7b",
+      "slug": "roadwarden",
+      "title": "Roadwarden",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/boxart.jpg?t=1787002556",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner145.jpg?t=1787002556",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner300.jpg?t=1787002556",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner400.jpg?t=1787002556",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3c5a-7309-9b5c-bee915f8ea7b/banner600.jpg?t=1787002556"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 10,
+     "amountInt": 1000,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-0a0c-70ee-bbc3-86f29dd16d35",
+      "slug": "pillars-of-eternity-ii-deadfire-obsidian-edition",
+      "title": "Pillars of Eternity II: Deadfire Obsidian Edition",
+      "type": "package",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/boxart.jpg?t=1786642221",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner145.jpg?t=1786642221",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner300.jpg?t=1786642222",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner400.jpg?t=1786642222",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-0a0c-70ee-bbc3-86f29dd16d35/banner600.jpg?t=1786642222"
+      }
+     },
+     {
+      "id": "018d937f-58dc-71f2-a401-8c665db6bc09",
+      "slug": "citizen-sleeper",
+      "title": "Citizen Sleeper",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/boxart.jpg?t=1789671017",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner145.jpg?t=1789671017",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner300.jpg?t=1789671017",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner400.jpg?t=1789671017",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-58dc-71f2-a401-8c665db6bc09/banner600.jpg?t=1789671017"
+      }
+     }
+    ]
+   },
+   {
+    "price": {
+     "amount": 13,
+     "amountInt": 1300,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-464a-70ca-bf5b-2ee4abf29acc",
+      "slug": "broken-roads",
+      "title": "Broken Roads",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/boxart.jpg?t=1786655150",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner145.jpg?t=1786655150",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner300.jpg?t=1786655150",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner400.jpg?t=1786655150",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-464a-70ca-bf5b-2ee4abf29acc/banner600.jpg?t=1786655150"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 13686,
+  "title": "Prestige Collection Build Your Own Bundle (Winter 2023)",
+  "page": {
+   "id": 8,
+   "name": "Fanatical",
+   "shopId": 6
+  },
+  "url": "https://www.awin1.com/cread.php?awinmid=118821&awinaffid=235265&ued=https%3A%2F%2Fwww.fanatical.com%2Fen%2Fpick-and-mix%2Fprestige-collection-build-your-own-bundle",
+  "details": "https://isthereanydeal.com/bundles/13686/",
+  "isMature": false,
+  "publish": "2023-12-08T16:26:58+01:00",
+  "expiry": "2024-02-01T00:55:00+01:00",
+  "note": null,
+  "counts": {
+   "games": 27,
+   "media": 1
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 14.99,
+     "amountInt": 1499,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937e-fcf7-7048-b82f-558a4db5883c",
+      "slug": "phoenix-wright-ace-attorney-trilogy",
+      "title": "Phoenix Wright: Ace Attorney Trilogy",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937e-fcf7-7048-b82f-558a4db5883c/boxart.jpg?t=1788246360",
+       "banner145": "https://assets.isthereanydeal.com/018d937e-fcf7-7048-b82f-558a4db5883c/banner145.jpg?t=1788246360",
+       "banner300": "https://assets.isthereanydeal.com/018d937e-fcf7-7048-b82f-558a4db5883c/banner300.jpg?t=1788246360",
+       "banner400": "https://assets.isthereanydeal.com/018d937e-fcf7-7048-b82f-558a4db5883c/banner400.jpg?t=1788246360",
+       "banner600": "https://assets.isthereanydeal.com/018d937e-fcf7-7048-b82f-558a4db5883c/banner600.jpg?t=1788246360"
+      }
+     },
+     {
+      "id": "018d937f-09d2-716c-8840-0fb4fde1cfaf",
+      "slug": "ghostrunner",
+      "title": "Ghostrunner",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-09d2-716c-8840-0fb4fde1cfaf/boxart.jpg?t=1786382464",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-09d2-716c-8840-0fb4fde1cfaf/banner145.jpg?t=1786382464",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-09d2-716c-8840-0fb4fde1cfaf/banner300.jpg?t=1786382464",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-09d2-716c-8840-0fb4fde1cfaf/banner400.jpg?t=1786382464",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-09d2-716c-8840-0fb4fde1cfaf/banner600.jpg?t=1786382464"
+      }
+     },
+     {
+      "id": "018d937f-2b35-72da-b450-6bde24754e0e",
+      "slug": "greedfall",
+      "title": "GreedFall",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2b35-72da-b450-6bde24754e0e/boxart.jpg?t=1786384588",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2b35-72da-b450-6bde24754e0e/banner145.jpg?t=1786384588",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2b35-72da-b450-6bde24754e0e/banner300.jpg?t=1786384588",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2b35-72da-b450-6bde24754e0e/banner400.jpg?t=1786384588",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2b35-72da-b450-6bde24754e0e/banner600.jpg?t=1786384588"
+      }
+     },
+     {
+      "id": "018d937f-2d32-71b9-8be8-145d7bd20ceb",
+      "slug": "bloodstained-ritual-of-the-night",
+      "title": "Bloodstained: Ritual of the Night",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2d32-71b9-8be8-145d7bd20ceb/boxart.jpg?t=1789002330",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2d32-71b9-8be8-145d7bd20ceb/banner145.jpg?t=1789002330",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2d32-71b9-8be8-145d7bd20ceb/banner300.jpg?t=1789002330",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2d32-71b9-8be8-145d7bd20ceb/banner400.jpg?t=1789002330",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2d32-71b9-8be8-145d7bd20ceb/banner600.jpg?t=1789002330"
+      }
+     },
+     {
+      "id": "018d937f-2d67-70cb-8706-8c3c9f701c07",
+      "slug": "the-forgotten-city",
+      "title": "The Forgotten City",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/boxart.jpg?t=1786584620",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner145.jpg?t=1786584620",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner300.jpg?t=1786584620",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner400.jpg?t=1786584620",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner600.jpg?t=1786584620"
+      }
+     },
+     {
+      "id": "018d937f-2e9a-70fc-9c2e-565a87c8917b",
+      "slug": "a-plague-tale-innocence",
+      "title": "A Plague Tale: Innocence",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2e9a-70fc-9c2e-565a87c8917b/boxart.jpg?t=1788469825",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2e9a-70fc-9c2e-565a87c8917b/banner145.jpg?t=1788469825",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2e9a-70fc-9c2e-565a87c8917b/banner300.jpg?t=1788469825",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2e9a-70fc-9c2e-565a87c8917b/banner400.jpg?t=1788469825",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2e9a-70fc-9c2e-565a87c8917b/banner600.jpg?t=1788469825"
+      }
+     },
+     {
+      "id": "018d937f-3592-70a1-8934-a495c90387a4",
+      "slug": "assetto-corsa-competizione",
+      "title": "Assetto Corsa Competizione",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3592-70a1-8934-a495c90387a4/boxart.jpg?t=1789091720",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3592-70a1-8934-a495c90387a4/banner145.jpg?t=1789091720",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3592-70a1-8934-a495c90387a4/banner300.jpg?t=1789091720",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3592-70a1-8934-a495c90387a4/banner400.jpg?t=1789091720",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3592-70a1-8934-a495c90387a4/banner600.jpg?t=1789091720"
+      }
+     },
+     {
+      "id": "018d937f-362e-70cd-a1ad-d31f21e6ef9d",
+      "slug": "dysmantle",
+      "title": "DYSMANTLE",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/boxart.jpg?t=1788819028",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner145.jpg?t=1788819028",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner300.jpg?t=1788819028",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner400.jpg?t=1788819028",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-362e-70cd-a1ad-d31f21e6ef9d/banner600.jpg?t=1788819028"
+      }
+     },
+     {
+      "id": "018d937f-3837-71ba-a211-9c3bace18313",
+      "slug": "spin-rhythm-xd",
+      "title": "Spin Rhythm XD",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3837-71ba-a211-9c3bace18313/boxart.jpg?t=1786566332",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3837-71ba-a211-9c3bace18313/banner145.jpg?t=1786566332",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3837-71ba-a211-9c3bace18313/banner300.jpg?t=1786566332",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3837-71ba-a211-9c3bace18313/banner400.jpg?t=1786566332",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3837-71ba-a211-9c3bace18313/banner600.jpg?t=1786566332"
+      }
+     },
+     {
+      "id": "018d937f-3a48-70b5-a889-444238b52c12",
+      "slug": "gordian-quest",
+      "title": "Gordian Quest",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3a48-70b5-a889-444238b52c12/boxart.jpg?t=1791974418",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3a48-70b5-a889-444238b52c12/banner145.jpg?t=1791974419",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3a48-70b5-a889-444238b52c12/banner300.jpg?t=1791974419",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3a48-70b5-a889-444238b52c12/banner400.jpg?t=1791974419",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3a48-70b5-a889-444238b52c12/banner600.jpg?t=1791974420"
+      }
+     },
+     {
+      "id": "018d937f-4202-71b0-98d0-97787c5e6f81",
+      "slug": "bzzzt",
+      "title": "Bzzzt",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4202-71b0-98d0-97787c5e6f81/boxart.jpg?t=1786986308",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4202-71b0-98d0-97787c5e6f81/banner145.jpg?t=1786986308",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4202-71b0-98d0-97787c5e6f81/banner300.jpg?t=1786986308",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4202-71b0-98d0-97787c5e6f81/banner400.jpg?t=1786986308",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4202-71b0-98d0-97787c5e6f81/banner600.jpg?t=1786986308"
+      }
+     },
+     {
+      "id": "018d937f-426e-7234-8b8b-4c331a91412b",
+      "slug": "mechwarrior-5-mercenaries",
+      "title": "MechWarrior 5: Mercenaries",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-426e-7234-8b8b-4c331a91412b/boxart.jpg?t=1791323116",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-426e-7234-8b8b-4c331a91412b/banner145.jpg?t=1791323116",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-426e-7234-8b8b-4c331a91412b/banner300.jpg?t=1791323116",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-426e-7234-8b8b-4c331a91412b/banner400.jpg?t=1791323116",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-426e-7234-8b8b-4c331a91412b/banner600.jpg?t=1791323116"
+      }
+     },
+     {
+      "id": "018d937f-42a2-7375-9070-38b59221ee3b",
+      "slug": "shantae-and-the-seven-sirens",
+      "title": "Shantae and the Seven Sirens",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-42a2-7375-9070-38b59221ee3b/boxart.jpg?t=1790918541",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-42a2-7375-9070-38b59221ee3b/banner145.jpg?t=1790918541",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-42a2-7375-9070-38b59221ee3b/banner300.jpg?t=1790918541",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-42a2-7375-9070-38b59221ee3b/banner400.jpg?t=1790918541",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-42a2-7375-9070-38b59221ee3b/banner600.jpg?t=1790918541"
+      }
+     },
+     {
+      "id": "018d937f-4614-7311-8f5e-54720a2e73c2",
+      "slug": "control-ultimate-edition",
+      "title": "Control Ultimate Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4614-7311-8f5e-54720a2e73c2/boxart.jpg?t=1786646487",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4614-7311-8f5e-54720a2e73c2/banner145.jpg?t=1786646487",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4614-7311-8f5e-54720a2e73c2/banner300.jpg?t=1786646487",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4614-7311-8f5e-54720a2e73c2/banner400.jpg?t=1786646487",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4614-7311-8f5e-54720a2e73c2/banner600.jpg?t=1786646487"
+      }
+     },
+     {
+      "id": "018d937f-4c7f-7272-83cc-75045203d0d7",
+      "slug": "sprawl",
+      "title": "SPRAWL",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4c7f-7272-83cc-75045203d0d7/boxart.jpg?t=1786390936",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4c7f-7272-83cc-75045203d0d7/banner145.jpg?t=1786390936",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4c7f-7272-83cc-75045203d0d7/banner300.jpg?t=1786390936",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4c7f-7272-83cc-75045203d0d7/banner400.jpg?t=1786390936",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4c7f-7272-83cc-75045203d0d7/banner600.jpg?t=1786390936"
+      }
+     },
+     {
+      "id": "018d937f-4d09-70c0-8b59-5405b9e18988",
+      "slug": "necromunda-hired-gun",
+      "title": "Necromunda: Hired Gun",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4d09-70c0-8b59-5405b9e18988/boxart.jpg?t=1788459317",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4d09-70c0-8b59-5405b9e18988/banner145.jpg?t=1788459317",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4d09-70c0-8b59-5405b9e18988/banner300.jpg?t=1788459317",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4d09-70c0-8b59-5405b9e18988/banner400.jpg?t=1788459317",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4d09-70c0-8b59-5405b9e18988/banner600.jpg?t=1788459317"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5c96-7241-a70f-e8de1c1e0609",
+      "slug": "death-stranding-directors-cut",
+      "title": "DEATH STRANDING DIRECTOR'S CUT",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5c96-7241-a70f-e8de1c1e0609/boxart.jpg?t=1789076715",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5c96-7241-a70f-e8de1c1e0609/banner145.jpg?t=1789076715",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5c96-7241-a70f-e8de1c1e0609/banner300.jpg?t=1789076715",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5c96-7241-a70f-e8de1c1e0609/banner400.jpg?t=1789076716",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5c96-7241-a70f-e8de1c1e0609/banner600.jpg?t=1789076716"
+      }
+     },
+     {
+      "id": "018d937f-5cc2-7138-88fa-4c425049d58e",
+      "slug": "ghostwire-tokyo",
+      "title": "Ghostwire Tokyo",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5cc2-7138-88fa-4c425049d58e/boxart.jpg?t=1786674939",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5cc2-7138-88fa-4c425049d58e/banner145.jpg?t=1786674939",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5cc2-7138-88fa-4c425049d58e/banner300.jpg?t=1786674939",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5cc2-7138-88fa-4c425049d58e/banner400.jpg?t=1786674939",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5cc2-7138-88fa-4c425049d58e/banner600.jpg?t=1786674939"
+      }
+     },
+     {
+      "id": "018d937f-619e-7299-a1e3-db17247a6ecf",
+      "slug": "homebody",
+      "title": "Homebody",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-619e-7299-a1e3-db17247a6ecf/boxart.jpg?t=1761607584",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-619e-7299-a1e3-db17247a6ecf/banner145.jpg?t=1761607585",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-619e-7299-a1e3-db17247a6ecf/banner300.jpg?t=1761607585",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-619e-7299-a1e3-db17247a6ecf/banner400.jpg?t=1761607585",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-619e-7299-a1e3-db17247a6ecf/banner600.jpg?t=1761607585"
+      }
+     },
+     {
+      "id": "018d937f-619f-7277-83a4-4bdd6f89a281",
+      "slug": "sunday-gold",
+      "title": "Sunday Gold",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-619f-7277-83a4-4bdd6f89a281/boxart.jpg?t=1786396632",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-619f-7277-83a4-4bdd6f89a281/banner145.jpg?t=1786396632",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-619f-7277-83a4-4bdd6f89a281/banner300.jpg?t=1786396632",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-619f-7277-83a4-4bdd6f89a281/banner400.jpg?t=1786396632",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-619f-7277-83a4-4bdd6f89a281/banner600.jpg?t=1786396632"
+      }
+     },
+     {
+      "id": "018d937f-637f-717e-898e-4dbf3ddcc87e",
+      "slug": "the-entropy-centre",
+      "title": "The Entropy Centre",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-637f-717e-898e-4dbf3ddcc87e/boxart.jpg?t=1790989529",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-637f-717e-898e-4dbf3ddcc87e/banner145.jpg?t=1790989529",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-637f-717e-898e-4dbf3ddcc87e/banner300.jpg?t=1790989529",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-637f-717e-898e-4dbf3ddcc87e/banner400.jpg?t=1790989529",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-637f-717e-898e-4dbf3ddcc87e/banner600.jpg?t=1790989529"
+      }
+     },
+     {
+      "id": "018d937f-64b8-7338-a078-e0c7adcb35ab",
+      "slug": "fallout-76-the-pitt-deluxe-edition",
+      "title": "Fallout 76: The Pitt Deluxe Edition",
+      "type": null,
+      "mature": false,
+      "assets": {}
+     },
+     {
+      "id": "018d937f-66cd-724b-a937-3b0cdb1d3aec",
+      "slug": "ship-of-fools",
+      "title": "Ship of Fools",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-66cd-724b-a937-3b0cdb1d3aec/boxart.jpg?t=1786383032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-66cd-724b-a937-3b0cdb1d3aec/banner145.jpg?t=1786383032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-66cd-724b-a937-3b0cdb1d3aec/banner300.jpg?t=1786383032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-66cd-724b-a937-3b0cdb1d3aec/banner400.jpg?t=1786383032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-66cd-724b-a937-3b0cdb1d3aec/banner600.jpg?t=1786383032"
+      }
+     },
+     {
+      "id": "018d937f-6d2a-705b-ad90-65727cf9b6d7",
+      "slug": "hammerwatch-ii",
+      "title": "Hammerwatch II",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6d2a-705b-ad90-65727cf9b6d7/boxart.jpg?t=1787607671",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6d2a-705b-ad90-65727cf9b6d7/banner145.jpg?t=1787607671",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6d2a-705b-ad90-65727cf9b6d7/banner300.jpg?t=1787607671",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6d2a-705b-ad90-65727cf9b6d7/banner400.jpg?t=1787607671",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6d2a-705b-ad90-65727cf9b6d7/banner600.jpg?t=1787607671"
+      }
+     },
+     {
+      "id": "018d937f-6ef6-73c9-aeec-1b15c02c3ff2",
+      "slug": "double-dragon-gaiden-rise-of-the-dragons",
+      "title": "Double Dragon Gaiden: Rise Of The Dragons",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-6ef6-73c9-aeec-1b15c02c3ff2/boxart.jpg?t=1791326721",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-6ef6-73c9-aeec-1b15c02c3ff2/banner145.jpg?t=1791326721",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-6ef6-73c9-aeec-1b15c02c3ff2/banner300.jpg?t=1791326721",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-6ef6-73c9-aeec-1b15c02c3ff2/banner400.jpg?t=1791326721",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-6ef6-73c9-aeec-1b15c02c3ff2/banner600.jpg?t=1791326721"
+      }
+     },
+     {
+      "id": "018d937f-7829-7173-8d70-703fec94e4d6",
+      "slug": "resident-evil-3-2020",
+      "title": "RESIDENT EVIL 3 (2020)",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-7829-7173-8d70-703fec94e4d6/boxart.jpg?t=1790232004",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-7829-7173-8d70-703fec94e4d6/banner145.jpg?t=1790232004",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-7829-7173-8d70-703fec94e4d6/banner300.jpg?t=1790232004",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-7829-7173-8d70-703fec94e4d6/banner400.jpg?t=1790232004",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-7829-7173-8d70-703fec94e4d6/banner600.jpg?t=1790232004"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 13592,
+  "title": "IGN Editor's Choice: 9 and Above Club Bundle",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fgames%2Fign-editors-choice-9-and-above-club",
+  "details": "https://isthereanydeal.com/bundles/13592/",
+  "isMature": false,
+  "publish": "2023-11-01T20:39:07+01:00",
+  "expiry": "2023-11-23T03:00:00+01:00",
+  "note": null,
+  "counts": {
+   "games": 7,
+   "media": 2
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 16,
+     "amountInt": 1600,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-15d9-7086-9fe8-2e72efbc6e3c",
+      "slug": "wildermyth",
+      "title": "Wildermyth",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-15d9-7086-9fe8-2e72efbc6e3c/boxart.jpg?t=1786459820",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-15d9-7086-9fe8-2e72efbc6e3c/banner145.jpg?t=1786459820",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-15d9-7086-9fe8-2e72efbc6e3c/banner300.jpg?t=1786459820",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-15d9-7086-9fe8-2e72efbc6e3c/banner400.jpg?t=1786459820",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-15d9-7086-9fe8-2e72efbc6e3c/banner600.jpg?t=1786459820"
+      }
+     },
+     {
+      "id": "018d937f-1caf-70bb-ab3c-94638e1f96ed",
+      "slug": "grime",
+      "title": "GRIME",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-1caf-70bb-ab3c-94638e1f96ed/boxart.jpg?t=1790963150",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-1caf-70bb-ab3c-94638e1f96ed/banner145.jpg?t=1790963150",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-1caf-70bb-ab3c-94638e1f96ed/banner300.jpg?t=1790963150",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-1caf-70bb-ab3c-94638e1f96ed/banner400.jpg?t=1790963151",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-1caf-70bb-ab3c-94638e1f96ed/banner600.jpg?t=1790963151"
+      }
+     },
+     {
+      "id": "018d937f-2d67-70cb-8706-8c3c9f701c07",
+      "slug": "the-forgotten-city",
+      "title": "The Forgotten City",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/boxart.jpg?t=1786584620",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner145.jpg?t=1786584620",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner300.jpg?t=1786584620",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner400.jpg?t=1786584620",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2d67-70cb-8706-8c3c9f701c07/banner600.jpg?t=1786584620"
+      }
+     },
+     {
+      "id": "018d937f-3a69-719a-a766-acba4a891b96",
+      "slug": "chivalry-2",
+      "title": "Chivalry 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/boxart.jpg?t=1786390865",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner145.jpg?t=1786390865",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner300.jpg?t=1786390865",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner400.jpg?t=1786390865",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner600.jpg?t=1786390865"
+      }
+     },
+     {
+      "id": "018d937f-3ccf-7153-987c-672106ad19f9",
+      "slug": "paradise-killer",
+      "title": "Paradise Killer",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/boxart.jpg?t=1787732408",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner145.jpg?t=1787732408",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner300.jpg?t=1787732408",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner400.jpg?t=1787732408",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3ccf-7153-987c-672106ad19f9/banner600.jpg?t=1787732408"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     },
+     {
+      "id": "018d937f-5dbf-705c-b6b1-19bd76e2d45a",
+      "slug": "spiritfarer-farewell-edition",
+      "title": "Spiritfarer: Farewell Edition",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-5dbf-705c-b6b1-19bd76e2d45a/boxart.jpg?t=1788817829",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-5dbf-705c-b6b1-19bd76e2d45a/banner145.jpg?t=1788817829",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-5dbf-705c-b6b1-19bd76e2d45a/banner300.jpg?t=1788817829",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-5dbf-705c-b6b1-19bd76e2d45a/banner400.jpg?t=1788817829",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-5dbf-705c-b6b1-19bd76e2d45a/banner600.jpg?t=1788817829"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 13378,
+  "title": "Humble Choice (Aug 2023)",
+  "page": {
+   "id": 1,
+   "name": "Humble Bundle",
+   "shopId": 37
+  },
+  "url": "https://humblebundleinc.sjv.io/c/2545989/2091208/25796?u=https%3A%2F%2Fwww.humblebundle.com%2Fmembership%2Faugust-2023",
+  "details": "https://isthereanydeal.com/bundles/13378/",
+  "isMature": false,
+  "publish": "2023-08-01T20:03:42+02:00",
+  "expiry": "2023-09-05T19:00:00+02:00",
+  "note": "\u2022 8 titles for Humble Choice this month.\r\n\u2022 Receive discount in Humble Store for being an active subscriber: 1 month = 10% off, 3 months = 15% off, 6 months = 17% off, 12 months = 20% off.\r\n\u2022 Sales Tax/VAT may also be applicable.",
+  "counts": {
+   "games": 8,
+   "media": 2
+  },
+  "tiers": [
+   {
+    "price": {
+     "amount": 11.99,
+     "amountInt": 1199,
+     "currency": "USD"
+    },
+    "addon": false,
+    "games": [
+     {
+      "id": "018d937f-2b0f-72b3-b7f5-cd649f253f6f",
+      "slug": "hot-brass",
+      "title": "Hot Brass",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-2b0f-72b3-b7f5-cd649f253f6f/boxart.jpg?t=1787694901",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-2b0f-72b3-b7f5-cd649f253f6f/banner145.jpg?t=1787694902",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-2b0f-72b3-b7f5-cd649f253f6f/banner300.jpg?t=1787694902",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-2b0f-72b3-b7f5-cd649f253f6f/banner400.jpg?t=1787694902",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-2b0f-72b3-b7f5-cd649f253f6f/banner600.jpg?t=1787694902"
+      }
+     },
+     {
+      "id": "018d937f-3a69-719a-a766-acba4a891b96",
+      "slug": "chivalry-2",
+      "title": "Chivalry 2",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/boxart.jpg?t=1786390865",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner145.jpg?t=1786390865",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner300.jpg?t=1786390865",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner400.jpg?t=1786390865",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-3a69-719a-a766-acba4a891b96/banner600.jpg?t=1786390865"
+      }
+     },
+     {
+      "id": "018d937f-4288-705c-8a18-d31838ff5828",
+      "slug": "tin-can",
+      "title": "Tin Can",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4288-705c-8a18-d31838ff5828/boxart.jpg?t=1786644678",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4288-705c-8a18-d31838ff5828/banner145.jpg?t=1786644678",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4288-705c-8a18-d31838ff5828/banner300.jpg?t=1786644678",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4288-705c-8a18-d31838ff5828/banner400.jpg?t=1786644678",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4288-705c-8a18-d31838ff5828/banner600.jpg?t=1786644678"
+      }
+     },
+     {
+      "id": "018d937f-47f8-705a-89eb-9958e67c8def",
+      "slug": "suchart-genius-artist-simulator",
+      "title": "SuchArt: Genius Artist Simulator",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-47f8-705a-89eb-9958e67c8def/boxart.jpg?t=1787967027",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-47f8-705a-89eb-9958e67c8def/banner145.jpg?t=1787967027",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-47f8-705a-89eb-9958e67c8def/banner300.jpg?t=1787967027",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-47f8-705a-89eb-9958e67c8def/banner400.jpg?t=1787967027",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-47f8-705a-89eb-9958e67c8def/banner600.jpg?t=1787967027"
+      }
+     },
+     {
+      "id": "018d937f-4a26-7235-a34c-0ad6f855afce",
+      "slug": "road-96",
+      "title": "Road 96",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4a26-7235-a34c-0ad6f855afce/boxart.jpg?t=1786388746",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4a26-7235-a34c-0ad6f855afce/banner145.jpg?t=1786388746",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4a26-7235-a34c-0ad6f855afce/banner300.jpg?t=1786388746",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4a26-7235-a34c-0ad6f855afce/banner400.jpg?t=1786388746",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4a26-7235-a34c-0ad6f855afce/banner600.jpg?t=1786388746"
+      }
+     },
+     {
+      "id": "018d937f-4e97-70c3-9a07-3c3a86efaa0b",
+      "slug": "arcade-paradise",
+      "title": "Arcade Paradise",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-4e97-70c3-9a07-3c3a86efaa0b/boxart.jpg?t=1786210892",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-4e97-70c3-9a07-3c3a86efaa0b/banner145.jpg?t=1786210892",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-4e97-70c3-9a07-3c3a86efaa0b/banner300.jpg?t=1786210892",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-4e97-70c3-9a07-3c3a86efaa0b/banner400.jpg?t=1786210892",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-4e97-70c3-9a07-3c3a86efaa0b/banner600.jpg?t=1786210893"
+      }
+     },
+     {
+      "id": "018d937f-51cb-73f5-b45c-bf7fe89e69bf",
+      "slug": "trek-to-yomi",
+      "title": "Trek to Yomi",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51cb-73f5-b45c-bf7fe89e69bf/boxart.jpg?t=1788653737",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51cb-73f5-b45c-bf7fe89e69bf/banner145.jpg?t=1788653737",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51cb-73f5-b45c-bf7fe89e69bf/banner300.jpg?t=1788653737",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51cb-73f5-b45c-bf7fe89e69bf/banner400.jpg?t=1788653737",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51cb-73f5-b45c-bf7fe89e69bf/banner600.jpg?t=1788653737"
+      }
+     },
+     {
+      "id": "018d937f-51f4-727c-95c0-ba550d156c86",
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium - The Final Cut",
+      "type": "game",
+      "mature": false,
+      "assets": {
+       "boxart": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/boxart.jpg?t=1787172032",
+       "banner145": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner145.jpg?t=1787172032",
+       "banner300": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner300.jpg?t=1787172032",
+       "banner400": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner400.jpg?t=1787172032",
+       "banner600": "https://assets.isthereanydeal.com/018d937f-51f4-727c-95c0-ba550d156c86/banner600.jpg?t=1787172032"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

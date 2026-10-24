@@ -1,0 +1,52 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+  id-token: write          # PyPI trusted publishing
+
+jobs:
+  pypi:
+    # turn on once PyPI trusted publishing is set up: repository variable PUBLISH_PYPI = true
+    if: vars.PUBLISH_PYPI == 'true'
+    runs-on: ubuntu-latest
+    environment: pypi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build twine
+      - run: python -m build
+      - run: twine check dist/*
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  binaries:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            name: sift-windows-x64.exe
+          - os: macos-latest
+            name: sift-macos-arm64
+          - os: ubuntu-latest
+            name: sift-linux-x64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install . pyinstaller
+      - run: pyinstaller packaging/pyinstaller/sift.spec --noconfirm --distpath dist
+      - run: dist/sift --version
+        shell: bash
+      - name: Rename
+        shell: bash
+        run: mv dist/sift* "dist/${{ matrix.name }}"
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ matrix.name }}

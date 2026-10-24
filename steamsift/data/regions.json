@@ -1,0 +1,2475 @@
+{
+"AD": {
+"en": "Andorra",
+"ru": "Андорра",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"AE": {
+"en": "United Arab Emirates",
+"ru": "ОАЭ",
+"store": true,
+"group": null,
+"sample": [
+"139.92 AED",
+"13992"
+]
+},
+"AF": {
+"en": "Afghanistan",
+"ru": "Афганистан",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AG": {
+"en": "Antigua & Barbuda",
+"ru": "Антигуа и Барбуда",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AI": {
+"en": "Anguilla",
+"ru": "Ангилья",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AL": {
+"en": "Albania",
+"ru": "Албания",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"AM": {
+"en": "Armenia",
+"ru": "Армения",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"AN": {
+"en": "AN",
+"ru": "AN",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AO": {
+"en": "Angola",
+"ru": "Ангола",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AQ": {
+"en": "Antarctica",
+"ru": "Антарктида",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AR": {
+"en": "Argentina",
+"ru": "Аргентина",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"AS": {
+"en": "American Samoa",
+"ru": "Американское Самоа",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AT": {
+"en": "Austria",
+"ru": "Австрия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"AU": {
+"en": "Australia",
+"ru": "Австралия",
+"store": true,
+"group": null,
+"sample": [
+"A$ 59.95",
+"5995"
+]
+},
+"AW": {
+"en": "Aruba",
+"ru": "Аруба",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"AX": {
+"en": "Åland Islands",
+"ru": "Аландские о-ва",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"AZ": {
+"en": "Azerbaijan",
+"ru": "Азербайджан",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"BA": {
+"en": "Bosnia & Herzegovina",
+"ru": "Босния и Герцеговина",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"BB": {
+"en": "Barbados",
+"ru": "Барбадос",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BD": {
+"en": "Bangladesh",
+"ru": "Бангладеш",
+"store": true,
+"group": "SASIA-USD",
+"sample": [
+"$32.99",
+"3299"
+]
+},
+"BE": {
+"en": "Belgium",
+"ru": "Бельгия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"BF": {
+"en": "Burkina Faso",
+"ru": "Буркина-Фасо",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BG": {
+"en": "Bulgaria",
+"ru": "Болгария",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"BH": {
+"en": "Bahrain",
+"ru": "Бахрейн",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"BI": {
+"en": "Burundi",
+"ru": "Бурунди",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BJ": {
+"en": "Benin",
+"ru": "Бенин",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BL": {
+"en": "St. Barthélemy",
+"ru": "Сен-Бартелеми",
+"store": false,
+"group": null,
+"sample": null
+},
+"BM": {
+"en": "Bermuda",
+"ru": "Бермудские о-ва",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BN": {
+"en": "Brunei",
+"ru": "Бруней-Даруссалам",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BO": {
+"en": "Bolivia",
+"ru": "Боливия",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"BQ": {
+"en": "Caribbean Netherlands",
+"ru": "Бонэйр, Синт-Эстатиус и Саба",
+"store": false,
+"group": null,
+"sample": null
+},
+"BR": {
+"en": "Brazil",
+"ru": "Бразилия",
+"store": true,
+"group": null,
+"sample": [
+"R$169,00",
+"16900"
+]
+},
+"BS": {
+"en": "Bahamas",
+"ru": "Багамы",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BT": {
+"en": "Bhutan",
+"ru": "Бутан",
+"store": true,
+"group": "SASIA-USD",
+"sample": [
+"$32.99",
+"3299"
+]
+},
+"BV": {
+"en": "Bouvet Island",
+"ru": "о-в Буве",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BW": {
+"en": "Botswana",
+"ru": "Ботсвана",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"BY": {
+"en": "Belarus",
+"ru": "Беларусь",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$5.69",
+"569"
+]
+},
+"BZ": {
+"en": "Belize",
+"ru": "Белиз",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"CA": {
+"en": "Canada",
+"ru": "Канада",
+"store": true,
+"group": null,
+"sample": [
+"C$ 59.99",
+"5999"
+]
+},
+"CC": {
+"en": "Cocos (Keeling) Islands",
+"ru": "Кокосовые о-ва",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CD": {
+"en": "Congo - Kinshasa",
+"ru": "Конго - Киншаса",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CF": {
+"en": "Central African Republic",
+"ru": "Центрально-Африканская Республика",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CG": {
+"en": "Congo - Brazzaville",
+"ru": "Конго - Браззавиль",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CH": {
+"en": "Switzerland",
+"ru": "Швейцария",
+"store": true,
+"group": null,
+"sample": [
+"CHF 39.90",
+"3990"
+]
+},
+"CI": {
+"en": "Côte d’Ivoire",
+"ru": "Кот-д’Ивуар",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CK": {
+"en": "Cook Islands",
+"ru": "Острова Кука",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CL": {
+"en": "Chile",
+"ru": "Чили",
+"store": true,
+"group": null,
+"sample": [
+"CLP$27.600",
+"2760000"
+]
+},
+"CM": {
+"en": "Cameroon",
+"ru": "Камерун",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CN": {
+"en": "China",
+"ru": "Китай",
+"store": true,
+"group": null,
+"sample": [
+"¥198.00",
+"19800"
+]
+},
+"CO": {
+"en": "Colombia",
+"ru": "Колумбия",
+"store": true,
+"group": null,
+"sample": [
+"COL$ 121.800,00",
+"12180000"
+]
+},
+"CR": {
+"en": "Costa Rica",
+"ru": "Коста-Рика",
+"store": true,
+"group": null,
+"sample": [
+"₡14.600,00",
+"1460000"
+]
+},
+"CU": {
+"en": "Cuba",
+"ru": "Куба",
+"store": false,
+"group": null,
+"sample": null
+},
+"CV": {
+"en": "Cape Verde",
+"ru": "Кабо-Верде",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CW": {
+"en": "Curaçao",
+"ru": "Кюрасао",
+"store": false,
+"group": null,
+"sample": null
+},
+"CX": {
+"en": "Christmas Island",
+"ru": "о-в Рождества",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"CY": {
+"en": "Cyprus",
+"ru": "Кипр",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"CZ": {
+"en": "Czechia",
+"ru": "Чехия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"DE": {
+"en": "Germany",
+"ru": "Германия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"DJ": {
+"en": "Djibouti",
+"ru": "Джибути",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"DK": {
+"en": "Denmark",
+"ru": "Дания",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"DM": {
+"en": "Dominica",
+"ru": "Доминика",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"DO": {
+"en": "Dominican Republic",
+"ru": "Доминиканская Республика",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"DZ": {
+"en": "Algeria",
+"ru": "Алжир",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"EC": {
+"en": "Ecuador",
+"ru": "Эквадор",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"EE": {
+"en": "Estonia",
+"ru": "Эстония",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"EG": {
+"en": "Egypt",
+"ru": "Египет",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"EH": {
+"en": "Western Sahara",
+"ru": "Западная Сахара",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"ER": {
+"en": "Eritrea",
+"ru": "Эритрея",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"ES": {
+"en": "Spain",
+"ru": "Испания",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"ET": {
+"en": "Ethiopia",
+"ru": "Эфиопия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"FI": {
+"en": "Finland",
+"ru": "Финляндия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"FJ": {
+"en": "Fiji",
+"ru": "Фиджи",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"FK": {
+"en": "Falkland Islands",
+"ru": "Фолклендские о-ва",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"FM": {
+"en": "Micronesia",
+"ru": "Федеративные Штаты Микронезии",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"FO": {
+"en": "Faroe Islands",
+"ru": "Фарерские о-ва",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"FR": {
+"en": "France",
+"ru": "Франция",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"GA": {
+"en": "Gabon",
+"ru": "Габон",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GB": {
+"en": "United Kingdom",
+"ru": "Великобритания",
+"store": true,
+"group": null,
+"sample": [
+"£34.99",
+"3499"
+]
+},
+"GD": {
+"en": "Grenada",
+"ru": "Гренада",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GE": {
+"en": "Georgia",
+"ru": "Грузия",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"GF": {
+"en": "French Guiana",
+"ru": "Французская Гвиана",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"GG": {
+"en": "Guernsey",
+"ru": "Гернси",
+"store": true,
+"group": null,
+"sample": [
+"£34.99",
+"3499"
+]
+},
+"GH": {
+"en": "Ghana",
+"ru": "Гана",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GI": {
+"en": "Gibraltar",
+"ru": "Гибралтар",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"GL": {
+"en": "Greenland",
+"ru": "Гренландия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GM": {
+"en": "Gambia",
+"ru": "Гамбия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GN": {
+"en": "Guinea",
+"ru": "Гвинея",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GP": {
+"en": "Guadeloupe",
+"ru": "Гваделупа",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"GQ": {
+"en": "Equatorial Guinea",
+"ru": "Экваториальная Гвинея",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GR": {
+"en": "Greece",
+"ru": "Греция",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"GS": {
+"en": "South Georgia & South Sandwich Islands",
+"ru": "Южная Георгия и Южные Сандвичевы о-ва",
+"store": true,
+"group": null,
+"sample": [
+"£34.99",
+"3499"
+]
+},
+"GT": {
+"en": "Guatemala",
+"ru": "Гватемала",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"GU": {
+"en": "Guam",
+"ru": "Гуам",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GW": {
+"en": "Guinea-Bissau",
+"ru": "Гвинея-Бисау",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"GY": {
+"en": "Guyana",
+"ru": "Гайана",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"HK": {
+"en": "Hong Kong SAR China",
+"ru": "Гонконг (САР)",
+"store": true,
+"group": null,
+"sample": [
+"HK$ 298.00",
+"29800"
+]
+},
+"HM": {
+"en": "Heard & McDonald Islands",
+"ru": "о-ва Херд и Макдональд",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"HN": {
+"en": "Honduras",
+"ru": "Гондурас",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"HR": {
+"en": "Croatia",
+"ru": "Хорватия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"HT": {
+"en": "Haiti",
+"ru": "Гаити",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"HU": {
+"en": "Hungary",
+"ru": "Венгрия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"ID": {
+"en": "Indonesia",
+"ru": "Индонезия",
+"store": true,
+"group": null,
+"sample": [
+"Rp 519 000",
+"51900000"
+]
+},
+"IE": {
+"en": "Ireland",
+"ru": "Ирландия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"IL": {
+"en": "Israel",
+"ru": "Израиль",
+"store": true,
+"group": null,
+"sample": [
+"₪159.00",
+"15900"
+]
+},
+"IM": {
+"en": "Isle of Man",
+"ru": "о-в Мэн",
+"store": true,
+"group": null,
+"sample": [
+"£34.99",
+"3499"
+]
+},
+"IN": {
+"en": "India",
+"ru": "Индия",
+"store": true,
+"group": null,
+"sample": [
+"₹2,497.00",
+"249700"
+]
+},
+"IO": {
+"en": "British Indian Ocean Territory",
+"ru": "Британская территория в Индийском океане",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"IQ": {
+"en": "Iraq",
+"ru": "Ирак",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"IR": {
+"en": "Iran",
+"ru": "Иран",
+"store": false,
+"group": null,
+"sample": null
+},
+"IS": {
+"en": "Iceland",
+"ru": "Исландия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"IT": {
+"en": "Italy",
+"ru": "Италия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"JE": {
+"en": "Jersey",
+"ru": "Джерси",
+"store": true,
+"group": null,
+"sample": [
+"£34.99",
+"3499"
+]
+},
+"JM": {
+"en": "Jamaica",
+"ru": "Ямайка",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"JO": {
+"en": "Jordan",
+"ru": "Иордания",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"JP": {
+"en": "Japan",
+"ru": "Япония",
+"store": true,
+"group": null,
+"sample": [
+"¥3,990",
+"399000"
+]
+},
+"KE": {
+"en": "Kenya",
+"ru": "Кения",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"KG": {
+"en": "Kyrgyzstan",
+"ru": "Киргизия",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"KH": {
+"en": "Cambodia",
+"ru": "Камбоджа",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"KI": {
+"en": "Kiribati",
+"ru": "Кирибати",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"KM": {
+"en": "Comoros",
+"ru": "Коморы",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"KN": {
+"en": "St. Kitts & Nevis",
+"ru": "Сент-Китс и Невис",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"KP": {
+"en": "North Korea",
+"ru": "КНДР",
+"store": false,
+"group": null,
+"sample": null
+},
+"KR": {
+"en": "South Korea",
+"ru": "Республика Корея",
+"store": true,
+"group": null,
+"sample": [
+"₩ 49,800",
+"4980000"
+]
+},
+"KW": {
+"en": "Kuwait",
+"ru": "Кувейт",
+"store": true,
+"group": null,
+"sample": [
+"11.55 KD",
+"1155"
+]
+},
+"KY": {
+"en": "Cayman Islands",
+"ru": "Острова Кайман",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"KZ": {
+"en": "Kazakhstan",
+"ru": "Казахстан",
+"store": true,
+"group": null,
+"sample": [
+"14 549,00₸",
+"1454900"
+]
+},
+"LA": {
+"en": "Laos",
+"ru": "Лаос",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"LB": {
+"en": "Lebanon",
+"ru": "Ливан",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"LC": {
+"en": "St. Lucia",
+"ru": "Сент-Люсия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"LI": {
+"en": "Liechtenstein",
+"ru": "Лихтенштейн",
+"store": true,
+"group": null,
+"sample": [
+"CHF 39.90",
+"3990"
+]
+},
+"LK": {
+"en": "Sri Lanka",
+"ru": "Шри-Ланка",
+"store": true,
+"group": "SASIA-USD",
+"sample": [
+"$32.99",
+"3299"
+]
+},
+"LR": {
+"en": "Liberia",
+"ru": "Либерия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"LS": {
+"en": "Lesotho",
+"ru": "Лесото",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"LT": {
+"en": "Lithuania",
+"ru": "Литва",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"LU": {
+"en": "Luxembourg",
+"ru": "Люксембург",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"LV": {
+"en": "Latvia",
+"ru": "Латвия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"LY": {
+"en": "Libya",
+"ru": "Ливия",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"MA": {
+"en": "Morocco",
+"ru": "Марокко",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"MC": {
+"en": "Monaco",
+"ru": "Монако",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"MD": {
+"en": "Moldova",
+"ru": "Молдова",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"ME": {
+"en": "Montenegro",
+"ru": "Черногория",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"MF": {
+"en": "St. Martin",
+"ru": "Сен-Мартен",
+"store": false,
+"group": null,
+"sample": null
+},
+"MG": {
+"en": "Madagascar",
+"ru": "Мадагаскар",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MH": {
+"en": "Marshall Islands",
+"ru": "Маршалловы Острова",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MK": {
+"en": "North Macedonia",
+"ru": "Северная Македония",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"ML": {
+"en": "Mali",
+"ru": "Мали",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MM": {
+"en": "Myanmar (Burma)",
+"ru": "Мьянма (Бирма)",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MN": {
+"en": "Mongolia",
+"ru": "Монголия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MO": {
+"en": "Macao SAR China",
+"ru": "Макао (САР)",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MP": {
+"en": "Northern Mariana Islands",
+"ru": "Северные Марианские о-ва",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MQ": {
+"en": "Martinique",
+"ru": "Мартиника",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"MR": {
+"en": "Mauritania",
+"ru": "Мавритания",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MS": {
+"en": "Montserrat",
+"ru": "Монтсеррат",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MT": {
+"en": "Malta",
+"ru": "Мальта",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"MU": {
+"en": "Mauritius",
+"ru": "Маврикий",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MV": {
+"en": "Maldives",
+"ru": "Мальдивы",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MW": {
+"en": "Malawi",
+"ru": "Малави",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"MX": {
+"en": "Mexico",
+"ru": "Мексика",
+"store": true,
+"group": null,
+"sample": [
+"Mex$ 559.00",
+"55900"
+]
+},
+"MY": {
+"en": "Malaysia",
+"ru": "Малайзия",
+"store": true,
+"group": null,
+"sample": [
+"RM135.90",
+"13590"
+]
+},
+"MZ": {
+"en": "Mozambique",
+"ru": "Мозамбик",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NA": {
+"en": "Namibia",
+"ru": "Намибия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NC": {
+"en": "New Caledonia",
+"ru": "Новая Каледония",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"NE": {
+"en": "Niger",
+"ru": "Нигер",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NF": {
+"en": "Norfolk Island",
+"ru": "о-в Норфолк",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NG": {
+"en": "Nigeria",
+"ru": "Нигерия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NI": {
+"en": "Nicaragua",
+"ru": "Никарагуа",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"NL": {
+"en": "Netherlands",
+"ru": "Нидерланды",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"NO": {
+"en": "Norway",
+"ru": "Норвегия",
+"store": true,
+"group": null,
+"sample": [
+"449,00 kr",
+"44900"
+]
+},
+"NP": {
+"en": "Nepal",
+"ru": "Непал",
+"store": true,
+"group": "SASIA-USD",
+"sample": [
+"$32.99",
+"3299"
+]
+},
+"NR": {
+"en": "Nauru",
+"ru": "Науру",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NU": {
+"en": "Niue",
+"ru": "Ниуэ",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"NZ": {
+"en": "New Zealand",
+"ru": "Новая Зеландия",
+"store": true,
+"group": null,
+"sample": [
+"NZ$ 63.96",
+"6396"
+]
+},
+"OM": {
+"en": "Oman",
+"ru": "Оман",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"PA": {
+"en": "Panama",
+"ru": "Панама",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"PE": {
+"en": "Peru",
+"ru": "Перу",
+"store": true,
+"group": null,
+"sample": [
+"S/. 109.00",
+"10900"
+]
+},
+"PF": {
+"en": "French Polynesia",
+"ru": "Французская Полинезия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"PG": {
+"en": "Papua New Guinea",
+"ru": "Папуа — Новая Гвинея",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"PH": {
+"en": "Philippines",
+"ru": "Филиппины",
+"store": true,
+"group": null,
+"sample": [
+"₱1,790.00",
+"179000"
+]
+},
+"PK": {
+"en": "Pakistan",
+"ru": "Пакистан",
+"store": true,
+"group": "SASIA-USD",
+"sample": [
+"$32.99",
+"3299"
+]
+},
+"PL": {
+"en": "Poland",
+"ru": "Польша",
+"store": true,
+"group": null,
+"sample": [
+"169,00 zł",
+"16900"
+]
+},
+"PM": {
+"en": "St. Pierre & Miquelon",
+"ru": "Сен-Пьер и Микелон",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"PN": {
+"en": "Pitcairn Islands",
+"ru": "о-ва Питкэрн",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"PR": {
+"en": "Puerto Rico",
+"ru": "Пуэрто-Рико",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"PS": {
+"en": "Palestinian Territories",
+"ru": "Палестинские территории",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"PT": {
+"en": "Portugal",
+"ru": "Португалия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"PW": {
+"en": "Palau",
+"ru": "Палау",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"PY": {
+"en": "Paraguay",
+"ru": "Парагвай",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"QA": {
+"en": "Qatar",
+"ru": "Катар",
+"store": true,
+"group": null,
+"sample": [
+"139.94 QR",
+"13994"
+]
+},
+"RE": {
+"en": "Réunion",
+"ru": "Реюньон",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"RO": {
+"en": "Romania",
+"ru": "Румыния",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"RS": {
+"en": "Serbia",
+"ru": "Сербия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"RU": {
+"en": "Russia",
+"ru": "Россия",
+"store": true,
+"group": null,
+"sample": [
+"3599 руб",
+"359900"
+]
+},
+"RW": {
+"en": "Rwanda",
+"ru": "Руанда",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SA": {
+"en": "Saudi Arabia",
+"ru": "Саудовская Аравия",
+"store": true,
+"group": null,
+"sample": [
+"131.22 SR",
+"13122"
+]
+},
+"SB": {
+"en": "Solomon Islands",
+"ru": "Соломоновы Острова",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SC": {
+"en": "Seychelles",
+"ru": "Сейшельские Острова",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SD": {
+"en": "Sudan",
+"ru": "Судан",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"SE": {
+"en": "Sweden",
+"ru": "Швеция",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"SG": {
+"en": "Singapore",
+"ru": "Сингапур",
+"store": true,
+"group": null,
+"sample": [
+"S$49.90",
+"4990"
+]
+},
+"SH": {
+"en": "St. Helena",
+"ru": "о-в Св. Елены",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SI": {
+"en": "Slovenia",
+"ru": "Словения",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"SJ": {
+"en": "Svalbard & Jan Mayen",
+"ru": "Шпицберген и Ян-Майен",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"SK": {
+"en": "Slovakia",
+"ru": "Словакия",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"SL": {
+"en": "Sierra Leone",
+"ru": "Сьерра-Леоне",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SM": {
+"en": "San Marino",
+"ru": "Сан-Марино",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"SN": {
+"en": "Senegal",
+"ru": "Сенегал",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SO": {
+"en": "Somalia",
+"ru": "Сомали",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SR": {
+"en": "Suriname",
+"ru": "Суринам",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"SS": {
+"en": "South Sudan",
+"ru": "Южный Судан",
+"store": false,
+"group": null,
+"sample": null
+},
+"ST": {
+"en": "São Tomé & Príncipe",
+"ru": "Сан-Томе и Принсипи",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"SV": {
+"en": "El Salvador",
+"ru": "Сальвадор",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"SX": {
+"en": "Sint Maarten",
+"ru": "Синт-Мартен",
+"store": false,
+"group": null,
+"sample": null
+},
+"SY": {
+"en": "Syria",
+"ru": "Сирия",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"SZ": {
+"en": "Eswatini",
+"ru": "Эсватини",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TC": {
+"en": "Turks & Caicos Islands",
+"ru": "о-ва Тёркс и Кайкос",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TD": {
+"en": "Chad",
+"ru": "Чад",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TF": {
+"en": "French Southern Territories",
+"ru": "Французские Южные территории",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TG": {
+"en": "Togo",
+"ru": "Того",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TH": {
+"en": "Thailand",
+"ru": "Таиланд",
+"store": true,
+"group": null,
+"sample": [
+"฿1,090.00",
+"109000"
+]
+},
+"TJ": {
+"en": "Tajikistan",
+"ru": "Таджикистан",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"TK": {
+"en": "Tokelau",
+"ru": "Токелау",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TL": {
+"en": "Timor-Leste",
+"ru": "Восточный Тимор",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TM": {
+"en": "Turkmenistan",
+"ru": "Туркменистан",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"TN": {
+"en": "Tunisia",
+"ru": "Тунис",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"TO": {
+"en": "Tonga",
+"ru": "Тонга",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TR": {
+"en": "Turkey",
+"ru": "Турция",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"TT": {
+"en": "Trinidad & Tobago",
+"ru": "Тринидад и Тобаго",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TV": {
+"en": "Tuvalu",
+"ru": "Тувалу",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"TW": {
+"en": "Taiwan",
+"ru": "Тайвань",
+"store": true,
+"group": null,
+"sample": [
+"NT$ 1,190.00",
+"119000"
+]
+},
+"TZ": {
+"en": "Tanzania",
+"ru": "Танзания",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"UA": {
+"en": "Ukraine",
+"ru": "Украина",
+"store": true,
+"group": null,
+"sample": [
+"1 200,00₴",
+"120000"
+]
+},
+"UG": {
+"en": "Uganda",
+"ru": "Уганда",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"UM": {
+"en": "U.S. Outlying Islands",
+"ru": "Внешние малые о-ва (США)",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"US": {
+"en": "United States",
+"ru": "Соединенные Штаты",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"UY": {
+"en": "Uruguay",
+"ru": "Уругвай",
+"store": true,
+"group": null,
+"sample": [
+"$U1.190,00",
+"119000"
+]
+},
+"UZ": {
+"en": "Uzbekistan",
+"ru": "Узбекистан",
+"store": true,
+"group": "CIS-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"VA": {
+"en": "Vatican City",
+"ru": "Ватикан",
+"store": true,
+"group": null,
+"sample": [
+"39,99€",
+"3999"
+]
+},
+"VC": {
+"en": "St. Vincent & Grenadines",
+"ru": "Сент-Винсент и Гренадины",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"VE": {
+"en": "Venezuela",
+"ru": "Венесуэла",
+"store": true,
+"group": "LATAM-USD",
+"sample": [
+"$29.00",
+"2900"
+]
+},
+"VG": {
+"en": "British Virgin Islands",
+"ru": "Виргинские о-ва (Великобритания)",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"VI": {
+"en": "U.S. Virgin Islands",
+"ru": "Виргинские о-ва (США)",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"VN": {
+"en": "Vietnam",
+"ru": "Вьетнам",
+"store": true,
+"group": null,
+"sample": [
+"850.000₫",
+"85000000"
+]
+},
+"VU": {
+"en": "Vanuatu",
+"ru": "Вануату",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"WF": {
+"en": "Wallis & Futuna",
+"ru": "Уоллис и Футуна",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"WS": {
+"en": "Samoa",
+"ru": "Самоа",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"YE": {
+"en": "Yemen",
+"ru": "Йемен",
+"store": true,
+"group": "MENA-USD",
+"sample": [
+"$29.99",
+"2999"
+]
+},
+"YT": {
+"en": "Mayotte",
+"ru": "Майотта",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"ZA": {
+"en": "South Africa",
+"ru": "Южно-Африканская Республика",
+"store": true,
+"group": null,
+"sample": [
+"R 561.75",
+"56175"
+]
+},
+"ZM": {
+"en": "Zambia",
+"ru": "Замбия",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+},
+"ZW": {
+"en": "Zimbabwe",
+"ru": "Зимбабве",
+"store": true,
+"group": "USD",
+"sample": [
+"$39.99",
+"3999"
+]
+}
+}

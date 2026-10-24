@@ -1,0 +1,14 @@
+# Copy .env.example to .env, fill STEAM_ID64 / STEAM_API_KEY / STEAM_COUNTRY and a channel, then:
+#   docker compose up -d        logs: docker compose logs -f
+services:
+  sift:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TZ: ${TZ:-UTC}
+    volumes:
+      - sift-data:/data
+
+volumes:
+  sift-data:

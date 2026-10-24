@@ -1,0 +1,886 @@
+{
+ "response": {
+  "store_items": [
+   {
+    "item_type": 0,
+    "id": 1174180,
+    "success": 15,
+    "visible": false,
+    "unvailable_for_country_restriction": true,
+    "name": "Red Dead Redemption 2",
+    "store_url_path": "app/1174180/Red_Dead_Redemption_2",
+    "store_url_slug": "Red_Dead_Redemption_2",
+    "appid": 1174180
+   },
+   {
+    "item_type": 0,
+    "id": 1030830,
+    "success": 15,
+    "visible": false,
+    "unvailable_for_country_restriction": true,
+    "name": "Mafia II: Definitive Edition",
+    "store_url_path": "app/1030830/Mafia_II_Definitive_Edition",
+    "store_url_slug": "Mafia_II_Definitive_Edition",
+    "appid": 1030830
+   },
+   {
+    "item_type": 0,
+    "id": 2050650,
+    "success": 15,
+    "visible": false,
+    "unvailable_for_country_restriction": true,
+    "name": "Resident Evil 4",
+    "store_url_path": "app/2050650/Resident_Evil_4",
+    "store_url_slug": "Resident_Evil_4",
+    "appid": 2050650
+   },
+   {
+    "item_type": 0,
+    "id": 620,
+    "success": 1,
+    "visible": true,
+    "name": "Portal 2",
+    "store_url_path": "app/620/Portal_2",
+    "store_url_slug": "Portal_2",
+    "appid": 620,
+    "type": 0,
+    "tagids": [
+     4182,
+     1625,
+     1664,
+     3839,
+     5923,
+     1742,
+     5537,
+     4136,
+     7208,
+     5395,
+     1685,
+     4106,
+     19,
+     1663,
+     3968,
+     3942,
+     8122,
+     5794,
+     1719,
+     4166
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2,
+      1,
+      9,
+      38,
+      39,
+      24
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      13,
+      30,
+      51,
+      67,
+      68,
+      69,
+      70,
+      74,
+      79,
+      23,
+      15,
+      17,
+      14,
+      41,
+      42,
+      43,
+      44,
+      62
+     ],
+     "controller_categoryids": [
+      28,
+      55,
+      56,
+      57,
+      58,
+      59
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 391543,
+      "percent_positive": 98,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 174252,
+      "percent_positive": 98,
+      "review_score": 9,
+      "review_score_label": "Overwhelmingly Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "The \"Perpetual Testing Initiative\" has been expanded to allow you to design co-op puzzles for you and your friends!",
+     "publishers": [
+      {
+       "name": "Valve",
+       "creator_clan_account_id": 4
+      }
+     ],
+     "developers": [
+      {
+       "name": "Valve",
+       "creator_clan_account_id": 4
+      }
+     ],
+     "franchises": [
+      {
+       "name": "Portal"
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 4182,
+      "weight": 604
+     },
+     {
+      "tagid": 1625,
+      "weight": 588
+     },
+     {
+      "tagid": 1664,
+      "weight": 586
+     },
+     {
+      "tagid": 3839,
+      "weight": 560
+     },
+     {
+      "tagid": 5923,
+      "weight": 558
+     },
+     {
+      "tagid": 1742,
+      "weight": 555
+     },
+     {
+      "tagid": 5537,
+      "weight": 549
+     },
+     {
+      "tagid": 4136,
+      "weight": 541
+     },
+     {
+      "tagid": 7208,
+      "weight": 538
+     },
+     {
+      "tagid": 5395,
+      "weight": 531
+     },
+     {
+      "tagid": 1685,
+      "weight": 517
+     },
+     {
+      "tagid": 4106,
+      "weight": 517
+     },
+     {
+      "tagid": 19,
+      "weight": 512
+     },
+     {
+      "tagid": 1663,
+      "weight": 512
+     },
+     {
+      "tagid": 3968,
+      "weight": 403
+     },
+     {
+      "tagid": 3942,
+      "weight": 392
+     },
+     {
+      "tagid": 8122,
+      "weight": 386
+     },
+     {
+      "tagid": 5794,
+      "weight": 382
+     },
+     {
+      "tagid": 1719,
+      "weight": 381
+     },
+     {
+      "tagid": 4166,
+      "weight": 378
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/620/${FILENAME}?t=1790187113",
+     "main_capsule": "02b755eb0cf5f41c1838a99c9a353ebce32a88cd/capsule_616x353.jpg",
+     "main_capsule_2x": "02b755eb0cf5f41c1838a99c9a353ebce32a88cd/capsule_616x353_2x.jpg",
+     "small_capsule": "bd23943dcd0280aa2cdc066e2f86d2185cfd4cce/capsule_231x87.jpg",
+     "small_capsule_2x": "bd23943dcd0280aa2cdc066e2f86d2185cfd4cce/capsule_231x87_2x.jpg",
+     "header": "faffc0f560786e2f05104a8d2fac837c6969bf13/header.jpg",
+     "header_2x": "faffc0f560786e2f05104a8d2fac837c6969bf13/header_2x.jpg",
+     "hero_capsule": "9a8ae9bb0b85f125bd956024f86f30a3aeb799e8/hero_capsule.jpg",
+     "hero_capsule_2x": "9a8ae9bb0b85f125bd956024f86f30a3aeb799e8/hero_capsule_2x.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "a58588d857b8683f8065e55f97ab82ad8a945c51/library_hero.jpg",
+     "library_hero_2x": "a58588d857b8683f8065e55f97ab82ad8a945c51/library_hero_2x.jpg",
+     "community_icon": "25a5a16b2423bf7487ac5340b5b0948cef48c5f8",
+     "page_background_path": "app/620?t=1790187113",
+     "last_modified": 1790187113
+    },
+    "release": {
+     "steam_release_date": 1303186800
+    },
+    "platforms": {
+     "windows": true,
+     "steamos_linux": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 3,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 7877,
+     "purchase_option_name": "Portal 2",
+     "final_price_in_cents": "44500",
+     "formatted_final_price": "445 руб",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 19,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 13,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 14,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 15,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 18,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 16,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 11,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 20,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 17,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 9,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 21,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 23,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 24,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 26,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 292030,
+    "success": 15,
+    "visible": false,
+    "unvailable_for_country_restriction": true,
+    "name": "The Witcher 3: Wild Hunt — Remastered",
+    "store_url_path": "app/292030/The_Witcher_3_Wild_Hunt_Remastered",
+    "store_url_slug": "The_Witcher_3_Wild_Hunt_Remastered",
+    "appid": 292030
+   },
+   {
+    "item_type": 0,
+    "id": 1245620,
+    "success": 1,
+    "visible": true,
+    "name": "ELDEN RING",
+    "store_url_path": "app/1245620/ELDEN_RING",
+    "store_url_slug": "ELDEN_RING",
+    "appid": 1245620,
+    "type": 0,
+    "content_descriptorids": [
+     2,
+     5
+    ],
+    "tagids": [
+     29482,
+     1695,
+     4604,
+     122,
+     4026,
+     4231,
+     3859,
+     1697,
+     1684,
+     4182,
+     3843,
+     19,
+     1685,
+     4166,
+     1756,
+     1775,
+     4667,
+     4191,
+     4747,
+     5350
+    ],
+    "categories": {
+     "supported_player_categoryids": [
+      2,
+      1,
+      49,
+      36,
+      9,
+      38
+     ],
+     "feature_categoryids": [
+      22,
+      29,
+      67,
+      68,
+      69,
+      70,
+      74,
+      79,
+      23,
+      62
+     ],
+     "controller_categoryids": [
+      28
+     ]
+    },
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 833503,
+      "percent_positive": 93,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     },
+     "summary_language_specific": {
+      "review_count": 436448,
+      "percent_positive": 94,
+      "review_score": 8,
+      "review_score_label": "Very Positive"
+     }
+    },
+    "basic_info": {
+     "short_description": "THE CRITICALLY ACCLAIMED FANTASY ACTION RPG.\r\nRise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+     "publishers": [
+      {
+       "name": "FromSoftware, Inc.",
+       "creator_clan_account_id": 45188208
+      },
+      {
+       "name": "Bandai Namco Entertainment",
+       "creator_clan_account_id": 33042543
+      }
+     ],
+     "developers": [
+      {
+       "name": "FromSoftware, Inc.",
+       "creator_clan_account_id": 45188208
+      }
+     ]
+    },
+    "tags": [
+     {
+      "tagid": 29482,
+      "weight": 1080
+     },
+     {
+      "tagid": 1695,
+      "weight": 790
+     },
+     {
+      "tagid": 4604,
+      "weight": 753
+     },
+     {
+      "tagid": 122,
+      "weight": 720
+     },
+     {
+      "tagid": 4026,
+      "weight": 706
+     },
+     {
+      "tagid": 4231,
+      "weight": 548
+     },
+     {
+      "tagid": 3859,
+      "weight": 523
+     },
+     {
+      "tagid": 1697,
+      "weight": 510
+     },
+     {
+      "tagid": 1684,
+      "weight": 489
+     },
+     {
+      "tagid": 4182,
+      "weight": 475
+     },
+     {
+      "tagid": 3843,
+      "weight": 456
+     },
+     {
+      "tagid": 19,
+      "weight": 429
+     },
+     {
+      "tagid": 1685,
+      "weight": 368
+     },
+     {
+      "tagid": 4166,
+      "weight": 363
+     },
+     {
+      "tagid": 1756,
+      "weight": 353
+     },
+     {
+      "tagid": 1775,
+      "weight": 348
+     },
+     {
+      "tagid": 4667,
+      "weight": 342
+     },
+     {
+      "tagid": 4191,
+      "weight": 308
+     },
+     {
+      "tagid": 4747,
+      "weight": 227
+     },
+     {
+      "tagid": 5350,
+      "weight": 205
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/1245620/${FILENAME}?t=1790290043",
+     "main_capsule": "e930e28b7e51d58697224549929373fb49494d21/capsule_616x353_alt_assets_3.jpg",
+     "main_capsule_2x": "e930e28b7e51d58697224549929373fb49494d21/capsule_616x353_alt_assets_3_2x.jpg",
+     "small_capsule": "65b8e40dc6ffab9cf53bf26f05023a199118a6a8/capsule_231x87_alt_assets_3.jpg",
+     "small_capsule_2x": "65b8e40dc6ffab9cf53bf26f05023a199118a6a8/capsule_231x87_alt_assets_3_2x.jpg",
+     "header": "f0b19c231f86fa0e633ff88a1a63459443017728/header_alt_assets_3.jpg",
+     "header_2x": "f0b19c231f86fa0e633ff88a1a63459443017728/header_alt_assets_3_2x.jpg",
+     "page_background": "page_bg_generated_v6b.jpg",
+     "hero_capsule": "14cc633e6c88ea08e14ef809ace57033c6fb0264/hero_capsule_alt_assets_3.jpg",
+     "hero_capsule_2x": "14cc633e6c88ea08e14ef809ace57033c6fb0264/hero_capsule_alt_assets_3_2x.jpg",
+     "library_capsule": "library_600x900.jpg",
+     "library_capsule_2x": "library_600x900_2x.jpg",
+     "library_hero": "library_hero.jpg",
+     "library_hero_2x": "library_hero_2x.jpg",
+     "community_icon": "b6e290dd5a92ce98f89089a207733c70c41a1871",
+     "page_background_path": "app/1245620?t=1790290043",
+     "raw_page_background": "page_bg_raw.jpg",
+     "edition_comparison": "74a5e0bf6820afb6e0056cc7d5e3ed346f3ce083/edition_comparision.png",
+     "last_modified": 1790290043
+    },
+    "release": {
+     "steam_release_date": 1645744078
+    },
+    "platforms": {
+     "windows": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 3,
+     "steam_os_compat_category": 2,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 3
+    },
+    "best_purchase_option": {
+     "packageid": 440408,
+     "purchase_option_name": "ELDEN RING",
+     "final_price_in_cents": "359900",
+     "formatted_final_price": "3599 руб",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 1,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    },
+    "supported_languages": [
+     {
+      "elanguage": 0,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": true,
+      "subtitles": true
+     },
+     {
+      "elanguage": 2,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 3,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 1,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 5,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 10,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 4,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 12,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 22,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 8,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 6,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 27,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 9,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 7,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     },
+     {
+      "elanguage": 25,
+      "eadditionallanguage": -1,
+      "supported": true,
+      "full_audio": false,
+      "subtitles": true
+     }
+    ]
+   },
+   {
+    "item_type": 0,
+    "id": 2148100,
+    "success": 1,
+    "visible": true,
+    "name": "Eville Soundtrack",
+    "store_url_path": "app/2148100/Eville_Soundtrack",
+    "store_url_slug": "Eville_Soundtrack",
+    "appid": 2148100,
+    "type": 11,
+    "related_items": {
+     "parent_appid": 1220170
+    },
+    "categories": {},
+    "reviews": {
+     "summary_filtered": {
+      "review_count": 0,
+      "percent_positive": 0,
+      "review_score": 0,
+      "review_score_label": "No user reviews"
+     }
+    },
+    "basic_info": {
+     "short_description": "The official soundtrack from the popular social-deduction game Eville quickly sets the mood for any role players looking for a game.",
+     "publishers": [
+      {
+       "name": "Versus Evil",
+       "creator_clan_account_id": 33240956
+      }
+     ],
+     "developers": [
+      {
+       "name": "VestGames",
+       "creator_clan_account_id": 39120527
+      }
+     ]
+    },
+    "assets": {
+     "asset_url_format": "steam/apps/2148100/${FILENAME}?t=1665472269",
+     "main_capsule": "capsule_616x353.jpg",
+     "small_capsule": "capsule_231x87.jpg",
+     "header": "header.jpg",
+     "header_2x": "header.jpg",
+     "hero_capsule": "hero_capsule.jpg",
+     "library_capsule": "portrait.png",
+     "community_icon": "6286c32a32fb2a93ed2148fa84d3a0300073e0e7",
+     "page_background_path": "app/2148100?t=1665472269",
+     "last_modified": 1665472269
+    },
+    "release": {
+     "steam_release_date": 1665472271
+    },
+    "platforms": {
+     "windows": true,
+     "mac": true,
+     "steamos_linux": true,
+     "vr_support": {},
+     "steam_deck_compat_category": 0,
+     "steam_os_compat_category": 0,
+     "steam_frame_compat_category": 0,
+     "steam_machine_compat_category": 0
+    },
+    "best_purchase_option": {
+     "packageid": 768417,
+     "purchase_option_name": "Eville Soundtrack",
+     "final_price_in_cents": "28000",
+     "formatted_final_price": "280 руб",
+     "user_can_purchase_as_gift": true,
+     "hide_discount_pct_for_compliance": false,
+     "included_game_count": 0,
+     "must_purchase_as_set": false,
+     "package_group": "default",
+     "price_cannot_be_displayed_as_discount": false
+    }
+   },
+   {
+    "item_type": 0,
+    "id": 1091500,
+    "success": 15,
+    "visible": false,
+    "unvailable_for_country_restriction": true,
+    "name": "Cyberpunk 2077",
+    "store_url_path": "app/1091500/Cyberpunk_2077",
+    "store_url_slug": "Cyberpunk_2077",
+    "appid": 1091500
+   }
+  ]
+ }
+}

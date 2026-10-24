@@ -1,0 +1,12 @@
+.env
+.env.migrated
+.cache/
+__pycache__/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.unlazy/
+node_modules/
+.taste-skill/
+site/
