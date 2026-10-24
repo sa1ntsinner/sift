@@ -11,6 +11,8 @@
   &nbsp;
   <img src="https://img.shields.io/badge/Windows%20·%20macOS%20·%20Linux-24292f?style=flat" alt="Windows, macOS, Linux" />
   &nbsp;
+  <a href="https://pypi.org/project/steamsift/"><img src="https://img.shields.io/pypi/v/steamsift?style=flat&color=24292f&label=pypi" alt="PyPI" /></a>
+  &nbsp;
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-24292f?style=flat" alt="MIT license" /></a>
 </p>
 
@@ -45,7 +47,7 @@ Prices are compared in what you pay, not in percent: $15 at −60% is not a reco
 **Or with Python 3.11+**
 
 ```bash
-uv tool install git+https://github.com/sa1ntsinner/sift      # or: pipx install git+https://github.com/sa1ntsinner/sift
+uv tool install steamsift      # or: pipx install steamsift
 sift
 ```
 
