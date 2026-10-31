@@ -29,10 +29,10 @@ from .theme import ACCENT, BASE_CSS, INK, MUTED, DIM, VERDICT, THEMES
 from .state import Data, REFRESH_AFTER, load_snapshot, save_snapshot
 
 SORTS = list(qry.SORTS)
-TABS = ("picks", "wish", "discover", "dlc")
-TAB_LABEL = {"picks": "tu_tab_deals", "wish": "tu_tab_wish", "discover": "tu_tab_discover", "dlc": "tu_tab_dlc"}
-DEAL_TABS = ("picks", "wish", "discover")
-WORTH_TABS = ("picks", "discover")        # open on HOT + GREAT only; the wishlist and DLC show every verdict
+TABS = ("picks", "wish", "dlc")          # DLC only with the dlc-tab setting (see SiftApp.tabs)
+TAB_LABEL = {"picks": "tu_tab_deals", "wish": "tu_tab_wish", "dlc": "tu_tab_dlc"}
+DEAL_TABS = ("picks", "wish")
+WORTH_TABS = ("picks",)                   # opens on HOT + GREAT only; the wishlist and DLC show every verdict
 WORTH = ("hot", "great")
 
 
@@ -61,15 +61,13 @@ class Loader:
             ctx.with_family = True             # always loaded; the family switch filters them live
             progress("sp_sift")
             ctx.load_pool()
-            progress("sp_discover")
-            ctx.load_discovery_pool()
             if not stale and net.steam_failures() != failures:
                 raise RuntimeError(t("tu_network_failed"))
             if not stale:
                 set_stale_ok(True)
                 try:
                     preview = Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0,
-                                                           discover=True, history_all=True),
+                                                           history_all=True),
                                    saved_at=time.time(), complete=False)
                 finally:
                     set_stale_ok(False)
@@ -79,7 +77,7 @@ class Loader:
                 save_snapshot(preview)
                 progress(preview)
             progress("sp_history")
-            data = Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0, discover=True,
+            data = Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0,
                                                  history_all=True), saved_at=0 if stale else time.time())
             if not stale and net.steam_failures() != failures:
                 raise RuntimeError(t("tu_network_failed"))
@@ -110,6 +108,41 @@ def verdict_of(row) -> Verdict:
 
 def worth_it(row) -> bool:
     return verdict_of(row).kind in WORTH or bool(getattr(row, "extras", {}).get("target", {}).get("hit"))
+
+
+def why_text(row, v: Verdict) -> str:
+    """The reason in a few words; for a game at full price, how it usually goes on sale."""
+    if v.reason:
+        return t(f"vs_{v.reason}", n=v.value)
+    h = row.hist
+    if row.item.cut > 0 or not h:
+        return ""
+    if h.typical_cut and h.gap_days:
+        return t("tu_wait_every", c=h.typical_cut, n=h.gap_days)
+    if h.typical_cut:
+        return t("vs_typical", n=h.typical_cut)
+    if h.covered_days >= 365 and not h.sales_2y:
+        return t("tu_wait_none")
+    return t("tu_best", n=h.best_cut) if h.best_cut else ""
+
+
+def wait_lines(row) -> list[str]:
+    """For a game at full price: what it usually costs on sale and when the next sale may come."""
+    import datetime as dt
+    from ..notify.cards import sale_name
+    from ..ui import money
+    i, h, out = row.item, row.hist, []
+    if h and h.typical_cut:
+        out.append(t("tu_wait_usual", c=h.typical_cut, price=money(i.price * (100 - h.typical_cut) / 100)))
+    if h and h.gap_days and h.since_last_days:
+        due = h.gap_days - h.since_last_days
+        out.append(t("tu_wait_due", n=due) if due > 0 else t("tu_wait_any_day"))
+    nxt = getattr(row, "extras", {}).get("sale_next")
+    if nxt and getattr(nxt, "start", None):
+        days = (nxt.start - dt.date.today()).days
+        if days >= 0:
+            out.append(t("tu_sale_next", name=sale_name(nxt.name), n=days))
+    return out
 
 
 def verdict_cell(v: Verdict) -> Text:
@@ -254,6 +287,9 @@ class FilterPanel(ModalScreen[None]):
         self._keys["h"] = "do:hidden"
         opts.append(Option(_row("0", t("tu_f_reset")), id="do:reset"))
         self._keys["0"] = "do:reset"
+        opts.append(_heading(t("tu_f_app")))
+        opts.append(Option(_row("D", t("tu_f_dlc_tab"), on=config.cfg.settings.dlc_tab), id="do:dlc"))
+        self._keys["D"] = "do:dlc"
         ol.add_options(opts)
         if keep is not None and keep < ol.option_count:
             ol.highlighted = keep
@@ -281,6 +317,10 @@ class FilterPanel(ModalScreen[None]):
             return
         elif arg == "reset":
             self.host.set_view(qry.Query(tab=q.tab, sort=q.sort))
+        elif arg == "dlc":
+            config.cfg.settings.dlc_tab = not config.cfg.settings.dlc_tab
+            config.cfg.settings.save()
+            self.host.tabs_changed()
         self.rebuild()
 
     def _start_edit(self, what: str) -> None:
@@ -429,6 +469,49 @@ class HiddenPanel(ModalScreen[None]):
         self.dismiss(None)
 
 
+def parse_price(text: str) -> int | None:
+    """'9.99', '$9,99', '1 500 ₸' → cents; anything else → None."""
+    import re
+    digits = re.sub(r"[^\d.,]", "", text).replace(",", ".")
+    if digits.count(".") > 1:
+        head, _, tail = digits.rpartition(".")
+        digits = head.replace(".", "") + "." + tail
+    try:
+        value = float(digits)
+    except ValueError:
+        return None
+    return round(value * 100) if value > 0 else None
+
+
+class TargetPrompt(ModalScreen[str | None]):
+    """One line: the price to be told about. Enter saves, Esc cancels."""
+    CSS = PANEL_CSS.replace("{name}", "TargetPrompt") + """
+    TargetPrompt { align: center middle; }
+    TargetPrompt #panel { width: 64; height: auto; }
+    TargetPrompt Input { border: none; background: $panel; padding: 0 1; }
+    """
+    BINDINGS = [Binding("escape", "cancel", show=False)]
+
+    def __init__(self, name: str):
+        super().__init__()
+        self.game = name
+
+    def compose(self) -> ComposeResult:
+        with Vertical(id="panel"):
+            yield Static(Text(short_name(self.game, 56), style=f"bold {INK}"), classes="head")
+            yield Input(placeholder=t("tu_target_ph"), id="price", compact=True)
+
+    def on_mount(self) -> None:
+        self.query_one("#price").focus()
+
+    @on(Input.Submitted, "#price")
+    def submitted(self, event: Input.Submitted) -> None:
+        self.dismiss(event.value)
+
+    def action_cancel(self) -> None:
+        self.dismiss(None)
+
+
 class HelpScreen(ModalScreen[None]):
     """Every key on one page (`?`)."""
     CSS = PANEL_CSS.replace("{name}", "HelpScreen") + """
@@ -459,27 +542,34 @@ class HelpScreen(ModalScreen[None]):
 
 
 HELP = (
-    ("tu_h_move", (("↑ ↓  j k", "tu_h_rows"), ("g  G", "tu_h_ends"), ("1–4  ← →  tab", "tu_h_tabs"))),
+    ("tu_h_move", (("↑ ↓  j k", "tu_h_rows"), ("g  G", "tu_h_ends"), ("1 2  ← →  tab", "tu_h_tabs"))),
     ("tu_h_game", (("enter  o", "tu_h_open"), ("i", "tu_h_itad"), ("b", "tu_h_bundle"),
-                   ("x", "tu_h_hide"), ("X", "tu_h_own"), ("u", "tu_h_undo"))),
+                   ("t", "tu_h_target"), ("x", "tu_h_hide"), ("X", "tu_h_own"), ("u", "tu_h_undo"))),
     ("tu_h_list", (("a", "tu_h_all"), ("d", "tu_h_details"), ("/", "tu_h_search"), ("f", "tu_h_filters"), ("s  S", "tu_h_sort"), ("0", "tu_h_reset"),
                    ("r", "tu_h_refresh"))),
     ("tu_h_app", (("?", "tu_h_help"), ("q", "tu_h_quit"))),
 )
 
 
-def help_text() -> Text:
+def help_text(width: int = 56) -> Text:
+    """Keys and verdicts in two columns; long lines wrap under their own column."""
+    import textwrap
     out = Text()
+
+    def row(key: str, label: str, style: str) -> None:
+        out.append(f"  {key:<15}", style=style)
+        lines = textwrap.wrap(label, max(20, width - 17)) or [""]
+        out.append(lines[0] + "".join("\n" + " " * 17 + x for x in lines[1:]) + "\n", style=INK)
+
     for title, rows in HELP:
         out.append(t(title) + "\n", style=f"bold {MUTED}")
         for keys, label in rows:
-            out.append(f"  {keys:<15}", style=f"bold {INK}")
-            out.append(t(label) + "\n", style=INK)
+            row(keys, t(label), f"bold {INK}")
         out.append("\n")
     out.append(t("tu_help_verdicts") + "\n", style=f"bold {MUTED}")
-    for kind in ("hot", "great", "ok", "meh", "nope"):
-        out.append(f"  {t('vd_' + kind):<15}", style=f"bold {VERDICT[kind]}")
-        out.append(t(f"tu_v_{kind}") + "\n", style=INK)
+    for kind in ("hot", "great", "ok", "meh", "nope", "wait"):
+        row(t("vd_" + kind), t(f"tu_v_{kind}"), f"bold {VERDICT.get(kind, MUTED)}")
+    out.append("\n" + textwrap.fill(t("tu_v_how"), width) + "\n", style=MUTED)
     return out
 
 
@@ -517,7 +607,7 @@ def sale_bars(hist, width: int, colour: str) -> Text:
     return out
 
 
-def render_details(row, status: str = "", width: int = 44) -> Text:
+def render_details(row, status: str = "", width: int = 44, target: str = "") -> Text:
     """The game, its price, the verdict with its reason, two years of sales, then everything else."""
     from ..notify.cards import notes_for
     i: Item = row.item
@@ -545,9 +635,20 @@ def render_details(row, status: str = "", width: int = 44) -> Text:
             out.append(f"   {ends}" if line + 3 + len(ends) <= width else f"\n{ends}", style=MUTED)
         out.append("\n")
 
+    if i.available and i.purchasable and i.cut <= 0:
+        out.append("\n" + t("tu_not_on_sale") + "\n", style=f"bold {INK}")
+        for line in wait_lines(row):
+            out.append(line + "\n", style=INK)
+    if target:
+        out.append(target + "\n", style=ACCENT)
     if v.kind:
         out.append("\n" + t(f"vd_{v.kind}") + "\n", style=f"bold {colour}")
         out.append(t(f"vr_{v.reason}", n=v.value) + "\n", style=INK)
+        h = row.hist
+        if h and h.by_price() and i.cut > 0 and h.now_cents(i.cut) <= h.low_2y_cents + h.tolerance(h.now_cents(i.cut)):
+            now = h.now_cents(i.cut)
+            seen = h.times_at(now)
+            out.append((t("tu_seen", n=seen, d=h.last_at(now)) if seen else t("tu_seen_never")) + "\n", style=MUTED)
 
     h = row.hist
     if h and h.covered_days and not h.sales_2y:
@@ -618,13 +719,13 @@ class Details(VerticalScroll):
                 self.images = False
         yield Static(id="info")
 
-    def show(self, row, status: str = "") -> None:
+    def show(self, row, status: str = "", target: str = "") -> None:
         info = self.query_one("#info", Static)
         if row is None:
             info.update(Text(""))
             return
         self._appid = row.item.appid
-        info.update(render_details(row, status, max(30, self.size.width - 5 or 44)))
+        info.update(render_details(row, status, max(30, self.size.width - 5 or 44), target))
         if self.images:
             self.fetch_cover(row.item.appid, row.item.cover)
 
@@ -763,6 +864,7 @@ class SiftApp(App):
     """
     BINDINGS = [
         Binding("a", "everything", show=False),
+        Binding("t", "target", show=False),
         Binding("o", "open", show=False),
         Binding("i", "itad", show=False),
         Binding("b", "bundle", show=False),
@@ -811,11 +913,20 @@ class SiftApp(App):
         self._all: dict[str, int] = {}
         self.everything = not self.WORTH_IT_FIRST
         self._hidden_cache: set[int] = set()
-        self.tab = self.view.tab if self.view.tab in TABS else "picks"
+        self.tab = self.view.tab if self.view.tab in self.tabs else "picks"
 
     @property
     def sort(self) -> str:
         return self.view.sort
+
+    @property
+    def tabs(self) -> tuple[str, ...]:
+        return TABS if config.cfg.settings.dlc_tab else DEAL_TABS
+
+    def tabs_changed(self) -> None:
+        if self.tab not in self.tabs:
+            self.action_tab("picks")
+        self._header()
 
     def compose(self) -> ComposeResult:
         yield Static(id="header")
@@ -927,8 +1038,7 @@ class SiftApp(App):
         self.fresh = fresh
         self.refresh_error = ""
         d = data.digest
-        self.recs.update({"picks": list(d.picks), "wish": list(d.wish),
-                          "discover": list(getattr(d, "discover", []) or [])})
+        self.recs.update({"picks": list(d.picks), "wish": list(d.wish) + list(getattr(d, "waiting", []) or [])})
         if data.dlc or data.dlc_at:
             self.recs["dlc"], self.dlc_loaded = list(data.dlc), True
         self.query_one("#loading-box").display = False
@@ -1000,7 +1110,7 @@ class SiftApp(App):
         line = Text()
         line.append("sift", style=f"bold {ACCENT}")
         line.append("   ")
-        for n, tab in enumerate(TABS, 1):
+        for tab in self.tabs:
             start = len(line)
             label = t(TAB_LABEL[tab])
             count = self._shown.get(tab)
@@ -1018,6 +1128,8 @@ class SiftApp(App):
             if self.screen.has_class("narrow"):
                 mode = mode.split(" · ")[-1]
             right.append(mode + "  ", style=Style(color=MUTED, meta={"@click": "app.everything"}))
+        if self.tab == "wish" and self.data is not None and getattr(self, "_split", (0, 0))[1]:
+            right.append(t("tu_wish_split", a=num(self._split[0]), b=num(self._split[1])) + "  ", style=MUTED)
         chips = self.view.chips()
         if self.view.macros:
             right.append(" ".join(self.view.macros) + "  ", style=f"bold {VERDICT['meh']}")
@@ -1049,16 +1161,16 @@ class SiftApp(App):
     def _keys(self) -> None:
         line = Text()
         keys = [("enter", "tu_k_open"), ("/", "tu_k_search"), ("f", "tu_k_filters"),
-                ("s", "tu_k_sort"), ("r", "tu_k_refresh"), ("x", "tu_k_hide"),
+                ("s", "tu_k_sort"), ("r", "tu_k_refresh"), ("t", "tu_k_target"), ("x", "tu_k_hide"),
                 ("?", "tu_k_keys"), ("q", "tu_k_quit")]
         if self.screen.has_class("narrow"):
-            keys = [("d", "tu_k_details"), *[k for k in keys if k[0] not in ("x", "s")]]
+            keys = [("d", "tu_k_details"), *[k for k in keys if k[0] not in ("x", "s", "t")]]
         for key, label in keys:
             start = len(line)
             line.append(key, style=f"bold {INK}")
             line.append(f" {t(label)}", style=MUTED)
             action = {"enter": "open", "/": "search", "f": "filters", "s": "sort(1)", "r": "refresh",
-                      "x": "hide('taste')", "?": "help", "q": "quit", "d": "details"}[key]
+                      "x": "hide('taste')", "?": "help", "q": "quit", "d": "details", "t": "target"}[key]
             line.stylize(Style(meta={"@click": f"app.{action}"}), start, len(line))
             line.append(" " if self.screen.has_class("narrow") else "   ")
         sale = self._sale_note()
@@ -1135,11 +1247,17 @@ class SiftApp(App):
 
     # ---------------------------------------------------------------- tables
 
-    def _visible(self, rows: list) -> list:
+    def _visible(self, rows: list, tab: str = "") -> list:
         q = self.query_text.lower()
         hidden = self._hidden_cache
         out = [r for r in rows if r.item.appid not in hidden and (not q or q in r.item.name.lower())]
-        return self.view.apply(out)
+        if tab != "wish":
+            return self.view.apply(out)
+        # the wishlist: discounts as filtered, then the games at full price in wishlist order (only without filters)
+        on_sale = self.view.apply([r for r in out if r.item.cut > 0])
+        waiting = [r for r in out if r.item.cut <= 0] if self.view.is_default() else []
+        self._split = (len(on_sale), len(waiting))
+        return on_sale + waiting
 
     def refill(self) -> None:
         self._hidden_cache = set(prefs.load_hidden())
@@ -1147,7 +1265,7 @@ class SiftApp(App):
             table = self.query_one(f"#t-{tab}", DataTable)
             keep = self._row_key(table)
             table.clear()
-            visible = self._visible(self.recs[tab])
+            visible = self._visible(self.recs[tab], tab)
             self._all[tab] = len(visible)
             if tab in WORTH_TABS and not self.everything:
                 visible = [r for r in visible if worth_it(r)]
@@ -1164,11 +1282,11 @@ class SiftApp(App):
                 if getattr(r, "extras", {}).get("target", {}).get("hit"):
                     name.append("  ◎", style=ACCENT)
                 cells = {
-                    "verdict": verdict_cell(v),
+                    "verdict": verdict_cell(v) if v.kind or i.cut > 0 else Text(t("vd_wait"), style=MUTED),
                     "price": Text(i.final_fmt, style=INK, justify="right"),
                     "cut": Text(f"−{i.cut}%" if i.cut else "", style=MUTED, justify="right"),
                     "game": name,
-                    "why": Text(t(f"vs_{v.reason}", n=v.value) if v.reason else "", style=MUTED,
+                    "why": Text(why_text(r, v), style=MUTED,
                                 overflow="ellipsis", no_wrap=True),
                     "reviews": Text(f"{i.review_pct}%" if i.review_count else "—", style=MUTED, justify="right"),
                 }
@@ -1189,7 +1307,14 @@ class SiftApp(App):
         if row and self.data and tab != "dlc":
             k, p = engine.status_of(self.data.ctx, row.item.appid)
             status = t(k, **p) if k and k != "st_wishlist" else ""
-        self.query_one(f"#d-{tab}", Details).show(row, status)
+        target = ""
+        if row and tab != "dlc":
+            want = prefs.targets().get(row.item.appid)
+            if want:
+                from ..ui import money
+                target = t("tu_target_low") if want["price_cents"] is None else \
+                    t("tu_target_at", price=money(want["price_cents"] / 100))
+        self.query_one(f"#d-{tab}", Details).show(row, status, target)
         empty = self.query_one("#empty", Static)
         nothing = self.data is not None and not self._shown.get(tab) and (tab != "dlc" or self.dlc_loaded)
         if nothing:
@@ -1257,7 +1382,7 @@ class SiftApp(App):
             tb.move_cursor(row=tb.row_count - 1 if last else 0)
 
     def action_tab(self, tab: str) -> None:
-        if self.data is None or self._typing():
+        if self.data is None or self._typing() or tab not in self.tabs:
             return                     # nothing to show yet (and never react to stray input during startup)
         self.tab = tab
         self.query_one("#views", ContentSwitcher).current = tab
@@ -1274,7 +1399,8 @@ class SiftApp(App):
     def action_step_tab(self, d: int) -> None:
         if self.data is None or self._typing():
             return
-        self.action_tab(TABS[(TABS.index(self.tab) + d) % len(TABS)])
+        tabs = self.tabs
+        self.action_tab(tabs[(tabs.index(self.tab) + d) % len(tabs)])
 
     def on_key(self, event: events.Key) -> None:
         if isinstance(self.focused, Input) and self.focused.id == "search" and event.key in ("down", "enter"):
@@ -1376,7 +1502,7 @@ class SiftApp(App):
         q.macros = [name]
         q.sort = q.sort if flags and "--sort" in flags else self.view.sort
         self.set_view(q)
-        if q.tab in TABS and q.tab != self.tab:
+        if q.tab in self.tabs and q.tab != self.tab:
             self.action_tab(q.tab)
 
     def save_macro(self, name: str, q: qry.Query) -> None:
@@ -1407,6 +1533,34 @@ class SiftApp(App):
             return
         self.set_view(qry.Query(tab=self.view.tab, sort=self.view.sort))
         self.notify(t("ui_cleared"), timeout=2)
+
+    def action_target(self) -> None:
+        if self._typing() or self.data is None or self.tab == "dlc":
+            return
+        row = self._current()
+        if row:
+            self.push_screen(TargetPrompt(row.item.name), lambda value: self._set_target(row, value))
+
+    def _set_target(self, row, value: str | None) -> None:
+        self._focus_table()
+        if value is None:
+            return
+        i = row.item
+        if value.strip() in ("-", "off"):
+            prefs.remove_target(i.appid)
+            self.notify(t("target_removed", name=i.name), timeout=3)
+        elif not value.strip():
+            prefs.set_target(i.appid, i.name, None)
+            self.notify(t("target_lowest", name=i.name), timeout=3)
+        else:
+            cents = parse_price(value)
+            if cents is None:
+                self.notify(t("set_number", lo=0, hi="∞"), severity="error", timeout=4)
+                return
+            from ..ui import money
+            prefs.set_target(i.appid, i.name, cents)
+            self.notify(t("target_set", name=i.name, price=money(cents / 100)), timeout=3)
+        self._show_current()
 
     def action_everything(self) -> None:
         if self._typing() or self.data is None:

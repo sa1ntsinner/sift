@@ -185,6 +185,7 @@ REGISTRY: list[Setting] = [
     Setting("country", "profile", "country", _country, "h_country"),
     Setting("lang", "settings", "lang", _lang, "h_lang"),
     Setting("covers", "settings", "covers", _choice("auto", "sixel", "blocks", "off"), "h_covers"),
+    Setting("dlc-tab", "settings", "dlc_tab", _bool, "h_dlc_tab"),
     Setting("budget", "profile", "budget", _budget, "h_budget"),
     Setting("min-discount", "profile", "min_discount", _int(0, 99), "h_min_discount"),
     Setting("family", "profile", "family", _family, "h_family"),

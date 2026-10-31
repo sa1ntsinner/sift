@@ -102,9 +102,10 @@ def test_loads_tabs_and_details(data):
             await pilot.press("2")
             assert app.tab == "wish" and rows(app, "wish") == ["Wished puzzle"]
             await pilot.press("right")
-            assert app.tab == "discover"
-            await pilot.press("left", "left")
-            assert app.tab == "picks"
+            assert app.tab == "picks"                                      # two tabs: Deals and Wishlist
+            await pilot.press("left")
+            assert app.tab == "wish"
+            assert "Discover" not in header(app) and "DLC" not in header(app)
     run(go())
 
 
@@ -244,7 +245,9 @@ def test_stray_terminal_replies_never_become_search_text(data):
     run(go())
 
 
-def test_instant_cached_paint_then_fresh_and_lazy_dlc(data):
+def test_instant_cached_paint_then_fresh_and_lazy_dlc(data, monkeypatch):
+    from steamsift import config
+    monkeypatch.setattr(config.cfg.settings, "dlc_tab", True)
     loader = StubLoader(data, dlc=[])
 
     async def go():
@@ -257,7 +260,7 @@ def test_instant_cached_paint_then_fresh_and_lazy_dlc(data):
                     break
             assert app.fresh and loader.calls[:2] == ["stale", "fresh"]
             assert "dlc" not in loader.calls, "DLC is fetched only when its tab is opened"
-            await pilot.press("4")
+            await pilot.press("3")
             for _ in range(50):
                 await pilot.pause(0.02)
                 if "dlc" in loader.calls:
@@ -362,8 +365,10 @@ def test_mouse_navigation_and_controls(data, monkeypatch):
     run(go())
 
 
-def test_saved_dlc_revalidates_once_when_opened_and_refreshes_without_main_scan(data):
+def test_saved_dlc_revalidates_once_when_opened_and_refreshes_without_main_scan(data, monkeypatch):
+    from steamsift import config
     from steamsift.engine import DlcRow
+    monkeypatch.setattr(config.cfg.settings, "dlc_tab", True)
     old = DlcRow(item(80, "Old DLC"), "you", "you", 5, "Base", 0.5, 0.8)
     new = DlcRow(item(81, "Fresh DLC"), "you", "you", 5, "Base", 0.5, 0.8)
     data.dlc, data.dlc_at = [old], 1
@@ -374,7 +379,7 @@ def test_saved_dlc_revalidates_once_when_opened_and_refreshes_without_main_scan(
         async with app.run_test(size=(150, 40)) as pilot:
             await ready(pilot, app)
             await app.workers.wait_for_complete()
-            await pilot.press("4")
+            await pilot.press("3")
             await app.workers.wait_for_complete()
             assert rows(app, "dlc") == ["Fresh DLC"]
             scans = loader.calls.count("fresh")
@@ -530,33 +535,41 @@ def test_cover_mode_resolution(monkeypatch):
     assert app_mod.cover_mode("blocks") == "blocks" and app_mod.cover_mode(False) == "off"
 
 
-def test_discover_tab_is_one_plain_list(world):
+def test_dlc_tab_is_hidden_until_switched_on_in_the_filter_panel(data, monkeypatch):
+    from steamsift import config
+    monkeypatch.setattr(config.cfg.settings, "dlc_tab", False)
+    monkeypatch.setattr(config.Settings, "save", lambda self: None)
+
     async def go():
-        app = SiftApp(StubLoader(world), images=False)
+        app = SiftApp(StubLoader(data), images=False)
         async with app.run_test(size=(150, 40)) as pilot:
             await ready(pilot, app)
             await pilot.press("3")
-            assert app.tab == "discover"
-            assert set(rows(app, "discover")) == {"Tiny Puzzle", "Another Puzzle", "Space Tactics"}
-            assert len(app.query_one("#t-discover").columns) == 6   # verdict · price · cut · game · why · reviews
+            assert app.tab == "picks" and "DLC" not in header(app)
+            await pilot.press("f", "D")
             await pilot.pause()
-            info = str(app.query_one("#d-discover").query_one("#info").render())
-            assert rows(app, "discover")[0] in info and "new for you" in info
+            assert config.cfg.settings.dlc_tab and "DLC" in header(app)
+            await pilot.press("escape", "3")
+            assert app.tab == "dlc"
+            await pilot.press("f", "D", "escape")
+            await pilot.pause()
+            assert app.tab == "picks" and "DLC" not in header(app)
     run(go())
 
 
 def test_cli_query_opens_the_right_tab_with_filters(world):
     async def go():
-        q = query.Query(tab="discover", max_price=3)
+        q = query.Query(tab="wish", max_price=3)
         app = SiftApp(StubLoader(world), images=False, query=q)
         async with app.run_test(size=(150, 40)) as pilot:
             await ready(pilot, app)
-            assert app.tab == "discover"
-            assert rows(app, "discover") == ["Tiny Puzzle"]                  # $1.99 ≤ 3; the others cost more
+            assert app.tab == "wish"
+            await pilot.press("1")
+            assert rows(app) == ["Tiny Puzzle"]                              # $1.99 ≤ 3; the others cost more
             assert "≤" in header(app)
             await pilot.press("0")                                          # reset
             await pilot.pause()
-            assert len(rows(app, "discover")) == 3
+            assert len(rows(app)) == 4
     run(go())
 
 
@@ -578,7 +591,7 @@ def test_filter_panel_saves_and_applies_saved_filters(world):
             gems = next(k for k, v in panel._keys.items() if v == "mc:gems")
             await pilot.press(gems)                                         # saved filters apply by number
             await pilot.pause()
-            assert app.tab == "discover" and app.view.macros == ["gems"] and app.view.min_rating == 93
+            assert app.tab == "picks" and app.view.macros == ["gems"] and app.view.min_rating == 93
             assert "gems" in header(app)
     run(go())
     query.remove_macro("pocket")
@@ -702,3 +715,67 @@ def test_deals_open_on_the_worth_it_list(monkeypatch):
         run(go())
     finally:
         prefs.clear_hidden()
+
+
+def test_wishlist_shows_games_at_full_price_with_when_to_wait(monkeypatch):
+    import datetime as dt
+    from steamsift.calendar import Event
+    lib, meta = racing_fan()
+    lib.wishlist = [{"appid": 52, "priority": 2, "date_added": 0}, {"appid": 50, "priority": 0, "date_added": 0},
+                    {"appid": 51, "priority": 1, "date_added": 0}]
+    wish = {50: item(50, "Wished puzzle", PUZZLE, cut=60),
+            51: item(51, "Full price one", PUZZLE, cut=0, price=2000),
+            52: item(52, "Full price two", PUZZLE, cut=0, price=1000)}
+    winter = Event("Steam Winter Sale", "sale", dt.date.today() + dt.timedelta(days=19),
+                   dt.date.today() + dt.timedelta(days=33))
+    offline_digest(monkeypatch, events=[winter], history={
+        50: 80, 51: History(75, typical_cut=60, sales_2y=8, gap_days=45, since_last_days=20, covered_days=730)})
+    ctx = make_ctx(lib, meta, wish, {})
+    d = engine.build_digest(ctx, limit=20, min_discount=0)
+    assert [r.item.name for r in d.waiting] == ["Full price one", "Full price two"]      # wishlist order
+
+    async def go():
+        app = SiftApp(StubLoader(Data(ctx, d, [])), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await pilot.press("2")
+            assert rows(app, "wish") == ["Wished puzzle", "Full price one", "Full price two"]
+            assert "1 on sale · 2 waiting" in header(app)
+            t = app.query_one("#t-wish")
+            assert t.get_row_at(1)[4].plain == "−60% every ~45 d"
+            await pilot.press("j")
+            await pilot.pause()
+            info = str(app.query_one("#d-wish").query_one("#info").render())
+            assert "Not on sale" in info and "usually −60%, about $8.00" in info
+            assert "next sale due in ~25 days" in info and "Winter Sale in 19 days" in info
+            await pilot.press("f", "c", *"50", "enter", "escape")                         # a filter: discounts only
+            await pilot.pause()
+            assert rows(app, "wish") == ["Wished puzzle"]
+    run(go())
+
+
+def test_price_alert_from_the_app(data):
+    from steamsift.tui.app import parse_price
+
+    assert (parse_price("9.99"), parse_price("$9,99"), parse_price("1 500 ₸"), parse_price("1.299,50")) == \
+        (999, 999, 150000, 129950)
+    assert parse_price("abc") is None and parse_price("0") is None
+
+    async def go():
+        app = SiftApp(StubLoader(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            appid = app._current().item.appid
+            await pilot.press("t", *"4.5", "enter")
+            await pilot.pause()
+            assert prefs.targets()[appid]["price_cents"] == 450
+            assert "◎ alert at ≤ $4.50" in str(app.query_one("#d-picks").query_one("#info").render())
+            await pilot.press("t", "enter")
+            await pilot.pause()
+            assert prefs.targets()[appid]["price_cents"] is None
+            await pilot.press("t", "-", "enter")
+            await pilot.pause()
+            assert appid not in prefs.targets()
+            await pilot.press("t", "escape")
+            assert app.focused is app.query_one("#t-picks")
+    run(go())

@@ -262,6 +262,8 @@ def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
         return Verdict()
     if hist.fake_discount(cut):
         return Verdict("nope", "fake", hist.raised_days)
+    if hist.by_price():
+        return _by_price(cut, hist, sale_next, bundle, price_cents, currency, today)
     if hist.is_atl(cut):
         if hist.tier == "frequent":       # a record price that comes back every few weeks is no reason to hurry
             return Verdict("great", "returns", hist.gap_days or round(730 / max(1, hist.sales_2y)))
@@ -286,6 +288,39 @@ def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
     if cheaper >= 12 and hist.tier != "rare":
         return Verdict("meh", "cheaper_before", cheaper)
     return Verdict("ok", "typical", hist.typical_cut or hist.best_cut)
+
+
+def _by_price(cut: int, hist: History, sale_next, bundle, price_cents: int, currency: str,
+              today: dt.date | None) -> Verdict:
+    """With two years of US prices: compare with the two-year low, then count how often today's price came.
+
+    above the 2-year low   ok (within 12% or a dollar) · meh (12–30%, or a big sale soon) · nope (30%+)
+    at the 2-year low      hot when it is new (lower than ever in two years) or came at most twice ·
+                           great when it comes back (3+ times): a good price, no hurry
+    Old records (a price from five years ago) do not count: what matters is what comes back."""
+    now = hist.now_cents(cut)
+    low = hist.low_2y_cents
+    if now > low + hist.tolerance(now):
+        if _cheaper_bundle(bundle, price_cents, currency, today):
+            return Verdict("hot", "bundle", bundle.price_cents)
+        cheaper = round(100 * (1 - low / now))
+        if now - low < 100 or cheaper < 12:          # under a dollar apart: not worth waiting for
+            return Verdict("ok", "near_low", cheaper)
+        if cheaper >= 30:
+            return Verdict("nope", "cheaper_before", cheaper)
+        if sale_next and getattr(sale_next, "kind", "sale") == "sale":
+            days = (sale_next.start - (today or dt.date.today())).days
+            if 0 <= days <= 21:
+                return Verdict("meh", "sale_soon", days)
+        return Verdict("meh", "cheaper_before", cheaper)
+    seen = hist.times_at(now)
+    if not seen:
+        if not hist.runs and not hist.sales_2y:
+            return Verdict("hot", "rare_first", 0)
+        return Verdict("hot", "atl", hist.best_cut) if hist.is_atl(cut) else Verdict("hot", "low_2y", cut)
+    if seen <= 2:
+        return Verdict("hot", "seen", seen)
+    return Verdict("great", "returns", hist.gap_at(now) or round(730 / seen))
 
 
 def _cheaper_bundle(bundle, price_cents: int, currency: str, today=None) -> bool:

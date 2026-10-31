@@ -15,7 +15,7 @@ from .net import request_json
 BASE = "https://api.isthereanydeal.com"
 STEAM_SHOP = 61
 _id_cache = Cache("itad_ids")
-_hist_cache = Cache("itad_history_v4", volatile=True)   # v4: last_day, last_cut
+_hist_cache = Cache("itad_history_v5", volatile=True)   # v5: runs (every sale in two years with its low)
 _log_cache = Cache("itad_log_v1")
 _prices_cache = Cache("itad_steam_low_v1", volatile=True)
 _bundle_cache = Cache("itad_bundles_v1", volatile=True)
@@ -38,6 +38,39 @@ class History:
     low_2y_cents: int = 0       # lowest US price in the last 730 days
     last_day: str = ""          # date of the log's latest change
     last_cut: int = 0           # the cut it changed to
+    runs: list = field(default_factory=list)    # finished sales in 730 days: [start date, lowest US cents]
+
+    # How often a price comes back is counted at that price: a game on sale every month at −50% that hit −80%
+    # once has seen −80% once, not every month. "Similar" is within 12% (the same band the verdict calls OK):
+    # GTFO drops 3–4% every month, so each sale is a new record, but a similar price is back every month.
+    SIMILAR = 0.12
+
+    def tolerance(self, cents: int) -> int:
+        """Prices this close count as the same price: 3%, at least 25 cents."""
+        return max(25, round(cents * 0.03))
+
+    def _starts_at(self, cents: int) -> list[dt.date]:
+        top = cents * (1 + self.SIMILAR)
+        return sorted(dt.date.fromisoformat(day) for day, low in self.runs if low <= top)
+
+    def times_at(self, cents: int) -> int:
+        """Finished sales in two years at a similar price or lower."""
+        return len(self._starts_at(cents))
+
+    def gap_at(self, cents: int) -> int:
+        """Typical days between sales at this price or lower (0 = fewer than two)."""
+        starts = self._starts_at(cents)
+        gaps = [(b - a).days for a, b in zip(starts, starts[1:])]
+        return round(median(gaps)) if gaps else 0
+
+    def last_at(self, cents: int, today: dt.date | None = None) -> int:
+        """Days since the last sale at this price or lower started (-1 = none in two years)."""
+        starts = self._starts_at(cents)
+        return ((today or dt.date.today()) - starts[-1]).days if starts else -1
+
+    def by_price(self) -> bool:
+        """The log is long enough and has US prices: judge in what you pay."""
+        return self.covered_days >= 365 and bool(self.regular_cents and self.low_2y_cents)
 
     # A base price can move: $10 at −50% ($5) beats $15 at −60% ($6). With US prices known we compare
     # what you pay; without them we fall back to the discount percentages.
@@ -119,10 +152,15 @@ def parse_history(log: list[dict], today: dt.date, store_low_cut: int = 0, store
     cutoff = today - dt.timedelta(days=730)
     sales = []
     active = None
+    active_low = 0
     previous_regular = None
+    last_regular = None
     for i, (stamp, cut, regular, price) in enumerate(rows):
         day = stamp.date()
         end = rows[i + 1][0].date() if i + 1 < len(rows) else today
+        last_regular = regular or last_regular
+        if not price and last_regular:
+            price = round(last_regular * (100 - cut) / 100)
         h.best_cut = max(h.best_cut, cut)
         if price:
             h.low_cents = min(h.low_cents, price) if h.low_cents else price
@@ -140,11 +178,14 @@ def parse_history(log: list[dict], today: dt.date, store_low_cut: int = 0, store
             previous_regular = regular
         if cut > 0:
             if active is None:
-                active = [day, cut]
+                active, active_low = [day, cut], price or 0
             else:
                 active[1] = max(active[1], cut)
+                active_low = min(x for x in (active_low, price) if x) if (active_low or price) else 0
         elif active is not None:
             sales.append((*active, day))
+            if active_low and day > cutoff:
+                h.runs.append([active[0].isoformat(), active_low])
             active = None
         if day >= cutoff:
             h.points.append((day.isoformat(), cut))

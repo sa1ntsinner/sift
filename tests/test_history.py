@@ -374,3 +374,53 @@ def test_request_recovers_after_429_and_exceptions_are_safe(api, monkeypatch):
     monkeypatch.setattr(itad, "request_json", broken)
     assert itad.history([883710])[883710] == History()
     assert itad.bundles([883710]) == {}
+
+
+def sale_runs(*runs, regular=1000):
+    """runs: (days_ago_start, length_days, cut) → an ITAD log, oldest first."""
+    rows = [change(900, 0, regular)]
+    for ago, length, cut in sorted(runs, reverse=True):
+        rows += [change(ago, cut, regular), change(ago - length, 0, regular)]
+    return rows
+
+
+def test_frequency_counts_sales_at_this_price_not_any_sale():
+    # −50% nineteen times, −80% once: today's −80% is a price seen once in two years, not "every 43 days"
+    log = sale_runs(*[(30 + 35 * k, 7, 50) for k in range(19)], (400, 7, 80))
+    h = parse_history(log, TODAY)
+    assert h.tier == "frequent"                                   # the old rule called this a returning record
+    assert h.times_at(h.now_cents(80)) == 1
+    assert verdict(80, h, today=TODAY) == Verdict("hot", "seen", 1)
+    # −50% again: that price is back every ~35 days, and −80% was 60% cheaper → wait
+    assert verdict(50, h, today=TODAY) == Verdict("nope", "cheaper_before", 60)
+
+
+def test_price_that_returns_is_great_with_its_own_rhythm():
+    log = sale_runs(*[(20 + 60 * k, 10, 75) for k in range(8)], (50, 5, 40))
+    h = parse_history(log, TODAY)
+    assert h.times_at(h.now_cents(75)) == 8
+    assert verdict(75, h, today=TODAY) == Verdict("great", "returns", 60)
+
+
+def test_first_time_this_low_in_two_years_and_old_records_do_not_count():
+    # sold for $0.50 six years ago (storeLow); in two years the best was −75% ($2.50), once
+    log = sale_runs((300, 10, 75), (100, 10, 50))
+    h = parse_history(log, TODAY, store_low_cut=95, store_low_cents=50)
+    assert verdict(75, h, today=TODAY) == Verdict("hot", "seen", 1)
+    assert verdict(80, h, today=TODAY) == Verdict("hot", "low_2y", 80)          # beats every price in two years
+    assert verdict(72, h, today=TODAY) == Verdict("ok", "near_low", 11)         # $2.80 vs $2.50
+    assert verdict(65, h, today=TODAY) == Verdict("meh", "cheaper_before", 29)  # $3.50 vs $2.50
+    assert verdict(50, h, today=TODAY) == Verdict("nope", "cheaper_before", 50)
+
+
+def test_a_record_that_never_came_back_is_the_record():
+    h = parse_history(sale_runs((300, 10, 50), (100, 10, 50)), TODAY, store_low_cut=90, store_low_cents=100)
+    assert verdict(90, h, today=TODAY) == Verdict("hot", "atl", 90)
+
+
+def test_a_price_that_creeps_down_every_month_is_no_rush():
+    # GTFO, 2026-10: every sale a few percent below the last; today's record is 3.6% under last month's
+    log = sale_runs((90, 7, 70), (60, 7, 71), (30, 7, 72))
+    h = parse_history(log, TODAY)
+    assert verdict(73, h, today=TODAY) == Verdict("great", "returns", 30)
+    assert verdict(85, h, today=TODAY).kind == "hot"                    # $1.50 vs $2.80: a different price

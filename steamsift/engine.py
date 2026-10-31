@@ -205,6 +205,10 @@ class Digest:
     sale_next: calendar.Event | None = None
     fests: list[calendar.Event] = field(default_factory=list)
     discover: list[Rec] = field(default_factory=list)      # new-for-you, ordered in genre lanes (Rec.lane)
+    waiting: list[Rec] = field(default_factory=list)       # wishlist games at full price, in wishlist order
+
+
+WAIT_LOGS = 40      # full sale logs per run for wishlist games at full price (ITAD allows ~80 calls per 5 min)
 
 
 def _in_budget(item: Item, budget: float | None) -> bool:
@@ -296,8 +300,26 @@ def build_digest(ctx: Context, limit: int = 12, min_discount: int | None = None,
     if finds and not stale_ok():
         disc.remember(finds, today)
     fests = calendar.fests_for([t for t, _ in ctx.profile.top_tags(5)], today, evs=evs)
+    waiting = waiting_list(ctx, sale_next) if show_wish else []
     return Digest(wish if show_wish else [], picks if show_picks else [], unavailable, len(ctx.candidates),
-                  sale_now, sale_next, fests, finds)
+                  sale_now, sale_next, fests, finds, waiting)
+
+
+def waiting_list(ctx: Context, sale_next: calendar.Event | None = None) -> list[Rec]:
+    """Wishlist games that are not on sale, in your wishlist order, with how they usually go on sale.
+
+    Logs (every sale in two years) only for the first WAIT_LOGS; the rest get ITAD's record low.
+    Logs are cached for a month, so each run fills in a few more."""
+    order = {w["appid"]: (w.get("priority") or 0, n) for n, w in enumerate(ctx.lib.wishlist)}
+    rows = [ctx.rec(i, True) for i in ctx.wish_items.values()
+            if i.available and i.purchasable and i.cut == 0 and i.appid not in ctx.excluded]
+    rows.sort(key=lambda r: order.get(r.item.appid, (2 ** 31, 0)))
+    ids = [r.item.appid for r in rows]
+    hist = itad.history(ids, deep=ids[:WAIT_LOGS]) if ids else {}
+    for r in rows:
+        r.hist = hist.get(r.item.appid)
+        r.extras["sale_next"] = sale_next
+    return rows
 
 
 # --------------------------------------------------------------------------- DLC

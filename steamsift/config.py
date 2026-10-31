@@ -139,6 +139,7 @@ class Settings:
     active: str = "main"
     profiles: dict[str, Profile] = field(default_factory=lambda: {"main": Profile()})
     covers: str = "auto"             # cover art in the app: auto (best the terminal supports) | sixel | blocks | off
+    dlc_tab: bool = False            # the app's DLC tab (discounted DLC for games you own)
     macros: dict[str, str] = field(default_factory=dict)   # name -> sift flags ("-b 2 -g indie --lowest")
     remote_fetch_host: str = ""       # advanced: SSH host used when the store blocks this IP
     remote_fetch_script: str = ""
@@ -159,6 +160,7 @@ class Settings:
         return cls(
             lang=raw.get("lang", ""),
             covers=raw.get("covers", "auto"),
+            dlc_tab=bool(raw.get("dlc_tab", False)),
             active=active if active in profiles else next(iter(profiles)),
             profiles=profiles,
             macros={str(k).lower(): str(v) for k, v in (raw.get("macros") or {}).items()},
@@ -169,6 +171,8 @@ class Settings:
     def save(self) -> None:
         doc = {"lang": self.lang, "covers": self.covers, "active": self.active,
                "profiles": {n: p.to_dict() for n, p in self.profiles.items()}}
+        if self.dlc_tab:
+            doc["dlc_tab"] = True
         if self.macros:
             doc["macros"] = dict(sorted(self.macros.items()))
         if self.remote_fetch_host:

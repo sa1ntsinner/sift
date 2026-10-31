@@ -87,7 +87,7 @@ def load_snapshot() -> Data | None:
             return None
         if not isinstance(data.saved_at, (int, float)) or not isinstance(data.dlc_at, (int, float)):
             return None
-        for rows in (data.digest.picks, data.digest.wish, data.digest.discover, data.dlc):
+        for rows in (data.digest.picks, data.digest.wish, data.digest.discover, data.digest.waiting, data.dlc):
             if not isinstance(rows, list) or any(not isinstance(r, (Rec, DlcRow)) or
                                                  not isinstance(r.item, Item) for r in rows):
                 return None

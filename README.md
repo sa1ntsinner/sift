@@ -31,13 +31,16 @@ show up, so you buy the right game at the right moment and skip the rest.
 
 | | |
 |---|---|
-| **HOT** | A price that rarely comes back: a rare record, the lowest in two years, or a cheaper bundle. |
-| **GREAT** | A record price, but it returns every few weeks. Buy it when you will play it. |
-| **OK** | An ordinary discount for this game. |
-| **MEH** | It has been 12–30% cheaper, or a big Steam sale is under three weeks away. |
-| **NOPE** | It has been much cheaper, or the base price went up just before the sale. |
+| **HOT** | The lowest price in two years, and a price this low came at most twice. Or a cheaper bundle. |
+| **GREAT** | The lowest price in two years, but a similar price (within 12%) comes back every few weeks. Buy it when you will play it. |
+| **OK** | Close to its two-year low: within 12% or a dollar. |
+| **MEH** | 12–30% above its two-year low, or a big Steam sale is under three weeks away. |
+| **NOPE** | 30% or more above its two-year low, or the base price went up just before the sale. |
 
-Prices are compared in what you pay, not in percent: $15 at −60% is not a record if the game once sold for $5.
+Prices are compared in what you pay, not in percent: $15 at −60% is not a low if the game sold for $5 last spring.
+The frequency counts sales at today's price, not any sale: a game that goes −50% every month and hit −80% once has
+seen −80% once. Records older than two years do not count. Wishlist games that are not on sale show **WAIT** with how
+deep and how often they usually go on sale, and when the next sale is due.
 
 ## Install
 
@@ -66,9 +69,11 @@ Steam only issues API keys to accounts that have spent at least $5 and use Steam
 
 ## Using it
 
-The app has four tabs (Deals · Wishlist · Discover · DLC). Every row has a verdict and a short reason, and the game's
-two-year sale history is shown next to it. Deals and Discover open on the games worth buying (HOT and GREAT); press `a` to see
-every discount. The wishlist always shows every verdict, so you can see what to buy now and what to wait for. Click a tab to switch views, click a game to preview it, or double-click to open it in Steam.
+The app has two tabs: Deals and Wishlist. Every row has a verdict and a short reason, and the game's two-year sale
+history is shown next to it. Deals opens on the games worth buying (HOT and GREAT); press `a` to see every discount.
+The wishlist shows every game on it: the discounted ones with their verdict, then the rest with when to expect a sale.
+A DLC tab for the games you own can be switched on in the filter panel (`f`, then `D`) or with `sift config set dlc-tab on`.
+Click a tab to switch views, click a game to preview it, or double-click to open it in Steam.
 The actions along the bottom are clickable too. Click the price, discount, verdict or review column to sort.
 Everything also works from the keyboard:
 
@@ -76,18 +81,18 @@ Everything also works from the keyboard:
 |---|---|---|---|
 | `↑ ↓` `j k` | move | `/` | search |
 | `enter` | open in Steam | `f` | filters, saved filters, hidden games |
-| `1–4` `← →` | tabs | `s` | sort |
+| `1 2` `← →` | tabs | `s` | sort |
 | `x` | hide: not for me | `u` | undo |
 | `i` | price history on IsThereAnyDeal | `?` | every key |
 | `r` | refresh the current view | `d` | show details in narrow windows |
-| `a` | worth it only / every discount | | |
+| `a` | worth it only / every discount | `t` | price alert for this game |
 
 The last results are saved locally as soon as a scan succeeds. Reopening sift shows them immediately;
 results less than 15 minutes old need no new scan. Older results stay visible while a background refresh
 runs. The app checks again while it stays open, reuses cached metadata and prices, and keeps the previous
 results if Steam is unavailable. The header shows when results were updated or that saved data is being used.
-Use `r` for a forced refresh; repeated clicks share the running scan. DLC loads only when its tab is opened
-and refreshes independently. Saved results are separated by Steam account, profile and store region.
+Use `r` for a forced refresh; repeated clicks share the running scan. DLC (when its tab is on) loads only when
+the tab is opened and refreshes independently. Saved results are separated by Steam account, profile and store region.
 
 The same filters work as flags, so a search can be one line:
 
@@ -112,7 +117,7 @@ Run it on a schedule with `sift notify enable`, keep it running with `sift watch
 - **Your store.** Prices in the currency Steam charges you, in whichever Steam region your account is in.
 - **Your Steam Family.** Shared games stay out of the list, or show with a blue mark if you want them.
 - **Your library.** Owned and hidden games never show up; DLC is listed for the games you own.
-- **Your taste, second.** Deals come first; your play history breaks ties and fills the Discover tab.
+- **Your taste, second.** The price decides the verdict; your play history only breaks ties.
 
 Everything stays on your computer: keys in the system keychain, settings in a local file. sift talks only to Steam and
 IsThereAnyDeal.
