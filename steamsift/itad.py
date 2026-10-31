@@ -187,6 +187,8 @@ _next_call = 0.0
 def _request(url: str, **kwargs):
     """Best-effort ITAD request, paced; net handles one short Retry-After retry on 429."""
     global _next_call
+    if stale_ok():
+        return None
     with _pace_lock:
         wait = _next_call - time.monotonic()
         _next_call = max(time.monotonic(), _next_call) + PACE

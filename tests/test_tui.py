@@ -260,6 +260,199 @@ def test_instant_cached_paint_then_fresh_and_lazy_dlc(data):
     run(go())
 
 
+def test_recent_results_open_without_starting_another_scan(data):
+    import time
+    data.saved_at = time.time()
+    loader = StubLoader(data)
+
+    async def go():
+        app = SiftApp(loader, images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            assert len(rows(app)) == 3
+            assert loader.calls == ["stale"]
+            assert app.fresh
+    run(go())
+
+
+def test_repeated_refresh_is_one_scan_and_keeps_selected_game(data):
+    from steamsift import db
+    loader = StubLoader(data, delay=0.15)
+
+    async def go():
+        app = SiftApp(loader, images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            await pilot.press("down")
+            selected = app._current().item.appid
+            before = len(loader.calls)
+            app.action_refresh()
+            app.action_refresh()
+            assert app._current().item.appid == selected
+            await app.workers.wait_for_complete()
+            assert len(loader.calls) == before + 1
+            assert app._current().item.appid == selected
+            assert not db._REFRESH
+    run(go())
+
+
+def test_failed_refresh_keeps_previous_rows_and_reports_stale(data):
+    class Offline(StubLoader):
+        def load(self, progress=lambda key: None, stale=False):
+            if not stale:
+                raise RuntimeError("Steam is down")
+            return self.data
+
+    async def go():
+        app = SiftApp(Offline(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            assert len(rows(app)) == 3
+            assert not app.fresh
+            assert "cached" in header(app).lower()
+    run(go())
+
+
+def test_mouse_navigation_and_controls(data, monkeypatch):
+    opened = []
+    monkeypatch.setattr("webbrowser.open", opened.append)
+
+    async def go():
+        app = SiftApp(StubLoader(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            # Click the actual Wishlist text, without relying on a new widget type.
+            label = header(app).index("Wishlist")
+            await pilot.click("#header", offset=(label + 2, 0))
+            assert app.tab == "wish"
+            assert rows(app, "wish") == ["Wished puzzle"]
+            await pilot.click("#t-wish", offset=(35, 1))
+            assert not opened, "a single click selects a game rather than opening a browser"
+            await pilot.press("enter")
+            assert opened and "/50/" in opened[-1]
+            opened.clear()
+            await pilot.double_click("#t-wish", offset=(35, 1))
+            assert len(opened) == 1
+            # The footer is an action bar, not just keyboard instructions.
+            keys = str(app.query_one("#keys").render())
+            await pilot.click("#keys", offset=(keys.index("filters") + 2, 0))
+            assert isinstance(app.screen, FilterPanel)
+            await pilot.pause()
+            await pilot.click("#opts", offset=(5, 1))
+            await pilot.pause()
+            assert app.view.buy
+            await pilot.click("#opts", offset=(5, 1))
+            await pilot.pause()
+            assert not app.view.buy
+            title = str(app.screen.query_one(".head").render())
+            await pilot.click(".head", offset=(title.index("×"), 0))
+            assert not isinstance(app.screen, FilterPanel)
+            await pilot.click("#header", offset=(label + 2, 0))
+            assert app.tab == "wish"
+    run(go())
+
+
+def test_saved_dlc_revalidates_once_when_opened_and_refreshes_without_main_scan(data):
+    from steamsift.engine import DlcRow
+    old = DlcRow(item(80, "Old DLC"), "you", "you", 5, "Base", 0.5, 0.8)
+    new = DlcRow(item(81, "Fresh DLC"), "you", "you", 5, "Base", 0.5, 0.8)
+    data.dlc, data.dlc_at = [old], 1
+    loader = StubLoader(data, dlc=[new])
+
+    async def go():
+        app = SiftApp(loader, images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            await pilot.press("4")
+            await app.workers.wait_for_complete()
+            assert rows(app, "dlc") == ["Fresh DLC"]
+            scans = loader.calls.count("fresh")
+            app.action_refresh()
+            app.action_refresh()
+            await app.workers.wait_for_complete()
+            assert loader.calls.count("fresh") == scans
+            assert loader.calls.count("dlc") == 2
+    run(go())
+
+
+def test_first_results_are_usable_while_history_is_still_loading(data):
+    import threading
+    gate = threading.Event()
+
+    class Staged(StubLoader):
+        def load(self, progress=lambda key: None, stale=False):
+            if stale:
+                raise LookupError("first run")
+            progress(data)
+            assert gate.wait(3), "history should not block the first usable results"
+            return data
+
+    async def go():
+        app = SiftApp(Staged(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            try:
+                await ready(pilot, app)
+                assert len(rows(app)) == 3 and app.loading
+                await pilot.press("2")
+                assert app.tab == "wish"
+            finally:
+                gate.set()
+            await app.workers.wait_for_complete()
+            assert app.fresh
+    run(go())
+
+
+def test_periodic_refresh_recovers_after_a_transient_failure(data):
+    import time
+    data.saved_at = time.time()
+    data.complete = False
+    class Flaky(StubLoader):
+        failed = False
+
+        def load(self, progress=lambda key: None, stale=False):
+            if not stale and not self.failed:
+                self.failed = True
+                raise RuntimeError("temporarily offline")
+            return data
+
+    async def go():
+        app = SiftApp(Flaky(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            assert not app.fresh
+            app._retry_at = 0
+            app._refresh_if_due()
+            await app.workers.wait_for_complete()
+            assert app.fresh and len(rows(app)) == 3
+    run(go())
+
+
+def test_checkpoint_failure_does_not_close_the_app(data, monkeypatch):
+    import sqlite3
+    from steamsift import db
+
+    def fail():
+        raise sqlite3.OperationalError("disk full")
+
+    async def go():
+        app = SiftApp(StubLoader(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            monkeypatch.setattr(db.db(), "flush", fail)
+            app.checkpoint()
+            await app.workers.wait_for_complete()
+            await pilot.press("2")
+            assert app.tab == "wish" and rows(app, "wish") == ["Wished puzzle"]
+    run(go())
+
+
 def test_half_block_cover_keeps_aspect_and_colours():
     from PIL import Image
     from steamsift.tui.cover import half_block_rows
@@ -451,4 +644,18 @@ def test_narrow_terminal_keeps_names_and_toggles_details(data):
             assert app.query_one("#t-picks").size.width > 60                 # the list gets the whole width
             await pilot.press("d")
             assert app.screen.has_class("details-on")
+    run(go())
+
+
+@pytest.mark.parametrize("width", [80, 100, 150])
+def test_long_game_names_keep_reviews_visible_at_every_width(data, width):
+    data.digest.picks[0].item.name = "A very long game name " * 5
+
+    async def go():
+        app = SiftApp(StubLoader(data), images=False)
+        async with app.run_test(size=(width, 32)) as pilot:
+            await ready(pilot, app)
+            await app.workers.wait_for_complete()
+            await pilot.pause()
+            assert "rev." in app.query_one("#t-picks").render_line(0).text
     run(go())

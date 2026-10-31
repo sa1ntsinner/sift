@@ -184,6 +184,7 @@ def api(monkeypatch):
 
 
 def test_fetch_split_prices_cache_incremental_merge_and_failure(api, monkeypatch):
+    monkeypatch.setattr(f"{__name__}.TODAY", dt.date.today())
     calls = []
     log = [change(900, 0), change(50, 60), change(40, 0)]
 

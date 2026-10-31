@@ -1,7 +1,7 @@
 """Local SQLite store: cache namespaces, own price history, hidden games.
 
-Cache namespaces are loaded lazily into memory and flushed in one transaction at
-exit, so hundreds of lookups per run cost nothing.
+Cache namespaces are loaded lazily into memory and checkpointed in transactions,
+so hundreds of lookups per run cost nothing.
 """
 from __future__ import annotations
 
@@ -78,13 +78,14 @@ class Database:
             self._prices.append((appid, country, time.strftime("%Y-%m-%d"), final_cents, orig_cents, cut))
 
     def flush(self) -> None:
+        # Cache reads take their lock before the DB lock; checkpoints must use the same order.
+        for c in Cache.all:
+            c.flush()
         with self.lock:
-            for c in Cache.all:
-                c.flush()
             if self._prices:
-                self.conn.executemany("INSERT OR REPLACE INTO price_history VALUES (?,?,?,?,?,?)", self._prices)
+                with self.conn:
+                    self.conn.executemany("INSERT OR REPLACE INTO price_history VALUES (?,?,?,?,?,?)", self._prices)
                 self._prices.clear()
-            self.conn.commit()
 
 
 _db: Database | None = None
@@ -118,6 +119,14 @@ def set_refresh(value: bool) -> None:
     """When enabled, volatile namespaces ignore stored entries for this run."""
     global _REFRESH
     _REFRESH = value
+    if value:
+        for cache in Cache.all:
+            with cache._lock:
+                cache._refreshed.clear()
+
+
+def refresh_requested() -> bool:
+    return _REFRESH
 
 
 def stale_ok() -> bool:
@@ -139,6 +148,7 @@ class Cache:
         self.volatile = volatile
         self._data: dict[str, tuple[float, Any]] | None = None
         self._dirty: set[str] = set()
+        self._refreshed: set[str] = set()
         self._lock = threading.Lock()
         Cache.all.append(self)
 
@@ -155,9 +165,9 @@ class Cache:
         return self._data
 
     def get(self, key: Any, ttl: float | None = None) -> Any:
-        if self.volatile and _REFRESH:
-            return None
         with self._lock:
+            if self.volatile and _REFRESH and not _STALE_OK and str(key) not in self._refreshed:
+                return None
             entry = self._load().get(str(key))
         if entry is None:
             return None
@@ -167,9 +177,12 @@ class Cache:
         return value
 
     def set(self, key: Any, value: Any) -> None:
+        if _STALE_OK:
+            return
         with self._lock:
             self._load()[str(key)] = (time.time(), value)
             self._dirty.add(str(key))
+            self._refreshed.add(str(key))
 
     def flush(self) -> None:
         with self._lock:
@@ -178,9 +191,10 @@ class Cache:
             rows = [(self.ns, k, self._data[k][0], json.dumps(self._data[k][1], ensure_ascii=False,
                                                                 separators=(",", ":")))
                     for k in self._dirty if k in self._data]
+            store = db()
+            with store.lock, store.conn:
+                store.conn.executemany("INSERT OR REPLACE INTO kv VALUES (?,?,?,?)", rows)
             self._dirty.clear()
-        with db().lock:
-            db().conn.executemany("INSERT OR REPLACE INTO kv VALUES (?,?,?,?)", rows)
 
 
 def clear_cache() -> int:

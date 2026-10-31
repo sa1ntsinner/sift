@@ -9,7 +9,7 @@ import html as htmllib
 import re
 from dataclasses import dataclass, field
 
-from .db import DAY, Cache
+from .db import DAY, Cache, stale_ok
 from .net import SESSION
 
 URL = "https://partner.steamgames.com/doc/marketing/upcoming_events"
@@ -113,6 +113,8 @@ def events() -> list[Event]:
     cached = _cache.get("events", 7 * DAY)
     if cached is not None:
         return [Event.from_json(e) for e in cached]
+    if stale_ok():
+        return []
     try:
         r = SESSION.get(URL, timeout=15)
         evs = parse(r.text) if r.status_code == 200 else []

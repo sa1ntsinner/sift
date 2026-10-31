@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 
 from . import calendar, config, discover as disc, itad, prefs, region
 from .config import Filters
+from .db import stale_ok
 from .recommender import (Profile as TasteProfile, Rec, TagSpace, build_profile, calibrate, deal_value, diversify,
                           make_rec, wilson_lower)
 from .steam import (LANG_AUDIO, LANG_SUBS, LANG_UI, TYPE_DLC, TYPE_GAME, Item, Library, get_items, load_library,
@@ -292,7 +293,7 @@ def build_digest(ctx: Context, limit: int = 12, min_discount: int | None = None,
     picks = diversify(sorted(head, key=lambda r: -r.score)) + sorted(picks[limit * 3:], key=lambda r: -r.score)
     wish.sort(key=lambda r: -r.score)
     finds = disc.arrange(find_head + finds[limit * 3:])
-    if finds:
+    if finds and not stale_ok():
         disc.remember(finds, today)
     fests = calendar.fests_for([t for t, _ in ctx.profile.top_tags(5)], today, evs=evs)
     return Digest(wish if show_wish else [], picks if show_picks else [], unavailable, len(ctx.candidates),

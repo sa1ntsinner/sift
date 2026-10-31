@@ -5,11 +5,13 @@ Everything works from the keyboard; every key is listed under `?`."""
 from __future__ import annotations
 
 import importlib
+import sqlite3
 import time
 import webbrowser
-from dataclasses import dataclass, field, replace
+from dataclasses import replace
 
 from rich.text import Text
+from rich.style import Style
 from textual import events, on, work
 from textual.app import App, ComposeResult
 from textual.binding import Binding
@@ -17,24 +19,19 @@ from textual.containers import Horizontal, Vertical, VerticalScroll
 from textual.screen import ModalScreen
 from textual.widgets import ContentSwitcher, DataTable, Input, LoadingIndicator, OptionList, Static
 from textual.widgets.option_list import Option
+from textual.worker import get_current_worker
 
-from .. import config, engine, prefs, query as qry
+from .. import config, engine, net, prefs, query as qry
 from ..i18n import date, num, t
 from ..recommender import Rec, Verdict, short_name, verdict as judge
 from ..steam import Item
 from .theme import ACCENT, BASE_CSS, INK, MUTED, DIM, VERDICT, THEMES
+from .state import Data, REFRESH_AFTER, load_snapshot, save_snapshot
 
 SORTS = list(qry.SORTS)
 TABS = ("picks", "wish", "discover", "dlc")
 TAB_LABEL = {"picks": "tu_tab_deals", "wish": "tu_tab_wish", "discover": "tu_tab_discover", "dlc": "tu_tab_dlc"}
 DEAL_TABS = ("picks", "wish", "discover")
-
-
-@dataclass
-class Data:
-    ctx: object
-    digest: engine.Digest
-    dlc: list = field(default_factory=list)
 
 
 class Loader:
@@ -46,24 +43,59 @@ class Loader:
     """
 
     def load(self, progress=lambda key: None, stale: bool = False) -> Data:
-        from ..db import set_stale_ok
+        from ..db import db, set_stale_ok
+        if stale:
+            saved = load_snapshot()
+            if saved is not None:
+                return saved
         set_stale_ok(stale)
+        failures = net.steam_failures()
         try:
             progress("sp_library")
             ctx = engine.Context(engine.search_many(engine.BASE_PAGES))
+            if stale and not (ctx.candidates or ctx.wish_items):
+                raise LookupError("No saved results yet")
+            db().flush()
             ctx.with_family = True             # always loaded; the family switch filters them live
             progress("sp_sift")
             ctx.load_pool()
             progress("sp_discover")
             ctx.load_discovery_pool()
+            if not stale and net.steam_failures() != failures:
+                raise RuntimeError(t("tu_network_failed"))
+            if not stale:
+                set_stale_ok(True)
+                try:
+                    preview = Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0,
+                                                           discover=True, history_all=True),
+                                   saved_at=time.time(), complete=False)
+                finally:
+                    set_stale_ok(False)
+                previous = load_snapshot()
+                if previous:
+                    preview.dlc, preview.dlc_at = previous.dlc, previous.dlc_at
+                save_snapshot(preview)
+                progress(preview)
             progress("sp_history")
-            return Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0, discover=True,
-                                                 history_all=True), [])
+            data = Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0, discover=True,
+                                                 history_all=True), saved_at=0 if stale else time.time())
+            if not stale and net.steam_failures() != failures:
+                raise RuntimeError(t("tu_network_failed"))
+            if not stale:
+                previous = load_snapshot()
+                if previous:
+                    data.dlc, data.dlc_at = previous.dlc, previous.dlc_at
+                save_snapshot(data)
+            return data
         finally:
             set_stale_ok(False)
 
     def load_dlc(self) -> list:
-        return engine.dlc_rows(limit=60, min_discount=0, budget=0)[0][:120]
+        failures = net.steam_failures()
+        rows = engine.dlc_rows(limit=60, min_discount=0, budget=0)[0][:120]
+        if net.steam_failures() != failures:
+            raise RuntimeError(t("tu_network_failed"))
+        return rows
 
 
 def verdict_of(row) -> Verdict:
@@ -138,6 +170,12 @@ def _heading(label: str) -> Option:
     return Option(Text(label, style=f"bold {MUTED}"), disabled=True)
 
 
+def panel_title(key: str) -> Text:
+    title = Text(t(key), style=f"bold {INK}")
+    title.append("   ×", style=Style(color=MUTED, meta={"@click": "screen.close"}))
+    return title
+
+
 class FilterPanel(ModalScreen[None]):
     """Filters, saved filter sets and hidden games in one place. Every change applies at once."""
     CSS = PANEL_CSS.replace("{name}", "FilterPanel")
@@ -153,7 +191,7 @@ class FilterPanel(ModalScreen[None]):
 
     def compose(self) -> ComposeResult:
         with Vertical(id="panel"):
-            yield Static(Text(t("tu_filters"), style=f"bold {INK}"), classes="head")
+            yield Static(panel_title("tu_filters"), classes="head")
             yield OptionList(id="opts", compact=True)
             yield Input(id="edit", compact=True)
             yield Static(Text(t("tu_filters_foot")), classes="foot")
@@ -334,7 +372,7 @@ class HiddenPanel(ModalScreen[None]):
 
     def compose(self) -> ComposeResult:
         with Vertical(id="panel"):
-            yield Static(Text(t("tu_hidden_title"), style=f"bold {INK}"), classes="head")
+            yield Static(panel_title("tu_hidden_title"), classes="head")
             yield OptionList(id="opts", compact=True)
             yield Static(Text(t("tu_hidden_foot")), classes="foot")
 
@@ -399,7 +437,7 @@ class HelpScreen(ModalScreen[None]):
 
     def compose(self) -> ComposeResult:
         with Vertical(id="panel"):
-            yield Static(Text(t("tu_help_title"), style=f"bold {INK}"), classes="head")
+            yield Static(panel_title("tu_help_title"), classes="head")
             with VerticalScroll(id="help"):
                 yield Static(help_text())
 
@@ -654,6 +692,33 @@ def image_widget(mode: str):
 
 # --------------------------------------------------------------------------- app
 
+class DealTable(DataTable):
+    """A click previews a game; Enter or a double click opens it."""
+
+    def on_resize(self) -> None:
+        game = self.columns.get("game")
+        if game is None or not self.content_size.width:
+            return
+        fixed = sum(c.get_render_width(self) for c in self.ordered_columns if c is not game)
+        game.width = max(8, self.content_size.width - fixed - 2 * self.cell_padding - 1)
+        game.auto_width = False
+        if self.row_count:
+            key = self.ordered_rows[0].key
+            self.update_cell(key, "game", self.get_cell(key, "game"), update_width=True)
+
+    async def _on_click(self, event: events.Click) -> None:
+        event.prevent_default()
+        row = event.style.meta.get("row", -1)
+        if event.button != 1 or row < 0:
+            await super()._on_click(event)
+            return
+        if row < self.row_count:
+            self.move_cursor(row=row, column=event.style.meta.get("column", 0))
+            if event.chain == 2:
+                self.action_select_cursor()
+        event.stop()
+
+
 class SiftApp(App):
     TITLE = "sift"
     AUTO_FOCUS = None          # never focus a widget implicitly: stray terminal replies must not become typing
@@ -720,6 +785,12 @@ class SiftApp(App):
         self.query_text = ""
         self.view = query or qry.Query()
         self.fresh = False
+        self.loading = False
+        self.refresh_error = ""
+        self._dlc_loading = False
+        self._retry_at = 0
+        self.dlc_error = ""
+        self._storage_error = ""
         self._shown: dict[str, int] = {}
         self._hidden_cache: set[int] = set()
         self.tab = self.view.tab if self.view.tab in TABS else "picks"
@@ -737,7 +808,7 @@ class SiftApp(App):
         with ContentSwitcher(id="views", initial=self.tab):
             for tab in TABS:
                 with Horizontal(id=tab, classes="deals"):
-                    yield DataTable(id=f"t-{tab}", cursor_type="row", show_row_labels=False, zebra_stripes=False)
+                    yield DealTable(id=f"t-{tab}", cursor_type="row", show_row_labels=False, zebra_stripes=False)
                     yield Details(self.images, id=f"d-{tab}")
         yield Static(id="empty")
         yield Static(id="keys")
@@ -757,65 +828,160 @@ class SiftApp(App):
         self._layout()
         self._header()
         self._keys()
-        self.load()
+        from ..db import refresh_requested
+        self.loading = True
+        self.load(refresh=refresh_requested())
+        self.set_interval(60, self._refresh_if_due)
+        self.set_interval(5, self.checkpoint)
 
     # ---------------------------------------------------------------- loading
 
     @work(thread=True, exclusive=True, group="load")
     def load(self, refresh: bool = False) -> None:
-        progress = lambda key: self.call_from_thread(self._progress, key)  # noqa: E731
-        if not refresh:
-            try:                                    # 1) instant: whatever is cached, even if expired
-                self.call_from_thread(self.populate, self.loader.load(progress, stale=True))
-            except Exception:  # noqa: BLE001 - no usable cache yet: the fresh load below covers it
-                pass
-        try:                                        # 2) fresh data from Steam, swapped in quietly
-            data = self.loader.load(progress, stale=False)
-        except Exception as e:  # noqa: BLE001
-            self.call_from_thread(self._load_failed, str(e))
-            return
-        self.call_from_thread(self.populate, data, True)
+        from ..db import set_refresh
+        worker = get_current_worker()
 
-    def _progress(self, key: str) -> None:
-        self.query_one("#loading-text", Static).update(t(key))
+        def deliver(callback, *args):
+            if not worker.is_cancelled:
+                self.call_from_thread(lambda: callback(*args) if not worker.is_cancelled
+                                      and self.query("#header") else None)
+
+        progress = lambda key: deliver(self._progress, key)  # noqa: E731
+        try:
+            if self.data is None:
+                try:
+                    data = self.loader.load(progress, stale=True)
+                    recent = data.complete and 0 <= time.time() - data.saved_at < REFRESH_AFTER
+                    deliver(self.populate, data, recent and not refresh)
+                    if recent and not refresh:
+                        return
+                except Exception:  # noqa: BLE001 - fresh load covers missing or unusable cache
+                    pass
+            data = self.loader.load(progress, stale=False)
+            deliver(self.populate, data, True)
+        except Exception as e:  # noqa: BLE001
+            deliver(self._load_failed, str(e))
+        finally:
+            set_refresh(False)
+            deliver(self._load_finished)
+
+    def _load_finished(self) -> None:
+        self.loading = False
+        self._header()
+        if self.tab == "dlc" and self.data is not None:
+            self._request_dlc()
+
+    def _refresh_if_due(self) -> None:
+        if self.data and not self.loading and not self._dlc_loading and time.time() >= self._retry_at:
+            if not self.data.complete or time.time() - self.data.saved_at >= REFRESH_AFTER:
+                self.loading = True
+                self.fresh = False
+                self._header()
+                self.load()
+        self._header()
+
+    @work(thread=True, group="checkpoint", exclusive=True)
+    def checkpoint(self) -> None:
+        from ..db import db
+        try:
+            db().flush()
+        except sqlite3.Error as e:
+            if not get_current_worker().is_cancelled:
+                self.call_from_thread(self._save_failed, str(e))
+
+    def _save_failed(self, msg: str) -> None:
+        if msg != self._storage_error:
+            self._storage_error = msg
+            self.notify(t("tu_save_failed", err=msg), severity="warning", timeout=8)
+
+    def _progress(self, key: str | Data) -> None:
+        if isinstance(key, Data):
+            self.populate(key)
+        else:
+            self.query_one("#loading-text", Static).update(t(key))
 
     def _load_failed(self, msg: str) -> None:
+        self.refresh_error = msg
+        self._retry_at = time.time() + 5 * 60
+        self.fresh = False
         if self.data is None:
             self.query_one("#loading-text", Static).update(Text(f"✗ {msg}", style=VERDICT["nope"]))
         else:
             self.notify(f"{t('ui_refresh_failed')}: {msg}", severity="warning", timeout=6)
-            self.fresh = True
             self._header()
 
     def populate(self, data: Data, fresh: bool = False) -> None:
         first = self.data is None
         self.data = data
         self.fresh = fresh
+        self.refresh_error = ""
         d = data.digest
         self.recs.update({"picks": list(d.picks), "wish": list(d.wish),
                           "discover": list(getattr(d, "discover", []) or [])})
-        if data.dlc:
+        if data.dlc or data.dlc_at:
             self.recs["dlc"], self.dlc_loaded = list(data.dlc), True
         self.query_one("#loading-box").display = False
         self.query_one("#views").display = True
         self.refill()
         if first:
             self._focus_table()
-        if self.tab == "dlc" and not self.dlc_loaded:
-            self.load_dlc()
+        if self.tab == "dlc" and not self.loading:
+            self._request_dlc()
+
+    def _request_dlc(self, force: bool = False) -> None:
+        if self.loading or self._dlc_loading:
+            return
+        if not force and self.dlc_loaded and self.data and time.time() - self.data.dlc_at < REFRESH_AFTER:
+            return
+        self._dlc_loading = True
+        self.dlc_error = ""
+        self._header()
+        self.load_dlc(force)
 
     @work(thread=True, exclusive=True, group="dlc")
-    def load_dlc(self) -> None:
+    def load_dlc(self, force: bool = False) -> None:
+        from ..db import set_refresh
+        worker = get_current_worker()
         try:
+            if force:
+                set_refresh(True)
             rows = self.loader.load_dlc()
         except Exception as e:  # noqa: BLE001
-            self.call_from_thread(self.notify, str(e), severity="warning")
-            return
-        self.call_from_thread(self._dlc_ready, rows)
+            if not worker.is_cancelled:
+                self.call_from_thread(self._dlc_failed, str(e))
+        else:
+            if not worker.is_cancelled:
+                self.call_from_thread(self._dlc_ready, rows)
+        finally:
+            set_refresh(False)
+            if not worker.is_cancelled:
+                self.call_from_thread(self._dlc_finished)
+
+    def _dlc_failed(self, msg: str) -> None:
+        self.dlc_error = msg
+        self.notify(msg, severity="warning")
+        if not self.dlc_loaded:
+            self.query_one("#empty", Static).update(Text(msg + " · " + t("tu_cached")))
+
+    def _dlc_finished(self) -> None:
+        self._dlc_loading = False
+        self._header()
 
     def _dlc_ready(self, rows: list) -> None:
         self.recs["dlc"], self.dlc_loaded = list(rows), True
+        if self.data is not None:
+            self.data.dlc, self.data.dlc_at = list(rows), time.time()
+            self.save_results()
         self.refill()
+
+    @work(thread=True, exclusive=True, group="snapshot")
+    def save_results(self) -> None:
+        if self.data is not None:
+            try:
+                save_snapshot(self.data)
+            except (OSError, ValueError, sqlite3.Error) as e:
+                if not get_current_worker().is_cancelled:
+                    self.call_from_thread(self._save_failed, str(e))
 
     # ---------------------------------------------------------------- header and key line
 
@@ -824,6 +990,7 @@ class SiftApp(App):
         line.append("sift", style=f"bold {ACCENT}")
         line.append("   ")
         for n, tab in enumerate(TABS, 1):
+            start = len(line)
             label = t(TAB_LABEL[tab])
             count = self._shown.get(tab)
             if tab == self.tab:
@@ -832,7 +999,8 @@ class SiftApp(App):
                 line.append(f"{label}", style=MUTED)
             if count is not None and self.data is not None and (tab != "dlc" or self.dlc_loaded):
                 line.append(f" {count}", style=DIM if tab != self.tab else MUTED)
-            line.append("   ")
+            line.stylize(Style(meta={"@click": f"app.go_tab('{tab}')"}), start, len(line))
+            line.append(" " if self.screen.has_class("narrow") else "   ")
         right = Text()
         chips = self.view.chips()
         if self.view.macros:
@@ -842,8 +1010,17 @@ class SiftApp(App):
         if self.query_text:
             right.append(f"“{self.query_text}”  ", style=INK)
         right.append(t("tu_sorted", by=t(f"ui_sort_{self.sort}")), style=MUTED)
-        if self.data is not None and not self.fresh:
+        right.stylize(Style(meta={"@click": "app.sort(1)"}))
+        stamp = len(right)
+        if (self.dlc_error if self.tab == "dlc" else self.refresh_error) and self.data is not None:
+            right.append("  " + t("tu_cached"), style=VERDICT["meh"])
+        elif self.loading or (self.tab == "dlc" and self._dlc_loading):
             right.append("  " + t("ui_updating"), style=f"{DIM} italic")
+        elif self.data and self.data.saved_at:
+            updated_at = self.data.dlc_at if self.tab == "dlc" and self.data.dlc_at else self.data.saved_at
+            right.append("  " + t("tu_updated", at=time.strftime("%H:%M", time.localtime(updated_at))),
+                         style=MUTED)
+        right.stylize(Style(meta={"@click": "app.refresh"}), stamp, len(right))
         width = max(40, self.size.width - 4)
         gap = width - len(line.plain) - len(right.plain)
         if gap < 2:
@@ -856,12 +1033,18 @@ class SiftApp(App):
     def _keys(self) -> None:
         line = Text()
         keys = [("enter", "tu_k_open"), ("/", "tu_k_search"), ("f", "tu_k_filters"),
-                ("s", "tu_k_sort"), ("x", "tu_k_hide"), ("?", "tu_k_keys"), ("q", "tu_k_quit")]
+                ("s", "tu_k_sort"), ("r", "tu_k_refresh"), ("x", "tu_k_hide"),
+                ("?", "tu_k_keys"), ("q", "tu_k_quit")]
         if self.screen.has_class("narrow"):
             keys = [("d", "tu_k_details"), *[k for k in keys if k[0] not in ("x", "s")]]
         for key, label in keys:
+            start = len(line)
             line.append(key, style=f"bold {INK}")
-            line.append(f" {t(label)}   ", style=MUTED)
+            line.append(f" {t(label)}", style=MUTED)
+            action = {"enter": "open", "/": "search", "f": "filters", "s": "sort(1)", "r": "refresh",
+                      "x": "hide('taste')", "?": "help", "q": "quit", "d": "details"}[key]
+            line.stylize(Style(meta={"@click": f"app.{action}"}), start, len(line))
+            line.append(" " if self.screen.has_class("narrow") else "   ")
         sale = self._sale_note()
         if sale:
             gap = max(2, self.size.width - 4 - len(line.plain) - len(sale))
@@ -955,7 +1138,7 @@ class SiftApp(App):
             msg = t("tu_empty_filtered") if (not self.view.is_default() or self.query_text) else t("tu_empty")
             empty.update(Text(msg))
         if tab == "dlc" and not self.dlc_loaded and self.data is not None:
-            empty.update(Text(t("sp_dlc")))
+            empty.update(Text(self.dlc_error or t("sp_dlc")))
             nothing = True
         empty.set_class(nothing, "show")
         self.query_one("#views").display = not nothing and self.data is not None
@@ -984,6 +1167,13 @@ class SiftApp(App):
     def selected(self) -> None:
         self.action_open()
 
+    @on(DataTable.HeaderSelected)
+    def sort_column(self, event: DataTable.HeaderSelected) -> None:
+        sort = {"verdict": "deal", "price": "price", "cut": "cut", "reviews": "rating"}.get(event.column_key.value)
+        if sort:
+            self.view.sort = sort
+            self.refill()
+
     def _focus_table(self) -> None:
         self._table().focus()
 
@@ -1011,11 +1201,15 @@ class SiftApp(App):
             return                     # nothing to show yet (and never react to stray input during startup)
         self.tab = tab
         self.query_one("#views", ContentSwitcher).current = tab
-        if tab == "dlc" and not self.dlc_loaded:
-            self.load_dlc()
+        if tab == "dlc":
+            self._request_dlc()
         self._show_current()
         self._header()
         self.call_after_refresh(self._focus_table)
+
+    def action_go_tab(self, tab: str) -> None:
+        self._focus_table()
+        self.action_tab(tab)
 
     def action_step_tab(self, d: int) -> None:
         if self.data is None or self._typing():
@@ -1162,11 +1356,16 @@ class SiftApp(App):
         self.refill()
 
     def action_refresh(self) -> None:
-        if self._typing():
+        if self._typing() or self.loading or self._dlc_loading:
+            return
+        if self.tab == "dlc" and self.data is not None:
+            self._request_dlc(force=True)
             return
         from ..db import set_refresh
         set_refresh(True)
         self.fresh = False
+        self.loading = True
+        self.refresh_error = ""
         self._header()
         self.load(refresh=True)
 

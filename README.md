@@ -67,7 +67,9 @@ Steam only issues API keys to accounts that have spent at least $5 and use Steam
 ## Using it
 
 The app has four tabs (Deals · Wishlist · Discover · DLC), a verdict on every row and the game's two-year sale history
-next to it. Everything works from the keyboard:
+next to it. Click a tab to switch views, click a game to preview it, or double-click to open it in Steam.
+The actions along the bottom are clickable too. Click the price, discount, verdict or review column to sort.
+Everything also works from the keyboard:
 
 | key | | key | |
 |---|---|---|---|
@@ -76,6 +78,14 @@ next to it. Everything works from the keyboard:
 | `1–4` `← →` | tabs | `s` | sort |
 | `x` | hide: not for me | `u` | undo |
 | `i` | price history on IsThereAnyDeal | `?` | every key |
+| `r` | refresh the current view | `d` | show details in narrow windows |
+
+The last results are saved locally as soon as a scan succeeds. Reopening sift shows them immediately;
+results less than 15 minutes old need no new scan. Older results stay visible while a background refresh
+runs. The app checks again while it stays open, reuses cached metadata and prices, and keeps the previous
+results if Steam is unavailable. The header shows when results were updated or that saved data is being used.
+Use `r` for a forced refresh; repeated clicks share the running scan. DLC loads only when its tab is opened
+and refreshes independently. Saved results are separated by Steam account, profile and store region.
 
 The same filters work as flags, so a search can be one line:
 

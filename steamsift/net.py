@@ -13,6 +13,7 @@ import requests
 from requests.adapters import HTTPAdapter
 
 from . import config
+from .db import stale_ok
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -21,6 +22,7 @@ USER_AGENT = (
 
 MAX_WAIT = 5.0                      # seconds we are willing to sleep on one 429
 _hold: dict[str, float] = {}        # host -> unix time until which we do not call it
+_failures: dict[str, int] = {}
 
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.8"})
@@ -52,6 +54,24 @@ def request_json(
     retries: int = 2,
     remote_fallback: bool = False,
 ) -> Any:
+    if stale_ok():
+        return None
+    data = _request_json(url, params, payload, timeout, retries, remote_fallback)
+    if data is None:
+        target = urlsplit(url)
+        required = ("/IPlayerService/GetOwnedGames/", "/IWishlistService/GetWishlist/",
+                    "/IStoreBrowseService/GetItems/", "/search/results/")
+        if target.path.startswith(required):
+            _failures[target.netloc] = _failures.get(target.netloc, 0) + 1
+    return data
+
+
+def steam_failures() -> int:
+    """Detect incomplete Steam scans even when individual endpoints return a quiet None."""
+    return sum(_failures.get(host, 0) for host in ("api.steampowered.com", "store.steampowered.com"))
+
+
+def _request_json(url, params, payload, timeout, retries, remote_fallback):
     """GET (or POST when payload is given) and decode JSON. Returns None on failure.
 
     A 429 waits at most MAX_WAIT once; a longer Retry-After puts the host on hold, and calls to it
