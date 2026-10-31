@@ -42,6 +42,12 @@ def data(monkeypatch):
     prefs.clear_hidden()
 
 
+@pytest.fixture(autouse=True)
+def every_row(monkeypatch):
+    """Most tests here are about other features: show every verdict, not only the worth-it list."""
+    monkeypatch.setattr(SiftApp, "WORTH_IT_FIRST", False)
+
+
 async def ready(pilot, app):
     for _ in range(100):
         await pilot.pause(0.02)
@@ -532,7 +538,7 @@ def test_discover_tab_is_one_plain_list(world):
             await pilot.press("3")
             assert app.tab == "discover"
             assert set(rows(app, "discover")) == {"Tiny Puzzle", "Another Puzzle", "Space Tactics"}
-            assert len(app.query_one("#t-discover").columns) == 5        # verdict · price · cut · game · reviews
+            assert len(app.query_one("#t-discover").columns) == 6   # verdict · price · cut · game · why · reviews
             await pilot.pause()
             info = str(app.query_one("#d-discover").query_one("#info").render())
             assert rows(app, "discover")[0] in info and "new for you" in info
@@ -648,7 +654,7 @@ def test_narrow_terminal_keeps_names_and_toggles_details(data):
 
 
 @pytest.mark.parametrize("width", [80, 100, 150])
-def test_long_game_names_keep_reviews_visible_at_every_width(data, width):
+def test_long_game_names_keep_the_last_column_visible_at_every_width(data, width):
     data.digest.picks[0].item.name = "A very long game name " * 5
 
     async def go():
@@ -657,5 +663,42 @@ def test_long_game_names_keep_reviews_visible_at_every_width(data, width):
             await ready(pilot, app)
             await app.workers.wait_for_complete()
             await pilot.pause()
-            assert "rev." in app.query_one("#t-picks").render_line(0).text
+            head = app.query_one("#t-picks").render_line(0).text
+            # narrow: the reason replaces reviews · medium: the reason is in the details pane · wide: both
+            assert ("why" in head, "rev." in head) == {80: (True, False), 100: (False, True), 150: (True, True)}[width]
+            if width == 150:
+                t = app.query_one("#t-picks")
+                assert "was 50% cheaper" in [t.get_row_at(i)[4].plain for i in range(t.row_count)]
     run(go())
+
+
+def test_deals_open_on_the_worth_it_list(monkeypatch):
+    monkeypatch.setattr(SiftApp, "WORTH_IT_FIRST", True)
+    lib, meta = racing_fan()
+    cands = {60: item(60, "Rally Kings", RACING, cut=80, price=499),
+             61: item(61, "Night Drive", RACING, cut=50, price=1299),
+             62: item(62, "Fear House", HORROR, cut=90, price=199)}
+    offline_digest(monkeypatch, history={
+        60: History(80, sales_2y=19, gap_days=43, covered_days=730),     # GREAT: record, back every 43 days
+        61: 75,                                                         # NOPE
+        62: 95})                                                        # OK
+    ctx = make_ctx(lib, meta, {}, cands)
+    data = Data(ctx, engine.build_digest(ctx, limit=20, min_discount=0), [])
+
+    async def go():
+        app = SiftApp(StubLoader(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            assert rows(app) == ["Rally Kings"]
+            assert "Deals 1" in header(app) and "worth it · a: all 3" in header(app)
+            await pilot.press("a")
+            assert set(rows(app)) == {"Rally Kings", "Night Drive", "Fear House"}
+            assert "all deals" in header(app)
+            await pilot.press("a")
+            prefs.hide(60, "Rally Kings", "taste")
+            app.refill()
+            assert rows(app) == [] and "a shows all 2 discounts" in str(app.query_one("#empty").render())
+    try:
+        run(go())
+    finally:
+        prefs.clear_hidden()

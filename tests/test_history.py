@@ -70,6 +70,29 @@ def test_window_lows_carry_forward_without_counting_old_start():
     assert parse_history([change(900, 0)], TODAY).low_2y_cut == 0
 
 
+def test_log_that_misses_the_running_sale_is_not_trusted():
+    # Resident Evil 6, 2026-10-31: ITAD's log stopped in January 2024 at full price, Steam has it at −75% now.
+    rows = [change(1000, 75, 2999), change(990, 0, 2999), change(970, 83, 2999), change(960, 0, 2999)]
+    h = parse_history(rows, TODAY, store_low_cut=83, store_low_cents=509, regular_cents=2999)
+    assert (h.last_cut, h.last_day) == (0, (TODAY - dt.timedelta(days=960)).isoformat())
+    assert h.tier == "rare" and verdict(75, h, today=TODAY).kind == "hot"      # the bug
+    assert itad.trusted(h, 75, TODAY) is None and verdict(75, None, today=TODAY) == Verdict()
+    # trusted as long as the log is recent, the game is not on sale, or the log ends inside a sale
+    assert itad.trusted(h, 0, TODAY) is h
+    fresh = parse_history([change(900, 0), change(200, 0, 1200)], TODAY)
+    assert itad.trusted(fresh, 50, TODAY) is fresh
+    running = parse_history([change(900, 0), change(400, 60)], TODAY)
+    assert itad.trusted(running, 60, TODAY) is running
+    assert itad.trusted(None, 50, TODAY) is None and itad.trusted(History(80), 50, TODAY) == History(80)
+
+
+def test_low_2y_reason_never_shows_zero_percent():
+    # decided in cents: the log's 2-year low cut is 0 (full price all window), today's −75% is the 2-year low
+    h = History(83, low_2y_cut=0, low_cents=509, low_2y_cents=2999, regular_cents=2999,
+                covered_days=730, sales_2y=3, gap_days=200)
+    assert verdict(75, h, today=TODAY) == Verdict("hot", "low_2y", 75)
+
+
 def test_raises_fake_discount_and_ignored_bad_rows():
     h = parse_history([change(900, 0), change(80, 0, 1200), change(30, 50, 1400)], TODAY)
     assert h.raised_days == 30 and h.fake_discount(50) and not h.fake_discount(0)

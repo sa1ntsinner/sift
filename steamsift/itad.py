@@ -15,7 +15,7 @@ from .net import request_json
 BASE = "https://api.isthereanydeal.com"
 STEAM_SHOP = 61
 _id_cache = Cache("itad_ids")
-_hist_cache = Cache("itad_history_v3", volatile=True)
+_hist_cache = Cache("itad_history_v4", volatile=True)   # v4: last_day, last_cut
 _log_cache = Cache("itad_log_v1")
 _prices_cache = Cache("itad_steam_low_v1", volatile=True)
 _bundle_cache = Cache("itad_bundles_v1", volatile=True)
@@ -36,6 +36,8 @@ class History:
     regular_cents: int = 0      # current US base price (latest in the log, or ITAD's current deal)
     low_cents: int = 0          # lowest US price ever paid (log or ITAD storeLow)
     low_2y_cents: int = 0       # lowest US price in the last 730 days
+    last_day: str = ""          # date of the log's latest change
+    last_cut: int = 0           # the cut it changed to
 
     # A base price can move: $10 at −50% ($5) beats $15 at −60% ($6). With US prices known we compare
     # what you pay; without them we fall back to the discount percentages.
@@ -113,6 +115,7 @@ def parse_history(log: list[dict], today: dt.date, store_low_cut: int = 0, store
     if not rows:
         return h
     h.covered_days = max(0, (today - rows[0][0].date()).days)
+    h.last_day, h.last_cut = rows[-1][0].date().isoformat(), rows[-1][1]
     cutoff = today - dt.timedelta(days=730)
     sales = []
     active = None
@@ -155,6 +158,24 @@ def parse_history(log: list[dict], today: dt.date, store_low_cut: int = 0, store
     if sales:
         h.since_last_days = max(0, (today - sales[-1][2]).days)
     return h
+
+
+QUIET_DAYS = 365
+
+
+def trusted(h: History | None, cut: int, today: dt.date | None = None) -> History | None:
+    """The log, or nothing when ITAD has lost track of the game.
+
+    Steam has the game on sale, but the log's last change is a return to full price a year ago:
+    ITAD stopped following this product (seen on Resident Evil 6: its log, low and base price were all stale).
+    Its "no sales in two years" would read as rare, its old base price as "was cheaper". No verdict is honest.
+    ponytail: a year of silence is the signal. A shorter gap would also catch a sale that started after
+    the last log fetch (logs refresh every 3 days). Pass the sale start here if a tighter rule is needed."""
+    if not h or cut <= 0 or not h.last_day or h.last_cut > 0:
+        return h
+    if ((today or dt.date.today()) - dt.date.fromisoformat(h.last_day)).days <= QUIET_DAYS:
+        return h
+    return None
 
 
 def analyze_price_series(rows: list[tuple[str, int, int, int]], today: dt.date | None = None) -> dict:

@@ -269,7 +269,7 @@ def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
             return Verdict("ok", "atl_unknown", hist.best_cut)
         return Verdict("hot", "atl", hist.best_cut)
     if hist.is_2y_low(cut) and hist.tier != "frequent":
-        return Verdict("hot", "low_2y", hist.low_2y_cut)
+        return Verdict("hot", "low_2y", max(cut, hist.low_2y_cut))   # in cents the log's cut may be 0
     if hist.tier == "rare" and cut >= hist.typical_cut:
         return Verdict("hot", "rare_first" if not hist.sales_2y else "rare", hist.sales_2y)
     if _cheaper_bundle(bundle, price_cents, currency, today):

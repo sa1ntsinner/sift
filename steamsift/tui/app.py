@@ -32,6 +32,8 @@ SORTS = list(qry.SORTS)
 TABS = ("picks", "wish", "discover", "dlc")
 TAB_LABEL = {"picks": "tu_tab_deals", "wish": "tu_tab_wish", "discover": "tu_tab_discover", "dlc": "tu_tab_dlc"}
 DEAL_TABS = ("picks", "wish", "discover")
+WORTH_TABS = ("picks", "discover")        # open on HOT + GREAT only; the wishlist and DLC show every verdict
+WORTH = ("hot", "great")
 
 
 class Loader:
@@ -104,6 +106,10 @@ def verdict_of(row) -> Verdict:
     if isinstance(v, Verdict):
         return v
     return judge(row.item.cut, row.hist)
+
+
+def worth_it(row) -> bool:
+    return verdict_of(row).kind in WORTH or bool(getattr(row, "extras", {}).get("target", {}).get("hit"))
 
 
 def verdict_cell(v: Verdict) -> Text:
@@ -456,7 +462,7 @@ HELP = (
     ("tu_h_move", (("↑ ↓  j k", "tu_h_rows"), ("g  G", "tu_h_ends"), ("1–4  ← →  tab", "tu_h_tabs"))),
     ("tu_h_game", (("enter  o", "tu_h_open"), ("i", "tu_h_itad"), ("b", "tu_h_bundle"),
                    ("x", "tu_h_hide"), ("X", "tu_h_own"), ("u", "tu_h_undo"))),
-    ("tu_h_list", (("d", "tu_h_details"), ("/", "tu_h_search"), ("f", "tu_h_filters"), ("s  S", "tu_h_sort"), ("0", "tu_h_reset"),
+    ("tu_h_list", (("a", "tu_h_all"), ("d", "tu_h_details"), ("/", "tu_h_search"), ("f", "tu_h_filters"), ("s  S", "tu_h_sort"), ("0", "tu_h_reset"),
                    ("r", "tu_h_refresh"))),
     ("tu_h_app", (("?", "tu_h_help"), ("q", "tu_h_quit"))),
 )
@@ -534,7 +540,9 @@ def render_details(row, status: str = "", width: int = 44) -> Text:
             out.append(f"  {i.orig_fmt}", style=f"strike {MUTED}")
             out.append(f"  −{i.cut}%", style=f"bold {INK}")
         if i.ends_at and i.ends_at > time.time():
-            out.append(f"   {engine_days(i.ends_at)}", style=MUTED)
+            ends = engine_days(i.ends_at)
+            line = len(out.plain) - out.plain.rfind("\n") - 1
+            out.append(f"   {ends}" if line + 3 + len(ends) <= width else f"\n{ends}", style=MUTED)
         out.append("\n")
 
     if v.kind:
@@ -546,14 +554,19 @@ def render_details(row, status: str = "", width: int = 44) -> Text:
         out.append("\n" + t("tu_first_sale" if i.cut > 0 else "tu_no_sales") + "\n", style=MUTED)
     elif h and h.points:
         out.append("\n")
-        out.append_text(sale_bars(h, max(16, width - 2), colour))
-        out.append("\n")
-        facts = [t("tu_sales_2y", n=h.sales_2y)]
-        if h.typical_cut:
-            facts.append(t("tu_usually", n=h.typical_cut))
+        bars = max(16, width - 2)
+        out.append_text(sale_bars(h, bars, colour))
+        ago, now = t("tu_2y_ago"), t("tu_now")
+        out.append("\n" + ago + " " * max(1, bars - len(ago) - len(now)) + now + "\n", style=DIM)
+        line = t("tu_sales_2y", n=h.sales_2y)
+        if h.gap_days:
+            line += ", " + t("tu_every", n=h.gap_days)
+        out.append(line + "\n", style=MUTED)
+        cuts = [t("tu_usually", n=h.typical_cut)] if h.typical_cut else []
         if h.best_cut:
-            facts.append(t("tu_best", n=h.best_cut))
-        out.append(" · ".join(facts) + "\n", style=MUTED)
+            cuts.append(t("tu_best", n=h.best_cut))
+        if cuts:
+            out.append(" · ".join(cuts) + "\n", style=MUTED)
         if h.since_last_days and i.cut <= 0:
             out.append(t("tu_since_last", n=h.since_last_days) + "\n", style=MUTED)
     elif h and h.best_cut:
@@ -749,6 +762,7 @@ class SiftApp(App):
     Screen.narrow.details-on Details { display: block; width: 55%; padding: 0 1 0 2; }
     """
     BINDINGS = [
+        Binding("a", "everything", show=False),
         Binding("o", "open", show=False),
         Binding("i", "itad", show=False),
         Binding("b", "bundle", show=False),
@@ -774,6 +788,8 @@ class SiftApp(App):
         *[Binding(str(n), f"tab('{tab}')", show=False) for n, tab in enumerate(TABS, 1)],
     ]
 
+    WORTH_IT_FIRST = True      # tests of other features switch this off to see every row
+
     def __init__(self, loader: Loader | None = None, images: bool = True, query: qry.Query | None = None):
         super().__init__()
         self.loader = loader or Loader()
@@ -792,6 +808,8 @@ class SiftApp(App):
         self.dlc_error = ""
         self._storage_error = ""
         self._shown: dict[str, int] = {}
+        self._all: dict[str, int] = {}
+        self.everything = not self.WORTH_IT_FIRST
         self._hidden_cache: set[int] = set()
         self.tab = self.view.tab if self.view.tab in TABS else "picks"
 
@@ -818,13 +836,6 @@ class SiftApp(App):
             self.register_theme(th)
         self.theme = "sift"
         self.query_one("#views").display = False
-        for tab in TABS:
-            table = self.query_one(f"#t-{tab}", DataTable)
-            table.add_column("", key="verdict", width=9)
-            table.add_column(Text(t("col_price"), justify="right"), key="price", width=9)
-            table.add_column(Text("%", justify="right"), key="cut", width=5)
-            table.add_column(t("col_game") if tab != "dlc" else t("col_dlc"), key="game")
-            table.add_column(Text(t("tu_col_reviews"), justify="right"), key="reviews", width=6)
         self._layout()
         self._header()
         self._keys()
@@ -1002,6 +1013,11 @@ class SiftApp(App):
             line.stylize(Style(meta={"@click": f"app.go_tab('{tab}')"}), start, len(line))
             line.append(" " if self.screen.has_class("narrow") else "   ")
         right = Text()
+        if self.tab in WORTH_TABS and self.data is not None:
+            mode = t("tu_everything") if self.everything else t("tu_worth", n=num(self._all.get(self.tab, 0)))
+            if self.screen.has_class("narrow"):
+                mode = mode.split(" · ")[-1]
+            right.append(mode + "  ", style=Style(color=MUTED, meta={"@click": "app.everything"}))
         chips = self.view.chips()
         if self.view.macros:
             right.append(" ".join(self.view.macros) + "  ", style=f"bold {VERDICT['meh']}")
@@ -1077,11 +1093,44 @@ class SiftApp(App):
         w = self.size.width
         self.screen.set_class(w < self.NARROW, "narrow")
         self.screen.set_class(self.NARROW <= w < self.MEDIUM, "medium")
+        self._columns()
+
+    def _wanted_columns(self) -> tuple[str, ...]:
+        """The reason shows in the table when the details pane is hidden or the window is wide enough for both;
+        in narrow windows it takes the reviews column's place."""
+        narrow, medium = self.screen.has_class("narrow"), self.screen.has_class("medium")
+        details = not narrow or self.screen.has_class("details-on")
+        cols = ["verdict", "price", "cut", "game"]
+        if not (details and (medium or narrow)):
+            cols.append("why")
+        if not narrow:
+            cols.append("reviews")
+        return tuple(cols)
+
+    def _columns(self) -> None:
+        cols = self._wanted_columns()
+        if cols == getattr(self, "_cols", ()):
+            return
+        self._cols = cols
+        heads = {"verdict": ("", 9, "left"), "price": (t("col_price"), 9, "right"), "cut": ("%", 5, "right"),
+                 "why": (t("tu_col_why"), 22, "left"), "reviews": (t("tu_col_reviews"), 6, "right")}
+        for tab in TABS:
+            table = self.query_one(f"#t-{tab}", DataTable)
+            table.clear(columns=True)
+            for key in cols:
+                if key == "game":
+                    table.add_column(t("col_game") if tab != "dlc" else t("col_dlc"), key="game")
+                else:
+                    label, width, justify = heads[key]
+                    table.add_column(Text(label, justify=justify), key=key, width=width)
+        if self.data is not None:
+            self.refill()
 
     def action_details(self) -> None:
         if self._typing():
             return
         self.screen.toggle_class("details-on")
+        self._columns()
         self._keys()
 
     # ---------------------------------------------------------------- tables
@@ -1099,22 +1148,31 @@ class SiftApp(App):
             keep = self._row_key(table)
             table.clear()
             visible = self._visible(self.recs[tab])
+            self._all[tab] = len(visible)
+            if tab in WORTH_TABS and not self.everything:
+                visible = [r for r in visible if worth_it(r)]
             self._shown[tab] = len(visible)
             wish = set(self.data.ctx.lib.wishlist_ids) if self.data else set()
             for r in visible:
                 i = r.item
                 v = verdict_of(r)
-                name = Text(short_name(i.name, 60), style=INK)
+                name = Text(short_name(i.name, 60), style=INK, overflow="ellipsis", no_wrap=True)
                 if tab != "wish" and i.appid in wish:
                     name.append("  ♥", style=VERDICT["wish"])
                 if getattr(r, "extras", {}).get("family"):
                     name.append("  ⌂", style=f"bold {VERDICT['family']}")
                 if getattr(r, "extras", {}).get("target", {}).get("hit"):
                     name.append("  ◎", style=ACCENT)
-                reviews = Text(f"{i.review_pct}%" if i.review_count else "—", style=MUTED, justify="right")
-                table.add_row(verdict_cell(v), Text(i.final_fmt, style=INK, justify="right"),
-                              Text(f"−{i.cut}%" if i.cut else "", style=MUTED, justify="right"),
-                              name, reviews, key=str(i.appid))
+                cells = {
+                    "verdict": verdict_cell(v),
+                    "price": Text(i.final_fmt, style=INK, justify="right"),
+                    "cut": Text(f"−{i.cut}%" if i.cut else "", style=MUTED, justify="right"),
+                    "game": name,
+                    "why": Text(t(f"vs_{v.reason}", n=v.value) if v.reason else "", style=MUTED,
+                                overflow="ellipsis", no_wrap=True),
+                    "reviews": Text(f"{i.review_pct}%" if i.review_count else "—", style=MUTED, justify="right"),
+                }
+                table.add_row(*(cells[c] for c in self._cols), key=str(i.appid))
             if keep:
                 try:
                     table.move_cursor(row=table.get_row_index(keep))
@@ -1136,6 +1194,8 @@ class SiftApp(App):
         nothing = self.data is not None and not self._shown.get(tab) and (tab != "dlc" or self.dlc_loaded)
         if nothing:
             msg = t("tu_empty_filtered") if (not self.view.is_default() or self.query_text) else t("tu_empty")
+            if tab in WORTH_TABS and not self.everything and self._all.get(tab):
+                msg = t("tu_empty_worth", n=num(self._all[tab]))
             empty.update(Text(msg))
         if tab == "dlc" and not self.dlc_loaded and self.data is not None:
             empty.update(Text(self.dlc_error or t("sp_dlc")))
@@ -1347,6 +1407,12 @@ class SiftApp(App):
             return
         self.set_view(qry.Query(tab=self.view.tab, sort=self.view.sort))
         self.notify(t("ui_cleared"), timeout=2)
+
+    def action_everything(self) -> None:
+        if self._typing() or self.data is None:
+            return
+        self.everything = not self.everything
+        self.refill()
 
     def action_sort(self, d: int) -> None:
         if self._typing() or self.data is None:

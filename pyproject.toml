@@ -51,7 +51,6 @@ Issues = "https://github.com/sa1ntsinner/sift/issues"
 [project.scripts]
 sift = "steamsift.cli:entry"
 steamsift = "steamsift.cli:entry"
-ss = "steamsift.cli:entry"
 
 [tool.setuptools]
 packages = ["steamsift", "steamsift.notify", "steamsift.tui"]

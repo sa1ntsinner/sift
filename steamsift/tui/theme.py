@@ -28,6 +28,9 @@ SIFT = Theme(
     surface="#0b0b0b",
     panel="#1c1c1c",
     dark=True,
+    # tabs, sort, footer keys are clickable: no web-link underline, only a quiet highlight under the pointer
+    variables={"link-style": "none", "link-style-hover": "bold", "link-background-hover": "#1c1c1c",
+               "link-color-hover": INK},
 )
 
 THEMES = [SIFT]

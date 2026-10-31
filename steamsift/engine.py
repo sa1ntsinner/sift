@@ -228,7 +228,7 @@ def enrich(recs: list[Rec], ctx: Context, sale_next: calendar.Event | None = Non
     targets = prefs.targets()
     for r in recs:
         a = r.item.appid
-        r.hist = hist.get(a)
+        r.hist = itad.trusted(hist.get(a), r.item.cut)
         r.extras.pop("bundle3p", None)
         if a in bundles:
             r.extras["bundle3p"] = bundles[a]
@@ -361,7 +361,7 @@ def dlc_rows(limit: int = 12, min_discount: int | None = None, budget: float | N
     rows.sort(key=lambda r: -r.score)
     hist = itad.history([r.item.appid for r in rows[: limit * 2]])
     for r in rows:
-        r.hist = hist.get(r.item.appid)
+        r.hist = itad.trusted(hist.get(r.item.appid), r.item.cut)
     rows.sort(key=lambda r: -r.score)
     return rows, len(items)
 
