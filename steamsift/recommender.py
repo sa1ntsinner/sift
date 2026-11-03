@@ -246,7 +246,7 @@ class Verdict:
     value: int = 0
 
 
-def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
+def verdict(cut: int, hist: History | None, bundle=None,
             price_cents: int = 0, currency: str = "", today: dt.date | None = None) -> Verdict:
     """Five levels, first match wins (prices compared in what you pay, not only in percent):
 
@@ -255,7 +255,9 @@ def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
           a rare sale at its usual depth · a cheaper active third-party bundle
     great record price, but it comes back every few weeks
     ok    record price with too little history to judge · an ordinary discount for this game
-    meh   it has been 12–30% cheaper · a big Steam sale starts within 21 days and this cut is small
+    meh   it has been 12–30% cheaper
+    A big Steam sale a few weeks away is no reason to wait for a game on sale now: in a backtest (2026-11) the
+    seasonal sale price of games discounted 2-21 days before it was 40-56% higher than the price then.
     No history yields an empty verdict.
     """
     if not hist or not hist._known() or cut <= 0:
@@ -263,7 +265,7 @@ def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
     if hist.fake_discount(cut):
         return Verdict("nope", "fake", hist.raised_days)
     if hist.by_price():
-        return _by_price(cut, hist, sale_next, bundle, price_cents, currency, today)
+        return _by_price(cut, hist, bundle, price_cents, currency, today)
     if hist.is_atl(cut):
         if hist.tier == "frequent":       # a record price that comes back every few weeks is no reason to hurry
             return Verdict("great", "returns", hist.gap_days or round(730 / max(1, hist.sales_2y)))
@@ -281,46 +283,57 @@ def verdict(cut: int, hist: History | None, sale_next=None, bundle=None,
         cheaper = 0                       # less than a dollar (US) apart: not worth waiting for
     if cheaper >= 30:
         return Verdict("nope", "cheaper_before", cheaper)
-    if sale_next and getattr(sale_next, "kind", "sale") == "sale":
-        days = (sale_next.start - (today or dt.date.today())).days
-        if 0 <= days <= 21 and cut < max(hist.typical_cut, hist.low_1y_cut):
-            return Verdict("meh", "sale_soon", days)
     if cheaper >= 12 and hist.tier != "rare":
         return Verdict("meh", "cheaper_before", cheaper)
     return Verdict("ok", "typical", hist.typical_cut or hist.best_cut)
 
 
-def _by_price(cut: int, hist: History, sale_next, bundle, price_cents: int, currency: str,
+def _by_price(cut: int, hist: History, bundle, price_cents: int, currency: str,
               today: dt.date | None) -> Verdict:
-    """With two years of US prices: compare with the two-year low, then count how often today's price came.
+    """With two years of US prices. Rules chosen by a backtest on 3,400 real sale starts (see usual_cents):
+    what a game usually costs on sale says more about waiting than its one lowest price.
 
-    above the 2-year low   ok (within 12% or a dollar) · meh (12–30%, or a big sale soon) · nope (30%+)
-    at the 2-year low      hot when it is new (lower than ever in two years) or came at most twice ·
-                           great when it comes back (3+ times): a good price, no hurry
-    Old records (a price from five years ago) do not count: what matters is what comes back."""
+    at the 2-year low   hot when the price is new or has not come for RARE_DAYS (it came back within 60 days in
+                        56-61% of cases, against 82-90% for a price seen in the last four months) ·
+                        great when it comes back: a good price, no hurry
+    above it            meh / nope when the usual sale price is 12% / 30% lower (waiting paid off within 90 days in
+                        53-67% of cases) · great when today beats the usual sale price by 10%+ · otherwise ok
+    With fewer than two sales in the last year there is no usual price: the 2-year low is the yardstick."""
+    day = today or dt.date.today()
     now = hist.now_cents(cut)
     low = hist.low_2y_cents
     if now > low + hist.tolerance(now):
         if _cheaper_bundle(bundle, price_cents, currency, today):
             return Verdict("hot", "bundle", bundle.price_cents)
-        cheaper = round(100 * (1 - low / now))
-        if now - low < 100 or cheaper < 12:          # under a dollar apart: not worth waiting for
-            return Verdict("ok", "near_low", cheaper)
-        if cheaper >= 30:
-            return Verdict("nope", "cheaper_before", cheaper)
-        if sale_next and getattr(sale_next, "kind", "sale") == "sale":
-            days = (sale_next.start - (today or dt.date.today())).days
-            if 0 <= days <= 21:
-                return Verdict("meh", "sale_soon", days)
-        return Verdict("meh", "cheaper_before", cheaper)
-    seen = hist.times_at(now)
-    if not seen:
+        usual = hist.usual_cents(day)
+        target, reason = (usual, "usual_cheaper") if usual else (low, "cheaper_before")
+        cheaper = round(100 * (1 - target / now)) if target < now else 0
+        if cheaper >= 12 and now - target >= 100:    # under a dollar apart is not worth waiting for
+            return Verdict("nope" if cheaper >= 30 else "meh", reason, cheaper)
+        if usual and now <= usual * 0.9:              # better than usual, but it got cheaper within 180 days
+            return Verdict("ok", "below_usual", round(100 * (1 - now / usual)))   # in 54% of cases
+        once = round(100 * (1 - low / now))
+        if usual and once >= 12:                      # a one-off low: the usual sale price is what comes back
+            return Verdict("ok", "usual", once)
+        return Verdict("ok", "near_low", once)
+    last = hist.last_at(now, day)
+    if last < 0:
         if not hist.runs and not hist.sales_2y:
             return Verdict("hot", "rare_first", 0)
+        # A new low only a step under the usual sale price is a price ladder: it was beaten within 180 days in
+        # 45% of cases (16% for a low at half the usual price or less). A good price, but no hurry.
+        usual = hist.usual_cents(day)
+        previous = min((p for _, p in hist.runs), default=0)
+        if (usual and now > usual * STEP) or (not usual and previous and now > previous * 0.85):
+            return Verdict("great", "step", round(100 * (1 - now / (usual or previous))))
         return Verdict("hot", "atl", hist.best_cut) if hist.is_atl(cut) else Verdict("hot", "low_2y", cut)
-    if seen <= 2:
-        return Verdict("hot", "seen", seen)
-    return Verdict("great", "returns", hist.gap_at(now) or round(730 / seen))
+    if last >= RARE_DAYS:
+        return Verdict("hot", "rare_low", last)
+    return Verdict("great", "returns", hist.gap_at(now) or round(730 / max(1, hist.times_at(now))))
+
+
+RARE_DAYS = 120     # a 2-year-low price not seen for this long counts as rare (see _by_price)
+STEP = 0.7          # a new low above this share of the usual sale price is a step down, not a rare price
 
 
 def _cheaper_bundle(bundle, price_cents: int, currency: str, today=None) -> bool:
@@ -390,8 +403,7 @@ class Rec:
         currency = {"CN": "CNY", "JP": "JPY"}.get(country.upper(), currency)
         d = _depth(self.item.cut, self.hist)
         rarity = self.hist.rarity(self.item.cut) if self.hist else 0.4
-        self.verdict = verdict(self.item.cut, self.hist, self.extras.get("sale_next"),
-                               self.extras.get("bundle3p"), self.item.final_cents, currency)
+        self.verdict = verdict(self.item.cut, self.hist, self.extras.get("bundle3p"), self.item.final_cents, currency)
         bundle = self.extras.get("bundle3p")
         bundle_value = float(bool(self.item.bundle_discount > 0 or self.item.complete_the_set
                                   or self.item.included_games > 1 or

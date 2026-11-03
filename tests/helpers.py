@@ -66,7 +66,7 @@ def offline_digest(monkeypatch, events: list[calendar.Event] | None = None, acco
     monkeypatch.setattr(engine.calendar, "events", lambda: list(events or []))
     monkeypatch.setattr(engine, "third_party_accounts", lambda ids: {a: v for a, v in (accounts or {}).items()
                                                                       if a in ids})
-    monkeypatch.setattr(engine.itad, "history", lambda ids, deep=None: {
+    monkeypatch.setattr(engine.itad, "history", lambda ids, deep=None, cuts=None: {
         a: (v if isinstance(v, History) else History(v)) for a, v in (history or {}).items() if a in ids
     })
 

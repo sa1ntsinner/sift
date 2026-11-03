@@ -107,8 +107,8 @@ class Card:
         return "\n".join(lines)
 
 
-def notes_for(r: Rec, wait: bool = True) -> str:
-    """Short annotations shared by every renderer (target hit, bundle, cadence, unshared family copy, elsewhere, accounts, wait)."""
+def notes_for(r: Rec) -> str:
+    """Short annotations shared by every renderer (target hit, bundle, cadence, unshared family copy, elsewhere, accounts)."""
     ex = r.extras
     parts = []
     tgt = ex.get("target")
@@ -126,15 +126,7 @@ def notes_for(r: Rec, wait: bool = True) -> str:
         parts.append(t("note_elsewhere", shop=e.shop, pct=e.pct))
     if ex.get("account"):
         parts.append(t("note_account", name=ex["account"]))
-    if wait and ex.get("wait"):
-        w = ex["wait"]
-        parts.append("⏳ " + t("note_wait", sale=sale_name(w.name), days=max(1, (w.start - _today()).days)))
     return " · ".join(parts)
-
-
-def _today():
-    import datetime as dt
-    return dt.date.today()
 
 
 def sale_name(name: str) -> str:

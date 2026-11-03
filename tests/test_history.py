@@ -10,7 +10,6 @@ import pytest
 import requests
 
 from steamsift import db, itad, net
-from steamsift.calendar import Event
 from steamsift.cli import _rec_to_dict
 from steamsift.itad import Bundle, History, parse_bundles, parse_history
 from steamsift.query import Query, parse
@@ -94,8 +93,11 @@ def test_low_2y_reason_never_shows_zero_percent():
 
 
 def test_raises_fake_discount_and_ignored_bad_rows():
-    h = parse_history([change(900, 0), change(80, 0, 1200), change(30, 50, 1400)], TODAY)
-    assert h.raised_days == 30 and h.fake_discount(50) and not h.fake_discount(0)
+    h = parse_history([change(900, 0), change(80, 0, 1200), change(30, 10, 1400)], TODAY)
+    assert h.raised_days == 30 and h.raised_from == 1200
+    assert h.fake_discount(10) and not h.fake_discount(0)     # $12.60 after a raise from $12: the old price back
+    assert not h.fake_discount(50)                            # $7 is below the old $12: a real sale
+    assert History(80, raised_days=5).fake_discount(50)       # old base unknown: any cut after a raise is suspect
     assert not replace(h, raised_days=61).fake_discount(50)
     assert replace(h, raised_days=60).fake_discount(1)
     assert replace(h, raised_days=0).fake_discount(1)
@@ -128,9 +130,6 @@ def test_history_methods_and_tier_boundaries():
     (80, History(80, sales_2y=14, covered_days=730), {}, Verdict("great", "returns", 52)),
     (70, History(90, low_2y_cut=70), {}, Verdict("hot", "low_2y", 70)),
     (60, History(90, typical_cut=60, sales_2y=2, covered_days=730), {}, Verdict("hot", "rare", 2)),
-    (50, History(60, typical_cut=55),
-     {"sale_next": Event("Winter", "sale", TODAY + dt.timedelta(days=21), TODAY + dt.timedelta(days=30))},
-     Verdict("meh", "sale_soon", 21)),
     (75, History(90, covered_days=400), {}, Verdict("nope", "cheaper_before", 60)),     # $25 vs $10
     (75, History(80, covered_days=400), {}, Verdict("meh", "cheaper_before", 20)),      # $25 vs $20
     (89, History(90, typical_cut=70, covered_days=400), {}, Verdict("ok", "typical", 70)),
@@ -165,10 +164,7 @@ def test_verdict_precedence_bundle_and_sale_boundaries():
     assert verdict(60, h, **args).reason == "returns"          # frequent record price: comes back
     assert verdict(50, replace(h, raised_days=1), **args).reason == "fake"
     no_bundle = dict(args, bundle=None)
-    for days, reason in [(21, "sale_soon"), (22, "cheaper_before"), (-1, "cheaper_before")]:
-        sale = Event("Sale", "sale", TODAY + dt.timedelta(days=days), TODAY + dt.timedelta(days=40))
-        assert verdict(50, h, sale_next=sale, **no_bundle).reason == reason
-    assert verdict(50, h, sale_next=Event("Fest", "fest", TODAY, TODAY), **no_bundle).reason == "cheaper_before"
+    assert verdict(50, h, **no_bundle).reason == "cheaper_before"
     assert verdict(50, h, **dict(args, currency="EUR")).reason == "cheaper_before"
     assert verdict(50, h, **dict(args, price_cents=300)).reason == "cheaper_before"
     expired = replace(b, expiry_iso="2000-01-01T00:00:00+00:00")
@@ -244,6 +240,29 @@ def test_fetch_split_prices_cache_incremental_merge_and_failure(api, monkeypatch
     itad._log_cache.get(883710)["fetched"] = 0
     monkeypatch.setattr(itad, "request_json", lambda *a, **kw: None)
     assert itad.history(ids, deep=[883710])[883710].covered_days == 900
+
+
+def test_discounted_games_beyond_the_shortlist_get_logs_a_few_per_run(api, monkeypatch):
+    # most HOT prices hide among games outside the top of the list: without a log they read "little data"
+    asked = []
+
+    def request(url, params=None, payload=None, **kwargs):
+        if "prices/v3" in url:
+            return fixture("itad_prices_v3.json")
+        asked.append(params["id"])
+        return [change(900, 0), change(50, 60), change(40, 0)]
+
+    monkeypatch.setattr(itad, "request_json", request)
+    monkeypatch.setattr(itad, "NEW_LOGS", 1)
+    ids = [883710, 7670]
+    result = itad.history(ids, deep=[], cuts={883710: 50, 7670: 0})
+    assert result[883710].covered_days > 365                    # on sale: its log was fetched
+    assert result[7670].covered_days == 0 and len(asked) == 1   # full price: not worth a call
+    itad._hist_cache._data = {}
+    assert itad.history(ids, deep=[], cuts={883710: 50})[883710].covered_days > 365    # cached log: no call
+    assert len(asked) == 1
+    monkeypatch.setattr(itad, "NEW_LOGS", 0)
+    assert itad.history([7670], deep=[], cuts={7670: 40})[7670].covered_days == 0       # over the run's budget
 
 
 def test_no_key_empty_paths_and_local_fallback(api, monkeypatch):
@@ -333,8 +352,9 @@ def test_engine_passes_full_ids_and_shortlist_and_attaches_bundle(monkeypatch):
     seen = []
     b = Bundle("Active", "Humble", "url", 100, "USD", "2099-01-01T00:00:00Z")
 
-    def history(ids, deep=None):
+    def history(ids, deep=None, cuts=None):
         seen.append((ids, deep))
+        assert cuts == {30: 50, 31: 50}
         return {30: History(90, covered_days=730, sales_2y=15), 31: History(90)}
 
     def bundles(ids):
@@ -390,9 +410,10 @@ def test_frequency_counts_sales_at_this_price_not_any_sale():
     h = parse_history(log, TODAY)
     assert h.tier == "frequent"                                   # the old rule called this a returning record
     assert h.times_at(h.now_cents(80)) == 1
-    assert verdict(80, h, today=TODAY) == Verdict("hot", "seen", 1)
-    # −50% again: that price is back every ~35 days, and −80% was 60% cheaper → wait
-    assert verdict(50, h, today=TODAY) == Verdict("nope", "cheaper_before", 60)
+    assert verdict(80, h, today=TODAY) == Verdict("hot", "rare_low", 400)       # not seen for 400 days
+    # −50% again: its usual sale price. −80% was 60% cheaper once, but a one-off low is no reason to wait
+    assert verdict(50, h, today=TODAY) == Verdict("ok", "usual", 60)
+    assert verdict(30, h, today=TODAY) == Verdict("meh", "usual_cheaper", 29)   # $7 vs the usual $5
 
 
 def test_price_that_returns_is_great_with_its_own_rhythm():
@@ -406,11 +427,21 @@ def test_first_time_this_low_in_two_years_and_old_records_do_not_count():
     # sold for $0.50 six years ago (storeLow); in two years the best was −75% ($2.50), once
     log = sale_runs((300, 10, 75), (100, 10, 50))
     h = parse_history(log, TODAY, store_low_cut=95, store_low_cents=50)
-    assert verdict(75, h, today=TODAY) == Verdict("hot", "seen", 1)
+    # its sales this year: $2.50 and $5 → usual $3.75
+    assert verdict(75, h, today=TODAY) == Verdict("hot", "rare_low", 300)       # $2.50, last seen 300 days ago
     assert verdict(80, h, today=TODAY) == Verdict("hot", "low_2y", 80)          # beats every price in two years
-    assert verdict(72, h, today=TODAY) == Verdict("ok", "near_low", 11)         # $2.80 vs $2.50
-    assert verdict(65, h, today=TODAY) == Verdict("meh", "cheaper_before", 29)  # $3.50 vs $2.50
-    assert verdict(50, h, today=TODAY) == Verdict("nope", "cheaper_before", 50)
+    assert verdict(72, h, today=TODAY) == Verdict("ok", "below_usual", 25)      # $2.80: under the usual $3.75
+    assert verdict(65, h, today=TODAY) == Verdict("ok", "usual", 29)            # $3.50: about the usual price
+    assert verdict(50, h, today=TODAY) == Verdict("meh", "usual_cheaper", 25)   # $5 vs the usual $3.75
+    assert verdict(20, h, today=TODAY) == Verdict("nope", "usual_cheaper", 53)  # $8 vs the usual $3.75
+
+
+def test_a_new_low_one_step_under_the_usual_price_is_no_rush():
+    # on sale every 2 months at $5; today $4: a new low, but a step down that is often beaten
+    h = parse_history(sale_runs(*[(20 + 60 * k, 10, 50) for k in range(8)]), TODAY)
+    assert h.usual_cents(TODAY) == 500
+    assert verdict(60, h, today=TODAY) == Verdict("great", "step", 20)
+    assert verdict(70, h, today=TODAY).kind == "hot"                           # $3 = 60% of usual: a real drop
 
 
 def test_a_record_that_never_came_back_is_the_record():

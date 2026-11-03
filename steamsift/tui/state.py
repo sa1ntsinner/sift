@@ -15,7 +15,7 @@ from ..recommender import Rec, Verdict
 from ..steam import Item, Library
 
 REFRESH_AFTER = 15 * 60
-_snapshots = Cache("tui_snapshot_v1")
+_snapshots = Cache("tui_snapshot_v2")   # v2: verdict reasons of 0.3
 
 
 @dataclass

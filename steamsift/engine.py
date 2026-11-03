@@ -223,7 +223,7 @@ def enrich(recs: list[Rec], ctx: Context, sale_next: calendar.Event | None = Non
     ids = [r.item.appid for r in recs]
     deep_ids = ids if deep is None else list(dict.fromkeys(r.item.appid for r in deep))
     deep_ids = deep_ids[:150]
-    hist = itad.history(ids, deep=deep_ids)
+    hist = itad.history(ids, deep=deep_ids, cuts={r.item.appid: r.item.cut for r in recs})
     bundles = itad.bundles(deep_ids[:40])         # one request per game: only the top of the lists
     accounts = third_party_accounts(deep_ids) if deep_ids else {}
     c = cfg()
@@ -248,9 +248,6 @@ def enrich(recs: list[Rec], ctx: Context, sale_next: calendar.Event | None = Non
             r.extras["target"] = {"price_cents": tgt["price_cents"], "hit": hit}
             if hit:
                 r.intent = max(r.intent, 1.0)
-        at_low = bool(r.hist and r.hist.is_atl(r.item.cut))
-        if sale_next and not at_low:
-            r.extras["wait"] = sale_next
         r.rescore()
 
 

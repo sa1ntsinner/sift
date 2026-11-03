@@ -645,6 +645,10 @@ def render_details(row, status: str = "", width: int = 44, target: str = "") -> 
         out.append("\n" + t(f"vd_{v.kind}") + "\n", style=f"bold {colour}")
         out.append(t(f"vr_{v.reason}", n=v.value) + "\n", style=INK)
         h = row.hist
+        if i.cut > 0:
+            gap = h.gap_days if h else 0
+            out.append(t(f"tu_do_{v.kind}_gap" if v.kind in ("meh", "nope") and gap else f"tu_do_{v.kind}", n=gap)
+                       + "\n", style=f"bold {INK}")
         if h and h.by_price() and i.cut > 0 and h.now_cents(i.cut) <= h.low_2y_cents + h.tolerance(h.now_cents(i.cut)):
             now = h.now_cents(i.cut)
             seen = h.times_at(now)

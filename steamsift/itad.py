@@ -15,7 +15,7 @@ from .net import request_json
 BASE = "https://api.isthereanydeal.com"
 STEAM_SHOP = 61
 _id_cache = Cache("itad_ids")
-_hist_cache = Cache("itad_history_v5", volatile=True)   # v5: runs (every sale in two years with its low)
+_hist_cache = Cache("itad_history_v6", volatile=True)   # v6: raised_from (the base price before a raise)
 _log_cache = Cache("itad_log_v1")
 _prices_cache = Cache("itad_steam_low_v1", volatile=True)
 _bundle_cache = Cache("itad_bundles_v1", volatile=True)
@@ -31,6 +31,7 @@ class History:
     since_last_days: int = 0
     typical_cut: int = 0
     raised_days: int = -1
+    raised_from: int = 0        # US base price before that raise (cents; 0 = unknown)
     covered_days: int = 0
     points: list[tuple[str, int]] = field(default_factory=list)
     regular_cents: int = 0      # current US base price (latest in the log, or ITAD's current deal)
@@ -67,6 +68,16 @@ class History:
         """Days since the last sale at this price or lower started (-1 = none in two years)."""
         starts = self._starts_at(cents)
         return ((today or dt.date.today()) - starts[-1]).days if starts else -1
+
+    def usual_cents(self, today: dt.date | None = None) -> int:
+        """The game's usual sale price: the median low of its sales in the last year (0 = fewer than two).
+
+        Backtested on 3,400 sale starts (2026-11): a price 12%+ above it got 12% cheaper within 90 days in 53-67% of
+        cases, a price at or below it in 14-18%. The two-year low is a worse yardstick: a one-off low a year ago
+        rarely comes back (22% within 90 days at 30%+ above it)."""
+        day = today or dt.date.today()
+        lows = [low for start, low in self.runs if (day - dt.date.fromisoformat(start)).days <= 365]
+        return round(median(lows)) if len(lows) >= 2 else 0
 
     def by_price(self) -> bool:
         """The log is long enough and has US prices: judge in what you pay."""
@@ -111,7 +122,11 @@ class History:
         return "regular"
 
     def fake_discount(self, cut: int) -> bool:
-        return 0 <= self.raised_days <= 60 and cut > 0
+        """The base price went up in the last 60 days and the sale only takes it back: you pay at least 90% of the
+        old full price. A raise followed by a real cut below the old price is a sale like any other."""
+        if not (0 <= self.raised_days <= 60 and cut > 0):
+            return False
+        return not (self.raised_from and self.regular_cents) or self.now_cents(cut) >= 0.9 * self.raised_from
 
     def rarity(self, cut: int) -> float:
         base = {"rare": 1.0, "regular": 0.5, "frequent": 0.15, "unknown": 0.4}[self.tier]
@@ -175,6 +190,7 @@ def parse_history(log: list[dict], today: dt.date, store_low_cut: int = 0, store
         if regular is not None:
             if previous_regular is not None and regular > previous_regular and (today - day).days <= 120:
                 h.raised_days = (today - day).days
+                h.raised_from = previous_regular
             previous_regular = regular
         if cut > 0:
             if active is None:
@@ -318,8 +334,15 @@ def _game_log(appid: int, gid: str) -> list[dict]:
     return log
 
 
-def history(appids: list[int], deep: list[int] | None = None) -> dict[int, History]:
-    """Batch Steam lows for all games; fetch full logs only for the shortlist."""
+NEW_LOGS = 60       # price logs fetched per run beyond the shortlist (ITAD allows ~80 log calls per 5 minutes)
+
+
+def history(appids: list[int], deep: list[int] | None = None, cuts: dict[int, int] | None = None) -> dict[int, History]:
+    """Batch Steam lows for all games; fetch full logs for the shortlist.
+
+    With `cuts` (today's discounts) the shortlist grows: every discounted game whose log is already cached, and up
+    to NEW_LOGS more, closest to their Steam low first. Without a log a game cannot be judged by price and gets
+    "record · little data"; most HOT and GREAT prices hide there, so coverage grows run by run (logs keep 30 days)."""
     if not available() or not appids:
         return {}
     appids = list(dict.fromkeys(appids))
@@ -350,6 +373,16 @@ def history(appids: list[int], deep: list[int] | None = None) -> dict[int, Histo
             regular = int((deal.get("regular") or {}).get("amountInt") or 0)
             result[a] = History(best_cut=best, low_cents=low, regular_cents=regular)
             _prices_cache.set(a, {"best": best, "low": low, "regular": regular})
+    if cuts:
+        extra = [a for a in appids if a not in shortlist and cuts.get(a, 0) > 0 and a in ids]
+        have = {a for a in extra if _log_cache.get(a, 30 * DAY)}
+
+        def closeness(a):
+            h = result[a]
+            now = h.now_cents(cuts[a])
+            return now / h.low_cents if now and h.low_cents else 9.0
+        new = sorted((a for a in extra if a not in have), key=closeness)[:NEW_LOGS]
+        shortlist |= have | set(new)
     pending = []
     for a in shortlist:
         cached = _hist_cache.get(a, 12 * HOUR)

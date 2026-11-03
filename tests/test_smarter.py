@@ -33,7 +33,8 @@ def test_current_next_and_matching_fests():
     assert calendar.fests_for(["Horror"], dt.date(2026, 10, 9), evs=evs)[0].name.startswith("Steam Scream")
 
 
-def test_wait_hint_only_when_not_at_record_low(monkeypatch):
+def test_no_wait_for_a_seasonal_sale_when_the_game_is_on_sale_now(monkeypatch):
+    # backtest: games discounted just before a seasonal sale cost 40-56% more during it than then
     lib, meta = racing_fan()
     soon = sale("Steam Winter Sale", dt.date.today() + dt.timedelta(days=9))
     offline_digest(monkeypatch, events=[soon], history={30: 90, 31: 60})
@@ -41,10 +42,9 @@ def test_wait_hint_only_when_not_at_record_low(monkeypatch):
     ctx = make_ctx(lib, meta, {}, cands)
     d = engine.build_digest(ctx, limit=10, min_discount=0)
     by = {r.item.appid: r for r in d.picks}
-    assert by[30].extras["wait"].name == "Steam Winter Sale" and "wait" not in by[31].extras
-    assert d.sale_next is soon
-    note = notes_for(by[30])
-    assert "⏳" in note and "9" in note
+    assert d.sale_next is soon                                   # the calendar still reaches the header
+    assert "wait" not in by[30].extras and "⏳" not in notes_for(by[30])
+    assert by[30].verdict.reason != "sale_soon"
 
 
 def test_running_sale_and_fests_reach_the_digest(monkeypatch):

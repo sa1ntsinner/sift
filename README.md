@@ -31,16 +31,23 @@ show up, so you buy the right game at the right moment and skip the rest.
 
 | | |
 |---|---|
-| **HOT** | The lowest price in two years, and a price this low came at most twice. Or a cheaper bundle. |
-| **GREAT** | The lowest price in two years, but a similar price (within 12%) comes back every few weeks. Buy it when you will play it. |
-| **OK** | Close to its two-year low: within 12% or a dollar. |
-| **MEH** | 12–30% above its two-year low, or a big Steam sale is under three weeks away. |
-| **NOPE** | 30% or more above its two-year low, or the base price went up just before the sale. |
+| **HOT** | The lowest price in two years, and a rare one: new, or not seen for four months, and well under the usual sale price. Or a cheaper bundle. Buy now if you want it. |
+| **GREAT** | The lowest price in two years, but it comes back (or it is only a small step under the usual sale price). No hurry. |
+| **OK** | An ordinary sale price. No reason to hurry, none to wait. |
+| **MEH** | Its sales are usually 12–30% cheaper. Wait for the next one. |
+| **NOPE** | Its sales are usually 30%+ cheaper, or the base price went up just before the sale. Wait. |
+
+How the rules were chosen: a backtest on 3,400 real Steam sale starts (ITAD price logs, 2024–2026), judging each sale
+only with the history before it and checking what the next sale cost. After a HOT, the next sale was 20% dearer on
+average; after GREAT about the same; after MEH or NOPE 16–17% cheaper (six times out of seven not dearer). The
+yardstick for waiting is the game's usual sale price over the last year, not its single lowest price: a one-off low
+from a year ago rarely comes back. A big Steam sale a few weeks away is no reason to wait for a game that is on sale
+now: those games cost more during the seasonal sale than before it.
 
 Prices are compared in what you pay, not in percent: $15 at −60% is not a low if the game sold for $5 last spring.
-The frequency counts sales at today's price, not any sale: a game that goes −50% every month and hit −80% once has
-seen −80% once. Records older than two years do not count. Wishlist games that are not on sale show **WAIT** with how
-deep and how often they usually go on sale, and when the next sale is due.
+Wishlist games that are not on sale show **WAIT** with how deep and how often they usually go on sale, and when the
+next sale is due. A game needs a year of price history to be judged by price; sift fetches it a few dozen games per
+run, so the first runs show more "record · little data".
 
 ## Install
 

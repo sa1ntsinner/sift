@@ -227,7 +227,7 @@ def rec_table(recs: list[Rec], start: int = 1, show_history: bool = True) -> Non
     for i, r in enumerate(recs, start=start):
         label, style, reason = verdict_parts(r.item.cut, r.hist, r.verdict)
         hist = Text(label or "·", style=style or "grey35")
-        notes = notes_for(r, wait=False)
+        notes = notes_for(r)
         why = Text()
         if reason:
             why.append(reason, style="grey85")
