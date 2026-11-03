@@ -54,15 +54,24 @@ run, so the first runs show more "record · little data".
 
 ## Install
 
-**Download** one file from the [latest release](https://github.com/sa1ntsinner/sift/releases/latest):
-`sift-windows-x64.exe`, `sift-macos-arm64` or `sift-linux-x64`. Nothing else to install.
-
-**Or with Python 3.11+**
+**Linux and macOS**
 
 ```bash
-uv tool install steamsift      # or: pipx install steamsift
-sift
+curl -fsSL https://sa1ntsinner.github.io/sift/install.sh | sh
 ```
+
+**Windows** (PowerShell)
+
+```powershell
+irm https://sa1ntsinner.github.io/sift/install.ps1 | iex
+```
+
+Both put the latest release binary on your PATH (`~/.local/bin`, or `%LOCALAPPDATA%\Programs\sift` on Windows), and
+then you run `sift`. You can also download the file yourself from the
+[latest release](https://github.com/sa1ntsinner/sift/releases/latest).
+
+With Python 3.11+: `uv tool install steamsift` (or `pipx install steamsift`). The package is called `steamsift`
+because `sift` was taken on PyPI; the command is still `sift`.
 
 ## First run
 
