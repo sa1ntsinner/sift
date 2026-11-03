@@ -1,3 +1,3 @@
 """sift — taste-aware Steam deals for you and your Steam Family."""
 
-__version__ = "0.3.1"
+__version__ = "0.3.2"
