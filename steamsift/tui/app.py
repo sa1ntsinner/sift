@@ -578,8 +578,14 @@ def help_text(width: int = 56) -> Text:
 BARS = " ▁▂▃▄▅▆▇█"
 
 
+BAR_ROWS = 3        # bar height in lines: 24 steps, so −50% and −90% look clearly different
+
+
 def sale_bars(hist, width: int, colour: str) -> Text:
-    """Two years of Steam sales in `width` cells: each cell shows the deepest cut in its slice of time."""
+    """Two years of Steam sales in `width` cells: each cell shows the deepest cut in its slice of time.
+
+    Bars are BAR_ROWS lines tall, scaled by the price paid, and every sale that has room is labelled with its
+    discount above it (the deepest first), so where it was cheaper and by how much reads at a glance."""
     import datetime as dt
     out = Text()
     if not hist or not hist.points:
@@ -597,13 +603,53 @@ def sale_bars(hist, width: int, colour: str) -> Text:
         b = min(width - 1, int(max(0, (end - start).days - 1) / span))
         for c in range(a, b + 1):
             cells[c] = max(cells[c], cut)
-    best = max(hist.best_cut, 1)
-    for cut in cells:
-        if cut <= 0:
-            out.append("▁", style=DIM)
+    best = max(hist.best_cut, max(cells), 1)
+    style = [colour if cut >= best else MUTED for cut in cells]
+
+    # labels: one per sale (a run of cells), deepest first, never touching another label
+    runs, i = [], 0
+    while i < width:
+        if cells[i] > 0:
+            j = i
+            while j + 1 < width and cells[j + 1] > 0:
+                j += 1
+            runs.append((max(cells[i:j + 1]), i, j))
+            i = j + 1
         else:
-            ch = BARS[max(1, round(8 * cut / best))]          # relative to its record: depth differences show
-            out.append(ch, style=colour if cut >= best else MUTED)
+            i += 1
+    labels = [" "] * width
+    label_style = [""] * width
+    taken = [False] * width
+    for cut, i, j in sorted(runs, key=lambda r: (-r[0], -r[1])):
+        text = f"−{cut}%"
+        at = min(max(0, (i + j + 1 - len(text)) // 2), width - len(text))
+        lo, hi = max(0, at - 1), min(width, at + len(text) + 1)
+        if at < 0 or any(taken[lo:hi]):
+            continue
+        for k, ch in enumerate(text):
+            labels[at + k], label_style[at + k], taken[at + k] = ch, style[i], True
+    for ch, st in zip(labels, label_style):
+        out.append(ch, style=st)
+    out.append("\n")
+
+    # height by what you pay, not the percent: −90% is 2.5× cheaper than −75%, so it should look clearly taller.
+    # The shallowest sale shown gets 30% of the height, the record all of it.
+    pays = [100 - cut for cut in cells if cut > 0]
+    dearest, cheapest = max(pays), min(pays)
+
+    def height(cut):
+        share = 1.0 if dearest == cheapest else 0.3 + 0.7 * (dearest - (100 - cut)) / (dearest - cheapest)
+        return max(1, round(8 * BAR_ROWS * share))
+    levels = [height(cut) if cut > 0 else 0 for cut in cells]
+    for row in range(BAR_ROWS - 1, -1, -1):
+        for level, st in zip(levels, style):
+            part = min(8, max(0, level - 8 * row))
+            if part:
+                out.append(BARS[part], style=st)
+            else:
+                out.append("▁" if row == 0 else " ", style=DIM)
+        if row:
+            out.append("\n")
     return out
 
 

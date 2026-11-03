@@ -135,6 +135,19 @@ def test_sale_bars_and_facts_from_the_real_log():
     assert any(ch in out for ch in "▁▂▃▄▅▆▇█")
 
 
+def test_sale_bars_label_each_sale_and_show_the_depth():
+    import datetime as dt
+    from steamsift.tui.app import BAR_ROWS, sale_bars
+    day = lambda ago: (dt.date.today() - dt.timedelta(days=ago)).isoformat()
+    h = History(best_cut=90, points=[(day(600), 75), (day(590), 0), (day(300), 90), (day(290), 0)])
+    lines = sale_bars(h, 40, "green").plain.split("\n")
+    assert len(lines) == 1 + BAR_ROWS
+    assert "−75%" in lines[0] and "−90%" in lines[0]                 # how much, right above each sale
+    top = lines[1]
+    record = lines[0].index("−90%")
+    assert top[record:record + 4].strip() and not top[:10].strip()   # only the record reaches the top line
+
+
 def test_hide_and_undo_and_hidden_panel(data):
     async def go():
         app = SiftApp(StubLoader(data), images=False)
