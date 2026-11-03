@@ -21,7 +21,7 @@
 </p>
 
 sift is a free terminal app for Steam deals. It reads two years of Steam prices for every discount, checks how often
-the game goes on sale, whether the base price was just raised, whether a big sale is days away and what your Steam
+the game goes on sale, what it usually costs on sale, whether the base price was just raised and what your Steam
 Family already owns, and gives each deal one word.
 
 Most "record lows" on Steam come back every five or six weeks. sift tells those apart from the prices that rarely
