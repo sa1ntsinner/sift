@@ -265,7 +265,18 @@ def verdict(cut: int, hist: History | None, bundle=None,
     if hist.fake_discount(cut):
         return Verdict("nope", "fake", hist.raised_days)
     if hist.by_price():
-        return _by_price(cut, hist, bundle, price_cents, currency, today)
+        v = _by_price(cut, hist, bundle, price_cents, currency, today)
+    else:
+        v = _by_percent(cut, hist, bundle, price_cents, currency, today)
+    # A rare price with a small cut is no rush: after such a HOT the next sale cost about the same (+1%) and was
+    # cheaper in a quarter of cases (backtest 2026-11, against +25% dearer after a HOT at −70% or more).
+    if v.kind == "hot" and v.reason != "bundle" and cut < HOT_MIN_CUT:
+        return Verdict("great", "small_cut", cut)
+    return v
+
+
+def _by_percent(cut: int, hist: History, bundle, price_cents: int, currency: str, today: dt.date | None) -> Verdict:
+    """Without a year of US prices: the older rules on discount percentages."""
     if hist.is_atl(cut):
         if hist.tier == "frequent":       # a record price that comes back every few weeks is no reason to hurry
             return Verdict("great", "returns", hist.gap_days or round(730 / max(1, hist.sales_2y)))
@@ -333,6 +344,27 @@ def _by_price(cut: int, hist: History, bundle, price_cents: int, currency: str,
 
 
 RARE_DAYS = 120     # a 2-year-low price not seen for this long counts as rare (see _by_price)
+HOT_MIN_CUT = 40    # HOT needs at least this discount (see verdict)
+
+# HOT is for games people rate: a rare price on a game few have played, or one players are lukewarm about, is
+# GREAT at most; a game with mixed reviews is OK however cheap. Wishlist games are exempt: you chose them.
+GOOD_PCT, GOOD_REVIEWS = 80, 1000     # Steam "Very Positive" with a real audience
+GEM_PCT, GEM_REVIEWS = 95, 300        # or "Overwhelmingly Positive" with a smaller one
+MIXED_PCT = 70                        # under this Steam calls the reviews Mixed
+
+
+def by_players(v: Verdict, item: Item, wish: bool = False) -> Verdict:
+    """The price verdict, held back for games players do not rate (reviews unknown: unchanged)."""
+    pct, n = item.review_pct, item.review_count
+    if wish or v.kind not in ("hot", "great") or pct is None or n < 10:
+        return v
+    if pct < MIXED_PCT:
+        return Verdict("ok", "mixed", pct)
+    if v.kind == "hot" and pct < GOOD_PCT:
+        return Verdict("great", "liked_less", pct)
+    if v.kind == "hot" and not (n >= GOOD_REVIEWS or (pct >= GEM_PCT and n >= GEM_REVIEWS)):
+        return Verdict("great", "niche", n)
+    return v
 STEP = 0.7          # a new low above this share of the usual sale price is a step down, not a rare price
 
 
@@ -403,7 +435,8 @@ class Rec:
         currency = {"CN": "CNY", "JP": "JPY"}.get(country.upper(), currency)
         d = _depth(self.item.cut, self.hist)
         rarity = self.hist.rarity(self.item.cut) if self.hist else 0.4
-        self.verdict = verdict(self.item.cut, self.hist, self.extras.get("bundle3p"), self.item.final_cents, currency)
+        self.verdict = by_players(verdict(self.item.cut, self.hist, self.extras.get("bundle3p"), self.item.final_cents,
+                                          currency), self.item, self.is_wish)
         bundle = self.extras.get("bundle3p")
         bundle_value = float(bool(self.item.bundle_discount > 0 or self.item.complete_the_set
                                   or self.item.included_games > 1 or

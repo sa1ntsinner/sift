@@ -455,3 +455,22 @@ def test_a_price_that_creeps_down_every_month_is_no_rush():
     h = parse_history(log, TODAY)
     assert verdict(73, h, today=TODAY) == Verdict("great", "returns", 30)
     assert verdict(85, h, today=TODAY).kind == "hot"                    # $1.50 vs $2.80: a different price
+
+
+def test_hot_needs_a_real_cut_and_a_game_players_rate():
+    from steamsift.recommender import by_players
+    from steamsift.steam import Item
+    h = parse_history(sale_runs((300, 10, 50), (100, 10, 50)), TODAY)
+    assert verdict(30, History(30, sales_2y=3, gap_days=200, covered_days=730), today=TODAY) \
+        == Verdict("great", "small_cut", 30)                                   # a record at −30%: no rush
+    hot = verdict(80, h, today=TODAY)
+    assert hot.kind == "hot"
+    game = lambda pct, n: Item(1, "Game", review_pct=pct, review_count=n)
+    assert by_players(hot, game(91, 5000)) == hot                               # rated and played
+    assert by_players(hot, game(97, 400)) == hot                                # a small gem
+    assert by_players(hot, game(91, 150)) == Verdict("great", "niche", 150)     # few have played it
+    assert by_players(hot, game(75, 9000)) == Verdict("great", "liked_less", 75)
+    assert by_players(hot, game(60, 9000)) == Verdict("ok", "mixed", 60)        # mixed: OK however cheap
+    assert by_players(Verdict("great", "returns", 30), game(55, 900)) == Verdict("ok", "mixed", 55)
+    assert by_players(hot, game(60, 9000), wish=True) == hot                    # your wishlist: your call
+    assert by_players(hot, game(None, 0)) == hot                                # reviews unknown: unchanged

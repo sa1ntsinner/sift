@@ -31,9 +31,9 @@ show up, so you buy the right game at the right moment and skip the rest.
 
 | | |
 |---|---|
-| **HOT** | The lowest price in two years, and a rare one: new, or not seen for four months, and well under the usual sale price. Or a cheaper bundle. Buy now if you want it. |
-| **GREAT** | The lowest price in two years, but it comes back (or it is only a small step under the usual sale price). No hurry. |
-| **OK** | An ordinary sale price. No reason to hurry, none to wait. |
+| **HOT** | A rare price on a game players rate: the lowest in two years, new or not seen for four months, well under the usual sale price, at least −40%. The game needs 80%+ positive reviews from 1,000+ players (or 95%+ from 300+). Or a cheaper bundle. Buy now if you want it. |
+| **GREAT** | The lowest price in two years, but it comes back, or the cut is small, or few people have played the game. No hurry. |
+| **OK** | An ordinary sale price. Also any game with mixed reviews (under 70% positive), however cheap. |
 | **MEH** | Its sales are usually 12–30% cheaper. Wait for the next one. |
 | **NOPE** | Its sales are usually 30%+ cheaper, or the base price went up just before the sale. Wait. |
 
@@ -43,6 +43,9 @@ average; after GREAT about the same; after MEH or NOPE 16–17% cheaper (six tim
 yardstick for waiting is the game's usual sale price over the last year, not its single lowest price: a one-off low
 from a year ago rarely comes back. A big Steam sale a few weeks away is no reason to wait for a game that is on sale
 now: those games cost more during the seasonal sale than before it.
+
+The review rules do not apply to your wishlist: you put those games there. They exist because a rare price on an
+unknown or disliked game is not a reason to hurry, and a list of HOT deals should be one you would actually buy.
 
 Prices are compared in what you pay, not in percent: $15 at −60% is not a low if the game sold for $5 last spring.
 Wishlist games that are not on sale show **WAIT** with how deep and how often they usually go on sale, and when the
