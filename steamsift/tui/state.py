@@ -15,7 +15,7 @@ from ..recommender import Rec, Verdict
 from ..steam import Item, Library
 
 REFRESH_AFTER = 15 * 60
-_snapshots = Cache("tui_snapshot_v3")   # v3: pick order (0.4)
+_snapshots = Cache("tui_snapshot_v4")   # v3: pick order (0.4)
 
 
 @dataclass

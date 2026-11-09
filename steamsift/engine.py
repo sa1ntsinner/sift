@@ -91,6 +91,7 @@ class Context:
         self.hidden = prefs.load_hidden()
         self.seeds = list(cfg().profile.seeds)
         self.interest = prefs.interest()
+        self.likes = prefs.likes()
 
         fam_meta = get_items(list(self.lib.family_games), with_price=False) if self.lib.family_games else {}
         self.family_shared, self.family_unshared = split_family(self.lib.family_games, fam_meta)
@@ -98,7 +99,7 @@ class Context:
         played = [a for a, g in self.lib.my_games.items() if g.get("playtime_forever", 0) >= 3]
         if not self.lib.playtime_visible:
             played = list(self.lib.my_games)
-        meta_ids = played + [w["appid"] for w in self.lib.wishlist] + list(self.hidden) + self.seeds + list(self.interest)
+        meta_ids = played + [w["appid"] for w in self.lib.wishlist] + list(self.hidden) + self.seeds + list(self.interest) + list(self.likes)
         self.meta = get_items(meta_ids, with_price=False)
         self.wish_items = get_items([w["appid"] for w in self.lib.wishlist], with_price=True)
         self.candidates: dict[int, Item] = get_items(extra_candidates, True) if extra_candidates else {}
@@ -116,7 +117,7 @@ class Context:
         self.space = TagSpace.build(corpus)
         fallback = 2.0 if not self.lib.playtime_visible else None
         self.profile: TasteProfile = build_profile(self.lib, self.meta, self.space, self.hidden, fallback,
-                                                   self.seeds, self.interest)
+                                                   self.seeds, self.interest, self.likes)
         self.personal = any(s.weight > 0 for s in self.profile.signals)   # something to learn your taste from
 
     def add_candidates(self, appids: list[int]) -> None:

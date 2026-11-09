@@ -101,11 +101,27 @@ def log_feedback(appid: int, action: str) -> None:
     db().execute("INSERT INTO feedback VALUES (?,?,?,?)", (_profile(), int(appid), action, int(time.time())))
 
 
+def like(appid: int) -> None:
+    """"More like this": a lasting positive taste signal (unlike `interest`, it does not fade)."""
+    unlike(appid)
+    log_feedback(appid, "like")
+
+
+def unlike(appid: int) -> None:
+    db().execute("DELETE FROM feedback WHERE profile=? AND appid=? AND action='like'", (_profile(), int(appid)))
+
+
+def likes() -> set[int]:
+    return {a for a, in db().execute("SELECT appid FROM feedback WHERE profile=? AND action='like'", (_profile(),))}
+
+
 def interest() -> dict[int, int]:
     """appid -> how often you showed interest recently (store opens count double)."""
     rows = db().execute("SELECT appid, action FROM feedback WHERE profile=? AND at>?",
                         (_profile(), int(time.time()) - FEEDBACK_WINDOW))
     out: dict[int, int] = {}
     for appid, action in rows:
+        if action == "like":
+            continue
         out[appid] = out.get(appid, 0) + (2 if action == "open" else 1)
     return out

@@ -79,7 +79,7 @@ def cosine(a: dict[str, float], b: dict[str, float]) -> float:
 class Signal:
     appid: int | None
     name: str
-    kind: str          # played | seed | wishlist | interest | dropped | hidden
+    kind: str          # played | seed | wishlist | liked | interest | dropped | hidden
     weight: float
     vec: dict[str, float]
     hours: float = 0.0
@@ -105,8 +105,11 @@ class Profile:
     def __post_init__(self):
         self.norm2 = sum(x * x for x in self.vector.values()) or 1.0
         self.by_appid = {s.appid: s for s in self.signals if s.appid}
-        self.anchors = sorted((s for s in self.signals if s.kind in ("played", "seed") and s.vec and s.weight > 1.0),
-                              key=lambda s: -s.weight)[:40]
+        self.anchors = sorted((s for s in self.signals if s.kind in ("played", "seed", "liked") and s.vec
+                               and s.weight > 1.0), key=lambda s: (s.kind != "liked", -s.weight))[:40]
+        # your explicit answers: games close to one you liked move up, close to one you hid move down (see nudge)
+        self.liked = [s.vec for s in self.signals if s.kind == "liked" and s.vec]
+        self.hid = [s.vec for s in self.signals if s.kind == "hidden" and s.vec]
         self.franchise_hours: dict[str, float] = {}
         for s in self.signals:
             if s.kind == "played":
@@ -142,13 +145,24 @@ def _recency(rtime: int, now: float) -> float:
 
 
 HIDDEN_WEIGHT = -0.6    # "not my kind of game": a firmer negative than a silent drop
+LIKE_WEIGHT = 1.8       # "more like this" (l in the app): a little under a favourite picked during setup
+WISH_WEIGHT = 0.8       # on your Steam wishlist: you said you want it
+# One answer must be felt at once, however large the library behind the profile: a game's place also moves by how
+# close it is to the nearest game you liked or hid. Closeness counts from NEAR (cosine of tag vectors) up.
+NEAR, NUDGE_UP, NUDGE_DOWN = 0.5, 0.35, 0.5
+
+
+def closeness(v: dict[str, float], others: list[dict[str, float]]) -> float:
+    """0..1: how close the game is to the nearest of `others` (0 below NEAR, 1 at 0.9+)."""
+    best = max((cosine(v, o) for o in others), default=0.0)
+    return max(0.0, min(1.0, (best - NEAR) / (0.9 - NEAR)))
 SEED_WEIGHT = 2.5       # a favourite picked during setup ≈ a game played ~10h recently
 INTEREST_WEIGHT = 0.35  # you opened it in the store / asked for details: mild positive
 
 
 def build_profile(lib: Library, meta: dict[int, Item], space: TagSpace, hidden: dict[int, dict] | None = None,
                   fallback_hours: float | None = None, seeds: list[int] | None = None,
-                  interest: dict[int, int] | None = None) -> Profile:
+                  interest: dict[int, int] | None = None, likes: set[int] | None = None) -> Profile:
     now = time.time()
     signals: list[Signal] = []
 
@@ -170,7 +184,13 @@ def build_profile(lib: Library, meta: dict[int, Item], space: TagSpace, hidden: 
     for w in lib.wishlist:
         item = meta.get(w["appid"])
         if item and item.tags:
-            signals.append(Signal(item.appid, item.name, "wishlist", 0.45, space.vec(item.tags), 0, item.franchises))
+            signals.append(Signal(item.appid, item.name, "wishlist", WISH_WEIGHT, space.vec(item.tags), 0,
+                                  item.franchises))
+
+    for aid in likes or ():
+        item = meta.get(aid)
+        if item and item.tags and aid not in (hidden or {}):
+            signals.append(Signal(aid, item.name, "liked", LIKE_WEIGHT, space.vec(item.tags), 0, item.franchises))
 
     for aid in seeds or []:
         item = meta.get(aid)
@@ -420,6 +440,9 @@ class Rec:
     hist: History | None = None
     verdict: Verdict = field(default_factory=Verdict)
     affinity: float = 0.0
+    base: float = 0.0           # affinity from the taste profile alone, before your likes and hides move it
+    up: float = 0.0             # closeness to the nearest game you liked (0..1)
+    down: float = 0.0           # closeness to the nearest game you hid as not yours (0..1)
     score: float = 0.0
     deal_score: float = 0.0     # objective deal intelligence score (0..100, taste-agnostic)
     pick: float = 0.0           # how much the game deserves your attention (0..100): the order inside a verdict
@@ -448,6 +471,11 @@ class Rec:
     @property
     def is_rare_sale(self) -> bool:
         return bool(self.hist and self.hist.tier == "rare")
+
+    def nudge(self) -> None:
+        """Taste as the profile sees it, moved by the games you liked and hid; then the scores that use it."""
+        self.affinity = max(0.0, min(1.0, self.base + NUDGE_UP * self.up - NUDGE_DOWN * self.down))
+        self.rescore()
 
     def rescore(self) -> None:
         country = config.cfg.country or "US"
@@ -524,7 +552,20 @@ def make_rec(item: Item, profile: Profile, space: TagSpace, is_wish: bool, explo
     if tags:
         reasons.append(", ".join(tags))
     return Rec(item=item, cos=cos, quality=quality, intent=intent, why=" · ".join(reasons), is_wish=is_wish,
-               similarity=nearest, explore=explore)
+               similarity=nearest, explore=explore, up=closeness(v, profile.liked), down=closeness(v, profile.hid))
+
+
+def vote(recs: list[Rec], space: TagSpace, item: Item, liked: bool) -> None:
+    """You just liked or hid `item`: move the games close to it at once (the next scan rebuilds the profile)."""
+    v = space.vec(item.tags)
+    for r in recs:
+        near = closeness(space.vec(r.item.tags), [v]) if r.item.appid != item.appid else 0.0
+        if near > (r.up if liked else r.down):
+            if liked:
+                r.up = near
+            else:
+                r.down = near
+            r.nudge()
 
 
 def calibrate(recs: list[Rec]) -> None:
@@ -539,8 +580,8 @@ def calibrate(recs: list[Rec]) -> None:
     lo, hi = pct(0.15), pct(0.97)
     span = max(1e-6, hi - lo)
     for r in recs:
-        r.affinity = max(0.0, min(1.0, (r.cos - lo) / span))
-        r.rescore()
+        r.base = max(0.0, min(1.0, (r.cos - lo) / span))
+        r.nudge()
 
 
 def diversify(recs: list[Rec], per_franchise: int = 1) -> list[Rec]:

@@ -36,12 +36,14 @@ def library(played: dict[int, tuple[str, float]] | None = None, wishlist: list[i
 
 def make_ctx(lib: Library, meta: dict[int, Item], wish: dict[int, Item] | None = None,
              candidates: dict[int, Item] | None = None, hidden: dict | None = None, seeds: list[int] | None = None,
-             interest: dict | None = None, unshared: set[int] | None = None) -> Context:
+             interest: dict | None = None, unshared: set[int] | None = None,
+             likes: set[int] | None = None) -> Context:
     ctx = object.__new__(Context)
     ctx.lib = lib
     ctx.hidden = hidden or {}
     ctx.seeds = seeds or []
     ctx.interest = interest or {}
+    ctx.likes = set(likes or ())
     ctx.family_unshared = set(unshared or set())
     ctx.family_shared = set(lib.family_games) - ctx.family_unshared
     ctx.meta = dict(meta)

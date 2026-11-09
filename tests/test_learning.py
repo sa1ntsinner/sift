@@ -66,3 +66,37 @@ def test_target_price_hit_boosts_and_is_flagged(monkeypatch):
         prefs.remove_target(60)
         prefs.remove_target(61)
 
+
+
+def test_a_like_or_a_hide_moves_similar_games_whatever_the_library_size():
+    from steamsift.recommender import calibrate, vote
+    lib = library({a: (f"Racer {a}", 150) for a in range(100, 160)})          # sixty racing games, 150 h each
+    meta = {a: item(a, f"Racer {a}", ) for a in range(100, 160)}
+    meta[40] = item(40, "Shooter I liked", SHOOTER)
+    meta[41] = item(41, "Horror I hid", HORROR)
+    cands = {50: item(50, "Another shooter", SHOOTER), 51: item(51, "Another horror", HORROR),
+             52: item(52, "A puzzle", PUZZLE)}
+
+    def picks(ctx):
+        recs = [ctx.rec(i, False) for i in cands.values()]
+        calibrate(recs)
+        return {r.item.appid: r for r in recs}
+
+    base = picks(make_ctx(lib, meta, {}, cands))
+    told = picks(make_ctx(lib, meta, {}, cands, likes={40}, hidden={41: {"name": "x", "reason": "taste", "at": 0}}))
+    assert told[50].pick > base[50].pick + 5 and told[50].up == 1.0          # one like is felt
+    assert told[51].down == 1.0 and told[51].affinity <= base[51].affinity
+    assert (told[52].up, told[52].down) == (0.0, 0.0)                         # a game unlike both stays put
+    assert "like Shooter I liked" in told[50].why
+
+    live = picks(make_ctx(lib, meta, {}, cands))                              # in the app: at once, before a rescan
+    vote(list(live.values()), make_ctx(lib, meta, {}, cands).space, meta[40], liked=True)
+    assert live[50].pick > base[50].pick + 5 and live[52].pick == base[52].pick
+
+
+def test_likes_are_kept_and_taken_back():
+    prefs.like(777)
+    prefs.like(777)
+    assert prefs.likes() == {777} and 777 not in prefs.interest()
+    prefs.unlike(777)
+    assert prefs.likes() == set()

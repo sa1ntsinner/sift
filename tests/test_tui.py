@@ -817,3 +817,20 @@ def test_forecast_says_when_to_come_back(data):
     waiting = replace(rec, item=replace(rec.item, cut=0), hist=History(75, typical_cut=60, gap_days=45),
                       verdict=Verdict(), extras={"next_sale": {"day": day, "name": ""}})
     assert why_text(waiting, verdict_of(waiting)) == f"−60% around {day_month(day)}"
+
+
+def test_like_key_marks_the_game_and_can_be_taken_back(data):
+    async def go():
+        app = SiftApp(StubLoader(data), images=False)
+        async with app.run_test(size=(150, 40)) as pilot:
+            await ready(pilot, app)
+            first = app._current().item
+            await pilot.press("l")
+            await pilot.pause()
+            assert prefs.likes() == {first.appid}
+            t = app.query_one("#t-picks")
+            assert any("★" in t.get_row_at(i)[NAME].plain for i in range(t.row_count))
+            await pilot.press("l")
+            await pilot.pause()
+            assert prefs.likes() == set()
+    run(go())

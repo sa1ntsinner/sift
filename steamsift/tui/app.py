@@ -23,7 +23,7 @@ from textual.worker import get_current_worker
 
 from .. import config, engine, itad, net, prefs, query as qry
 from ..i18n import date, day_month, num, t
-from ..recommender import Rec, Verdict, short_name, verdict as judge
+from ..recommender import Rec, Verdict, short_name, verdict as judge, vote
 from ..steam import Item
 from .theme import ACCENT, BASE_CSS, INK, MUTED, DIM, VERDICT, THEMES
 from .state import Data, REFRESH_AFTER, load_snapshot, save_snapshot
@@ -594,7 +594,7 @@ class HelpScreen(ModalScreen[None]):
 HELP = (
     ("tu_h_move", (("↑ ↓  j k", "tu_h_rows"), ("g  G", "tu_h_ends"), ("1 2  ← →  tab", "tu_h_tabs"))),
     ("tu_h_game", (("enter  o", "tu_h_open"), ("i", "tu_h_itad"), ("b", "tu_h_bundle"),
-                   ("t", "tu_h_target"), ("x", "tu_h_hide"), ("X", "tu_h_own"), ("u", "tu_h_undo"))),
+                   ("t", "tu_h_target"), ("l", "tu_h_like"), ("x", "tu_h_hide"), ("X", "tu_h_own"), ("u", "tu_h_undo"))),
     ("tu_h_list", (("a", "tu_h_all"), ("d", "tu_h_details"), ("/", "tu_h_search"), ("f", "tu_h_filters"), ("s  S", "tu_h_sort"), ("0", "tu_h_reset"),
                    ("r", "tu_h_refresh"))),
     ("tu_h_app", (("?", "tu_h_help"), ("q", "tu_h_quit"))),
@@ -941,6 +941,7 @@ class SiftApp(App):
         Binding("f", "filters", show=False),
         Binding("s", "sort(1)", show=False),
         Binding("S", "sort(-1)", show=False),
+        Binding("l", "like", show=False),
         Binding("x", "hide('taste')", show=False),
         Binding("X", "hide('owned')", show=False),
         Binding("u", "undo", show=False),
@@ -1256,12 +1257,14 @@ class SiftApp(App):
                 ("?", "tu_k_keys"), ("q", "tu_k_quit")]
         if self.screen.has_class("narrow"):
             keys = [("d", "tu_k_details"), *[k for k in keys if k[0] not in ("x", "s", "t")]]
+        elif self.size.width >= self.MEDIUM:
+            keys.insert(6, ("l", "tu_k_like"))
         for key, label in keys:
             start = len(line)
             line.append(key, style=f"bold {INK}")
             line.append(f" {t(label)}", style=MUTED)
             action = {"enter": "open", "/": "search", "f": "filters", "s": "sort(1)", "r": "refresh",
-                      "x": "hide('taste')", "?": "help", "q": "quit", "d": "details", "t": "target"}[key]
+                      "x": "hide('taste')", "l": "like", "?": "help", "q": "quit", "d": "details", "t": "target"}[key]
             line.stylize(Style(meta={"@click": f"app.{action}"}), start, len(line))
             line.append(" " if self.screen.has_class("narrow") else "   ")
         sale = self._sale_note()
@@ -1363,6 +1366,7 @@ class SiftApp(App):
     def refill(self) -> None:
         self._columns(refill=False)         # the price column is as wide as the dearest price
         self._hidden_cache = set(prefs.load_hidden())
+        self._liked = prefs.likes()
         wish = set(self.data.ctx.lib.wishlist_ids) if self.data else set()
         for tab in TABS:
             table = self.query_one(f"#t-{tab}", DealList)
@@ -1388,6 +1392,8 @@ class SiftApp(App):
         name = Text(short_name(i.name, 60), style=INK, overflow="ellipsis", no_wrap=True)
         if tab != "wish" and i.appid in wish:
             name.append("  ♥", style=VERDICT["wish"])
+        if i.appid in self._liked:
+            name.append("  ★", style=ACCENT)
         if getattr(r, "extras", {}).get("family"):
             name.append("  ⌂", style=f"bold {VERDICT['family']}")
         if getattr(r, "extras", {}).get("target", {}).get("hit"):
@@ -1542,9 +1548,31 @@ class SiftApp(App):
             return
         prefs.hide(row.item.appid, row.item.name, reason)
         self.undo_stack.append(row.item.appid)
+        if reason == "taste":
+            self._vote(row.item, liked=False)
         self.refill()
         key = "tu_hidden_taste" if reason == "taste" else "tu_hidden_owned"
         self.notify(t(key, name=short_name(row.item.name, 40)), timeout=5)
+
+    def action_like(self) -> None:
+        """More like this: games close to it move up now, and the taste profile counts it from the next scan."""
+        row = self._current()
+        if self._typing() or not row or self.tab == "dlc":
+            return
+        name = short_name(row.item.name, 40)
+        if row.item.appid in prefs.likes():
+            prefs.unlike(row.item.appid)
+            self.notify(t("tu_unliked", name=name), timeout=3)
+        else:
+            prefs.like(row.item.appid)
+            self._vote(row.item, liked=True)
+            self.notify(t("tu_liked", name=name), timeout=4)
+        self.refill()
+
+    def _vote(self, item, liked: bool) -> None:
+        # ponytail: taking an answer back (u, l again) moves games back only at the next scan
+        if self.data and getattr(self.data.ctx, "space", None):
+            vote([r for tab in DEAL_TABS for r in self.recs[tab]], self.data.ctx.space, item, liked)
 
     def action_undo(self) -> None:
         if self._typing() or not self.undo_stack:
