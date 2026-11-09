@@ -66,6 +66,11 @@ def request_json(
     return data
 
 
+def on_hold(url: str) -> bool:
+    """The host asked us to stay away (a long Retry-After): calls to it fail at once until the hold ends."""
+    return _hold.get(urlsplit(url).netloc, 0) > time.time()
+
+
 def steam_failures() -> int:
     """Detect incomplete Steam scans even when individual endpoints return a quiet None."""
     return sum(_failures.get(host, 0) for host in ("api.steampowered.com", "store.steampowered.com"))

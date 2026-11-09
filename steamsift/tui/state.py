@@ -15,7 +15,7 @@ from ..recommender import Rec, Verdict
 from ..steam import Item, Library
 
 REFRESH_AFTER = 15 * 60
-_snapshots = Cache("tui_snapshot_v2")   # v2: verdict reasons of 0.3
+_snapshots = Cache("tui_snapshot_v3")   # v3: pick order (0.4)
 
 
 @dataclass
@@ -34,6 +34,7 @@ class Data:
     saved_at: float = 0
     dlc_at: float = 0
     complete: bool = True
+    pending: int = 0        # games whose price history is still to come (ITAD's call budget): the next run goes on
 
 
 _TYPES = {cls.__name__: cls for cls in

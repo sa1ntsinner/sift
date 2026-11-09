@@ -31,7 +31,9 @@ def isolated(monkeypatch):
     monkeypatch.setattr(requests.sessions.Session, "request", no_network)
     monkeypatch.setattr(config, "_keyring", lambda: None)
     from steamsift import itad, net
-    monkeypatch.setattr(itad, "PACE", 0)                 # no pacing against fake endpoints
+    monkeypatch.setattr(itad, "_calls", [])              # a fresh call budget for every test
+    monkeypatch.setattr(itad, "unfinished", set())
+    itad._limit_cache._data, itad._limit_cache._dirty = {}, set()
     monkeypatch.setattr(net, "_hold", {})
     monkeypatch.setattr(config, "_legacy_env_files", lambda: [])
     monkeypatch.setenv("SIFT_LANG", "en")

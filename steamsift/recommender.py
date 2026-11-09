@@ -206,6 +206,28 @@ def wilson_lower(pct: int | None, n: int, z: float = 1.96) -> float | None:
     return (centre - margin) / denom
 
 
+def rating(pct: int | None, n: int) -> float | None:
+    """Share of positive reviews pulled towards 50% while the reviews are few (SteamDB's rating):
+    95% from 40 reviews is 0.80, from 4,000 it is 0.91, from 400,000 it is 0.94."""
+    if pct is None or n <= 0:
+        return None
+    p = pct / 100
+    return p - (p - 0.5) * 2 ** (-math.log10(n + 1))
+
+
+def want(item: Item, affinity: float | None, is_wish: bool = False) -> float:
+    """How much this game deserves your attention, whatever its price (0..1): your taste first, then how well and
+    by how many it is reviewed. Without a library to learn taste from, the reviews alone."""
+    r = rating(item.review_pct, item.review_count)
+    quality = 0.3 if r is None else max(0.0, min(1.0, (r - 0.70) / 0.25))
+    crowd = max(0.0, min(1.0, (math.log10(max(1, item.review_count)) - 2) / 3))    # 100 reviews 0 … 100,000 1
+    if affinity is None:
+        value = 0.65 * quality + 0.35 * crowd
+    else:
+        value = 0.45 * affinity + 0.35 * quality + 0.20 * crowd
+    return min(1.0, value + (0.15 if is_wish else 0))
+
+
 def _depth(cut: int, hist: History | None) -> float:
     """Discount depth, independent of taste and review quality (0..1)."""
     base = (max(0, min(100, cut)) / 100) ** 0.9
@@ -400,6 +422,8 @@ class Rec:
     affinity: float = 0.0
     score: float = 0.0
     deal_score: float = 0.0     # objective deal intelligence score (0..100, taste-agnostic)
+    pick: float = 0.0           # how much the game deserves your attention (0..100): the order inside a verdict
+    personal: bool = True       # the taste profile has something to go on (an empty library: reviews decide)
     note: str = ""
     similarity: float = 0.0     # to the closest game you already love (0..1)
     explore: float = 0.0        # 0 = familiar … 1 = adventurous (profile setting)
@@ -445,6 +469,7 @@ class Rec:
         if self.verdict.reason == "fake":
             obj *= 0.6
         self.deal_score = round(100 * max(0, min(1.0, obj)), 1)
+        self.pick = round(100 * want(self.item, self.affinity if self.personal else None, self.is_wish), 1)
 
         if self.mode == "discover":
             d = deal_value(self.item.cut, self.hist, self.item)
@@ -480,21 +505,19 @@ def make_rec(item: Item, profile: Profile, space: TagSpace, is_wish: bool, explo
 
     reasons: list[str] = []
     intent = 1.0 if is_wish else 0.0
-    nearest = max((cosine(v, a.vec) for a in profile.anchors if a.appid != item.appid), default=0.0)
+    # the closest game you already love: one pass over the anchors (this runs for every game on sale)
+    closest, nearest = None, 0.0
+    for a in profile.anchors:
+        if a.appid != item.appid:
+            sim = cosine(v, a.vec)
+            if sim > nearest:
+                closest, nearest = a, sim
     fr = next((f for f in item.franchises if profile.franchise_hours.get(f, 0) >= 2), None)
     if fr:
         intent = max(intent, 0.6)
         reasons.append(t("why_series", name=short_name(fr, 22)))
-    else:
-        best, best_sim = None, 0.55
-        for a in profile.anchors:
-            if a.appid == item.appid:
-                continue
-            sim = cosine(v, a.vec)
-            if sim > best_sim:
-                best, best_sim = a, sim
-        if best:
-            reasons.append(t("why_like", name=short_name(best.name)))
+    elif closest and nearest > 0.55:
+        reasons.append(t("why_like", name=short_name(closest.name)))
 
     contrib = sorted(((tag, x * profile.vector.get(tag, 0.0)) for tag, x in v.items()), key=lambda c: -c[1])
     tags = [local_tag(tag).lower() for tag, c in contrib if c > 0 and tag not in META_TAGS][:2]

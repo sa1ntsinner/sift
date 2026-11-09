@@ -228,10 +228,10 @@ def test_fetch_split_prices_cache_incremental_merge_and_failure(api, monkeypatch
     assert len(calls) == 2
     itad._hist_cache._data = {}
     itad.history(ids, deep=[883710])
-    assert len(calls) == 2  # raw log is fresh for 3 days
+    assert len(calls) == 2  # with the sale's start unknown the raw log is good for a few days
     itad._hist_cache._data = {}
     cached = itad._log_cache.get(883710)
-    cached["fetched"] = time.time() - 73 * 3600
+    cached["fetched"] = time.time() - itad.QUIET_REFRESH - 3600
     log = [log[-1], change(1, 75)]
     itad.history(ids, deep=[883710])
     assert calls[-1][1]["since"] == itad._timestamp(change(40, 0)["timestamp"]).astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -285,7 +285,7 @@ def test_bundles_fetch_and_cache(api, monkeypatch):
 
     def request(url, **kwargs):
         calls.append(url)
-        return [entry]
+        return {"prices": [], "bundles": [entry]}      # one overview call answers for every game asked
 
     monkeypatch.setattr(itad, "request_json", request)
     assert itad.bundles([883710])[883710].price_cents == 300
@@ -352,7 +352,7 @@ def test_engine_passes_full_ids_and_shortlist_and_attaches_bundle(monkeypatch):
     seen = []
     b = Bundle("Active", "Humble", "url", 100, "USD", "2099-01-01T00:00:00Z")
 
-    def history(ids, deep=None, cuts=None):
+    def history(ids, deep=None, cuts=None, deals=None):
         seen.append((ids, deep))
         assert cuts == {30: 50, 31: 50}
         return {30: History(90, covered_days=730, sales_2y=15), 31: History(90)}
@@ -474,3 +474,138 @@ def test_hot_needs_a_real_cut_and_a_game_players_rate():
     assert by_players(Verdict("great", "returns", 30), game(55, 900)) == Verdict("ok", "mixed", 55)
     assert by_players(hot, game(60, 9000), wish=True) == hot                    # your wishlist: your call
     assert by_players(hot, game(None, 0)) == hot                                # reviews unknown: unchanged
+
+
+# ----------------------------------------------------------------------------- the whole sale, the call budget
+
+def feed_row(gid, cut, price, regular, low=None, kind="game", started="2026-10-20T10:00:00+01:00"):
+    return {"id": gid, "type": kind, "deal": {
+        "cut": cut, "price": {"amountInt": price}, "regular": {"amountInt": regular},
+        "storeLow": {"amountInt": low} if low else None, "timestamp": started}}
+
+
+def test_feed_lists_discounted_games_with_their_steam_low_and_sale_start(api, monkeypatch):
+    calls = []
+
+    def request(url, params=None, payload=None, **kwargs):
+        calls.append(url.rsplit("/", 2)[-2])
+        if "deals/v2" in url:
+            if params["offset"]:
+                return {"list": []}
+            return {"list": [feed_row("g1", 75, 500, 2000, 400), feed_row("g2", 50, 1000, 2000, kind="dlc"),
+                             feed_row("g3", 20, 800, 1000, 800), {"id": "broken"}]}
+        assert "lookup/shop" in url and payload == ["g1", "g3"]
+        return {"g1": ["sub/9", "app/11", "app/12"], "g3": []}
+
+    monkeypatch.setattr(itad, "request_json", request)
+    deals = itad.feed()
+    assert set(deals) == {11, 12}       # DLC is not a game; no Steam app: out; ITAD files several apps as one game
+    d = deals[11]
+    assert (d.gid, d.rank, d.cut, d.price, d.regular, d.store_low) == ("g1", 1, 75, 500, 2000, 400)
+    assert d.started == itad._timestamp("2026-10-20T10:00:00+01:00").timestamp()
+    assert itad._id_cache.get(11) == "g1"                       # the way back is known too: no second lookup
+    before = len(calls)
+    assert set(itad.feed()) == {11, 12} and len(calls) == before    # kept: no more calls
+
+
+def test_feed_gives_steam_lows_without_a_prices_call(api, monkeypatch):
+    asked = []
+
+    def request(url, params=None, payload=None, **kwargs):
+        asked.append(url)
+        return [change(900, 0), change(50, 60), change(40, 0)]
+
+    monkeypatch.setattr(itad, "request_json", request)
+    deal = itad.Deal(883710, fixture("itad_ids.json")["883710"], 1, 60, 400, 1000, 300, time.time() - 3600)
+    h = itad.history([883710], deep=[], cuts={883710: 60}, deals={883710: deal})[883710]
+    assert (h.low_cents, h.regular_cents, h.best_cut) == (300, 1000, 70)
+    assert all("prices/v3" not in url for url in asked) and len(asked) == 1     # only the price log
+
+
+def test_a_log_fetched_after_the_sale_began_is_complete(api, monkeypatch):
+    asked = []
+    monkeypatch.setattr(itad, "request_json", lambda url, **kw: asked.append(url) or [change(900, 0), change(50, 60)])
+    gid = fixture("itad_ids.json")["883710"]
+    now = time.time()
+
+    def run(started, fetched):
+        itad._hist_cache._data = {}
+        itad._prices_cache._data = {}
+        itad._log_cache.set(883710, {"log": [change(900, 0), change(50, 60), change(40, 0)], "fetched": fetched})
+        asked.clear()
+        deal = itad.Deal(883710, gid, 1, 60, 400, 1000, 300, started)
+        itad.history([883710], deep=[883710], cuts={883710: 60}, deals={883710: deal})
+        return len(asked)
+
+    assert run(started=now - 20 * 86400, fetched=now - 10 * 86400) == 0     # ten days old, but nothing is missing
+    assert run(started=now - 86400, fetched=now - 2 * 86400) == 0           # no sale fits into the day between
+    assert run(started=now - 86400, fetched=now - 10 * 86400) == 1          # a sale may have come and gone: ask
+    assert 883710 not in itad.unfinished
+
+
+def test_call_budget_stops_before_the_rate_limit_and_keeps_old_logs(api, monkeypatch):
+    calls = []
+    monkeypatch.setattr(itad, "request_json", lambda url, **kw: calls.append(url) or [change(900, 0), change(50, 60)])
+    itad._limit_cache.set("calls", {"calls": 3, "known": True})
+    for n in range(5):
+        itad._request(f"https://example.com/{n}")
+    assert len(calls) == 3 and itad.budget_left() == 0
+    # out of calls: an old log still gives a history, and the game is remembered as unfinished
+    gid = fixture("itad_ids.json")["883710"]
+    itad._prices_cache.set(883710, {"best": 60, "low": 400, "regular": 1000})
+    itad._log_cache.set(883710, {"log": [change(900, 0), change(50, 60), change(40, 0)], "fetched": 0})
+    deal = itad.Deal(883710, gid, 1, 60, 400, 1000, 300, time.time())
+    h = itad.history([883710], deep=[883710], cuts={883710: 60}, deals={883710: deal})[883710]
+    assert h.covered_days >= 900 and len(calls) == 3
+    assert itad.unfinished == {883710} and itad._hist_cache.get(883710) is None
+
+
+def test_call_budget_grows_while_itad_answers_and_remembers_the_first_429(api, monkeypatch):
+    answers = []
+    monkeypatch.setattr(itad, "request_json", lambda url, **kw: answers.append(url) or [])
+    monkeypatch.setattr(itad, "BUDGET", 4)
+    monkeypatch.setattr(itad, "BUDGET_MAX", 16)
+    for n in range(40):
+        itad._request(f"https://example.com/{n}")
+    assert len(answers) == 16 and itad._limit() == (16, False)       # 4 -> 8 -> 16, then the ceiling
+
+    # the key's real limit shows as a 429: that many calls, less a margin, is the budget from now on
+    itad._calls.clear()
+    itad._limit_cache._data = {}
+    monkeypatch.setattr(itad, "BUDGET", 100)
+    monkeypatch.setattr(itad, "BUDGET_MAX", 900)
+    held = []
+
+    def limited(url, **kw):
+        if len(itad._calls) > 120:
+            held.append(1)
+            net._hold["example.com"] = time.time() + 200
+            return None
+        return []
+
+    monkeypatch.setattr(itad, "request_json", limited)
+    for n in range(300):
+        itad._request(f"https://example.com/{n}")
+    assert held == [1] and itad._limit() == (111, True)
+    net._hold.clear()
+    itad._calls.clear()
+    for n in range(300):
+        itad._request(f"https://example.com/{n}")
+    assert held == [1]                                              # never hit again
+
+
+def test_next_sale_follows_the_rhythm_the_cooldown_and_steam_wide_sales():
+    today = dt.date(2026, 11, 9)
+    day = lambda n: today + dt.timedelta(days=n)                            # noqa: E731
+    off = History(50, gap_days=45, since_last_days=26, runs=[[day(-40).isoformat(), 500]],
+                  points=[(day(-40).isoformat(), 50), (day(-26).isoformat(), 0)])
+    assert off.next_sale(today) == (day(5), "")                             # its own rhythm: 45 days after the last start
+    assert off.next_sale(today, sales=[(day(3), "Steam Autumn Sale"), (day(40), "Steam Winter Sale")]) == \
+        (day(3), "Steam Autumn Sale")                                       # a Steam-wide sale that comes first
+    assert off.next_sale(today, sales=[(day(30), "Steam Winter Sale")]) == (day(5), "")
+    late = History(50, gap_days=30, since_last_days=45, runs=[[day(-60).isoformat(), 500]],
+                   points=[(day(-60).isoformat(), 50), (day(-45).isoformat(), 0)])
+    assert late.next_sale(today) == (today, "")                             # overdue: any day now
+    on = History(50, gap_days=20, points=[(day(-60).isoformat(), 0), (day(-5).isoformat(), 50)])
+    assert on.next_sale(today, ends=day(9)) == (day(37), "")                # never within 28 days of this sale's end
+    assert History(50).next_sale(today) == (None, "")                       # no log, no calendar: no date

@@ -37,9 +37,10 @@ show up, so you buy the right game at the right moment and skip the rest.
 | **MEH** | Its sales are usually 12–30% cheaper. Wait for the next one. |
 | **NOPE** | Its sales are usually 30%+ cheaper, or the base price went up just before the sale. Wait. |
 
-How the rules were chosen: a backtest on 3,400 real Steam sale starts (ITAD price logs, 2024–2026), judging each sale
-only with the history before it and checking what the next sale cost. After a HOT, the next sale was 20% dearer on
-average; after GREAT about the same; after MEH or NOPE 16–17% cheaper (six times out of seven not dearer). The
+How the rules were chosen: a backtest on 8,700 real Steam sale starts (ITAD price logs, 2024–2026), judging each sale
+only with the history before it and checking what came after. After a HOT, the next sale was a third dearer on
+average, and four times out of ten the price was not back within three months. A GREAT price was back within three
+months 93 times out of 100. After MEH or NOPE the next sale was 13–17% cheaper. The
 yardstick for waiting is the game's usual sale price over the last year, not its single lowest price: a one-off low
 from a year ago rarely comes back. A big Steam sale a few weeks away is no reason to wait for a game that is on sale
 now: those games cost more during the seasonal sale than before it.
@@ -48,9 +49,15 @@ The review rules do not apply to your wishlist: you put those games there. They 
 unknown or disliked game is not a reason to hurry, and a list of HOT deals should be one you would actually buy.
 
 Prices are compared in what you pay, not in percent: $15 at −60% is not a low if the game sold for $5 last spring.
-Wishlist games that are not on sale show **WAIT** with how deep and how often they usually go on sale, and when the
-next sale is due. A game needs a year of price history to be judged by price; sift fetches it a few dozen games per
-run, so the first runs show more "record · little data".
+Wishlist games that are not on sale show **WAIT** with how deep they usually go and when the next sale is likely.
+
+When a price is not worth taking, sift says when to come back. The date comes from the game's own rhythm, Steam's
+28-day pause between two discounts and the Steam-wide sales ahead. In the backtest it was within a week of the real
+start for 62% of sales and within two weeks for 77%.
+
+A game needs a year of price history to be judged by price. IsThereAnyDeal limits how many histories a key may fetch
+in five minutes, so after a long break sift fills them in over a few refreshes, the games you are likeliest to want
+first. Until then a game shows "record · little data", and the header says how many are left.
 
 ## Install
 
@@ -91,8 +98,11 @@ Steam only issues API keys to accounts that have spent at least $5 and use Steam
 
 ## Using it
 
-The app has two tabs: Deals and Wishlist. Every row has a verdict and a short reason, and the game's two-year sale
-history is shown next to it. Deals opens on the games worth buying (HOT and GREAT); press `a` to see every discount.
+The app has two tabs: Deals and Wishlist. Deals covers the sale as a whole, the few thousand most popular discounted
+games and not only Steam's front pages. The list is ordered by verdict, and inside a verdict by how much you are
+likely to want the game: the tags you play, its reviews, how many people play it. Each row shows which of your tags
+the game has; the price's reason and the two-year sale history are next to it.
+Deals opens on the games worth buying (HOT and GREAT); press `a` to see every discount.
 The wishlist shows every game on it: the discounted ones with their verdict, then the rest with when to expect a sale.
 A DLC tab for the games you own can be switched on in the filter panel (`f`, then `D`) or with `sift config set dlc-tab on`.
 Click a tab to switch views, click a game to preview it, or double-click to open it in Steam.
@@ -139,7 +149,7 @@ Run it on a schedule with `sift notify enable`, keep it running with `sift watch
 - **Your store.** Prices in the currency Steam charges you, in whichever Steam region your account is in.
 - **Your Steam Family.** Shared games stay out of the list, or show with a blue mark if you want them.
 - **Your library.** Owned and hidden games never show up; DLC is listed for the games you own.
-- **Your taste, second.** The price decides the verdict; your play history only breaks ties.
+- **Your taste, second.** The price decides the verdict; your play history orders the games inside it.
 
 Everything stays on your computer: keys in the system keychain, settings in a local file. sift talks only to Steam and
 IsThereAnyDeal.

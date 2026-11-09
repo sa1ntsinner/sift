@@ -10,7 +10,7 @@ from statistics import median
 
 from . import config
 from .db import DAY, HOUR, Cache, price_history, stale_ok
-from .net import request_json
+from .net import on_hold, request_json
 
 BASE = "https://api.isthereanydeal.com"
 STEAM_SHOP = 61
@@ -78,6 +78,33 @@ class History:
         day = today or dt.date.today()
         lows = [low for start, low in self.runs if (day - dt.date.fromisoformat(start)).days <= 365]
         return round(median(lows)) if len(lows) >= 2 else 0
+
+    def next_sale(self, today: dt.date, ends: dt.date | None = None,
+                  sales: list[tuple[dt.date, str]] | None = None) -> tuple[dt.date | None, str]:
+        """When the next sale is likely to start: (day, the Steam-wide sale it falls on or "").
+
+        The game's own rhythm (the median gap between its sale starts), but not within 28 days of the end of a
+        sale (Steam's cooldown between discounts), or the next Steam-wide sale when that comes first. `ends` is
+        the end of the sale running now. A day that has already passed means "any day now": today is returned.
+        Backtest (2026-11, 11,600 sales): within a week of the real start in 62% of cases, within two in 77%."""
+        on_sale = bool(self.points) and self.points[-1][1] > 0
+        start = None
+        if on_sale:
+            for day, cut in reversed(self.points):
+                if cut <= 0:
+                    break
+                start = dt.date.fromisoformat(day)
+            end = max(ends or today, today)
+        else:
+            start = dt.date.fromisoformat(self.runs[-1][0]) if self.runs else None
+            end = today - dt.timedelta(days=self.since_last_days) if self.since_last_days else today
+        rhythm = None
+        if start and self.gap_days:
+            rhythm = max(start + dt.timedelta(days=self.gap_days), end + dt.timedelta(days=28), today)
+        season = next(((day, name) for day, name in sorted(sales or []) if day > end and day >= today), None)
+        if season and (rhythm is None or season[0] <= rhythm + dt.timedelta(days=3)):
+            return season
+        return rhythm, ""
 
     def by_price(self) -> bool:
         """The log is long enough and has US prices: judge in what you pay."""
@@ -257,25 +284,53 @@ def _cut(low: float | None, regular: float | None) -> int | None:
     return max(0, round(100 * (1 - low / regular)))
 
 
-PACE = 0.2                  # seconds between ITAD calls: its burst limit is far below the documented 1000 / 5 min
-_pace_lock = threading.Lock()
-_next_call = 0.0
+# ITAD counts a key's calls per five minutes, all endpoints together: 1000 for an account with a verified e-mail,
+# about 120 without one (measured 2026-11: the 123rd call got 429 with Retry-After for the rest of the window).
+# Past the limit every call fails for minutes, so sift counts its own calls. It starts with BUDGET, doubles it while
+# ITAD keeps answering, and on the first 429 remembers how far it got (kept a month): each key runs at its own speed.
+BUDGET, BUDGET_MAX, WINDOW = 105, 900, 300
+_calls: list[float] = []
+_calls_lock = threading.Lock()
+_limit_cache = Cache("itad_limit")
+
+
+def _limit() -> tuple[int, bool]:
+    """(calls allowed per window, whether a 429 has shown the real limit)."""
+    saved = _limit_cache.get("calls", 30 * DAY)
+    if isinstance(saved, dict) and saved.get("calls"):
+        return int(saved["calls"]), bool(saved.get("known"))
+    return BUDGET, False
+
+
+def budget_left() -> int:
+    """ITAD calls this process may still make in the current five minutes."""
+    with _calls_lock:
+        edge = time.monotonic() - WINDOW
+        _calls[:] = [at for at in _calls if at > edge]
+        limit, known = _limit()
+        if len(_calls) >= limit and not known and limit < BUDGET_MAX:
+            limit = min(BUDGET_MAX, limit * 2)          # every call so far was answered: try twice as far
+            _limit_cache.set("calls", {"calls": limit, "known": False})
+        return max(0, limit - len(_calls))
 
 
 def _request(url: str, **kwargs):
-    """Best-effort ITAD request, paced; net handles one short Retry-After retry on 429."""
-    global _next_call
-    if stale_ok():
+    """Best-effort ITAD request inside the call budget; net handles one short Retry-After retry on 429."""
+    if stale_ok() or on_hold(url) or not budget_left():
         return None
-    with _pace_lock:
-        wait = _next_call - time.monotonic()
-        _next_call = max(time.monotonic(), _next_call) + PACE
-    if wait > 0:
-        time.sleep(wait)
+    with _calls_lock:
+        _calls.append(time.monotonic())
     try:
-        return request_json(url, retries=1, **kwargs)
+        data = request_json(url, retries=1, **kwargs)
     except Exception:
         return None
+    if data is None and on_hold(url):                   # rate limited just now: this is as far as the key goes
+        with _calls_lock:
+            reached = len(_calls) - 10
+            # a 429 after a handful of calls is someone else's doing (another sift running on the same key)
+            if reached >= 50 and (reached < _limit()[0] or not _limit()[1]):
+                _limit_cache.set("calls", {"calls": reached, "known": True})
+    return data
 
 
 def _resolve_ids(appids: list[int]) -> dict[int, str]:
@@ -306,12 +361,113 @@ def _from_cached(cached: dict) -> History:
     return History(**valid)
 
 
-def _game_log(appid: int, gid: str) -> list[dict]:
-    cached = _log_cache.get(appid, 30 * DAY) or {}
+# --------------------------------------------------------------------------- the whole sale
+
+FEED_PAGES = 20             # × 200 Steam discounts, the most popular games first (about one in six of all of them)
+FEED_TTL = 2 * HOUR         # prices come from Steam itself: the feed says what is on sale and since when
+_feed_cache = Cache("itad_feed_v1", volatile=True)
+_app_cache = Cache("itad_apps_v2")      # ITAD game id -> its Steam appids ([] = no Steam app)
+
+
+@dataclass
+class Deal:
+    """One Steam discount in ITAD's deals list (US prices)."""
+    appid: int
+    gid: str
+    rank: int               # place by popularity among today's discounts (1 = the most wanted game)
+    cut: int
+    price: int
+    regular: int
+    store_low: int          # Steam's lowest price ever
+    started: float          # when the current price began (unix time)
+
+
+def _apps_of(gids: list[str]) -> dict[str, list[int]]:
+    """Steam appids for ITAD game ids (cached; 200 per call). ITAD files regional and legacy apps under one game
+    (Borderlands 2 has three), and the first is not always the one Steam sells: all are returned."""
+    out, todo = {}, []
+    for gid in gids:
+        cached = _app_cache.get(gid, 90 * DAY)
+        if cached is None:
+            todo.append(gid)
+        elif cached:
+            out[gid] = cached
+    for i in range(0, len(todo), 200):
+        chunk = todo[i: i + 200]
+        data = _request(f"{BASE}/lookup/shop/{STEAM_SHOP}/id/v1", params={"key": _key()}, payload=chunk)
+        if not isinstance(data, dict):
+            continue
+        for gid in chunk:
+            apps = [int(x[4:]) for x in data.get(gid) or [] if isinstance(x, str) and x.startswith("app/")
+                    and x[4:].isdigit()][:6]
+            _app_cache.set(gid, apps)
+            if apps:
+                out[gid] = apps
+                for appid in apps:
+                    _id_cache.set(appid, gid)
+    return out
+
+
+def feed() -> dict[int, Deal]:
+    """Steam's discounts by popularity, from ITAD's deals list: the candidate pool beyond Steam's own top sellers,
+    and for each game its Steam low and the start of its sale (which says whether a cached price log is complete).
+
+    Twenty calls, kept two hours. An empty answer (no key, rate limit) only narrows the pool."""
+    if not available():
+        return {}
+    cached = _feed_cache.get("US", FEED_TTL)
+    if cached is None and not stale_ok():
+        def page(n: int):
+            data = _request(f"{BASE}/deals/v2", params={
+                "key": _key(), "country": "US", "shops": STEAM_SHOP, "limit": 200, "offset": n * 200,
+                "sort": "rank", "mature": "true"})
+            return data.get("list", []) if isinstance(data, dict) else None
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            pages = list(pool.map(page, range(FEED_PAGES)))
+        rows = []
+        for games in pages:
+            for g in games or []:
+                try:
+                    d = g["deal"]
+                    if g.get("type") not in ("game", None) or not d.get("cut"):
+                        continue
+                    rows.append([g["id"], len(rows) + 1, int(d["cut"]), int(d["price"]["amountInt"]),
+                                 int(d["regular"]["amountInt"]), int((d.get("storeLow") or {}).get("amountInt") or 0),
+                                 _timestamp(d["timestamp"]).timestamp()])
+                except (KeyError, TypeError, ValueError, AttributeError):
+                    continue
+        if pages and pages[0]:              # a list without its head is not worth keeping
+            _feed_cache.set("US", rows)
+            cached = rows
+    apps = _apps_of([row[0] for row in cached or []])
+    out: dict[int, Deal] = {}
+    for gid, rank, cut, price, regular, low, started in cached or []:
+        for appid in apps.get(gid, []):
+            if appid not in out:
+                out[appid] = Deal(appid, gid, rank, cut, price, regular, low, started)
+    return out
+
+
+# --------------------------------------------------------------------------- price logs
+
+LOG_DAYS = 45       # a cached log older than this is dropped and fetched whole again
+QUIET_REFRESH = 5 * DAY     # how old a log may be when the start of the current sale is unknown
+
+
+def _log_complete(fetched: float, started: float) -> bool:
+    """Nothing can be missing from a log fetched after the current sale began (or within two days before it:
+    no sale starts and ends that fast). Without the sale's start, a log is good for a few days."""
+    if started:
+        return fetched >= started - 2 * DAY
+    return time.time() - fetched <= QUIET_REFRESH
+
+
+def _game_log(appid: int, gid: str, started: float = 0) -> list[dict]:
+    cached = _log_cache.get(appid, LOG_DAYS * DAY) or {}
     log = cached.get("log", [])
     if stale_ok():                      # first paint: whatever we have; the fresh load fetches the rest
         return log
-    if time.time() - cached.get("fetched", 0) <= 3 * DAY:       # the current price comes from Steam itself
+    if log and _log_complete(cached.get("fetched", 0), started):
         return log
     # ITAD rejects fractional seconds ("Invalid 'since' format"): send whole seconds in UTC
     start = max((_timestamp(r["timestamp"]) for r in log), default=None) or (
@@ -334,28 +490,40 @@ def _game_log(appid: int, gid: str) -> list[dict]:
     return log
 
 
-NEW_LOGS = 60       # price logs fetched per run beyond the shortlist (ITAD allows ~80 log calls per 5 minutes)
+NEW_LOGS = 5000     # first-time price logs per run beyond the shortlist: in practice ITAD's call budget decides
+RESERVE = 8         # calls left for whatever comes after the logs (bundles, other stores)
+unfinished: set[int] = set()    # games whose log is missing or out of date after the last runs: the next run goes on
 
 
-def history(appids: list[int], deep: list[int] | None = None, cuts: dict[int, int] | None = None) -> dict[int, History]:
-    """Batch Steam lows for all games; fetch full logs for the shortlist.
+def history(appids: list[int], deep: list[int] | None = None, cuts: dict[int, int] | None = None,
+            deals: dict[int, Deal] | None = None) -> dict[int, History]:
+    """Steam lows for all games; full price logs for the shortlist, the most important first.
 
-    With `cuts` (today's discounts) the shortlist grows: every discounted game whose log is already cached, and up
-    to NEW_LOGS more, closest to their Steam low first. Without a log a game cannot be judged by price and gets
-    "record · little data"; most HOT and GREAT prices hide there, so coverage grows run by run (logs keep 30 days)."""
+    `deep` is the shortlist in order of importance. With `cuts` (today's discounts) it grows: every discounted
+    game whose log is already cached, and up to NEW_LOGS more, closest to their Steam low first. Without a log a
+    game cannot be judged by price and gets "record · little data"; most HOT and GREAT prices hide there.
+    `deals` (the feed) gives Steam lows without a call and tells which cached logs are still complete.
+    ITAD's call budget decides how many logs one run fetches; a log that could not be refreshed is used as it is."""
     if not available() or not appids:
         return {}
     appids = list(dict.fromkeys(appids))
-    shortlist = set(appids if deep is None else deep) & set(appids)
-    ids = _resolve_ids(appids)
+    deals = deals or {}
+    order = [a for a in (appids if deep is None else deep) if a in set(appids)]
+    shortlist = set(order)
     result = {a: History() for a in appids}
     todo = []
     for a in appids:
         cached = _prices_cache.get(a, 12 * HOUR)
-        if cached is None or not isinstance(cached, dict):
-            todo.append(a)
-        else:
+        deal = deals.get(a)
+        if isinstance(cached, dict):
             result[a] = History(best_cut=cached["best"], low_cents=cached["low"], regular_cents=cached["regular"])
+        elif deal and cuts and cuts.get(a) == deal.cut:     # the same discount: the same product
+            best = max(_cut(deal.store_low, deal.regular) or 0, deal.cut) if deal.store_low else deal.cut
+            result[a] = History(best_cut=best, low_cents=deal.store_low, regular_cents=deal.regular)
+            _prices_cache.set(a, {"best": best, "low": deal.store_low, "regular": deal.regular})
+        else:
+            todo.append(a)
+    ids = _resolve_ids(appids)
     by_gid = {ids[a]: a for a in todo if a in ids}
     gids = list(by_gid)
     for i in range(0, len(gids), 200):
@@ -375,16 +543,23 @@ def history(appids: list[int], deep: list[int] | None = None, cuts: dict[int, in
             _prices_cache.set(a, {"best": best, "low": low, "regular": regular})
     if cuts:
         extra = [a for a in appids if a not in shortlist and cuts.get(a, 0) > 0 and a in ids]
-        have = {a for a in extra if _log_cache.get(a, 30 * DAY)}
+        have = [a for a in extra if _log_cache.get(a, LOG_DAYS * DAY)]
 
-        def closeness(a):
+        place = {a: n for n, a in enumerate(appids)}
+
+        def priority(a):
+            # at the Steam low first (that is where HOT and GREAT are), then close to it; inside each group the
+            # caller's order: the games the user is most likely to want
             h = result[a]
             now = h.now_cents(cuts[a])
-            return now / h.low_cents if now and h.low_cents else 9.0
-        new = sorted((a for a in extra if a not in have), key=closeness)[:NEW_LOGS]
-        shortlist |= have | set(new)
+            near = now / h.low_cents if now and h.low_cents else 9.0
+            return (0 if near <= 1.03 else 1 if near <= 1.15 else 2, place[a])
+        kept = set(have)
+        new = sorted((a for a in extra if a not in kept), key=priority)[:NEW_LOGS]
+        order += sorted(new + have, key=priority)
+        shortlist |= kept | set(new)
     pending = []
-    for a in shortlist:
+    for a in order:
         cached = _hist_cache.get(a, 12 * HOUR)
         if cached is not None:
             h = _from_cached(cached)
@@ -399,7 +574,17 @@ def history(appids: list[int], deep: list[int] | None = None, cuts: dict[int, in
     def fetch(a):
         base = result.get(a, History())
         best = base.best_cut
-        log = _game_log(a, ids[a]) if a in ids else []
+        deal = deals.get(a)
+        on_sale = bool(cuts and cuts.get(a, 0) > 0)
+        started = deal.started if deal and on_sale and cuts.get(a) == deal.cut else 0
+        spare = budget_left() > RESERVE
+        log = _game_log(a, ids[a], started) if a in ids and spare else (_log_cache.get(a, LOG_DAYS * DAY) or {}).get(
+            "log", [])
+        complete = bool(log) and (stale_ok() or _log_complete((_log_cache.get(a) or {}).get("fetched", 0), started))
+        if not complete and a in ids and not stale_ok():
+            unfinished.add(a)
+        else:
+            unfinished.discard(a)
         if not log:
             # our own samples are too sparse to count sales or prove a price hike: keep only the deepest cut
             country = (config.cfg.country or "US").upper()
@@ -409,11 +594,12 @@ def history(appids: list[int], deep: list[int] | None = None, cuts: dict[int, in
         else:
             h = parse_history(log, dt.date.today(), best, base.low_cents, base.regular_cents)
             h.regular_cents = base.regular_cents or h.regular_cents      # today's base price beats the log's
-            _hist_cache.set(a, asdict(h))      # a failed fetch (rate limit, offline) is retried next run
+            if complete:
+                _hist_cache.set(a, asdict(h))  # a log that could not be refreshed (rate limit, offline): next run
         _prices_cache.set(a, {"best": h.best_cut, "low": h.low_cents, "regular": h.regular_cents})
         return a, h
 
-    with ThreadPoolExecutor(max_workers=3) as pool:
+    with ThreadPoolExecutor(max_workers=4) as pool:
         for a, h in pool.map(fetch, pending):
             result[a] = h
     return result
@@ -474,20 +660,20 @@ def bundles(appids: list[int]) -> dict[int, Bundle]:
     if stale_ok():
         return out
     ids = _resolve_ids(todo)
-
-    def fetch(a):
-        gid = ids.get(a)
-        data = _request(f"{BASE}/games/bundles/v2", params={
-            "key": _key(), "id": gid, "country": country, "expired": "true"}) if gid else []
-        b = parse_bundles(data, gid, now) if isinstance(data, list) else None
-        if isinstance(data, list):                # only a real answer is remembered
-            _bundle_cache.set(f"{country}:{a}", asdict(b) if b else {})
-        return a, b
-
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        for a, b in pool.map(fetch, todo):
+    by_gid = {ids[a]: a for a in todo if a in ids}
+    gids = list(by_gid)
+    for i in range(0, len(gids), 200):      # one call for 200 games: the active bundles that hold any of them
+        chunk = gids[i: i + 200]
+        data = _request(f"{BASE}/games/overview/v2", params={"key": _key(), "country": country,
+                                                             "shops": STEAM_SHOP}, payload=chunk)
+        found = data.get("bundles") if isinstance(data, dict) else None
+        if not isinstance(found, list):     # only a real answer is remembered
+            continue
+        for gid in chunk:
+            b = parse_bundles(found, gid, now)
+            _bundle_cache.set(f"{country}:{by_gid[gid]}", asdict(b) if b else {})
             if b:
-                out[a] = b
+                out[by_gid[gid]] = b
     return out
 
 
@@ -531,8 +717,8 @@ def elsewhere(appids: list[int], country: str) -> dict[int, Elsewhere]:
     shops = ",".join(str(s) for s in [STEAM_SHOP, *OFFICIAL_SHOPS])
     gids = list(by_gid)
     for i in range(0, len(gids), 200):
-        data = request_json(f"{BASE}/games/prices/v3", params={"key": _key(), "country": country, "shops": shops},
-                            payload=gids[i: i + 200]) or []
+        data = _request(f"{BASE}/games/prices/v3", params={"key": _key(), "country": country, "shops": shops},
+                        payload=gids[i: i + 200]) or []
         for entry in data if isinstance(data, list) else []:
             a = by_gid.get(entry.get("id"))
             deals = entry.get("deals") or []

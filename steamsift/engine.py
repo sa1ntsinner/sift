@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import datetime as dt
 import math
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
 from . import calendar, config, discover as disc, itad, prefs, region
@@ -83,6 +84,9 @@ class Context:
     with_family: bool | None = None   # None = the `family` setting; the app loads them always and filters live
 
     def __init__(self, extra_candidates: list[int] | None = None):
+        # ITAD's list of Steam discounts loads while Steam answers about the library (see load_pool)
+        self._feed = ThreadPoolExecutor(max_workers=1).submit(itad.feed) if extra_candidates is not None else None
+        self.deals: dict[int, itad.Deal] = {}
         self.lib: Library = load_library()
         self.hidden = prefs.load_hidden()
         self.seeds = list(cfg().profile.seeds)
@@ -113,18 +117,25 @@ class Context:
         fallback = 2.0 if not self.lib.playtime_visible else None
         self.profile: TasteProfile = build_profile(self.lib, self.meta, self.space, self.hidden, fallback,
                                                    self.seeds, self.interest)
+        self.personal = any(s.weight > 0 for s in self.profile.signals)   # something to learn your taste from
 
     def add_candidates(self, appids: list[int]) -> None:
         self.candidates.update(get_items(appids, with_price=True))
         self.rebuild()
 
     def load_pool(self) -> None:
-        """Top sellers on sale + highest-rated specials + specials matching your most distinctive tags."""
+        """The sale as a whole: the most popular discounted games (ITAD's list, a few thousand), Steam's top sellers
+        and best-reviewed specials, and specials matching your most distinctive tags."""
         rev = {v: k for k, v in tag_names("english").items()}
         tag_ids = [rev[tg] for tg, _ in self.profile.top_tags(6) if tg in rev]
         targeted = [{"start": 0, "count": 100, "tag_ids": [tid]} for tid in tag_ids]
         targeted += [{"start": 0, "count": 100, "tag_ids": tag_ids[:2]}] if len(tag_ids) >= 2 else []
-        self.add_candidates(search_many(DISCOVER_PAGES[:2] + targeted))
+        found = search_many(DISCOVER_PAGES[:2] + targeted)
+        try:
+            self.deals = self._feed.result() if self._feed else {}
+        except Exception:  # noqa: BLE001 - the list only widens the pool; Steam's own pages still fill it
+            self.deals = {}
+        self.add_candidates(list(dict.fromkeys(found + list(self.deals))))
 
     def load_discovery_pool(self) -> None:
         """Acclaimed games on sale + top sellers of genres you barely play (a new handful every week)."""
@@ -183,6 +194,7 @@ class Context:
 
     def rec(self, item: Item, is_wish: bool) -> Rec:
         r = make_rec(item, self.profile, self.space, is_wish, self.filters.explore)
+        r.personal = self.personal
         if item.appid in self.family_unshared:
             r.extras["unshared"] = self.lib.family_games[item.appid]["owner"]
         elif item.appid in self.family_shared:
@@ -208,7 +220,8 @@ class Digest:
     waiting: list[Rec] = field(default_factory=list)       # wishlist games at full price, in wishlist order
 
 
-WAIT_LOGS = 40      # full sale logs per run for wishlist games at full price (ITAD allows ~80 calls per 5 min)
+WAIT_LOGS = 40      # full sale logs per run for wishlist games at full price
+LOG_REVIEWS, LOG_PCT = 100, 70      # below this a game stays "little data": reviews would hold its verdict back anyway
 
 
 def _in_budget(item: Item, budget: float | None) -> bool:
@@ -223,13 +236,20 @@ def enrich(recs: list[Rec], ctx: Context, sale_next: calendar.Event | None = Non
     ids = [r.item.appid for r in recs]
     deep_ids = ids if deep is None else list(dict.fromkeys(r.item.appid for r in deep))
     deep_ids = deep_ids[:150]
-    hist = itad.history(ids, deep=deep_ids, cuts={r.item.appid: r.item.cut for r in recs})
-    bundles = itad.bundles(deep_ids[:40])         # one request per game: only the top of the lists
-    accounts = third_party_accounts(deep_ids) if deep_ids else {}
     c = cfg()
-    cheaper = itad.elsewhere(deep_ids, c.country) if deep_ids and itad.elsewhere_enabled(ctx.filters.elsewhere,
-                                                                                            c.country) else {}
+    with ThreadPoolExecutor(max_workers=1) as side:       # Steam's account notices load beside ITAD's answers
+        notices = side.submit(third_party_accounts, deep_ids) if deep_ids else None
+        # two calls before the price logs, which may take all that is left of ITAD's call budget
+        bundles = itad.bundles(deep_ids)
+        cheaper = itad.elsewhere(deep_ids, c.country) if deep_ids and itad.elsewhere_enabled(
+            ctx.filters.elsewhere, c.country) else {}
+        # a price log only for games that can come out HOT or GREAT: on your wishlist, or liked by enough players
+        worth = {r.item.appid: r.item.cut for r in recs
+                 if r.is_wish or (r.item.review_count >= LOG_REVIEWS and (r.item.review_pct or 0) >= LOG_PCT)}
+        hist = itad.history(ids, deep=deep_ids, cuts=worth, deals=getattr(ctx, "deals", None))
+        accounts = notices.result() if notices else {}
     targets = prefs.targets()
+    sales = _sale_days()
     for r in recs:
         a = r.item.appid
         r.hist = itad.trusted(hist.get(a), r.item.cut)
@@ -237,6 +257,7 @@ def enrich(recs: list[Rec], ctx: Context, sale_next: calendar.Event | None = Non
         if a in bundles:
             r.extras["bundle3p"] = bundles[a]
         r.extras["sale_next"] = sale_next
+        _forecast(r, sales)
         if accounts.get(a):
             r.extras["account"] = accounts[a]
         if a in cheaper:
@@ -278,8 +299,8 @@ def build_digest(ctx: Context, limit: int = 12, min_discount: int | None = None,
     finds = disc.candidates(picks, ctx.profile, ctx.space, ctx.interest, today) if discover else []
     if not show_wish:
         picks += wish
-    picks = diversify(sorted(picks, key=lambda r: -r.score))
-    finds.sort(key=lambda r: -r.score)
+    picks = diversify(sorted(picks, key=lambda r: -r.pick))     # the games you are most likely to want first:
+    finds.sort(key=lambda r: -r.score)                          # they get price logs and offers before the rest
 
     evs = calendar.events()
     sale_now, sale_next = calendar.current_sale(today, evs=evs), calendar.next_sale(today, evs=evs)
@@ -291,7 +312,7 @@ def build_digest(ctx: Context, limit: int = 12, min_discount: int | None = None,
     if not f.third_party:
         head = [r for r in head if "account" not in r.extras]
         find_head = [r for r in find_head if "account" not in r.extras]
-    picks = diversify(sorted(head, key=lambda r: -r.score)) + sorted(picks[limit * 3:], key=lambda r: -r.score)
+    picks = diversify(sorted(head, key=lambda r: -r.pick)) + sorted(picks[limit * 3:], key=lambda r: -r.pick)
     wish.sort(key=lambda r: -r.score)
     finds = disc.arrange(find_head + finds[limit * 3:])
     if finds and not stale_ok():
@@ -313,10 +334,33 @@ def waiting_list(ctx: Context, sale_next: calendar.Event | None = None) -> list[
     rows.sort(key=lambda r: order.get(r.item.appid, (2 ** 31, 0)))
     ids = [r.item.appid for r in rows]
     hist = itad.history(ids, deep=ids[:WAIT_LOGS]) if ids else {}
+    sales = _sale_days()
     for r in rows:
         r.hist = hist.get(r.item.appid)
         r.extras["sale_next"] = sale_next
+        _forecast(r, sales)
     return rows
+
+
+def _sale_days() -> list[tuple[dt.date, str]]:
+    """Starts of the Steam-wide sales Valve has announced."""
+    try:
+        return [(e.start, e.name) for e in calendar.events() if e.kind == "sale"]
+    except Exception:  # noqa: BLE001 - no calendar: the game's own rhythm still gives a date
+        return []
+
+
+def _forecast(r: Rec, sales: list[tuple[dt.date, str]]) -> None:
+    """When the game's next sale is likely to start (see History.next_sale); needs a price log."""
+    r.extras.pop("next_sale", None)
+    h = r.hist
+    if not h or not h.points or not (h.gap_days or sales):
+        return
+    today = dt.date.today()
+    ends = dt.date.fromtimestamp(r.item.ends_at) if r.item.cut > 0 and r.item.ends_at else None
+    day, name = h.next_sale(today, ends, sales)
+    if day:
+        r.extras["next_sale"] = {"day": day, "name": name}
 
 
 # --------------------------------------------------------------------------- DLC

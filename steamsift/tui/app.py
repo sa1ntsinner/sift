@@ -17,16 +17,17 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal, Vertical, VerticalScroll
 from textual.screen import ModalScreen
-from textual.widgets import ContentSwitcher, DataTable, Input, LoadingIndicator, OptionList, Static
+from textual.widgets import ContentSwitcher, Input, LoadingIndicator, OptionList, Static
 from textual.widgets.option_list import Option
 from textual.worker import get_current_worker
 
-from .. import config, engine, net, prefs, query as qry
-from ..i18n import date, num, t
+from .. import config, engine, itad, net, prefs, query as qry
+from ..i18n import date, day_month, num, t
 from ..recommender import Rec, Verdict, short_name, verdict as judge
 from ..steam import Item
 from .theme import ACCENT, BASE_CSS, INK, MUTED, DIM, VERDICT, THEMES
 from .state import Data, REFRESH_AFTER, load_snapshot, save_snapshot
+from .table import DealList
 
 SORTS = list(qry.SORTS)
 TABS = ("picks", "wish", "dlc")          # DLC only with the dlc-tab setting (see SiftApp.tabs)
@@ -78,7 +79,8 @@ class Loader:
                 progress(preview)
             progress("sp_history")
             data = Data(ctx, engine.build_digest(ctx, limit=60, min_discount=0, budget=0,
-                                                 history_all=True), saved_at=0 if stale else time.time())
+                                                 history_all=True), saved_at=0 if stale else time.time(),
+                        pending=0 if stale else len(itad.unfinished))
             if not stale and net.steam_failures() != failures:
                 raise RuntimeError(t("tu_network_failed"))
             if not stale:
@@ -106,6 +108,11 @@ def verdict_of(row) -> Verdict:
     return judge(row.item.cut, row.hist)
 
 
+def _group(row) -> str:
+    """Rows with the same answer share one word in the list's first column."""
+    return verdict_of(row).kind or ("wait" if row.item.cut <= 0 else "")
+
+
 def worth_it(row) -> bool:
     return verdict_of(row).kind in WORTH or bool(getattr(row, "extras", {}).get("target", {}).get("hit"))
 
@@ -117,6 +124,10 @@ def why_text(row, v: Verdict) -> str:
     h = row.hist
     if row.item.cut > 0 or not h:
         return ""
+    nxt = forecast_of(row)
+    if nxt:
+        key = ("tu_due" if h.typical_cut else "tu_due_sale") + ("_now" if nxt[2] <= 0 else "_on")
+        return t(key, c=h.typical_cut, day=day_month(nxt[0]))
     if h.typical_cut and h.gap_days:
         return t("tu_wait_every", c=h.typical_cut, n=h.gap_days)
     if h.typical_cut:
@@ -134,6 +145,9 @@ def wait_lines(row) -> list[str]:
     i, h, out = row.item, row.hist, []
     if h and h.typical_cut:
         out.append(t("tu_wait_usual", c=h.typical_cut, price=money(i.price * (100 - h.typical_cut) / 100)))
+    line = forecast_line(row)
+    if line:
+        return out + [line]
     if h and h.gap_days and h.since_last_days:
         due = h.gap_days - h.since_last_days
         out.append(t("tu_wait_due", n=due) if due > 0 else t("tu_wait_any_day"))
@@ -142,6 +156,42 @@ def wait_lines(row) -> list[str]:
         days = (nxt.start - dt.date.today()).days
         if days >= 0:
             out.append(t("tu_sale_next", name=sale_name(nxt.name), n=days))
+    return out
+
+
+def forecast_of(row):
+    """(day, Steam-wide sale name or "", days from today) of the game's next likely sale, or None."""
+    import datetime as dt
+    nxt = getattr(row, "extras", {}).get("next_sale")
+    if not nxt:
+        return None
+    return nxt["day"], nxt["name"], (nxt["day"] - dt.date.today()).days
+
+
+def forecast_line(row, key: str = "tu_next") -> str:
+    """"next sale around 18 Dec" in the words of `key` (tu_next: a fact, tu_do_wait: advice)."""
+    from ..notify.cards import sale_name
+    nxt = forecast_of(row)
+    if not nxt:
+        return ""
+    day, name, days = nxt
+    if days <= 0:
+        return t(f"{key}_any")
+    if name:
+        return t(f"{key}_sale", name=sale_name(name), day=day_month(day))
+    return t(f"{key}_on", day=day_month(day))
+
+
+def verdict_mark(v: Verdict, word: bool, waiting: bool = False) -> Text:
+    """The list's first column: a mark in the verdict's colour on every row, the word where a run of them starts."""
+    if waiting:
+        return Text("  " + t("vd_wait") if word else "", style=MUTED)
+    if not v.kind:
+        return Text("·", style=DIM)
+    colour = DIM if v.kind == "ok" else VERDICT[v.kind]
+    out = Text("▎", style=colour)
+    if word:
+        out.append(" " + t(f"vd_{v.kind}"), style=MUTED if v.kind == "ok" else f"bold {colour}")
     return out
 
 
@@ -693,8 +743,11 @@ def render_details(row, status: str = "", width: int = 44, target: str = "") -> 
         h = row.hist
         if i.cut > 0:
             gap = h.gap_days if h else 0
-            out.append(t(f"tu_do_{v.kind}_gap" if v.kind in ("meh", "nope") and gap else f"tu_do_{v.kind}", n=gap)
-                       + "\n", style=f"bold {INK}")
+            wait = forecast_line(row, "tu_do_wait") if v.kind in ("meh", "nope") else ""
+            out.append((wait or t(f"tu_do_{v.kind}_gap" if v.kind in ("meh", "nope") and gap else f"tu_do_{v.kind}",
+                                  n=gap)) + "\n", style=f"bold {INK}")
+            if v.kind in ("great", "ok") and forecast_line(row):
+                out.append(forecast_line(row) + "\n", style=MUTED)
         if h and h.by_price() and i.cut > 0 and h.now_cents(i.cut) <= h.low_2y_cents + h.tolerance(h.now_cents(i.cut)):
             now = h.now_cents(i.cut)
             seen = h.times_at(now)
@@ -856,33 +909,6 @@ def image_widget(mode: str):
 
 # --------------------------------------------------------------------------- app
 
-class DealTable(DataTable):
-    """A click previews a game; Enter or a double click opens it."""
-
-    def on_resize(self) -> None:
-        game = self.columns.get("game")
-        if game is None or not self.content_size.width:
-            return
-        fixed = sum(c.get_render_width(self) for c in self.ordered_columns if c is not game)
-        game.width = max(8, self.content_size.width - fixed - 2 * self.cell_padding - 1)
-        game.auto_width = False
-        if self.row_count:
-            key = self.ordered_rows[0].key
-            self.update_cell(key, "game", self.get_cell(key, "game"), update_width=True)
-
-    async def _on_click(self, event: events.Click) -> None:
-        event.prevent_default()
-        row = event.style.meta.get("row", -1)
-        if event.button != 1 or row < 0:
-            await super()._on_click(event)
-            return
-        if row < self.row_count:
-            self.move_cursor(row=row, column=event.style.meta.get("column", 0))
-            if event.chain == 2:
-                self.action_select_cursor()
-        event.stop()
-
-
 class SiftApp(App):
     TITLE = "sift"
     AUTO_FOCUS = None          # never focus a widget implicitly: stray terminal replies must not become typing
@@ -898,13 +924,6 @@ class SiftApp(App):
     #loading-text { margin-top: 1; color: $foreground 60%; }
     #views { height: 1fr; }
     .deals { height: 1fr; }
-    DataTable { height: 1fr; background: $background; padding: 0 0 0 1; scrollbar-size-vertical: 1;
-                scrollbar-size-horizontal: 0; scrollbar-background: $background; scrollbar-color: $panel;
-                scrollbar-color-hover: $foreground 30%; scrollbar-color-active: $foreground 40%; }
-    DataTable > .datatable--header { background: $background; color: $foreground 45%; text-style: none; }
-    DataTable > .datatable--cursor { background: $panel; text-style: none; }
-    DataTable:focus > .datatable--cursor { background: $panel; text-style: none; }
-    DataTable > .datatable--hover { background: $surface; }
     #empty { display: none; height: 1fr; padding: 2 3; color: $foreground 60%; }
     #empty.show { display: block; }
     #keys { height: 1; padding: 0 2; }
@@ -961,6 +980,7 @@ class SiftApp(App):
         self._storage_error = ""
         self._shown: dict[str, int] = {}
         self._all: dict[str, int] = {}
+        self._rows: dict[str, list] = {}
         self.everything = not self.WORTH_IT_FIRST
         self._hidden_cache: set[int] = set()
         self.tab = self.view.tab if self.view.tab in self.tabs else "picks"
@@ -987,7 +1007,7 @@ class SiftApp(App):
         with ContentSwitcher(id="views", initial=self.tab):
             for tab in TABS:
                 with Horizontal(id=tab, classes="deals"):
-                    yield DealTable(id=f"t-{tab}", cursor_type="row", show_row_labels=False, zebra_stripes=False)
+                    yield DealList(id=f"t-{tab}")
                     yield Details(self.images, id=f"d-{tab}")
         yield Static(id="empty")
         yield Static(id="keys")
@@ -1058,7 +1078,9 @@ class SiftApp(App):
 
     def _refresh_if_due(self) -> None:
         if self.data and not self.loading and not self._dlc_loading and time.time() >= self._retry_at:
-            if not self.data.complete or time.time() - self.data.saved_at >= REFRESH_AFTER:
+            # price histories still to come are fetched as soon as ITAD's five-minute call budget is back
+            due = itad.WINDOW + 10 if self.data.pending else REFRESH_AFTER
+            if not self.data.complete or time.time() - self.data.saved_at >= due:
                 self.loading = True
                 self.fresh = False
                 self._header()
@@ -1213,6 +1235,10 @@ class SiftApp(App):
             updated_at = self.data.dlc_at if self.tab == "dlc" and self.data.dlc_at else self.data.saved_at
             right.append("  " + t("tu_updated", at=time.strftime("%H:%M", time.localtime(updated_at))),
                          style=MUTED)
+            pending = " · " + t("tu_pending", n=num(self.data.pending))
+            if self.data.pending and self.tab != "dlc" and \
+                    len(line.plain) + len(right.plain) + len(pending) + 2 <= max(40, self.size.width - 4):
+                right.append(pending, style=DIM)
         right.stylize(Style(meta={"@click": "app.refresh"}), stamp, len(right))
         width = max(40, self.size.width - 4)
         gap = width - len(line.plain) - len(right.plain)
@@ -1272,35 +1298,45 @@ class SiftApp(App):
         self.screen.set_class(self.NARROW <= w < self.MEDIUM, "medium")
         self._columns()
 
-    def _wanted_columns(self) -> tuple[str, ...]:
-        """The reason shows in the table when the details pane is hidden or the window is wide enough for both;
-        in narrow windows it takes the reviews column's place."""
+    BOTH = 172          # from this width the deals show your tags and the price's reason side by side
+
+    def _wanted_columns(self, tab: str = "picks") -> tuple[str, ...]:
+        """Beside the game: on the deals tab the tags of yours it has (the price's reason is in the details pane),
+        elsewhere the price's reason. Both from BOTH columns; none when the details pane leaves no room; in narrow
+        windows the reason takes the reviews column's place."""
         narrow, medium = self.screen.has_class("narrow"), self.screen.has_class("medium")
         details = not narrow or self.screen.has_class("details-on")
         cols = ["verdict", "price", "cut", "game"]
         if not (details and (medium or narrow)):
-            cols.append("why")
+            if tab == "picks" and not narrow:
+                cols.append("taste")
+            if tab != "picks" or narrow or self.size.width >= self.BOTH:
+                cols.append("why")
         if not narrow:
             cols.append("reviews")
         return tuple(cols)
 
-    def _columns(self) -> None:
-        cols = self._wanted_columns()
-        if cols == getattr(self, "_cols", ()):
+    def _columns(self, refill: bool = True) -> None:
+        cols = {tab: self._wanted_columns(tab) for tab in TABS}
+        rows = [r for tab in TABS for r in self.recs.get(tab, ())]
+        widths = (max([5, *(len(r.item.final_fmt) for r in rows)]),
+                  2 + max(len(t(f"vd_{k}")) for k in ("hot", "great", "ok", "meh", "nope", "wait")))
+        if (cols, widths) == getattr(self, "_laid", None):
             return
-        self._cols = cols
-        heads = {"verdict": ("", 9, "left"), "price": (t("col_price"), 9, "right"), "cut": ("%", 5, "right"),
-                 "why": (t("tu_col_why"), 22, "left"), "reviews": (t("tu_col_reviews"), 6, "right")}
+        self._laid, self._cols = (cols, widths), cols
+        heads = {"verdict": ("", widths[1], "left"), "price": (t("col_price"), widths[0], "right"),
+                 "cut": ("%", 5, "right"), "taste": (t("tu_col_taste"), 24, "left"),
+                 "why": (t("tu_col_why"), 22, "left"), "reviews": (t("tu_col_reviews"), 5, "right")}
         for tab in TABS:
-            table = self.query_one(f"#t-{tab}", DataTable)
-            table.clear(columns=True)
-            for key in cols:
+            columns = []
+            for key in cols[tab]:
                 if key == "game":
-                    table.add_column(t("col_game") if tab != "dlc" else t("col_dlc"), key="game")
+                    columns.append((key, Text(t("col_game") if tab != "dlc" else t("col_dlc")), None))
                 else:
                     label, width, justify = heads[key]
-                    table.add_column(Text(label, justify=justify), key=key, width=width)
-        if self.data is not None:
+                    columns.append((key, Text(label, justify=justify), width))
+            self.query_one(f"#t-{tab}", DealList).set_columns(columns)
+        if refill and self.data is not None:
             self.refill()
 
     def action_details(self) -> None:
@@ -1325,45 +1361,47 @@ class SiftApp(App):
         return on_sale + waiting
 
     def refill(self) -> None:
+        self._columns(refill=False)         # the price column is as wide as the dearest price
         self._hidden_cache = set(prefs.load_hidden())
+        wish = set(self.data.ctx.lib.wishlist_ids) if self.data else set()
         for tab in TABS:
-            table = self.query_one(f"#t-{tab}", DataTable)
-            keep = self._row_key(table)
-            table.clear()
+            table = self.query_one(f"#t-{tab}", DealList)
             visible = self._visible(self.recs[tab], tab)
             self._all[tab] = len(visible)
             if tab in WORTH_TABS and not self.everything:
                 visible = [r for r in visible if worth_it(r)]
             self._shown[tab] = len(visible)
-            wish = set(self.data.ctx.lib.wishlist_ids) if self.data else set()
-            for r in visible:
-                i = r.item
-                v = verdict_of(r)
-                name = Text(short_name(i.name, 60), style=INK, overflow="ellipsis", no_wrap=True)
-                if tab != "wish" and i.appid in wish:
-                    name.append("  ♥", style=VERDICT["wish"])
-                if getattr(r, "extras", {}).get("family"):
-                    name.append("  ⌂", style=f"bold {VERDICT['family']}")
-                if getattr(r, "extras", {}).get("target", {}).get("hit"):
-                    name.append("  ◎", style=ACCENT)
-                cells = {
-                    "verdict": verdict_cell(v) if v.kind or i.cut > 0 else Text(t("vd_wait"), style=MUTED),
-                    "price": Text(i.final_fmt, style=INK, justify="right"),
-                    "cut": Text(f"−{i.cut}%" if i.cut else "", style=MUTED, justify="right"),
-                    "game": name,
-                    "why": Text(why_text(r, v), style=MUTED,
-                                overflow="ellipsis", no_wrap=True),
-                    "reviews": Text(f"{i.review_pct}%" if i.review_count else "—", style=MUTED, justify="right"),
-                }
-                table.add_row(*(cells[c] for c in self._cols), key=str(i.appid))
-            if keep:
-                try:
-                    table.move_cursor(row=table.get_row_index(keep))
-                except Exception:  # noqa: BLE001 - row gone (hidden / filtered): stay at the top
-                    pass
+            self._rows[tab] = visible
+            table.set_rows([str(r.item.appid) for r in visible],
+                           lambda index, rows=visible, tab=tab: self._cells(
+                               rows[index], tab, wish, not index or _group(rows[index]) != _group(rows[index - 1])),
+                           keep=table.cursor_key)
         self._show_current()
         self._header()
         self._keys()
+
+    def _cells(self, r, tab: str, wish: set[int], first: bool = True) -> list[Text]:
+        """One row of the list; built when the row first scrolls into view. `first`: its verdict differs from the
+        row above, so the word is written out."""
+        i = r.item
+        v = verdict_of(r)
+        name = Text(short_name(i.name, 60), style=INK, overflow="ellipsis", no_wrap=True)
+        if tab != "wish" and i.appid in wish:
+            name.append("  ♥", style=VERDICT["wish"])
+        if getattr(r, "extras", {}).get("family"):
+            name.append("  ⌂", style=f"bold {VERDICT['family']}")
+        if getattr(r, "extras", {}).get("target", {}).get("hit"):
+            name.append("  ◎", style=ACCENT)
+        cells = {
+            "verdict": verdict_mark(v, first, waiting=not v.kind and i.cut <= 0),
+            "price": Text(i.final_fmt, style=INK, justify="right"),
+            "cut": Text(f"−{i.cut}%" if i.cut else "", style=MUTED, justify="right"),
+            "game": name,
+            "taste": Text(getattr(r, "why", ""), style=MUTED, overflow="ellipsis", no_wrap=True),
+            "why": Text(why_text(r, v), style=MUTED, overflow="ellipsis", no_wrap=True),
+            "reviews": Text(f"{i.review_pct}%" if i.review_count else "—", style=MUTED, justify="right"),
+        }
+        return [cells[c] for c in self._cols[tab]]
 
     def _show_current(self) -> None:
         tab = self.tab
@@ -1393,33 +1431,26 @@ class SiftApp(App):
         empty.set_class(nothing, "show")
         self.query_one("#views").display = not nothing and self.data is not None
 
-    def _row_key(self, table: DataTable) -> str | None:
-        if not table.row_count:
-            return None
-        try:
-            return table.coordinate_to_cell_key(table.cursor_coordinate).row_key.value
-        except Exception:  # noqa: BLE001
-            return None
-
     def _row_at(self, tab: str):
-        key = self._row_key(self.query_one(f"#t-{tab}", DataTable))
-        return next((r for r in self.recs[tab] if str(r.item.appid) == key), None) if key else None
+        table = self.query_one(f"#t-{tab}", DealList)
+        rows = self._rows.get(tab, [])
+        return rows[table.cursor_row] if 0 <= table.cursor_row < min(len(rows), table.row_count) else None
 
-    def _table(self) -> DataTable:
-        return self.query_one(f"#t-{self.tab}", DataTable)
+    def _table(self) -> DealList:
+        return self.query_one(f"#t-{self.tab}", DealList)
 
-    @on(DataTable.RowHighlighted)
-    def highlighted(self, event: DataTable.RowHighlighted) -> None:
-        if event.data_table.id == f"t-{self.tab}":
+    @on(DealList.Highlighted)
+    def highlighted(self, event: DealList.Highlighted) -> None:
+        if event.table.id == f"t-{self.tab}" and event.table.is_attached:      # not while the app closes
             self._show_current()
 
-    @on(DataTable.RowSelected)
+    @on(DealList.Selected)
     def selected(self) -> None:
         self.action_open()
 
-    @on(DataTable.HeaderSelected)
-    def sort_column(self, event: DataTable.HeaderSelected) -> None:
-        sort = {"verdict": "deal", "price": "price", "cut": "cut", "reviews": "rating"}.get(event.column_key.value)
+    @on(DealList.HeaderClicked)
+    def sort_column(self, event: DealList.HeaderClicked) -> None:
+        sort = {"verdict": "deal", "price": "price", "cut": "cut", "reviews": "rating"}.get(event.column)
         if sort:
             self.view.sort = sort
             self.refill()
@@ -1435,16 +1466,12 @@ class SiftApp(App):
     def action_cursor(self, d: int) -> None:
         if self.data is None or self._typing():
             return
-        tb = self._table()
-        if tb.row_count:
-            tb.action_cursor_down() if d > 0 else tb.action_cursor_up()
+        self._table().action_move(d)
 
     def action_cursor_end(self, last: int) -> None:
         if self.data is None or self._typing():
             return
-        tb = self._table()
-        if tb.row_count:
-            tb.move_cursor(row=tb.row_count - 1 if last else 0)
+        self._table().action_end(last)
 
     def action_tab(self, tab: str) -> None:
         if self.data is None or self._typing() or tab not in self.tabs:

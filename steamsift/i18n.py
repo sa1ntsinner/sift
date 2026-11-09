@@ -756,7 +756,13 @@ EN.update({
     "vs_returns": "back every ~{n} d", "vs_atl_unknown": "record · little data",
     "vs_atl": "rare record", "vs_low_2y": "2-year low", "vs_rare": "rare: {n} in 2 y",
     "vs_typical": "usual −{n}%", "vs_deeper_before": "was −{n}%", "vs_fake": "price raised {n} d ago",
-    "vs_bundle": "cheaper in a bundle", "tu_col_why": "why",
+    "vs_bundle": "cheaper in a bundle", "tu_col_why": "why", "tu_col_taste": "your tags",
+    "tu_due_on": "−{c}% around {day}", "tu_due_now": "−{c}% due any day",
+    "tu_due_sale_on": "sale around {day}", "tu_due_sale_now": "sale due any day",
+    "tu_next_on": "next sale around {day}", "tu_next_sale": "next sale: {name}, {day}",
+    "tu_next_any": "a sale is due any day now",
+    "tu_do_wait_on": "Wait: its next sale is due around {day}.", "tu_do_wait_sale": "Wait until {day} ({name}).",
+    "tu_do_wait_any": "Wait: its next sale is due any day now.",
 })
 RU.update({
     "vd_hot": "ОГОНЬ", "vd_great": "КЛАСС", "vd_ok": "НОРМ", "vd_meh": "ТАК СЕБЕ", "vd_nope": "МИМО",
@@ -792,7 +798,13 @@ RU.update({
     "vs_returns": "бывает раз в ~{n} дн.", "vs_atl_unknown": "рекорд · мало данных",
     "vs_atl": "редкий рекорд", "vs_low_2y": "минимум за 2 года", "vs_rare": "редкая: {n} за 2 г.",
     "vs_typical": "обычная −{n}%", "vs_deeper_before": "бывало −{n}%", "vs_fake": "подняли цену {n} дн.",
-    "vs_bundle": "дешевле в наборе", "tu_col_why": "почему",
+    "vs_bundle": "дешевле в наборе", "tu_col_why": "почему", "tu_col_taste": "твои теги",
+    "tu_due_on": "−{c}% около {day}", "tu_due_now": "−{c}% со дня на день",
+    "tu_due_sale_on": "скидка около {day}", "tu_due_sale_now": "скидка со дня на день",
+    "tu_next_on": "следующая скидка около {day}", "tu_next_sale": "следующая скидка: {name}, {day}",
+    "tu_next_any": "скидка может начаться в любой день",
+    "tu_do_wait_on": "Жди: следующая скидка ожидается около {day}.", "tu_do_wait_sale": "Жди до {day} ({name}).",
+    "tu_do_wait_any": "Жди: скидка может начаться в любой день.",
 })
 
 
@@ -804,6 +816,7 @@ EN.update({
     "tu_k_open": "open", "tu_k_search": "search", "tu_k_filters": "filters", "tu_k_sort": "sort",
     "tu_k_hide": "hide", "tu_k_keys": "all keys", "tu_k_quit": "quit", "tu_k_details": "details",
     "tu_k_refresh": "refresh", "tu_updated": "updated {at}", "tu_cached": "cached · r retry",
+    "tu_pending": "{n} price histories to come",
     "tu_network_failed": "Steam couldn't be reached; keeping the previous results",
     "tu_save_failed": "Couldn't save results: {err}",
     "tu_h_details": "show / hide the details pane (narrow windows)",
@@ -864,6 +877,7 @@ RU.update({
     "tu_k_open": "открыть", "tu_k_search": "поиск", "tu_k_filters": "фильтры", "tu_k_sort": "сортировка",
     "tu_k_hide": "скрыть", "tu_k_keys": "все клавиши", "tu_k_quit": "выход", "tu_k_details": "детали",
     "tu_k_refresh": "обновить", "tu_updated": "обновлено {at}", "tu_cached": "сохранено · r повторить",
+    "tu_pending": "ещё {n} историй цен загружаются",
     "tu_network_failed": "Steam недоступен; оставлены предыдущие результаты",
     "tu_save_failed": "Не удалось сохранить результаты: {err}",
     "tu_h_details": "показать / скрыть карточку игры (узкие окна)",

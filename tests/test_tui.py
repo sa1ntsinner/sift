@@ -115,7 +115,10 @@ def test_verdict_column_and_details_explain_the_price(data):
         async with app.run_test(size=(150, 40)) as pilot:
             await ready(pilot, app)
             t = app.query_one("#t-picks")
-            by_name = {t.get_row_at(i)[NAME].plain: t.get_row_at(i)[0].plain for i in range(t.row_count)}
+            by_name, word = {}, ""          # the word is written where a run of one verdict starts
+            for i in range(t.row_count):
+                word = t.get_row_at(i)[0].plain.strip("▎ ") or word
+                by_name[t.get_row_at(i)[NAME].plain] = word
             assert by_name["Rally Kings"] == "OK"                       # its record, but no log to say it is rare
             assert by_name["Night Drive"] == "NOPE"                     # −50% when it has been −75%: half the price
     run(go())
@@ -679,7 +682,7 @@ def test_narrow_terminal_keeps_names_and_toggles_details(data):
     run(go())
 
 
-@pytest.mark.parametrize("width", [80, 100, 150])
+@pytest.mark.parametrize("width", [80, 100, 150, 180])
 def test_long_game_names_keep_the_last_column_visible_at_every_width(data, width):
     data.digest.picks[0].item.name = "A very long game name " * 5
 
@@ -690,11 +693,14 @@ def test_long_game_names_keep_the_last_column_visible_at_every_width(data, width
             await app.workers.wait_for_complete()
             await pilot.pause()
             head = app.query_one("#t-picks").render_line(0).text
-            # narrow: the reason replaces reviews · medium: the reason is in the details pane · wide: both
-            assert ("why" in head, "rev." in head) == {80: (True, False), 100: (False, True), 150: (True, True)}[width]
-            if width == 150:
+            # narrow: the reason replaces reviews · medium: the reason is in the details pane · wide: your tags
+            # beside the game, and from 172 columns the reason too
+            assert ("why" in head, "rev." in head) == {80: (True, False), 100: (False, True), 150: (False, True),
+                                                       180: (True, True)}[width]
+            assert ("your tags" in head) == (width >= 150)
+            if width == 180:
                 t = app.query_one("#t-picks")
-                assert "was 50% cheaper" in [t.get_row_at(i)[4].plain for i in range(t.row_count)]
+                assert "was 50% cheaper" in [t.get_row_at(i)[5].plain for i in range(t.row_count)]
     run(go())
 
 
@@ -792,3 +798,22 @@ def test_price_alert_from_the_app(data):
             await pilot.press("t", "escape")
             assert app.focused is app.query_one("#t-picks")
     run(go())
+
+
+def test_forecast_says_when_to_come_back(data):
+    import datetime as dt
+    from steamsift.i18n import day_month
+    from dataclasses import replace
+    from steamsift.recommender import Verdict
+    from steamsift.tui.app import why_text, verdict_of
+    rec = next(r for r in data.digest.picks if r.item.name == "Night Drive")          # NOPE: it has been cheaper
+    day = dt.date.today() + dt.timedelta(days=12)
+    rec.extras["next_sale"] = {"day": day, "name": "Steam Winter Sale"}
+    assert f"Wait until {day_month(day)} (Winter Sale)." in render_details(rec).plain
+    rec.extras["next_sale"] = {"day": day, "name": ""}
+    assert f"Wait: its next sale is due around {day_month(day)}." in render_details(rec).plain
+    rec.extras["next_sale"] = {"day": dt.date.today(), "name": ""}
+    assert "its next sale is due any day now" in render_details(rec).plain
+    waiting = replace(rec, item=replace(rec.item, cut=0), hist=History(75, typical_cut=60, gap_days=45),
+                      verdict=Verdict(), extras={"next_sale": {"day": day, "name": ""}})
+    assert why_text(waiting, verdict_of(waiting)) == f"−60% around {day_month(day)}"

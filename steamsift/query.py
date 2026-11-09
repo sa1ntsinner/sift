@@ -154,15 +154,18 @@ class Query:
     def _rec_sort_key(self, r):
         s = SORT_ALIASES.get(self.sort, self.sort)
         if s == "deal":
-            # most worthwhile first: verdict, then deal score, then how well reviewed, then the cut
+            # most worthwhile first: the verdict says whether the price is good; inside a verdict, the games you
+            # are most likely to want (taste, reviews) come first. DLC rows have no taste: their deal score decides.
             from .recommender import deal_value, verdict, wilson_lower
             v = getattr(r, "verdict", None)
             kind = v.kind if v is not None and hasattr(v, "kind") else verdict(r.item.cut, getattr(r, "hist", None)).kind
-            ds = getattr(r, "deal_score", None)
-            if ds is None:
-                ds = deal_value(r.item.cut, getattr(r, "hist", None), r.item) * 100
+            pick = getattr(r, "pick", None)
+            if pick is None:
+                pick = getattr(r, "deal_score", None)
+                if pick is None:
+                    pick = deal_value(r.item.cut, getattr(r, "hist", None), r.item) * 100
             reviews = wilson_lower(r.item.review_pct, r.item.review_count) or 0.0
-            return (VERDICT_RANK.get(kind, len(VERDICT_RANK)), -round(ds), -reviews, -r.item.cut)
+            return (VERDICT_RANK.get(kind, len(VERDICT_RANK)), -round(pick), -reviews, -r.item.cut)
         if s == "match":
             aff = getattr(r, "affinity", 0.0)
             cos = getattr(r, "cos", 0.0)
