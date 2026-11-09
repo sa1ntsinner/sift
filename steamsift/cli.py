@@ -383,6 +383,48 @@ def cmd_family(args) -> None:
     ui.family(lib, unshared)
 
 
+def cmd_update(args) -> int:
+    """sift update [--check]: the newest release, installed the way this copy was installed."""
+    import subprocess
+
+    from . import updater
+    with _status("sp_update"):
+        latest = updater.latest(cached=False)
+    if not latest:
+        ui.error(t("up_offline"))
+        return 1
+    how = updater.method()
+    if how == "source":
+        ui.plain(f"  {t('up_source', v=__version__, latest=latest)}", "bold")
+    if updater.parse(latest) <= updater.parse(__version__) and how != "source":
+        ui.plain(f"  ✓ {t('up_latest', v=__version__)}", "green")
+        return 0
+    if how != "source":
+        ui.plain(f"  {t('up_found', new=latest, old=__version__)}", "bold")
+    if getattr(args, "check", False):
+        ui.plain(f"  {t('up_hint')}", "grey62")
+        return 0
+    if how == "binary":
+        try:
+            with _status("sp_update_download"):
+                path = updater.replace_binary(latest)
+        except Exception as e:  # noqa: BLE001 - network, disk or a broken download: say so, keep the old binary
+            ui.error(t("up_failed", err=e))
+            return 1
+        ui.plain(f"  ✓ {t('up_done', v=latest, path=path)}", "green")
+        return 0
+    cmd = updater.command(how)
+    ui.plain(f"  {t('up_via', cmd=' '.join(cmd))}", "grey62")
+    try:
+        code = subprocess.call(cmd)
+    except OSError as e:
+        ui.error(t("up_failed", err=e))
+        return 1
+    if code == 0:
+        ui.plain(f"  ✓ {t('up_done_cmd')}", "green")
+    return code
+
+
 def cmd_doctor(args) -> int:
     from . import doctor
     with _status("sp_doctor"):
@@ -795,6 +837,8 @@ def build_parser() -> argparse.ArgumentParser:
         "rest", nargs=argparse.REMAINDER)
     add("setup", "guided first-time setup")
     add("doctor", "check keys, privacy, region, family, notifications")
+    add("update", "update sift to the latest release (--check: only tell)").add_argument(
+        "--check", action="store_true", help="only check for a newer version")
     add("dlc", "discounted DLC for games you or your family own")
     add("info", "price, history & match for one game").add_argument("query", nargs="+", help="title or appid")
     add("open", "open result #N from the last list").add_argument("numbers", nargs="+", type=int)
@@ -831,6 +875,9 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else argv
+    from .updater import cleanup
+    cleanup()                                             # the old binary a Windows update renamed
+    argv = ["update" if a == "--update" else a for a in argv]     # sift --update = sift update
     if argv[:1] == ["help"]:
         argv = ["--help", *argv[1:]] if len(argv) == 1 else [*argv[1:], "--help"]   # sift help [command]
     parser = build_parser()
@@ -864,7 +911,7 @@ def main(argv: list[str] | None = None) -> int:
         args.min_discount = c.min_discount
 
     first_run = not CONFIG_FILE.exists() and args.cmd is None and sys.stdin.isatty() and sys.stdout.isatty()
-    no_setup = {"config", "profile", "open", "unhide", "hidden", "setup", "doctor", "targets", "calendar"}
+    no_setup = {"config", "profile", "open", "unhide", "hidden", "setup", "doctor", "targets", "calendar", "update"}
     try:
         if first_run and not ready(quiet=True):
             return cmd_setup(args) or 0
@@ -873,7 +920,7 @@ def main(argv: list[str] | None = None) -> int:
             handler = {"config": cmd_config, "profile": cmd_profile, "open": cmd_open, "unhide": cmd_unhide,
                        "hidden": lambda a: ui.hidden_list(prefs.load_hidden()), "setup": cmd_setup,
                        "doctor": cmd_doctor, "targets": cmd_targets, "calendar": cmd_calendar,
-                       "notify": cmd_notify}[args.cmd]
+                       "notify": cmd_notify, "update": cmd_update}[args.cmd]
             return handler(args) or 0
         interactive = sys.stdin.isatty() and sys.stdout.isatty()
         if args.cmd is None and not (args.dna or args.print or getattr(args, "json", False)) and interactive:

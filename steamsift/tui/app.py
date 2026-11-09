@@ -1005,6 +1005,19 @@ class SiftApp(App):
         self.load(refresh=refresh_requested())
         self.set_interval(60, self._refresh_if_due)
         self.set_interval(5, self.checkpoint)
+        self.check_update()
+
+    @work(thread=True, group="update", exclusive=True)
+    def check_update(self) -> None:
+        """Once a day: is there a newer release? Shown quietly in the header, never in the way."""
+        from ..updater import newer
+        try:
+            version = newer()
+        except Exception:  # noqa: BLE001 - offline or GitHub down: no hint, nothing else changes
+            return
+        if version:
+            self.update_to = version
+            self.call_from_thread(self._header)
 
     # ---------------------------------------------------------------- loading
 
@@ -1173,6 +1186,8 @@ class SiftApp(App):
             line.stylize(Style(meta={"@click": f"app.go_tab('{tab}')"}), start, len(line))
             line.append(" " if self.screen.has_class("narrow") else "   ")
         right = Text()
+        if getattr(self, "update_to", ""):
+            right.append(t("tu_update", v=self.update_to) + "  ", style=f"bold {ACCENT}")
         if self.tab in WORTH_TABS and self.data is not None:
             mode = t("tu_everything") if self.everything else t("tu_worth", n=num(self._all.get(self.tab, 0)))
             if self.screen.has_class("narrow"):

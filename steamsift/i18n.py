@@ -1008,3 +1008,32 @@ RU.update({
     "dr_itad_optional": "не задан: необязательно, даёт историю цен для вердиктов ОГОНЬ / КЛАСС / МИМО",
     "ev_wish_lowest": "Вишлист: цена ОГОНЬ",
 })
+
+
+# --------------------------------------------------------------------------- sift update
+EN.update({
+    "sp_update": "checking for a new version…", "sp_update_download": "downloading the new version…",
+    "up_offline": "Couldn't reach GitHub to check for a new version.",
+    "up_latest": "sift {v} is the latest version.",
+    "up_found": "sift {new} is out (you have {old}).",
+    "up_hint": "Update with: sift update",
+    "up_source": "This is a source checkout ({v}); the latest release is {latest}. sift update runs git pull.",
+    "up_via": "updating with: {cmd}",
+    "up_done": "Updated to {v} ({path}). Run sift.",
+    "up_done_cmd": "Updated. Run sift.",
+    "up_failed": "Update failed: {err}",
+    "tu_update": "↑ {v}: sift update",
+})
+RU.update({
+    "sp_update": "проверяю новую версию…", "sp_update_download": "скачиваю новую версию…",
+    "up_offline": "Не удалось связаться с GitHub, чтобы проверить новую версию.",
+    "up_latest": "sift {v}: это последняя версия.",
+    "up_found": "Вышел sift {new} (у тебя {old}).",
+    "up_hint": "Обновить: sift update",
+    "up_source": "Это копия исходников ({v}); последний релиз {latest}. sift update сделает git pull.",
+    "up_via": "обновляю командой: {cmd}",
+    "up_done": "Обновлено до {v} ({path}). Запусти sift.",
+    "up_done_cmd": "Обновлено. Запусти sift.",
+    "up_failed": "Не удалось обновить: {err}",
+    "tu_update": "↑ {v}: sift update",
+})

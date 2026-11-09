@@ -73,6 +73,9 @@ then you run `sift`. You can also download the file yourself from the
 With Python 3.11+: `uv tool install steamsift` (or `pipx install steamsift`). The package is called `steamsift`
 because `sift` was taken on PyPI; the command is still `sift`.
 
+**Update** with `sift update` (or `sift --update`): it installs the latest release the same way sift was installed.
+`sift update --check` only tells you whether there is one.
+
 ## First run
 
 `sift` opens a three-minute setup. It can look on your computer for your Steam account and Steam Family (only Steam's
