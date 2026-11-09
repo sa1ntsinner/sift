@@ -110,6 +110,12 @@ def run_checks() -> list[Check]:
             except Exception:  # noqa: BLE001
                 add(Check(WARN, t("dr_store"), t("dr_network")))
 
+    from . import audit
+    judged, bad = audit.record()
+    trusted = judged < audit.MIN_JUDGED or bad / judged <= audit.MAX_BAD
+    add(Check(OK if trusted else WARN, t("dr_calls"),
+              t("dr_calls_n", n=judged, bad=bad) if judged else t("dr_calls_none")))
+
     if c.family:
         add(Check(OK, t("family"), f"{len(c.family)} · {t('family_src_manual')}"))
     elif c.steam_id:

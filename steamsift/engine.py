@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
 from . import calendar, config, discover as disc, itad, prefs, region
+from . import audit
 from .config import Filters
 from .db import stale_ok
 from .recommender import (Profile as TasteProfile, Rec, TagSpace, build_profile, calibrate, deal_value, diversify,
@@ -219,6 +220,7 @@ class Digest:
     fests: list[calendar.Event] = field(default_factory=list)
     discover: list[Rec] = field(default_factory=list)      # new-for-you, ordered in genre lanes (Rec.lane)
     waiting: list[Rec] = field(default_factory=list)       # wishlist games at full price, in wishlist order
+    unsure: str = ""                                       # HOT is taken back: 'record' | 'mix' (see audit.py)
 
 
 WAIT_LOGS = 40      # full sale logs per run for wishlist games at full price
@@ -310,6 +312,7 @@ def build_digest(ctx: Context, limit: int = 12, min_discount: int | None = None,
     deep_objects = {id(r) for r in deep}
     rest = [r for r in wish + picks + finds if id(r) not in deep_objects]
     enrich(deep + rest, ctx, sale_next, deep=deep)
+    unsure = audit.review(deep + rest, today)
     if not f.third_party:
         head = [r for r in head if "account" not in r.extras]
         find_head = [r for r in find_head if "account" not in r.extras]
@@ -321,7 +324,7 @@ def build_digest(ctx: Context, limit: int = 12, min_discount: int | None = None,
     fests = calendar.fests_for([t for t, _ in ctx.profile.top_tags(5)], today, evs=evs)
     waiting = waiting_list(ctx, sale_next) if show_wish else []
     return Digest(wish if show_wish else [], picks if show_picks else [], unavailable, len(ctx.candidates),
-                  sale_now, sale_next, fests, finds, waiting)
+                  sale_now, sale_next, fests, finds, waiting, unsure)
 
 
 def waiting_list(ctx: Context, sale_next: calendar.Event | None = None) -> list[Rec]:

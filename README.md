@@ -115,6 +115,7 @@ Everything also works from the keyboard:
 | `enter` | open in Steam | `f` | filters, saved filters, hidden games |
 | `1 2` `← →` | tabs | `s` | sort |
 | `x` | hide: not for me | `u` | undo |
+| `l` | more like this | | |
 | `i` | price history on IsThereAnyDeal | `?` | every key |
 | `r` | refresh the current view | `d` | show details in narrow windows |
 | `a` | worth it only / every discount | `t` | price alert for this game |
@@ -150,9 +151,18 @@ Run it on a schedule with `sift notify enable`, keep it running with `sift watch
 - **Your Steam Family.** Shared games stay out of the list, or show with a blue mark if you want them.
 - **Your library.** Owned and hidden games never show up; DLC is listed for the games you own.
 - **Your taste, second.** The price decides the verdict; your play history orders the games inside it.
+- **Your answers.** Press `l` on a game you want more of and `x` on one that is not yours: games close to it
+  move up or down at once. Your wishlist and the store pages you open count too.
 
 Everything stays on your computer: keys in the system keychain, settings in a local file. sift talks only to Steam and
 IsThereAnyDeal.
+
+## It checks itself
+
+sift writes down every HOT it shows and, when the game's later prices are known, checks whether the game got clearly
+cheaper within four months. If its own calls stop holding, or a suspicious share of a sale comes out HOT (what broken
+price data looks like), HOT is shown as GREAT with the reason until the record is good again. `sift doctor` shows the
+record. If Steam or IsThereAnyDeal do not answer, sift keeps the last results and says so instead of guessing.
 
 ## More
 

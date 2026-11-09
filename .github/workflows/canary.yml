@@ -1,0 +1,37 @@
+# Once a week: do Steam and IsThereAnyDeal still answer in the shape sift reads? If not, an issue says which part broke.
+name: canary
+
+on:
+  schedule:
+    - cron: "23 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SIFT_HOME: ${{ github.workspace }}/.sift
+      STEAM_COUNTRY: US
+      SIFT_LANG: en
+      PYTHONUTF8: "1"
+      ITAD_API_KEY: ${{ secrets.ITAD_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet -e .
+      - id: check
+        run: python packaging/canary.py | tee canary.txt
+        shell: bash -o pipefail {0}
+      - if: failure() && steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search 'canary in:title' --json number --jq '.[0].number')" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "canary: a data source changed" --body "$(printf 'The weekly check failed:\n\n```\n%s\n```\n' "$(cat canary.txt)")"
+          fi
