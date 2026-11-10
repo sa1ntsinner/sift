@@ -139,11 +139,26 @@ sift --print                  # a plain table for scripts; sift -J prints JSON
 
 ## Alerts
 
-`sift notify setup telegram` (or `discord`, `ntfy`, `desktop`, `email`) sends a few cards a day: HOT prices, your own
-price targets and wishlist records that are about to end. Never the whole sale.
+`sift notify setup telegram` (or `discord`, `ntfy`, `desktop`, `email`) connects a channel and sends a test card.
+After that sift writes only when:
 
-Run it on a schedule with `sift notify enable`, keep it running with `sift watch`, or run it in the cloud with
-[GitHub Actions](packaging/github-actions/sift.yml) or [Docker](compose.yaml) while your PC is off.
+- a game on your wishlist, or one of the top games on Deals, is HOT;
+- a game reaches the price you set with `t` (or `sift target`);
+- a HOT or GREAT wishlist price ends within a day;
+- DLC for a game you have played for 10 hours or more is HOT;
+- a Steam-wide sale starts (one card, with your top games in it).
+
+GREAT prices come back every few weeks, so they never ping you on their own, and a game is not announced again for
+three weeks unless it gets cheaper. The cards come as one digest a day at 19:00 (`sift config set digest-time 08:30`),
+or as they are found with `sift config set notify-mode instant`; instant cards wait out your quiet hours
+(`sift config set quiet 23:00-08:00`). On Telegram every card has buttons to open the game, see more or hide it.
+`sift notify run --dry-run` shows what would be sent now, `sift notify pause 7` mutes it for a week.
+
+Run it on a schedule with `sift notify enable` (hourly; `--every 120` for two hours), keep it running with
+`sift watch`, or run it in the cloud while your PC is off: `sift notify actions` writes a
+[GitHub Actions workflow](packaging/github-actions/sift.yml) and lists the secrets it needs, and
+[Docker](compose.yaml) reads the same settings from `.env` (see `.env.example`). A cloud copy that uses your
+IsThereAnyDeal key shares its five-minute limit with the app on your PC.
 
 ## What it knows
 
